@@ -1,0 +1,1026 @@
+[
+  {
+    "code": "M1-001",
+    "skill_code": "M1.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welchen exakten Wert hat $\\sin 30^\\circ$?",
+    "payload": {
+      "options": [
+        "$\\frac{1}{2}$",
+        "$\\frac{1}{2}\\sqrt{3}$",
+        "$\\frac{1}{2}\\sqrt{2}$",
+        "$\\frac{1}{3}\\sqrt{3}$"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Am Einheitskreis ist $\\sin 30^\\circ$ die y-Koordinate des Punktes zum Winkel 30°, und die ist genau $\\frac{1}{2}$. Der Wert $\\frac{1}{2}\\sqrt{3}$ ist $\\cos 30^\\circ$, hier sind Sinus und Kosinus vertauscht. $\\frac{1}{3}\\sqrt{3}$ ist $\\tan 30^\\circ$.",
+    "hint": "Denk an den Einheitskreis: Welche Koordinate des Punktes gehört zum Sinus, und wie hoch liegt der Punkt bei 30°?"
+  },
+  {
+    "code": "M1-002",
+    "skill_code": "M1.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welcher Winkel zwischen 0° und 360° hat denselben Sinuswert wie 40°?",
+    "payload": {
+      "options": [
+        "140°",
+        "50°",
+        "220°",
+        "320°"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Es gilt $\\sin(180^\\circ - \\alpha) = \\sin \\alpha$, also $\\sin 140^\\circ = \\sin 40^\\circ$. Bei 220° und 320° liegt der Punkt am Einheitskreis unterhalb der x-Achse, der Sinus ist dort negativ. 50° gehört zu $\\cos 40^\\circ = \\sin 50^\\circ$, das ist eine Verwechslung mit dem Kosinus.",
+    "hint": "Der Sinus ist die y-Koordinate am Einheitskreis. Bei welcher Spiegelung des Punktes bleibt die y-Koordinate gleich?"
+  },
+  {
+    "code": "M1-003",
+    "skill_code": "M1.1",
+    "type": "mc_multi",
+    "difficulty": 2,
+    "stem": "Welche Aussagen sind richtig? Dabei ist $\\alpha$ ein beliebiger Winkel zwischen 0° und 180°. Wähle alle richtigen aus.",
+    "payload": {
+      "options": [
+        "$\\sin(180^\\circ - \\alpha) = \\sin \\alpha$",
+        "$\\cos(180^\\circ - \\alpha) = -\\cos \\alpha$",
+        "$\\tan 45^\\circ = 1$",
+        "$\\cos 60^\\circ = \\frac{1}{2}\\sqrt{3}$",
+        "$\\sin 90^\\circ = 0$"
+      ]
+    },
+    "solution": {
+      "indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    "explanation": "Spiegelt man den Punkt am Einheitskreis an der y-Achse, bleibt die y-Koordinate (Sinus) gleich und die x-Koordinate (Kosinus) wechselt das Vorzeichen. Bei 45° sind Sinus und Kosinus gleich, deshalb ist der Tangens 1. $\\cos 60^\\circ$ ist $\\frac{1}{2}$ und $\\sin 90^\\circ$ ist 1, dort wurden Werte vertauscht.",
+    "hint": "Prüf jede Aussage einzeln am Einheitskreis: Der Sinus ist die y-Koordinate, der Kosinus die x-Koordinate."
+  },
+  {
+    "code": "M1-004",
+    "skill_code": "M1.1",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Der Punkt P liegt auf dem Einheitskreis. Die Strecke vom Ursprung zu P schließt mit der positiven x-Achse einen Winkel von {{a}}° ein (gegen den Uhrzeigersinn gemessen). Berechne die y-Koordinate von P. Runde auf drei Stellen nach dem Komma.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 5,
+          "max": 175,
+          "step": 5
+        }
+      },
+      "constraints": [
+        "a != 90"
+      ],
+      "formula": "sin(a)",
+      "tolerance": 0.001
+    },
+    "explanation": "Am Einheitskreis ist die y-Koordinate eines Punktes gleich dem Sinus des Winkels. Du rechnest also $\\sin \\alpha$ mit dem Taschenrechner aus. Achte darauf, dass der Rechner auf Grad (DEG) eingestellt ist.",
+    "hint": "Am Einheitskreis gehört jede Koordinate des Punktes zu einer Winkelfunktion. Welche ist es bei der y-Koordinate? Rechner auf DEG stellen."
+  },
+  {
+    "code": "M1-005",
+    "skill_code": "M1.1",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Für einen spitzen Winkel α gilt cos α = {{c}}. Berechne α. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "c": {
+          "min": 0.05,
+          "max": 0.95,
+          "step": 0.05
+        }
+      },
+      "constraints": [
+        "c != 0.5"
+      ],
+      "formula": "acos(c)",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Den Winkel zu einem Kosinuswert bekommst du mit der Umkehrfunktion: $\\alpha = \\cos^{-1}(\\text{Wert})$. Für einen spitzen Winkel ist das Ergebnis des Taschenrechners direkt die Lösung. Rechner auf Grad (DEG) einstellen.",
+    "hint": "Um aus einem Kosinuswert den Winkel zu bekommen, brauchst du die Umkehrfunktion auf dem Taschenrechner (Modus DEG)."
+  },
+  {
+    "code": "M1-006",
+    "skill_code": "M1.1",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Für einen stumpfen Winkel α (90° < α < 180°) gilt sin α = {{s}}. Berechne α. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "s": {
+          "min": 0.1,
+          "max": 0.95,
+          "step": 0.05
+        }
+      },
+      "constraints": [
+        "s != 0.5"
+      ],
+      "formula": "180 - asin(s)",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Der Taschenrechner liefert mit $\\sin^{-1}$ nur den spitzen Winkel. Wegen $\\sin(180^\\circ - \\alpha) = \\sin \\alpha$ hat der stumpfe Winkel denselben Sinuswert. Du ziehst den Rechnerwert also von 180° ab.",
+    "hint": "Der Rechner liefert mit $\\sin^{-1}$ nur einen spitzen Winkel. Welcher stumpfe Winkel hat denselben Sinuswert?"
+  },
+  {
+    "code": "M1-007",
+    "skill_code": "M1.1",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Der Punkt $P(-0{,}6 \\mid 0{,}8)$ liegt auf dem Einheitskreis. Welchen Winkel schließt die Strecke vom Ursprung zu P mit der positiven x-Achse ein (gegen den Uhrzeigersinn gemessen)?",
+    "payload": {
+      "options": [
+        "126,87°",
+        "53,13°",
+        "233,13°",
+        "36,87°"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Die x-Koordinate ist der Kosinus: $\\cos \\alpha = -0{,}6$, die y-Koordinate der Sinus: $\\sin \\alpha = 0{,}8$. P liegt links oben (II. Quadrant), also zwischen 90° und 180°, und $\\cos^{-1}(-0{,}6) \\approx 126{,}87^\\circ$. 53,13° wäre der Winkel ohne Minuszeichen, 233,13° liegt unten links, wo der Sinus negativ ist.",
+    "hint": "Die x-Koordinate ist der Kosinus, die y-Koordinate der Sinus. In welchem Quadranten liegt P, und welcher Winkelbereich gehört dazu?"
+  },
+  {
+    "code": "M1-008",
+    "skill_code": "M1.1",
+    "type": "match",
+    "difficulty": 1,
+    "stem": "Ordne jedem Term seinen exakten Wert zu.",
+    "payload": {
+      "pairs": [
+        [
+          "$\\sin 0^\\circ$",
+          "$0$"
+        ],
+        [
+          "$\\cos 60^\\circ$",
+          "$\\frac{1}{2}$"
+        ],
+        [
+          "$\\sin 45^\\circ$",
+          "$\\frac{1}{2}\\sqrt{2}$"
+        ],
+        [
+          "$\\cos 30^\\circ$",
+          "$\\frac{1}{2}\\sqrt{3}$"
+        ],
+        [
+          "$\\tan 45^\\circ$",
+          "$1$"
+        ]
+      ]
+    },
+    "explanation": "Diese Werte gehören zu den besonderen Winkeln 0°, 30°, 45°, 60° und 90° und sollten sitzen. Merkhilfe: $\\sin 0^\\circ, \\sin 30^\\circ, \\sin 45^\\circ, \\sin 60^\\circ, \\sin 90^\\circ$ sind $\\frac{1}{2}\\sqrt{0}, \\frac{1}{2}\\sqrt{1}, \\frac{1}{2}\\sqrt{2}, \\frac{1}{2}\\sqrt{3}, \\frac{1}{2}\\sqrt{4}$. Beim Kosinus läuft die Reihe rückwärts.",
+    "hint": "Merkhilfe: Die Sinuswerte von 0°, 30°, 45°, 60° und 90° lassen sich alle als $\\frac{1}{2}\\sqrt{\\ldots}$ schreiben. Beim Kosinus läuft die Reihe rückwärts."
+  },
+  {
+    "code": "M1-009",
+    "skill_code": "M1.2",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Eine Gerade hat die Steigung $m = 1$. Wie groß ist ihr Neigungswinkel gegen die x-Achse?",
+    "payload": {
+      "options": [
+        "45°",
+        "57,3°",
+        "0,79°",
+        "30°"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Für den Neigungswinkel gilt $m = \\tan \\alpha$, also $\\alpha = \\tan^{-1}(1) = 45^\\circ$. 57,3° und 0,79 entstehen, wenn der Taschenrechner im Bogenmaß (RAD) statt in Grad rechnet. Stell ihn deshalb immer auf DEG.",
+    "hint": "Welche Winkelfunktion verbindet die Steigung mit dem Neigungswinkel? Achte darauf, dass der Rechner im Gradmodus (DEG) steht."
+  },
+  {
+    "code": "M1-010",
+    "skill_code": "M1.2",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Gegeben ist die Gerade g: y = {{m}}x + {{t}}. Berechne den Neigungswinkel α der Geraden gegen die x-Achse. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "m": {
+          "min": 0.2,
+          "max": 3,
+          "step": 0.1
+        },
+        "t": {
+          "min": 1,
+          "max": 6,
+          "step": 1
+        }
+      },
+      "constraints": [
+        "m != 1"
+      ],
+      "formula": "atan(m)",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Die Steigung m ist der Tangens des Neigungswinkels: $m = \\tan \\alpha$. Also gilt $\\alpha = \\tan^{-1}(m)$. Der y-Achsenabschnitt t spielt für den Winkel keine Rolle.",
+    "hint": "Welche Winkelfunktion verbindet die Steigung m mit dem Neigungswinkel? Überlege auch, ob der y-Achsenabschnitt überhaupt eine Rolle spielt."
+  },
+  {
+    "code": "M1-011",
+    "skill_code": "M1.2",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Gegeben ist die Gerade g: y = −{{m}}x + {{t}}. Berechne ihren Neigungswinkel α gegen die x-Achse mit 0° ≤ α < 180°. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "m": {
+          "min": 0.3,
+          "max": 3,
+          "step": 0.1
+        },
+        "t": {
+          "min": 1,
+          "max": 8,
+          "step": 1
+        }
+      },
+      "constraints": [
+        "m != 1"
+      ],
+      "formula": "180 - atan(m)",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Bei negativer Steigung fällt die Gerade, der Neigungswinkel ist stumpf. Der Taschenrechner liefert für $\\tan^{-1}(m)$ einen negativen Winkel, zu dem du 180° addierst. Gleichwertig: 180° minus den Winkel, der zum Betrag der Steigung gehört.",
+    "hint": "Eine fallende Gerade hat einen stumpfen Neigungswinkel. Was liefert der Rechner für $\\tan^{-1}$ einer negativen Zahl, und wie kommst du von dort in den Bereich zwischen 90° und 180°?"
+  },
+  {
+    "code": "M1-012",
+    "skill_code": "M1.2",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Eine Straße steigt gleichmäßig unter einem Winkel von {{a}}° gegen die Waagrechte an. Wie groß ist die Steigung der Straße in Prozent? Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 2,
+          "max": 12,
+          "step": 0.5
+        }
+      },
+      "formula": "100 * tan(a)",
+      "unit": "%",
+      "tolerance": 0.1
+    },
+    "explanation": "Die Steigung ist Höhenunterschied geteilt durch waagrechte Strecke, also $m = \\tan \\alpha$. Für die Prozentangabe multiplizierst du m mit 100. Ein häufiger Fehler ist $\\sin \\alpha$ statt $\\tan \\alpha$: Der Sinus bezieht sich auf die schräge Strecke, nicht auf die waagrechte.",
+    "hint": "Steigung heißt Höhenunterschied pro waagrechter Strecke. Welche Winkelfunktion ist Gegenkathete durch Ankathete?"
+  },
+  {
+    "code": "M1-013",
+    "skill_code": "M1.2",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Die Geraden g: y = {{m1}}x − 2 und h: y = −{{m2}}x + 5 schneiden sich. Berechne den Schnittwinkel der beiden Geraden (den Winkel, der höchstens 90° groß ist). Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "m1": {
+          "min": 0.5,
+          "max": 3,
+          "step": 0.25
+        },
+        "m2": {
+          "min": 0.5,
+          "max": 3,
+          "step": 0.25
+        }
+      },
+      "derived": {
+        "d": "180 - atan(m2) - atan(m1)"
+      },
+      "formula": "min(d, 180 - d)",
+      "unit": "°",
+      "tolerance": 0.1,
+      "constraints": [
+        "m1 != 1",
+        "m2 != 1"
+      ]
+    },
+    "explanation": "Bestimme zuerst beide Neigungswinkel mit $m = \\tan \\alpha$; bei der fallenden Geraden h ist der Neigungswinkel stumpf ($180^\\circ$ minus Rechnerwert zum Betrag der Steigung). Die Differenz der beiden Neigungswinkel ist ein Winkel zwischen den Geraden. Ist sie größer als 90°, nimmst du den Nebenwinkel $180^\\circ - \\delta$.",
+    "hint": "Bestimme für jede Gerade einzeln den Neigungswinkel, bei der fallenden ist er stumpf. Wie hängt der Winkel zwischen den Geraden mit diesen beiden Winkeln zusammen?"
+  },
+  {
+    "code": "M1-014",
+    "skill_code": "M1.2",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Die Geraden g: y = {{m1}}x + 1 und h: y = {{m2}}x − 3 schneiden sich. Berechne den Schnittwinkel der beiden Geraden. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "m1": {
+          "min": 0.2,
+          "max": 1,
+          "step": 0.1
+        },
+        "m2": {
+          "min": 1.5,
+          "max": 4,
+          "step": 0.5
+        }
+      },
+      "formula": "atan(m2) - atan(m1)",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Berechne für beide Geraden den Neigungswinkel mit $\\alpha = \\tan^{-1}(m)$. Der Schnittwinkel ist die Differenz der beiden Neigungswinkel. Die Steigungen einfach voneinander abzuziehen und dann $\\tan^{-1}$ zu nehmen, ist falsch.",
+    "hint": "Bestimme für jede Gerade den Neigungswinkel über $m = \\tan \\alpha$. Wie hängt der Winkel zwischen den Geraden mit diesen beiden Winkeln zusammen?"
+  },
+  {
+    "code": "M1-015",
+    "skill_code": "M1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Eine Gerade hat gegen die x-Achse den Neigungswinkel $\\alpha = 120^\\circ$. Welche Steigung hat sie (gerundet)?",
+    "payload": {
+      "options": [
+        "$m \\approx -1{,}73$",
+        "$m \\approx 1{,}73$",
+        "$m \\approx -0{,}58$",
+        "$m = -0{,}5$"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Es gilt $m = \\tan 120^\\circ = -\\tan 60^\\circ = -\\sqrt{3} \\approx -1{,}73$. Die Gerade fällt, weil der Winkel stumpf ist, deshalb ist m negativ. $-0{,}5$ ist $\\cos 120^\\circ$, und $-0{,}58$ gehört zum Winkel 150°.",
+    "hint": "Es gilt $m = \\tan \\alpha$. Überlege vorher, ob eine Gerade mit stumpfem Neigungswinkel steigt oder fällt."
+  },
+  {
+    "code": "M1-016",
+    "skill_code": "M1.2",
+    "type": "numeric",
+    "difficulty": 3,
+    "stem": "Die Geraden g: $y = 2x - 1$ und h: $y = -0{,}5x + 3$ schneiden sich. Berechne den Schnittwinkel der beiden Geraden.",
+    "payload": {
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "solution": {
+      "value": 90
+    },
+    "explanation": "Neigungswinkel von g: $\\tan^{-1}(2) \\approx 63{,}43^\\circ$. Neigungswinkel von h: $180^\\circ + \\tan^{-1}(-0{,}5) \\approx 153{,}43^\\circ$. Die Differenz ist genau 90°, die Geraden stehen senkrecht aufeinander. Das passt dazu, dass $2 \\cdot (-0{,}5) = -1$ ist.",
+    "hint": "Berechne beide Neigungswinkel mit $m = \\tan \\alpha$, bei der fallenden Geraden h ist er stumpf. Dann vergleichst du die beiden Winkel."
+  },
+  {
+    "code": "M1-017",
+    "skill_code": "M1.3",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welche Amplitude hat die Funktion $y = 3 \\cdot \\sin(2x)$?",
+    "payload": {
+      "options": [
+        "3",
+        "2",
+        "6",
+        "1,5"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Bei $y = a \\cdot \\sin(b \\cdot x)$ ist die Amplitude der Betrag von a, hier also 3. Der Graph schwankt zwischen −3 und 3. Die Zahl b = 2 ändert nur die Periode, nicht die Höhe.",
+    "hint": "Bei $y = a \\cdot \\sin(b \\cdot x)$ bestimmt eine Zahl die Höhe der Schwingung, die andere nur, wie schnell sie sich wiederholt. Welche ist welche?"
+  },
+  {
+    "code": "M1-018",
+    "skill_code": "M1.3",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welche Periode hat die Funktion $y = \\sin(2x)$ (x in Grad)?",
+    "payload": {
+      "options": [
+        "180°",
+        "720°",
+        "360°",
+        "90°"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Die Periode von $y = a \\cdot \\sin(b \\cdot x)$ ist $\\frac{360^\\circ}{b}$, hier $\\frac{360^\\circ}{2} = 180^\\circ$. Der Faktor 2 staucht den Graphen, er wiederholt sich also doppelt so schnell. 720° entsteht, wenn man mit 2 multipliziert statt dividiert.",
+    "hint": "Die Periode von $\\sin x$ ist 360°. Wiederholt sich der Graph schneller oder langsamer, wenn x vorher mit 2 multipliziert wird?"
+  },
+  {
+    "code": "M1-019",
+    "skill_code": "M1.3",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Gegeben ist die Funktion y = {{a}} · sin({{b}} · x) mit x in Grad. Gib die Periode der Funktion an.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 0.5,
+          "max": 4,
+          "step": 0.5
+        },
+        "b": {
+          "min": 2,
+          "max": 6,
+          "step": 1
+        }
+      },
+      "formula": "360 / b",
+      "unit": "°",
+      "tolerance": 0,
+      "constraints": [
+        "a != 1"
+      ]
+    },
+    "explanation": "Für $y = a \\cdot \\sin(b \\cdot x)$ gilt: Periode $= \\frac{360^\\circ}{b}$. Der Faktor a vor dem Sinus bestimmt nur die Amplitude und hat mit der Periode nichts zu tun.",
+    "hint": "Nur der Faktor im Argument des Sinus beeinflusst die Periode. Welche Formel verbindet ihn mit der Grundperiode 360°?"
+  },
+  {
+    "code": "M1-020",
+    "skill_code": "M1.3",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Die Funktion y = sin(b · x) mit x in Grad und b > 0 hat die Periode {{p}}°. Berechne b.",
+    "payload": {
+      "params": {
+        "b": {
+          "min": 0.5,
+          "max": 6,
+          "step": 0.5
+        }
+      },
+      "derived": {
+        "p": "360 / b"
+      },
+      "constraints": [
+        "p == round(p, 0)",
+        "b != 1"
+      ],
+      "formula": "b",
+      "tolerance": 0.01
+    },
+    "explanation": "Aus Periode $= \\frac{360^\\circ}{b}$ folgt durch Umstellen $b = \\frac{360^\\circ}{\\text{Periode}}$. Ist die Periode größer als 360°, ist der Graph gestreckt und b liegt zwischen 0 und 1.",
+    "hint": "Nutze den Zusammenhang Periode $= \\frac{360^\\circ}{b}$ und stelle ihn nach b um."
+  },
+  {
+    "code": "M1-021",
+    "skill_code": "M1.3",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Gegeben ist die Funktion y = {{a}} · sin({{b}} · x) mit x in Grad. Berechne den Funktionswert an der Stelle x = {{x}}°. Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 1,
+          "max": 5,
+          "step": 0.5
+        },
+        "b": {
+          "min": 2,
+          "max": 4,
+          "step": 1
+        },
+        "x": {
+          "min": 10,
+          "max": 170,
+          "step": 10
+        }
+      },
+      "constraints": [
+        "a != 1",
+        "abs(a * sin(b * x)) >= 0.5"
+      ],
+      "formula": "a * sin(b * x)",
+      "tolerance": 0.01
+    },
+    "explanation": "Setze x ein und rechne zuerst das Produkt $b \\cdot x$ aus, dann den Sinus davon, und multipliziere zum Schluss mit a. Ist $b \\cdot x$ größer als 180°, kann der Sinus negativ werden, das Vorzeichen gehört zum Ergebnis.",
+    "hint": "Rechne in der richtigen Reihenfolge: erst das Produkt in der Klammer, dann den Sinus davon, zuletzt den Faktor davor. Rechner auf DEG stellen."
+  },
+  {
+    "code": "M1-022",
+    "skill_code": "M1.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Welche Funktion hat die Amplitude 2 und die Periode 180°?",
+    "payload": {
+      "options": [
+        "$y = 2 \\cdot \\sin(2x)$",
+        "$y = 2 \\cdot \\sin(0{,}5x)$",
+        "$y = 0{,}5 \\cdot \\sin(2x)$",
+        "$y = 2 \\cdot \\sin(180x)$"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Die Amplitude ist der Faktor vor dem Sinus, also a = 2. Aus Periode $= \\frac{360^\\circ}{b} = 180^\\circ$ folgt b = 2. Mit b = 0,5 wäre die Periode 720°, und b = 180 setzt die Periode fälschlich direkt in die Klammer.",
+    "hint": "Die Amplitude ist der Faktor vor dem Sinus, die Periode ist $\\frac{360^\\circ}{b}$. Welches b passt zur verlangten Periode?"
+  },
+  {
+    "code": "M1-023",
+    "skill_code": "M1.3",
+    "type": "mc_multi",
+    "difficulty": 2,
+    "stem": "Betrachte den Graphen von $y = \\sin x$ für $0^\\circ \\le x \\le 360^\\circ$. Welche Aussagen sind richtig? Wähle alle richtigen aus.",
+    "payload": {
+      "options": [
+        "Die Nullstellen liegen bei 0°, 180° und 360°.",
+        "Der Hochpunkt liegt bei x = 90°.",
+        "Alle Funktionswerte liegen zwischen −1 und 1.",
+        "Der Tiefpunkt liegt bei x = 180°.",
+        "Der Graph wiederholt sich alle 180°."
+      ]
+    },
+    "solution": {
+      "indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    "explanation": "Der Sinus ist die y-Koordinate am Einheitskreis: 0 bei 0°, 180° und 360°, maximal 1 bei 90°, minimal −1 bei 270°. Bei 180° ist also eine Nullstelle, kein Tiefpunkt. Die Periode von $\\sin x$ ist 360°, nicht 180°.",
+    "hint": "Stell dir den Punkt vor, der einmal um den Einheitskreis läuft: Wo ist seine y-Koordinate 0, wo am größten, wo am kleinsten?"
+  },
+  {
+    "code": "M1-024",
+    "skill_code": "M1.3",
+    "type": "numeric",
+    "difficulty": 3,
+    "stem": "Die Höhe einer Riesenradgondel über der Radachse wird durch $y = 15 \\cdot \\sin(9 \\cdot t)$ beschrieben (t in Sekunden, y in Metern, Argument in Grad). Nach wie vielen Sekunden befindet sich die Gondel zum ersten Mal 7,5 m **unterhalb** der Radachse? Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "unit": "s",
+      "tolerance": 0.01
+    },
+    "solution": {
+      "value": 23.33
+    },
+    "explanation": "Ansatz: $15 \\cdot \\sin(9t) = -7{,}5$, also $\\sin(9t) = -0{,}5$. Der erste Winkel mit Sinuswert $-0{,}5$ ist $180^\\circ + 30^\\circ = 210^\\circ$ (der Rechnerwert −30° ist negativ und damit zu früh). Aus $9t = 210$ folgt $t \\approx 23{,}33$ s.",
+    "hint": "Setze $15 \\cdot \\sin(9t)$ gleich der Höhe unter der Achse, also mit Minuszeichen. Der Rechner liefert einen negativen Winkel, gesucht ist aber der erste positive Zeitpunkt."
+  },
+  {
+    "code": "M1-025",
+    "skill_code": "M1.4",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Im Dreieck ABC sind b = {{b}} cm, c = {{c}} cm und α = {{al}}°. Berechne die Seite a. Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "params": {
+        "b": {
+          "min": 4,
+          "max": 12,
+          "step": 0.5
+        },
+        "c": {
+          "min": 4,
+          "max": 12,
+          "step": 0.5
+        },
+        "al": {
+          "min": 30,
+          "max": 150,
+          "step": 5
+        }
+      },
+      "constraints": [
+        "al != 90"
+      ],
+      "formula": "sqrt(b^2 + c^2 - 2 * b * c * cos(al))",
+      "unit": "cm",
+      "tolerance": 0.02
+    },
+    "explanation": "Gegeben sind zwei Seiten und der eingeschlossene Winkel, also hilft der Kosinussatz: $a^2 = b^2 + c^2 - 2bc \\cdot \\cos \\alpha$. Rechne die rechte Seite aus und ziehe am Ende die Wurzel. Ist α stumpf, ist $\\cos \\alpha$ negativ und a wird entsprechend größer.",
+    "hint": "Zwei Seiten und der eingeschlossene Winkel sind gegeben. Welcher Satz liefert daraus die dritte Seite?"
+  },
+  {
+    "code": "M1-026",
+    "skill_code": "M1.4",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Ein Dreieck ABC hat die Seiten a = {{a}} cm, b = {{b}} cm und c = {{c}} cm. Berechne den Winkel γ. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 3,
+          "max": 12,
+          "step": 0.5
+        },
+        "b": {
+          "min": 3,
+          "max": 12,
+          "step": 0.5
+        },
+        "c": {
+          "min": 3,
+          "max": 12,
+          "step": 0.5
+        }
+      },
+      "constraints": [
+        "a + b > c + 1",
+        "a + c > b + 1",
+        "b + c > a + 1"
+      ],
+      "formula": "acos((a^2 + b^2 - c^2) / (2 * a * b))",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Sind alle drei Seiten bekannt, stellst du den Kosinussatz nach dem Winkel um: $\\cos \\gamma = \\frac{a^2 + b^2 - c^2}{2ab}$. γ liegt der Seite c gegenüber, deshalb steht $c^2$ mit Minus im Zähler. Mit $\\cos^{-1}$ erhältst du γ, auch wenn er stumpf ist.",
+    "hint": "Alle drei Seiten sind bekannt: Stelle den Kosinussatz nach $\\cos \\gamma$ um. Welche Seite liegt γ gegenüber?"
+  },
+  {
+    "code": "M1-027",
+    "skill_code": "M1.4",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Im Dreieck ABC sind a = {{a}} cm, α = {{al}}° und β = {{be}}°. Berechne die Seite b. Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 4,
+          "max": 12,
+          "step": 0.5
+        },
+        "al": {
+          "min": 30,
+          "max": 100,
+          "step": 5
+        },
+        "be": {
+          "min": 20,
+          "max": 100,
+          "step": 5
+        }
+      },
+      "constraints": [
+        "al + be <= 160",
+        "al != be"
+      ],
+      "formula": "a * sin(be) / sin(al)",
+      "unit": "cm",
+      "tolerance": 0.02
+    },
+    "explanation": "Eine Seite und der gegenüberliegende Winkel sind bekannt, dazu ein weiterer Winkel: Das ist ein Fall für den Sinussatz $\\frac{b}{\\sin \\beta} = \\frac{a}{\\sin \\alpha}$. Umgestellt: $b = \\frac{a \\cdot \\sin \\beta}{\\sin \\alpha}$.",
+    "hint": "Eine Seite mit ihrem Gegenwinkel und ein weiterer Winkel sind bekannt. Welcher Satz verbindet Seiten mit den Sinuswerten ihrer Gegenwinkel?"
+  },
+  {
+    "code": "M1-028",
+    "skill_code": "M1.4",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Im Dreieck ABC sind a = {{a}} cm, b = {{b}} cm und α = {{al}}°. Berechne den Winkel γ. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 5,
+          "max": 12,
+          "step": 0.5
+        },
+        "b": {
+          "min": 3,
+          "max": 10,
+          "step": 0.5
+        },
+        "al": {
+          "min": 30,
+          "max": 80,
+          "step": 5
+        }
+      },
+      "constraints": [
+        "a > b + 0.5"
+      ],
+      "derived": {
+        "be": "asin(b * sin(al) / a)"
+      },
+      "formula": "180 - al - be",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Mit dem Sinussatz berechnest du zuerst β: $\\sin \\beta = \\frac{b \\cdot \\sin \\alpha}{a}$. Da b kleiner als a ist, muss β kleiner als α sein, deshalb kommt nur der spitze Winkel in Frage und die Lösung ist eindeutig. Danach folgt γ aus der Winkelsumme: $\\gamma = 180^\\circ - \\alpha - \\beta$.",
+    "hint": "Berechne zuerst den Winkel β, der b gegenüberliegt, mit dem Sinussatz. Der Rest folgt aus der Winkelsumme im Dreieck."
+  },
+  {
+    "code": "M1-029",
+    "skill_code": "M1.4",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Im Dreieck ABC sind a = {{a}} cm, b = {{b}} cm und der eingeschlossene Winkel γ = {{ga}}°. Berechne den Flächeninhalt des Dreiecks. Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 4,
+          "max": 12,
+          "step": 0.5
+        },
+        "b": {
+          "min": 4,
+          "max": 12,
+          "step": 0.5
+        },
+        "ga": {
+          "min": 20,
+          "max": 160,
+          "step": 5
+        }
+      },
+      "constraints": [
+        "ga != 90"
+      ],
+      "formula": "0.5 * a * b * sin(ga)",
+      "unit": "cm²",
+      "tolerance": 0.05
+    },
+    "explanation": "Für zwei Seiten und den eingeschlossenen Winkel gilt $A = \\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin \\gamma$. Der Faktor $\\frac{1}{2}$ wird oft vergessen, dann ist das Ergebnis doppelt so groß. Bei stumpfem γ ist der Sinus trotzdem positiv.",
+    "hint": "Für zwei Seiten und den eingeschlossenen Winkel gibt es eine Flächenformel mit dem Sinus. Denk an den Faktor $\\frac{1}{2}$."
+  },
+  {
+    "code": "M1-030",
+    "skill_code": "M1.4",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welche Gleichung ist der Kosinussatz für die Seite c im Dreieck ABC?",
+    "payload": {
+      "options": [
+        "$c^2 = a^2 + b^2 - 2ab \\cdot \\cos \\gamma$",
+        "$c^2 = a^2 + b^2 + 2ab \\cdot \\cos \\gamma$",
+        "$c^2 = a^2 + b^2 - 2ab \\cdot \\cos \\alpha$",
+        "$c = a + b - 2ab \\cdot \\cos \\gamma$"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Im Kosinussatz steht der Winkel, der der gesuchten Seite gegenüberliegt: zu c gehört γ. Vor dem Produkt steht ein Minus, bei γ = 90° bleibt so der Satz des Pythagoras übrig. Die Seiten müssen quadriert werden, sonst stimmen schon die Einheiten nicht.",
+    "hint": "Welcher Winkel liegt der Seite c gegenüber? Überlege außerdem, was bei einem rechten Winkel von der Formel übrig bleiben muss."
+  },
+  {
+    "code": "M1-031",
+    "skill_code": "M1.4",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "Von einem Dreieck ABC sind $a = 6$ cm, $b = 8$ cm und $\\alpha = 40^\\circ$ bekannt. Wie viele verschiedene Dreiecke passen zu diesen Angaben?",
+    "payload": {
+      "options": [
+        "Genau zwei",
+        "Genau eins",
+        "Keines",
+        "Unendlich viele"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Mit dem Sinussatz ist $\\sin \\beta = \\frac{8 \\cdot \\sin 40^\\circ}{6} \\approx 0{,}857$, also $\\beta \\approx 59{,}0^\\circ$ oder $\\beta \\approx 180^\\circ - 59{,}0^\\circ = 121{,}0^\\circ$. In beiden Fällen bleibt für γ noch ein positiver Winkel übrig, also gibt es zwei Dreiecke. Das kann passieren, weil der gegebene Winkel α der kürzeren Seite gegenüberliegt.",
+    "hint": "Berechne β mit dem Sinussatz. Zu einem Sinuswert gibt es zwischen 0° und 180° zwei Winkel, prüfe jeweils, ob für γ noch etwas übrig bleibt."
+  },
+  {
+    "code": "M1-032",
+    "skill_code": "M1.4",
+    "type": "numeric",
+    "difficulty": 2,
+    "stem": "Ein Dreieck hat die Seiten $a = 7$ cm, $b = 8$ cm und $c = 13$ cm. Berechne den Winkel $\\gamma$.",
+    "payload": {
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "solution": {
+      "value": 120
+    },
+    "explanation": "Kosinussatz nach dem Winkel umgestellt: $\\cos \\gamma = \\frac{a^2 + b^2 - c^2}{2ab} = \\frac{49 + 64 - 169}{112} = -0{,}5$. Daraus folgt $\\gamma = 120^\\circ$. Der negative Kosinuswert zeigt, dass γ stumpf ist.",
+    "hint": "Alle drei Seiten sind bekannt: Stelle den Kosinussatz nach $\\cos \\gamma$ um und achte auf das Vorzeichen."
+  },
+  {
+    "code": "M1-033",
+    "skill_code": "M1.5",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Du stehst {{e}} m vom Fuß eines Turms entfernt auf ebenem Boden. Die Turmspitze siehst du unter einem Höhenwinkel von {{al}}°. Deine Augen sind 1,60 m über dem Boden. Berechne die Höhe des Turms. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "e": {
+          "min": 20,
+          "max": 80,
+          "step": 5
+        },
+        "al": {
+          "min": 20,
+          "max": 60,
+          "step": 1
+        }
+      },
+      "formula": "e * tan(al) + 1.6",
+      "unit": "m",
+      "tolerance": 0.1
+    },
+    "explanation": "Augenhöhe, Turmspitze und der Punkt auf Augenhöhe am Turm bilden ein rechtwinkliges Dreieck. Die Entfernung ist die Ankathete, das Turmstück über Augenhöhe die Gegenkathete: $x = e \\cdot \\tan \\alpha$. Zum Schluss die Augenhöhe von 1,60 m addieren, das wird oft vergessen.",
+    "hint": "Zeichne das rechtwinklige Dreieck ab Augenhöhe: Welche Seite ist die Entfernung, welche das gesuchte Turmstück? Vergiss am Ende die Augenhöhe nicht."
+  },
+  {
+    "code": "M1-034",
+    "skill_code": "M1.5",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Von einem Punkt A aus sieht man die Spitze eines Turms unter einem Höhenwinkel von {{al}}°. Geht man {{e}} m direkt auf den Turm zu bis zum Punkt B, sieht man die Spitze unter einem Höhenwinkel von {{be}}°. A, B und der Fußpunkt des Turms liegen auf einer waagrechten Geraden. Berechne die Höhe des Turms (Augenhöhe vernachlässigen). Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "e": {
+          "min": 20,
+          "max": 60,
+          "step": 5
+        },
+        "al": {
+          "min": 20,
+          "max": 40,
+          "step": 1
+        },
+        "be": {
+          "min": 35,
+          "max": 65,
+          "step": 1
+        }
+      },
+      "constraints": [
+        "be - al >= 10"
+      ],
+      "formula": "e * sin(al) * sin(be) / sin(be - al)",
+      "unit": "m",
+      "tolerance": 0.2
+    },
+    "explanation": "Im Dreieck A, B, Turmspitze S ist der Winkel bei B gleich $180^\\circ - \\beta$ und der Winkel bei S gleich $\\beta - \\alpha$. Mit dem Sinussatz folgt $\\overline{BS} = \\frac{e \\cdot \\sin \\alpha}{\\sin(\\beta - \\alpha)}$. Im rechtwinkligen Dreieck unter B ist dann die Höhe $h = \\overline{BS} \\cdot \\sin \\beta$.",
+    "hint": "Betrachte zuerst das schiefwinklige Dreieck aus A, B und der Turmspitze und bestimme seine Winkel. Mit dem Sinussatz bekommst du eine Strecke, danach hilft ein rechtwinkliges Dreieck."
+  },
+  {
+    "code": "M1-035",
+    "skill_code": "M1.5",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Um die Entfernung zu einer Boje C im See zu bestimmen, steckt man am geraden Ufer die Strecke AB = {{c}} m ab. Man misst die Winkel ∢BAC = {{al}}° und ∢ABC = {{be}}°. Berechne die Entfernung von A zur Boje. Runde auf ganze Meter.",
+    "payload": {
+      "params": {
+        "c": {
+          "min": 100,
+          "max": 400,
+          "step": 10
+        },
+        "al": {
+          "min": 40,
+          "max": 80,
+          "step": 5
+        },
+        "be": {
+          "min": 40,
+          "max": 80,
+          "step": 5
+        }
+      },
+      "formula": "c * sin(be) / sin(al + be)",
+      "unit": "m",
+      "tolerance": 1
+    },
+    "explanation": "Berechne zuerst den dritten Winkel bei der Boje: $\\gamma = 180^\\circ - \\alpha - \\beta$. Die gesuchte Strecke AC liegt dem Winkel β gegenüber, die bekannte Strecke AB dem Winkel γ. Mit dem Sinussatz folgt $\\overline{AC} = \\frac{\\overline{AB} \\cdot \\sin \\beta}{\\sin \\gamma}$.",
+    "hint": "Berechne zuerst den Winkel bei der Boje. Welcher Winkel liegt der gesuchten Strecke AC gegenüber, welcher der bekannten Strecke AB?"
+  },
+  {
+    "code": "M1-036",
+    "skill_code": "M1.5",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Eine gerade Pyramide hat ein Quadrat mit der Kantenlänge {{a}} cm als Grundfläche und die Höhe {{h}} cm. Berechne den Winkel, den eine Seitenkante mit der Grundfläche einschließt. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "a": {
+          "min": 4,
+          "max": 12,
+          "step": 1
+        },
+        "h": {
+          "min": 3,
+          "max": 15,
+          "step": 1
+        }
+      },
+      "formula": "atan(h / (a * sqrt(2) / 2))",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Die Höhe, die halbe Diagonale der Grundfläche und die Seitenkante bilden ein rechtwinkliges Dreieck. Die halbe Diagonale ist $\\frac{a}{2}\\sqrt{2}$. Dann gilt $\\tan \\varphi = \\frac{h}{\\frac{a}{2}\\sqrt{2}}$. Wer die halbe Grundkante statt der halben Diagonale nimmt, berechnet den Winkel einer Seitenfläche.",
+    "hint": "Such das rechtwinklige Dreieck aus Höhe, Seitenkante und einer Strecke in der Grundfläche: Vom Fußpunkt der Höhe bis zur Ecke läuft ein Teil der Diagonale."
+  },
+  {
+    "code": "M1-037",
+    "skill_code": "M1.5",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Ein Quader ist {{l}} cm lang, {{b}} cm breit und {{h}} cm hoch. Berechne den Winkel, den eine Raumdiagonale mit der Grundfläche einschließt. Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": {
+        "l": {
+          "min": 3,
+          "max": 10,
+          "step": 1
+        },
+        "b": {
+          "min": 2,
+          "max": 8,
+          "step": 1
+        },
+        "h": {
+          "min": 2,
+          "max": 10,
+          "step": 1
+        }
+      },
+      "formula": "atan(h / sqrt(l^2 + b^2))",
+      "unit": "°",
+      "tolerance": 0.1
+    },
+    "explanation": "Berechne zuerst die Diagonale der Grundfläche mit dem Pythagoras: $d = \\sqrt{l^2 + b^2}$. Diese Diagonale, die Höhe und die Raumdiagonale bilden ein rechtwinkliges Dreieck. Der gesuchte Winkel liegt an d an, also $\\tan \\varphi = \\frac{h}{d}$.",
+    "hint": "Die Raumdiagonale steht schräg über der Diagonale der Grundfläche. Berechne zuerst diese Grundflächendiagonale mit dem Pythagoras."
+  },
+  {
+    "code": "M1-038",
+    "skill_code": "M1.5",
+    "type": "numeric",
+    "difficulty": 1,
+    "stem": "Eine 6 m lange Leiter lehnt an einer senkrechten Hauswand. Sie schließt mit dem waagrechten Boden einen Winkel von 70° ein. In welcher Höhe berührt die Leiter die Wand? Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "unit": "m",
+      "tolerance": 0.01
+    },
+    "solution": {
+      "value": 5.64
+    },
+    "explanation": "Leiter, Wand und Boden bilden ein rechtwinkliges Dreieck mit der Leiter als Hypotenuse. Die Höhe an der Wand liegt dem 70°-Winkel gegenüber, also $h = 6 \\cdot \\sin 70^\\circ \\approx 5{,}64$ m. Mit dem Kosinus bekäme man den Abstand des Leiterfußes von der Wand.",
+    "hint": "Die Leiter ist die Hypotenuse. Liegt die gesuchte Höhe dem 70°-Winkel gegenüber oder an ihm an?"
+  },
+  {
+    "code": "M1-039",
+    "skill_code": "M1.5",
+    "type": "mc_multi",
+    "difficulty": 3,
+    "stem": "Ein gleichschenkliges Dreieck hat zwei Schenkel von je 5 cm Länge. Der Winkel $\\varphi$ zwischen den Schenkeln kann sich ändern ($0^\\circ < \\varphi < 180^\\circ$). Welche Aussagen über den Flächeninhalt $A(\\varphi)$ sind richtig? Wähle alle richtigen aus.",
+    "payload": {
+      "options": [
+        "$A(\\varphi) = 12{,}5 \\cdot \\sin \\varphi$ cm²",
+        "Der Flächeninhalt ist für $\\varphi = 90^\\circ$ am größten.",
+        "$A(30^\\circ) = A(150^\\circ)$",
+        "Verdoppelt man $\\varphi$, verdoppelt sich auch der Flächeninhalt.",
+        "Der größte Flächeninhalt beträgt 25 cm²."
+      ]
+    },
+    "solution": {
+      "indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    "explanation": "Mit $A = \\frac{1}{2} \\cdot 5 \\cdot 5 \\cdot \\sin \\varphi$ ergibt sich $A(\\varphi) = 12{,}5 \\cdot \\sin \\varphi$. Der Sinus ist bei 90° maximal (Wert 1), also ist $A_{max} = 12{,}5$ cm²; 25 cm² entsteht, wenn der Faktor $\\frac{1}{2}$ fehlt. Wegen $\\sin(180^\\circ - \\varphi) = \\sin \\varphi$ ist $A(30^\\circ) = A(150^\\circ)$, und da der Sinus nicht proportional zum Winkel wächst, verdoppelt sich A nicht mit φ.",
+    "hint": "Stelle zuerst die Flächenformel $A = \\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin \\varphi$ mit den Schenkeln auf. Wo ist der Sinus am größten, und wächst er gleichmäßig mit dem Winkel?"
+  },
+  {
+    "code": "M1-040",
+    "skill_code": "M1.5",
+    "type": "match",
+    "difficulty": 1,
+    "stem": "Ordne jeder Situation den Ansatz zu, mit dem du am schnellsten zum Ziel kommst.",
+    "payload": {
+      "pairs": [
+        [
+          "Höhe eines Baums aus Entfernung zum Stamm und Höhenwinkel",
+          "Tangens im rechtwinkligen Dreieck"
+        ],
+        [
+          "Entfernung zu einem Schiff aus einer Standlinie am Ufer und den zwei Winkeln an ihren Enden",
+          "Sinussatz"
+        ],
+        [
+          "Abstand zweier Schiffe, wenn beide Entfernungen vom Hafen und der Winkel dazwischen bekannt sind",
+          "Kosinussatz"
+        ],
+        [
+          "Fläche eines dreieckigen Grundstücks aus zwei Seiten und dem Winkel dazwischen",
+          "$A = \\frac{1}{2} \\cdot a \\cdot b \\cdot \\sin \\gamma$"
+        ]
+      ]
+    },
+    "explanation": "Im rechtwinkligen Dreieck reichen Sinus, Kosinus und Tangens; beim Baum sind Ankathete und Winkel gegeben, gesucht ist die Gegenkathete. Sind eine Seite und die Winkel bekannt, hilft der Sinussatz. Zwei Seiten mit eingeschlossenem Winkel führen zur dritten Seite über den Kosinussatz und zur Fläche über $A = \\frac{1}{2} ab \\sin \\gamma$.",
+    "hint": "Frag dich bei jeder Situation: Gibt es einen rechten Winkel? Und wenn nicht: Kennst du eher Winkel oder zwei Seiten mit dem Winkel dazwischen?"
+  }
+]

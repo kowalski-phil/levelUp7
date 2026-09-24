@@ -1,0 +1,527 @@
+[
+  {
+    "code": "M3-001",
+    "skill_code": "M3.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welche Gleichung beschreibt eine Exponentialfunktion?",
+    "payload": { "options": ["$y = 3 \\cdot 2^x$", "$y = 3 \\cdot x^2$", "$y = 2x + 3$", "$y = x^3 + 2$"] },
+    "solution": { "index": 0 },
+    "explanation": "Bei einer Exponentialfunktion $y = k \\cdot a^x$ steht die Variable x im Exponenten. Bei $y = 3 \\cdot x^2$ steht x in der Basis, das ist eine quadratische Funktion (Potenzfunktion). Die anderen Gleichungen sind eine Gerade und eine Potenzfunktion dritten Grades.",
+    "hint": "Schau, wo die Variable x steht: in der Basis oder im Exponenten?"
+  },
+  {
+    "code": "M3-002",
+    "skill_code": "M3.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Gegeben ist die Funktion $y = 5 \\cdot 0{,}8^x$. Welche Aussage stimmt?",
+    "payload": { "options": ["Die Funktion beschreibt eine Abnahme, weil $0 < a < 1$ ist.", "Die Funktion beschreibt ein Wachstum, weil $k = 5 > 1$ ist.", "Die Funktion beschreibt ein Wachstum, weil $a > 0$ ist.", "Die Funktion beschreibt eine Abnahme, weil $k > a$ ist."] },
+    "solution": { "index": 0 },
+    "explanation": "Ob eine Exponentialfunktion wächst oder fällt, entscheidet nur der Faktor a: Für $a > 1$ wächst sie, für $0 < a < 1$ nimmt sie ab. Hier ist $a = 0{,}8$, also Abnahme. Der Faktor k = 5 gibt nur den Startwert (y-Achsenabschnitt) an.",
+    "hint": "Welcher der beiden Parameter in $y = k \\cdot a^x$ entscheidet über Wachstum oder Abnahme, und welcher gibt nur den Startwert an?"
+  },
+  {
+    "code": "M3-003",
+    "skill_code": "M3.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "In welchem Punkt schneidet der Graph von $y = 3 \\cdot 2^x$ die y-Achse?",
+    "payload": { "options": ["$(0 \\mid 3)$", "$(0 \\mid 2)$", "$(0 \\mid 6)$", "$(0 \\mid 1)$"] },
+    "solution": { "index": 0 },
+    "explanation": "Setze x = 0 ein: $y = 3 \\cdot 2^0 = 3 \\cdot 1 = 3$. Der y-Achsenabschnitt ist also immer k. Wer $2^0 = 2$ rechnet, kommt fälschlich auf 6.",
+    "hint": "Auf der y-Achse ist x = 0. Setze ein und denk daran, was eine Zahl hoch 0 ergibt."
+  },
+  {
+    "code": "M3-004",
+    "skill_code": "M3.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welche Gerade ist Asymptote des Graphen von $y = 2 \\cdot 0{,}5^x$?",
+    "payload": { "options": ["die x-Achse (y = 0)", "die y-Achse (x = 0)", "die Gerade y = 2", "die Gerade y = 0,5"] },
+    "solution": { "index": 0 },
+    "explanation": "Für große x wird $0{,}5^x$ immer kleiner, bleibt aber positiv. Der Graph nähert sich also der x-Achse, ohne sie zu erreichen. Die y-Achse schneidet der Graph dagegen im Punkt (0 | 2).",
+    "hint": "Was passiert mit $0{,}5^x$, wenn x immer größer wird? Kann der Wert jemals 0 oder negativ werden?"
+  },
+  {
+    "code": "M3-005",
+    "skill_code": "M3.1",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Gegeben ist die Funktion f(x) = {{k}} $\\cdot$ {{a}}$^x$. Berechne f({{n}}).",
+    "payload": {
+      "params": { "k": { "min": 2, "max": 8, "step": 1 }, "a": { "min": 2, "max": 3, "step": 1 }, "n": { "min": 2, "max": 4, "step": 1 } },
+      "formula": "k * a^n",
+      "tolerance": 0
+    },
+    "explanation": "Setze den x-Wert in die Funktionsgleichung ein. Berechne zuerst die Potenz $a^x$ und multipliziere dann mit k. Achtung: Die Potenz gehört nur zu a, nicht zu k.",
+    "hint": "Setze den x-Wert ein. Die Hochzahl gehört nur zur Basis, nicht zum Faktor davor."
+  },
+  {
+    "code": "M3-006",
+    "skill_code": "M3.1",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Gegeben ist die Funktion f(x) = {{k}} $\\cdot 0{,}5^x$. Berechne f(−{{n}}).",
+    "payload": {
+      "params": { "k": { "min": 1, "max": 6, "step": 1 }, "n": { "min": 1, "max": 4, "step": 1 } },
+      "formula": "k * 0.5^(-n)",
+      "tolerance": 0
+    },
+    "explanation": "Ein negativer Exponent bedeutet den Kehrwert: $0{,}5^{-n} = 2^n$. Rechne also $2^n$ aus und multipliziere mit k. Der Funktionswert wird größer als k, weil der Graph links von der y-Achse ansteigt.",
+    "hint": "Ein negativer Exponent bedeutet Kehrwert. Wie lässt sich $0{,}5^{-n}$ ohne Minus im Exponenten schreiben?"
+  },
+  {
+    "code": "M3-007",
+    "skill_code": "M3.1",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Der Graph einer Funktion $f(x) = k \\cdot a^x$ verläuft durch die Punkte P(0 | {{k}}) und Q(1 | {{y1}}). Bestimme a.",
+    "payload": {
+      "params": { "k": { "min": 2, "max": 6, "step": 1 }, "a": { "min": 2, "max": 5, "step": 1 } },
+      "derived": { "y1": "k * a" },
+      "formula": "a",
+      "tolerance": 0
+    },
+    "explanation": "Aus P(0 | k) folgt direkt der Startwert k. Setze Q ein: $y_1 = k \\cdot a^1$, also $a = y_1 : k$. Der Faktor a gibt an, mit welcher Zahl der y-Wert pro Schritt nach rechts multipliziert wird.",
+    "hint": "Der Punkt auf der y-Achse liefert dir k. Mit welchem Faktor wird der y-Wert von x = 0 nach x = 1 multipliziert?"
+  },
+  {
+    "code": "M3-008",
+    "skill_code": "M3.1",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Der Graph einer Funktion $f(x) = k \\cdot a^x$ mit $a > 0$ verläuft durch die Punkte P(1 | {{y1}}) und Q(3 | {{y3}}). Bestimme k.",
+    "payload": {
+      "params": { "k": { "min": 1, "max": 5, "step": 1 }, "a": { "min": 2, "max": 4, "step": 1 } },
+      "derived": { "y1": "k * a", "y3": "k * a^3" },
+      "formula": "k",
+      "tolerance": 0
+    },
+    "explanation": "Teile die beiden Gleichungen durcheinander: $\\frac{k \\cdot a^3}{k \\cdot a} = a^2$, so fällt k weg. Aus $a^2 = y_3 : y_1$ erhältst du a (positive Wurzel). Setze a in $y_1 = k \\cdot a$ ein und löse nach k auf.",
+    "hint": "Teile die beiden Gleichungen durcheinander, dann fällt k weg und du bekommst a. Danach setzt du a in eine der Gleichungen ein."
+  },
+  {
+    "code": "M3-009",
+    "skill_code": "M3.1",
+    "type": "mc_multi",
+    "difficulty": 2,
+    "stem": "Welche Aussagen gelten für die Funktion $y = 4 \\cdot 0{,}5^x$? Wähle alle richtigen aus.",
+    "payload": { "options": ["Der Graph schneidet die y-Achse im Punkt (0 | 4).", "Die Funktion ist streng monoton fallend.", "Die x-Achse ist Asymptote des Graphen.", "Der Graph schneidet die x-Achse bei x = 8.", "Für x = 1 gilt y = 8.", "Die Funktion nimmt auch negative Werte an."] },
+    "solution": { "indices": [0, 1, 2] },
+    "explanation": "Der y-Achsenabschnitt ist k = 4, und wegen $0 < a < 1$ fällt der Graph. Da $0{,}5^x$ immer positiv ist, hat der Graph keine Nullstelle und nimmt nie negative Werte an, die x-Achse ist Asymptote. Für x = 1 ist $y = 4 \\cdot 0{,}5 = 2$, nicht 8.",
+    "hint": "Prüfe jede Aussage einzeln: Setze passende x-Werte ein und überlege, ob $0{,}5^x$ jemals 0 oder negativ werden kann."
+  },
+  {
+    "code": "M3-010",
+    "skill_code": "M3.1",
+    "type": "match",
+    "difficulty": 2,
+    "stem": "Ordne jeder Funktion die passende Beschreibung ihres Graphen zu.",
+    "payload": {
+      "pairs": [
+        ["$y = 2 \\cdot 3^x$", "steigt, schneidet die y-Achse bei 2"],
+        ["$y = 3 \\cdot 2^x$", "steigt, schneidet die y-Achse bei 3"],
+        ["$y = 2 \\cdot \\left(\\frac{1}{3}\\right)^x$", "fällt, schneidet die y-Achse bei 2"],
+        ["$y = 3 \\cdot 0{,}5^x$", "fällt, schneidet die y-Achse bei 3"]
+      ]
+    },
+    "explanation": "Der Faktor k vor der Potenz ist der y-Achsenabschnitt. Die Basis a entscheidet über den Verlauf: $a > 1$ bedeutet steigend, $0 < a < 1$ bedeutet fallend.",
+    "hint": "Der Faktor vor der Potenz ist der y-Achsenabschnitt. Die Basis entscheidet, ob der Graph steigt oder fällt."
+  },
+  {
+    "code": "M3-011",
+    "skill_code": "M3.1",
+    "type": "numeric",
+    "difficulty": 2,
+    "stem": "Eine Exponentialfunktion $y = k \\cdot a^x$ hat folgende Wertetabelle: Für x = 0 ist y = 5, für x = 1 ist y = 15, für x = 2 ist y = 45. Berechne y für x = 4.",
+    "payload": { "tolerance": 0 },
+    "solution": { "value": 405 },
+    "explanation": "Aus x = 0 folgt k = 5. Von einem x-Wert zum nächsten wird y jeweils mit 3 multipliziert, also ist a = 3. Damit gilt $y = 5 \\cdot 3^4 = 5 \\cdot 81 = 405$.",
+    "hint": "Lies k bei x = 0 ab und schau, mit welcher Zahl y von Schritt zu Schritt multipliziert wird."
+  },
+  {
+    "code": "M3-012",
+    "skill_code": "M3.1",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "Der Graph von $y = 2^x$ wird an der y-Achse gespiegelt. Welche Gleichung hat der gespiegelte Graph?",
+    "payload": { "options": ["$y = 0{,}5^x$", "$y = -2^x$", "$y = \\log_2 x$", "$y = -0{,}5^x$"] },
+    "solution": { "index": 0 },
+    "explanation": "Bei der Spiegelung an der y-Achse wird x durch −x ersetzt: $y = 2^{-x} = \\left(\\frac{1}{2}\\right)^x = 0{,}5^x$. $y = -2^x$ entsteht durch Spiegelung an der x-Achse. $y = \\log_2 x$ ist die Spiegelung an der Winkelhalbierenden y = x.",
+    "hint": "Spiegeln an der y-Achse heißt: x wird durch −x ersetzt. Schreib den neuen Term dann ohne Minus im Exponenten."
+  },
+  {
+    "code": "M3-013",
+    "skill_code": "M3.1",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Gegeben ist die Funktion f(x) = {{k}} $\\cdot 1{,}5^x$. Berechne f({{n}}).",
+    "payload": {
+      "params": { "k": { "min": 16, "max": 80, "step": 16 }, "n": { "min": 2, "max": 4, "step": 1 } },
+      "formula": "k * 1.5^n",
+      "tolerance": 0.01
+    },
+    "explanation": "Setze den x-Wert ein und berechne zuerst die Potenz $1{,}5^x$. Multipliziere das Ergebnis dann mit k. Nicht erst k mal 1,5 rechnen und dann potenzieren, denn die Potenz gehört nur zu 1,5.",
+    "hint": "Berechne zuerst die Potenz und multipliziere dann mit dem Faktor davor. Die Hochzahl gehört nur zu 1,5."
+  },
+  {
+    "code": "M3-014",
+    "skill_code": "M3.2",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Berechne den Logarithmus von {{b}} zur Basis {{a}}.",
+    "payload": {
+      "params": { "a": { "min": 2, "max": 5, "step": 1 }, "n": { "min": 2, "max": 4, "step": 1 } },
+      "derived": { "b": "a^n" },
+      "formula": "n",
+      "tolerance": 0
+    },
+    "explanation": "$\\log_a b$ ist die Hochzahl, mit der man a potenzieren muss, um b zu erhalten. Frage dich also: a hoch wie viel ergibt b? Probiere $a^2, a^3, a^4$ durch, bis du b erreichst.",
+    "hint": "Frage dich: Die Basis hoch wie viel ergibt die Zahl? Probiere die Potenzen der Basis der Reihe nach durch."
+  },
+  {
+    "code": "M3-015",
+    "skill_code": "M3.2",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welche Gleichung bedeutet dasselbe wie $\\log_3 81 = 4$?",
+    "payload": { "options": ["$3^4 = 81$", "$4^3 = 81$", "$81^4 = 3$", "$3^{81} = 4$"] },
+    "solution": { "index": 0 },
+    "explanation": "$\\log_a b = x$ bedeutet $a^x = b$: Die Basis wird mit dem Logarithmuswert potenziert. Hier also $3^4 = 81$. Bei $4^3$ sind Basis und Hochzahl vertauscht, das ergibt 64.",
+    "hint": "Übersetze die Logarithmus-Schreibweise: $\\log_a b = x$ heißt $a^x = b$. Welche Zahl ist hier die Basis?"
+  },
+  {
+    "code": "M3-016",
+    "skill_code": "M3.2",
+    "type": "numeric",
+    "difficulty": 1,
+    "stem": "Berechne $\\log_{10} 0{,}001$.",
+    "payload": { "tolerance": 0 },
+    "solution": { "value": -3 },
+    "explanation": "Schreibe 0,001 als Zehnerpotenz: $0{,}001 = \\frac{1}{1000} = 10^{-3}$. Also ist $\\log_{10} 0{,}001 = -3$. Zahlen zwischen 0 und 1 haben einen negativen Logarithmus.",
+    "hint": "Schreibe 0,001 zuerst als Bruch und dann als Zehnerpotenz."
+  },
+  {
+    "code": "M3-017",
+    "skill_code": "M3.2",
+    "type": "numeric",
+    "difficulty": 1,
+    "stem": "Berechne $\\log_2 \\frac{1}{16}$.",
+    "payload": { "tolerance": 0 },
+    "solution": { "value": -4 },
+    "explanation": "Es gilt $16 = 2^4$, also $\\frac{1}{16} = 2^{-4}$. Damit ist $\\log_2 \\frac{1}{16} = -4$. Das Minuszeichen kommt vom Kehrwert.",
+    "hint": "Schreibe 16 als Zweierpotenz und denk daran, was ein Kehrwert beim Exponenten bewirkt."
+  },
+  {
+    "code": "M3-018",
+    "skill_code": "M3.2",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Löse die Gleichung {{k}} $\\cdot$ {{a}}$^x$ = {{c}}.",
+    "payload": {
+      "params": { "k": { "min": 2, "max": 6, "step": 1 }, "a": { "min": 2, "max": 3, "step": 1 }, "n": { "min": 2, "max": 5, "step": 1 } },
+      "derived": { "c": "k * a^n" },
+      "formula": "n",
+      "tolerance": 0
+    },
+    "explanation": "Teile zuerst beide Seiten durch den Faktor vor der Potenz, sodass die Potenz allein steht. Dann gilt $x = \\log_a \\left(\\frac{c}{k}\\right)$. Das Ergebnis ist hier eine ganze Zahl, du kannst es also auch durch Probieren finden.",
+    "hint": "Bring die Potenz allein auf eine Seite, indem du durch den Faktor davor teilst. Dann fragst du: Basis hoch wie viel?"
+  },
+  {
+    "code": "M3-019",
+    "skill_code": "M3.2",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Löse die Gleichung {{a}}$^x$ = {{b}}. Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "params": { "a": { "min": 2, "max": 6, "step": 1 }, "b": { "min": 10, "max": 300, "step": 10 } },
+      "formula": "round(log(a, b), 2)",
+      "tolerance": 0.01
+    },
+    "explanation": "Die Lösung ist $x = \\log_a b$. Mit dem Taschenrechner rechnest du $x = \\frac{\\lg b}{\\lg a}$. Mach zur Kontrolle die Probe: a hoch deinem Ergebnis sollte ungefähr b ergeben.",
+    "hint": "Die Lösung ist ein Logarithmus. Mit dem Taschenrechner rechnest du ihn als Quotient zweier Zehnerlogarithmen."
+  },
+  {
+    "code": "M3-020",
+    "skill_code": "M3.2",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Löse die Gleichung {{k}} $\\cdot$ {{a}}$^x$ = {{c}}. Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "params": { "k": { "min": 2, "max": 10, "step": 1 }, "a": { "min": 1.5, "max": 4, "step": 0.5 }, "c": { "min": 50, "max": 600, "step": 25 } },
+      "constraints": ["c > 3 * k"],
+      "formula": "round(log(a, c / k), 2)",
+      "tolerance": 0.01
+    },
+    "explanation": "Teile zuerst durch k, damit die Potenz allein steht: $a^x = \\frac{c}{k}$. Dann gilt $x = \\log_a \\frac{c}{k} = \\frac{\\lg (c : k)}{\\lg a}$. Ein häufiger Fehler ist, erst k mal a zu rechnen und dann zu logarithmieren.",
+    "hint": "Teile zuerst durch den Faktor vor der Potenz, damit die Potenz allein steht. Danach logarithmieren."
+  },
+  {
+    "code": "M3-021",
+    "skill_code": "M3.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Wie löst du die Gleichung $5^x = 20$ richtig?",
+    "payload": { "options": ["$x = \\log_5 20$", "$x = 20 : 5 = 4$", "$x = \\log_{20} 5$", "$x = \\sqrt[5]{20}$"] },
+    "solution": { "index": 0 },
+    "explanation": "Gesucht ist die Hochzahl, mit der man 5 potenzieren muss, um 20 zu erhalten, und das ist $\\log_5 20 \\approx 1{,}86$. Die Division 20 : 5 wäre nur bei $5 \\cdot x = 20$ richtig. $\\log_{20} 5$ vertauscht Basis und Zahl, die Wurzel löst $x^5 = 20$.",
+    "hint": "Hier ist die Hochzahl gesucht. Welche Umkehroperation zum Potenzieren liefert genau die Hochzahl?"
+  },
+  {
+    "code": "M3-022",
+    "skill_code": "M3.2",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welchen Wert hat $\\log_a 1$ für jede zulässige Basis a (a > 0, a ≠ 1)?",
+    "payload": { "options": ["0", "1", "a", "Der Wert ist nicht definiert."] },
+    "solution": { "index": 0 },
+    "explanation": "Für jede Basis gilt $a^0 = 1$. Deshalb ist $\\log_a 1 = 0$. Der Wert 1 wäre richtig für $\\log_a a$, denn $a^1 = a$.",
+    "hint": "Übersetze in eine Potenzgleichung: Mit welcher Hochzahl musst du eine beliebige Basis potenzieren, damit 1 herauskommt?"
+  },
+  {
+    "code": "M3-023",
+    "skill_code": "M3.2",
+    "type": "numeric",
+    "difficulty": 2,
+    "stem": "Berechne $\\log_4 2$.",
+    "payload": { "tolerance": 0 },
+    "solution": { "value": 0.5 },
+    "explanation": "Gesucht ist x mit $4^x = 2$. Da $\\sqrt{4} = 2$ und $\\sqrt{4} = 4^{0{,}5}$ ist, gilt x = 0,5. Nicht mit $\\log_2 4 = 2$ verwechseln.",
+    "hint": "Gesucht ist x mit $4^x = 2$. Welche Rechenoperation macht aus 4 eine 2, und wie schreibt man sie als Potenz?"
+  },
+  {
+    "code": "M3-024",
+    "skill_code": "M3.2",
+    "type": "mc_multi",
+    "difficulty": 2,
+    "stem": "Welche Aussagen sind richtig? Wähle alle aus.",
+    "payload": { "options": ["$\\log_2 32 = 5$", "$\\log_{10} 1000 = 3$", "$\\log_5 25 = 5$", "$\\log_3 \\frac{1}{9} = -2$", "$\\log_2 0 = 0$"] },
+    "solution": { "indices": [0, 1, 3] },
+    "explanation": "Prüfe jeweils mit der Potenz: $2^5 = 32$, $10^3 = 1000$ und $3^{-2} = \\frac{1}{9}$ stimmen. $\\log_5 25$ ist 2, weil $5^2 = 25$. $\\log_2 0$ gibt es nicht, weil eine Potenz von 2 nie 0 wird.",
+    "hint": "Übersetze jede Aussage in eine Potenz und prüfe sie: $\\log_a b = x$ heißt $a^x = b$."
+  },
+  {
+    "code": "M3-025",
+    "skill_code": "M3.2",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Löse die Gleichung {{k}} $\\cdot$ {{a}}$^x$ − {{d}} = {{c}}.",
+    "payload": {
+      "params": { "k": { "min": 2, "max": 5, "step": 1 }, "a": { "min": 2, "max": 3, "step": 1 }, "n": { "min": 2, "max": 5, "step": 1 }, "d": { "min": 1, "max": 20, "step": 1 } },
+      "derived": { "c": "k * a^n - d" },
+      "formula": "n",
+      "tolerance": 0
+    },
+    "explanation": "Bringe zuerst die Zahl ohne Potenz auf die rechte Seite (addieren), dann teile durch den Faktor vor der Potenz. Jetzt steht $a^x$ allein und du bestimmst x mit dem Logarithmus oder durch Probieren. Die Reihenfolge ist wichtig: erst plus/minus, dann teilen, zuletzt logarithmieren.",
+    "hint": "Isoliere die Potenz Schritt für Schritt: erst die Zahl ohne Potenz auf die andere Seite bringen, dann durch den Faktor teilen."
+  },
+  {
+    "code": "M3-026",
+    "skill_code": "M3.2",
+    "type": "numeric",
+    "difficulty": 3,
+    "stem": "Löse die Gleichung $2^x = 3^{x-1}$. Runde auf zwei Stellen nach dem Komma.",
+    "payload": { "tolerance": 0.01 },
+    "solution": { "value": 2.71 },
+    "explanation": "Logarithmiere beide Seiten: $x \\cdot \\lg 2 = (x - 1) \\cdot \\lg 3$. Ausmultiplizieren und ordnen ergibt $x \\cdot (\\lg 3 - \\lg 2) = \\lg 3$. Also ist $x = \\frac{\\lg 3}{\\lg 3 - \\lg 2} \\approx 2{,}71$.",
+    "hint": "Die Unbekannte steht auf beiden Seiten im Exponenten. Logarithmiere beide Seiten und nutze $\\lg(a^x) = x \\cdot \\lg a$."
+  },
+  {
+    "code": "M3-027",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Ein Kapital von {{K0}} € wird zu {{p}} % Zinsen pro Jahr angelegt. Die Zinsen werden jedes Jahr mitverzinst. Wie hoch ist das Kapital nach {{n}} Jahren? Runde auf Cent.",
+    "payload": {
+      "params": { "K0": { "min": 1000, "max": 10000, "step": 500 }, "p": { "min": 1.5, "max": 4, "step": 0.5 }, "n": { "min": 3, "max": 10, "step": 1 } },
+      "formula": "round(K0 * (1 + p / 100)^n, 2)",
+      "unit": "€",
+      "tolerance": 1
+    },
+    "explanation": "Bei Zinseszins wächst das Kapital jedes Jahr um den gleichen Faktor $1 + \\frac{p}{100}$. Deshalb gilt $K_n = K_0 \\cdot \\left(1 + \\frac{p}{100}\\right)^n$. Rechne den Faktor möglichst ungerundet in den Taschenrechner ein.",
+    "hint": "Bei Zinseszins wird das Kapital jedes Jahr mit demselben Faktor multipliziert. Wie lautet dieser Faktor bei p %?"
+  },
+  {
+    "code": "M3-028",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Ein Patient bekommt {{A0}} mg eines Medikaments. Der Körper baut pro Stunde {{p}} % der vorhandenen Menge ab. Wie viel mg sind nach {{t}} Stunden noch im Körper? Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "A0": { "min": 200, "max": 800, "step": 50 }, "p": { "min": 10, "max": 30, "step": 5 }, "t": { "min": 2, "max": 6, "step": 1 } },
+      "formula": "round(A0 * (1 - p / 100)^t, 1)",
+      "unit": "mg",
+      "tolerance": 0.1
+    },
+    "explanation": "Wenn pro Stunde p % abgebaut werden, bleiben $100 \\% - p \\%$ übrig, der Faktor ist also $a = 1 - \\frac{p}{100}$. Damit gilt $A(t) = A_0 \\cdot a^t$. Ein typischer Fehler ist, den Faktor $\\frac{p}{100}$ statt $1 - \\frac{p}{100}$ zu nehmen.",
+    "hint": "Wenn p % abgebaut werden, wie viel Prozent bleiben jede Stunde übrig? Daraus ergibt sich der Faktor pro Stunde."
+  },
+  {
+    "code": "M3-029",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Eine Stadt hat {{N0}} Einwohner. Die Einwohnerzahl wächst jedes Jahr um {{p}} %. Wie viele Einwohner hat die Stadt nach {{n}} Jahren, wenn das Wachstum so weitergeht? Runde auf ganze Einwohner.",
+    "payload": {
+      "params": { "N0": { "min": 20000, "max": 80000, "step": 2500 }, "p": { "min": 1.5, "max": 4, "step": 0.5 }, "n": { "min": 5, "max": 15, "step": 1 } },
+      "formula": "round(N0 * (1 + p / 100)^n, 0)",
+      "tolerance": 1
+    },
+    "explanation": "Der Wachstumsfaktor pro Jahr ist $a = 1 + \\frac{p}{100}$. Die Einwohnerzahl nach n Jahren ist $N = N_0 \\cdot a^n$. Nicht einfach n-mal p % vom Anfangswert addieren, denn das wäre lineares Wachstum.",
+    "hint": "Die Einwohnerzahl wird jedes Jahr mit demselben Wachstumsfaktor multipliziert. Wie oft passiert das?"
+  },
+  {
+    "code": "M3-030",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 1,
+    "stem": "Ein Bestand nimmt jedes Jahr um {{p}} % ab. Gib den Faktor a in der Funktionsgleichung $y = k \\cdot a^x$ an.",
+    "payload": {
+      "params": { "p": { "min": 1.5, "max": 8, "step": 0.5 } },
+      "formula": "1 - p / 100",
+      "tolerance": 0.0001
+    },
+    "explanation": "Nach einem Jahr bleiben $100 \\% - p \\%$ des Bestands übrig. Als Dezimalzahl ist das $a = 1 - \\frac{p}{100}$. Der Wert $\\frac{p}{100}$ allein wäre nur der Anteil, der verschwindet.",
+    "hint": "Wie viel Prozent des Bestands bleiben nach einem Jahr übrig? Schreibe diesen Anteil als Dezimalzahl."
+  },
+  {
+    "code": "M3-031",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Ein Kapital wird mit {{p}} % pro Jahr verzinst, die Zinsen werden mitverzinst. Nach wie vielen Jahren hat sich das Kapital verdoppelt? Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "p": { "min": 2, "max": 8, "step": 0.5 } },
+      "formula": "round(log(1 + p / 100, 2), 1)",
+      "unit": "Jahre",
+      "tolerance": 0.1
+    },
+    "explanation": "Verdoppelt heißt: $K_0 \\cdot a^n = 2 \\cdot K_0$, also $a^n = 2$ mit $a = 1 + \\frac{p}{100}$. Daraus folgt $n = \\log_a 2 = \\frac{\\lg 2}{\\lg a}$. Die Verdopplungszeit hängt nicht vom Anfangskapital ab.",
+    "hint": "Verdoppelt heißt: Anfangskapital mal Faktor hoch n ergibt das Doppelte. Kürze das Anfangskapital weg und löse mit dem Logarithmus."
+  },
+  {
+    "code": "M3-032",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 2,
+    "stem": "Die Menge eines Wirkstoffs im Blut nimmt pro Stunde um {{p}} % ab. Nach wie vielen Stunden ist nur noch die Hälfte der Anfangsmenge vorhanden? Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "p": { "min": 5, "max": 25, "step": 5 } },
+      "formula": "round(log(1 - p / 100, 0.5), 1)",
+      "unit": "Stunden",
+      "tolerance": 0.1
+    },
+    "explanation": "Halbwertszeit heißt: $A_0 \\cdot a^t = 0{,}5 \\cdot A_0$, also $a^t = 0{,}5$ mit $a = 1 - \\frac{p}{100}$. Daraus folgt $t = \\log_a 0{,}5 = \\frac{\\lg 0{,}5}{\\lg a}$. Die Anfangsmenge spielt dafür keine Rolle.",
+    "hint": "Setze an: Anfangsmenge mal Faktor hoch t ergibt die halbe Anfangsmenge. Welcher Faktor gehört zu einer Abnahme um p %?"
+  },
+  {
+    "code": "M3-033",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Ein radioaktives Isotop hat eine Halbwertszeit von {{T}} Tagen. Eine Probe enthält anfangs {{A0}} mg davon. Wie viel mg sind nach {{t}} Tagen noch vorhanden? Runde auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "params": { "T": { "min": 5, "max": 30, "step": 1 }, "A0": { "min": 100, "max": 1000, "step": 50 }, "t": { "min": 3, "max": 60, "step": 1 } },
+      "constraints": ["t <= 3 * T", "t != T", "t != 2 * T"],
+      "formula": "round(A0 * 0.5^(t / T), 2)",
+      "unit": "mg",
+      "tolerance": 0.05
+    },
+    "explanation": "Nach jeder Halbwertszeit T halbiert sich die Menge. Nach t Tagen sind $\\frac{t}{T}$ Halbwertszeiten vergangen, also gilt $A(t) = A_0 \\cdot 0{,}5^{\\frac{t}{T}}$. Der Exponent ist meist keine ganze Zahl, deshalb brauchst du den Taschenrechner.",
+    "hint": "Wie viele Halbwertszeiten sind in der gegebenen Zeit vergangen? Diese Anzahl kommt als Exponent zum Faktor 0,5."
+  },
+  {
+    "code": "M3-034",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Ein Kapital von {{K0}} € wird mit {{p}} % pro Jahr verzinst, die Zinsen werden mitverzinst. Nach wie vielen vollen Jahren ist das Kapital zum ersten Mal auf mindestens {{Z}} € angewachsen?",
+    "payload": {
+      "params": { "K0": { "min": 2000, "max": 10000, "step": 1000 }, "p": { "min": 1.5, "max": 5, "step": 0.5 }, "f": { "min": 1.3, "max": 2, "step": 0.1 } },
+      "derived": { "Z": "round(K0 * f, 0)" },
+      "formula": "ceil(log(1 + p / 100, Z / K0))",
+      "unit": "Jahre",
+      "tolerance": 0
+    },
+    "explanation": "Setze an: $K_0 \\cdot a^n = Z$ mit $a = 1 + \\frac{p}{100}$, also $n = \\log_a \\frac{Z}{K_0}$. Das Ergebnis ist meist keine ganze Zahl. Weil nach vollen Jahren gefragt ist und der Betrag mindestens erreicht sein muss, rundest du immer auf.",
+    "hint": "Stelle $K_0 \\cdot a^n = Z$ auf und löse mit dem Logarithmus nach n. Überlege danach, wie du bei vollen Jahren rundest."
+  },
+  {
+    "code": "M3-035",
+    "skill_code": "M3.3",
+    "type": "numeric_template",
+    "difficulty": 3,
+    "stem": "Eine Gemeinde hatte vor {{n}} Jahren {{N0}} Einwohner, heute sind es {{N1}}. Um wie viel Prozent ist die Einwohnerzahl durchschnittlich pro Jahr gewachsen? Runde auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "N0": { "min": 5000, "max": 20000, "step": 500 }, "p": { "min": 1.5, "max": 6, "step": 0.5 }, "n": { "min": 4, "max": 12, "step": 1 } },
+      "derived": { "N1": "round(N0 * (1 + p / 100)^n, 0)" },
+      "formula": "round(((N1 / N0)^(1 / n) - 1) * 100, 1)",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Ansatz: $N_0 \\cdot a^n = N_1$, also $a = \\sqrt[n]{\\frac{N_1}{N_0}}$. Der Prozentsatz ist dann $p = (a - 1) \\cdot 100$. Den Gesamtzuwachs einfach durch n zu teilen, ergibt einen zu großen Wert, weil der Zinseszinseffekt fehlt.",
+    "hint": "Setze an: Anfangswert mal Faktor hoch n ergibt den heutigen Wert. Um nach dem Faktor aufzulösen, brauchst du eine Wurzel."
+  },
+  {
+    "code": "M3-036",
+    "skill_code": "M3.3",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Ein Guthaben wächst jährlich um 4 %. Wie groß ist der Wachstumsfaktor pro Jahr?",
+    "payload": { "options": ["1,04", "0,04", "1,4", "0,96"] },
+    "solution": { "index": 0 },
+    "explanation": "Nach einem Jahr hat man 100 % + 4 % = 104 % des Guthabens, also den Faktor 1,04. Der Wert 0,04 ist nur der Zuwachs, 1,4 würde 40 % Wachstum bedeuten. Der Faktor 0,96 gehört zu einer Abnahme um 4 %.",
+    "hint": "Wie viel Prozent des Guthabens hat man nach einem Jahr? Schreibe diesen Prozentsatz als Dezimalzahl."
+  },
+  {
+    "code": "M3-037",
+    "skill_code": "M3.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Ein Auto kostet neu 20.000 €. Es verliert jedes Jahr 15 % seines aktuellen Werts. Welche Funktion beschreibt den Wert W (in €) nach t Jahren?",
+    "payload": { "options": ["$W(t) = 20\\,000 \\cdot 0{,}85^t$", "$W(t) = 20\\,000 \\cdot 0{,}15^t$", "$W(t) = 20\\,000 \\cdot 1{,}15^t$", "$W(t) = 20\\,000 - 3\\,000 \\cdot t$"] },
+    "solution": { "index": 0 },
+    "explanation": "Nach jedem Jahr bleiben 85 % des Werts übrig, der Faktor ist also 0,85. Mit 0,15 würde man nur den Verlust betrachten, mit 1,15 eine Zunahme. Die Gleichung mit minus 3.000 € pro Jahr wäre eine lineare Abnahme, bei der immer 15 % vom Neupreis abgezogen werden.",
+    "hint": "Wie viel Prozent des Werts bleiben jedes Jahr übrig? Wird dabei jedes Jahr derselbe Betrag abgezogen oder derselbe Anteil?"
+  },
+  {
+    "code": "M3-038",
+    "skill_code": "M3.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Ein radioaktiver Stoff hat eine Halbwertszeit von 8 Tagen. Zu Beginn sind 100 g vorhanden. Wie viel ist nach 24 Tagen noch übrig?",
+    "payload": { "options": ["12,5 g", "25 g", "33,3 g", "0 g"] },
+    "solution": { "index": 0 },
+    "explanation": "24 Tage sind 3 Halbwertszeiten, die Menge halbiert sich also dreimal: 100 g, 50 g, 25 g, 12,5 g. Das entspricht $100 \\cdot 0{,}5^3 = 12{,}5$. Der Stoff verschwindet nie ganz, und durch 3 teilen ist kein Halbieren.",
+    "hint": "Wie viele Halbwertszeiten passen in 24 Tage? So oft halbierst du die Anfangsmenge."
+  },
+  {
+    "code": "M3-039",
+    "skill_code": "M3.3",
+    "type": "match",
+    "difficulty": 1,
+    "stem": "Ordne jeder prozentualen Änderung pro Jahr den passenden Wachstumsfaktor zu.",
+    "payload": {
+      "pairs": [
+        ["Zunahme um 3 %", "1,03"],
+        ["Abnahme um 3 %", "0,97"],
+        ["Zunahme um 30 %", "1,3"],
+        ["Abnahme um 30 %", "0,7"]
+      ]
+    },
+    "explanation": "Bei einer Zunahme um p % ist der Faktor $1 + \\frac{p}{100}$, bei einer Abnahme $1 - \\frac{p}{100}$. Achte auf die Stellen: 3 % sind 0,03 und 30 % sind 0,3.",
+    "hint": "Bei einer Zunahme addierst du den Prozentsatz als Dezimalzahl zu 1, bei einer Abnahme ziehst du ihn ab. Achte auf die Kommastelle."
+  },
+  {
+    "code": "M3-040",
+    "skill_code": "M3.3",
+    "type": "mc_multi",
+    "difficulty": 3,
+    "stem": "Ein Kapital wird mit 5 % pro Jahr verzinst, die Zinsen werden mitverzinst. Welche Aussagen stimmen? Wähle alle richtigen aus.",
+    "payload": { "options": ["Der Wachstumsfaktor pro Jahr ist 1,05.", "Nach 2 Jahren ist das Kapital um 10,25 % gewachsen.", "Nach etwa 14,2 Jahren hat sich das Kapital verdoppelt.", "Nach 10 Jahren ist das Kapital um genau 50 % gewachsen.", "Die Verdopplungszeit ist bei einem größeren Anfangskapital kürzer."] },
+    "solution": { "indices": [0, 1, 2] },
+    "explanation": "Der Faktor ist 1,05, und nach 2 Jahren gilt $1{,}05^2 = 1{,}1025$, also ein Plus von 10,25 %. Die Verdopplungszeit ist $\\log_{1{,}05} 2 \\approx 14{,}2$ Jahre, unabhängig vom Anfangskapital. Nach 10 Jahren ist $1{,}05^{10} \\approx 1{,}63$, also ein Plus von rund 63 % und nicht 50 %.",
+    "hint": "Rechne jede Aussage mit dem Wachstumsfaktor nach: Über mehrere Jahre wird der Faktor potenziert, nicht der Prozentsatz vervielfacht."
+  }
+]

@@ -1,0 +1,571 @@
+[
+  {
+    "code": "M5-001",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "numeric_template",
+    "stem": "In einer Urne liegen {{r}} rote und {{b}} blaue Kugeln. Du ziehst zweimal eine Kugel und legst sie nach jedem Zug wieder zurück. Berechne die Wahrscheinlichkeit, zweimal eine rote Kugel zu ziehen. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "r": { "min": 2, "max": 6, "step": 1 }, "b": { "min": 2, "max": 6, "step": 1 } },
+      "formula": "100 * (r / (r + b))^2",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Mit Zurücklegen ist die Wahrscheinlichkeit für Rot auf beiden Stufen gleich: Anzahl roter Kugeln geteilt durch alle Kugeln. Nach der Pfadmultiplikationsregel multiplizierst du diese Wahrscheinlichkeit mit sich selbst. Zum Schluss mal 100 für Prozent und auf eine Stelle runden.",
+    "hint": "Wie groß ist die Wahrscheinlichkeit für Rot bei einem Zug, und ändert sie sich durch das Zurücklegen?"
+  },
+  {
+    "code": "M5-002",
+    "skill_code": "M5.1",
+    "difficulty": 2,
+    "type": "numeric_template",
+    "stem": "In einer Urne liegen {{r}} rote und {{b}} blaue Kugeln. Du ziehst nacheinander zwei Kugeln, ohne die erste zurückzulegen. Berechne die Wahrscheinlichkeit, zweimal eine rote Kugel zu ziehen. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "r": { "min": 2, "max": 6, "step": 1 }, "b": { "min": 2, "max": 6, "step": 1 } },
+      "derived": { "n": "r + b" },
+      "formula": "100 * r / n * (r - 1) / (n - 1)",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Auf der ersten Stufe ist die Wahrscheinlichkeit für Rot: rote Kugeln geteilt durch alle Kugeln. Ohne Zurücklegen fehlt danach eine rote Kugel und eine Kugel insgesamt, also verkleinern sich Zähler und Nenner auf der zweiten Stufe um 1. Beide Astwahrscheinlichkeiten multiplizieren, mal 100 nehmen und runden.",
+    "hint": "Wie viele rote Kugeln und wie viele Kugeln insgesamt liegen beim zweiten Zug noch in der Urne?"
+  },
+  {
+    "code": "M5-003",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "numeric_template",
+    "stem": "Ein Glücksrad hat {{n}} gleich große Felder, {{k}} davon sind rot. Es wird zweimal gedreht. Berechne die Wahrscheinlichkeit, dass es beide Male auf Rot stehen bleibt. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "n": { "min": 4, "max": 10, "step": 1 }, "k": { "min": 2, "max": 8, "step": 1 } },
+      "constraints": ["k / n >= 0.2", "k / n <= 0.8"],
+      "formula": "100 * (k / n)^2",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Die Wahrscheinlichkeit für Rot bei einer Drehung ist Anzahl roter Felder geteilt durch Anzahl aller Felder. Beim zweiten Drehen ändert sich daran nichts, das Glücksrad verhält sich wie ein Experiment mit Zurücklegen. Beide Wahrscheinlichkeiten multiplizieren und in Prozent umrechnen.",
+    "hint": "Bestimme die Wahrscheinlichkeit für Rot bei einer Drehung und wende dann die Pfadmultiplikationsregel an."
+  },
+  {
+    "code": "M5-004",
+    "skill_code": "M5.1",
+    "difficulty": 2,
+    "type": "numeric_template",
+    "stem": "In einer Lostrommel liegen {{N}} Lose, davon sind {{g}} Gewinne, der Rest sind Nieten. Du ziehst nacheinander zwei Lose und behältst sie. Berechne die Wahrscheinlichkeit, dass das erste Los ein Gewinn und das zweite eine Niete ist. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "N": { "min": 10, "max": 40, "step": 5 }, "g": { "min": 2, "max": 8, "step": 1 } },
+      "constraints": ["g <= N / 3"],
+      "formula": "100 * g / N * (N - g) / (N - 1)",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Erster Ast: Gewinne geteilt durch alle Lose. Da das Gewinnlos behalten wird, liegen danach nur noch N − 1 Lose in der Trommel, aber alle Nieten sind noch da. Zweiter Ast also: Nieten geteilt durch (N − 1), dann beide Werte multiplizieren und in Prozent umrechnen.",
+    "hint": "Folge dem Pfad Gewinn – Niete: Welche Lose liegen beim zweiten Zug noch in der Trommel?"
+  },
+  {
+    "code": "M5-005",
+    "skill_code": "M5.1",
+    "difficulty": 2,
+    "type": "numeric_template",
+    "stem": "Ein Glücksrad bleibt mit einer Wahrscheinlichkeit von {{p}} % auf Rot stehen. Es wird zweimal gedreht. Berechne die Wahrscheinlichkeit, dass es beim ersten Mal auf Rot und beim zweiten Mal nicht auf Rot stehen bleibt. Gib das Ergebnis als Dezimalzahl an, falls nötig gerundet auf vier Stellen nach dem Komma.",
+    "payload": {
+      "params": { "p": { "min": 10, "max": 60, "step": 5 } },
+      "formula": "p / 100 * (1 - p / 100)",
+      "tolerance": 0.00005
+    },
+    "explanation": "Schreibe die Prozentangabe als Dezimalzahl, die Gegenwahrscheinlichkeit für \"nicht Rot\" ist 1 minus diese Zahl. Der gesuchte Pfad ist Rot, dann nicht Rot. Nach der Pfadmultiplikationsregel multiplizierst du beide Astwahrscheinlichkeiten.",
+    "hint": "Wie groß ist die Wahrscheinlichkeit für „nicht Rot“, und wie berechnest du einen Pfad aus zwei Ästen?"
+  },
+  {
+    "code": "M5-006",
+    "skill_code": "M5.1",
+    "difficulty": 3,
+    "type": "numeric_template",
+    "stem": "In einer Urne liegen {{r}} rote und {{b}} weiße Kugeln. Du ziehst nacheinander drei Kugeln ohne Zurücklegen. Berechne die Wahrscheinlichkeit, dass alle drei Kugeln rot sind. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "r": { "min": 3, "max": 7, "step": 1 }, "b": { "min": 2, "max": 6, "step": 1 } },
+      "derived": { "n": "r + b" },
+      "constraints": ["100 * r * (r - 1) * (r - 2) / (n * (n - 1) * (n - 2)) >= 3"],
+      "formula": "100 * r / n * (r - 1) / (n - 1) * (r - 2) / (n - 2)",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Das Baumdiagramm hat drei Stufen, der gesuchte Pfad ist rot – rot – rot. Bei jedem Zug ohne Zurücklegen werden die Anzahl der roten Kugeln und die Gesamtzahl um 1 kleiner. Die drei Astwahrscheinlichkeiten multiplizierst du und rechnest in Prozent um.",
+    "hint": "Folge dem Pfad rot – rot – rot und überlege bei jedem Zug, wie viele rote Kugeln und wie viele Kugeln insgesamt noch da sind."
+  },
+  {
+    "code": "M5-007",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "numeric_template",
+    "stem": "Ein Glücksrad hat {{k}} gleich große Felder in {{k}} verschiedenen Farben. Es wird {{m}}-mal gedreht, und jedes Mal wird die Farbe notiert. Wie viele Pfade hat das vollständige Baumdiagramm?",
+    "payload": {
+      "params": { "k": { "min": 2, "max": 4, "step": 1 }, "m": { "min": 2, "max": 3, "step": 1 } },
+      "formula": "k^m",
+      "tolerance": 0
+    },
+    "explanation": "Von jedem Verzweigungspunkt gehen so viele Äste ab, wie es Farben gibt. Bei jeder weiteren Stufe vervielfacht sich die Zahl der Pfade mit diesem Faktor. Die Anzahl der Pfade ist also Farbenanzahl hoch Anzahl der Drehungen.",
+    "hint": "Wie viele Äste gehen von jedem Verzweigungspunkt ab, und wie oft wiederholt sich das?"
+  },
+  {
+    "code": "M5-008",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "numeric_template",
+    "stem": "In einer Tüte sind {{r}} Kirschbonbons und {{z}} Zitronenbonbons. Du nimmst ohne hinzusehen nacheinander zwei Bonbons und legst das erste nicht zurück. Das erste Bonbon ist ein Kirschbonbon. Welche Wahrscheinlichkeit steht im Baumdiagramm auf der zweiten Stufe am Ast „Kirsch“? Gib sie in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "r": { "min": 3, "max": 8, "step": 1 }, "z": { "min": 2, "max": 8, "step": 1 } },
+      "formula": "100 * (r - 1) / (r + z - 1)",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Nach dem ersten Zug ist ein Kirschbonbon weniger in der Tüte und insgesamt ein Bonbon weniger. Die Wahrscheinlichkeit am zweiten Ast ist also (Kirsch − 1) geteilt durch (alle − 1). Wer die ursprünglichen Anzahlen nimmt, rechnet fälschlich so, als wäre zurückgelegt worden.",
+    "hint": "Wie viele Kirschbonbons und wie viele Bonbons insgesamt sind nach dem ersten Zug noch in der Tüte?"
+  },
+  {
+    "code": "M5-009",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "mc",
+    "stem": "Aus einer Urne mit 3 roten und 2 blauen Kugeln ziehst du zweimal ohne Zurücklegen. Die erste Kugel war rot. Welche Wahrscheinlichkeit steht im Baumdiagramm auf der zweiten Stufe am Ast „rot“?",
+    "payload": { "options": ["2/4", "3/5", "2/5", "3/4"] },
+    "solution": { "index": 0 },
+    "explanation": "Nach dem ersten Zug liegen noch 4 Kugeln in der Urne, davon 2 rote, also 2/4. Die 3/5 wäre richtig, wenn die Kugel zurückgelegt worden wäre. Bei 2/5 und 3/4 wurde nur Zähler oder nur Nenner angepasst.",
+    "hint": "Zähle, wie viele Kugeln insgesamt und wie viele rote nach dem ersten Zug noch in der Urne liegen."
+  },
+  {
+    "code": "M5-010",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "mc",
+    "stem": "Woran erkennst du im Baumdiagramm, dass ein Experiment **mit Zurücklegen** durchgeführt wird?",
+    "payload": {
+      "options": [
+        "Die Wahrscheinlichkeiten für ein Ergebnis sind auf jeder Stufe gleich.",
+        "Die Wahrscheinlichkeiten ändern sich von Stufe zu Stufe.",
+        "Das Baumdiagramm hat weniger Pfade als ohne Zurücklegen.",
+        "An jedem Verzweigungspunkt ist die Summe der Wahrscheinlichkeiten kleiner als 1."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Beim Zurücklegen ist vor jedem Zug wieder derselbe Inhalt in der Urne, deshalb stehen auf jeder Stufe dieselben Wahrscheinlichkeiten. Wechselnde Wahrscheinlichkeiten sind das Kennzeichen von \"ohne Zurücklegen\". Die Summe an einem Verzweigungspunkt ist immer 1.",
+    "hint": "Überlege, ob sich der Inhalt der Urne zwischen zwei Zügen verändert, wenn du zurücklegst."
+  },
+  {
+    "code": "M5-011",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "mc",
+    "stem": "In einem Baumdiagramm gehen von einem Verzweigungspunkt drei Äste aus. Welchen Wert ergibt die Summe der Wahrscheinlichkeiten an diesen drei Ästen?",
+    "payload": { "options": ["1", "3", "0,5", "Das hängt vom Experiment ab."] },
+    "solution": { "index": 0 },
+    "explanation": "Die Äste an einem Verzweigungspunkt decken alle möglichen Ergebnisse dieser Stufe ab. Deshalb ist ihre Summe immer 1, also 100 %. Die Zahl der Äste spielt dafür keine Rolle.",
+    "hint": "An einem Verzweigungspunkt tritt immer genau eines der Ergebnisse dieser Stufe ein. Was folgt daraus für die Summe?"
+  },
+  {
+    "code": "M5-012",
+    "skill_code": "M5.1",
+    "difficulty": 2,
+    "type": "mc",
+    "stem": "Eine Münze wird dreimal geworfen. Wie viele Pfade im Baumdiagramm gehören zum Ereignis „genau zweimal Kopf“?",
+    "payload": { "options": ["3", "2", "4", "8"] },
+    "solution": { "index": 0 },
+    "explanation": "Die passenden Pfade sind K–K–Z, K–Z–K und Z–K–K, die Zahl darf an jeder der drei Stellen stehen. Das sind 3 Pfade. Die 8 ist die Anzahl aller Pfade, nicht nur der passenden.",
+    "hint": "Schreibe alle Pfade mit K und Z auf und markiere die, in denen genau zweimal K vorkommt."
+  },
+  {
+    "code": "M5-013",
+    "skill_code": "M5.1",
+    "difficulty": 2,
+    "type": "mc",
+    "stem": "Ein Baumdiagramm hat zwei Stufen. Auf jeder Stufe gibt es die Äste „Sechs“ mit $\\frac{1}{6}$ und „keine Sechs“ mit $\\frac{5}{6}$. Welches Zufallsexperiment passt dazu?",
+    "payload": {
+      "options": [
+        "Ein Würfel wird zweimal geworfen, notiert wird nur, ob eine Sechs fällt.",
+        "Zwei Würfel werden geworfen, notiert wird die Augensumme.",
+        "Ein Würfel wird einmal geworfen, notiert wird die Augenzahl.",
+        "Aus einer Urne mit 1 roten und 5 blauen Kugeln wird zweimal ohne Zurücklegen gezogen."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Zwei Stufen bedeuten zwei Durchgänge, und gleiche Wahrscheinlichkeiten auf beiden Stufen passen zum Würfel, der sich nicht verändert. Bei der Urne ohne Zurücklegen würden sich die Wahrscheinlichkeiten auf der zweiten Stufe ändern. Die Augensumme oder Augenzahl hätte mehr als zwei Äste pro Stufe.",
+    "hint": "Wie viele Durchgänge stehen hinter zwei Stufen, und was bedeutet es, dass die Wahrscheinlichkeiten auf beiden Stufen gleich sind?"
+  },
+  {
+    "code": "M5-014",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "mc",
+    "stem": "In einer Urne liegen 4 rote Kugeln und 1 blaue Kugel. Du ziehst zweimal ohne Zurücklegen. Welcher Pfad hat die Wahrscheinlichkeit 0?",
+    "payload": { "options": ["blau – blau", "rot – rot", "rot – blau", "blau – rot"] },
+    "solution": { "index": 0 },
+    "explanation": "Es gibt nur eine blaue Kugel. Ist sie beim ersten Zug gezogen, kann ohne Zurücklegen keine zweite blaue mehr kommen. Am zweiten Ast steht dann 0/4 = 0, also ist auch der Pfad blau – blau unmöglich.",
+    "hint": "Prüfe für jeden Pfad, ob die Kugeln, die er braucht, beim zweiten Zug überhaupt noch in der Urne sein können."
+  },
+  {
+    "code": "M5-015",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "numeric",
+    "stem": "Ein Würfel wird zweimal geworfen, und jedes Mal wird die Augenzahl notiert. Wie viele Pfade hat das vollständige Baumdiagramm?",
+    "payload": { "tolerance": 0 },
+    "solution": { "value": 36 },
+    "explanation": "Auf der ersten Stufe gibt es 6 Äste, und von jedem dieser Äste gehen wieder 6 Äste aus. Die Anzahl der Pfade ist deshalb 6 · 6 = 36.",
+    "hint": "Wie viele Äste hat die erste Stufe, und wie viele gehen von jedem dieser Äste wieder ab?"
+  },
+  {
+    "code": "M5-016",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "numeric",
+    "stem": "In einer Tüte sind 3 Zitronen- und 7 Erdbeerbonbons. Tim nimmt nacheinander zwei Bonbons, ohne das erste zurückzulegen. Das erste ist ein Erdbeerbonbon. Mit welcher Wahrscheinlichkeit ist das zweite ein Zitronenbonbon? Gib das Ergebnis als Dezimalzahl an, gerundet auf zwei Stellen nach dem Komma.",
+    "payload": { "tolerance": 0.005 },
+    "solution": { "value": 0.3333 },
+    "explanation": "Nach dem ersten Zug sind noch 9 Bonbons in der Tüte, alle 3 Zitronenbonbons sind noch da. Die Wahrscheinlichkeit ist also 3/9 ≈ 0,33. Die Zahl der Zitronenbonbons ändert sich nicht, weil ein Erdbeerbonbon entnommen wurde.",
+    "hint": "Wie viele Bonbons sind nach dem ersten Zug noch in der Tüte, und hat sich die Zahl der Zitronenbonbons verändert?"
+  },
+  {
+    "code": "M5-017",
+    "skill_code": "M5.1",
+    "difficulty": 3,
+    "type": "numeric",
+    "stem": "In einer Urne liegen 4 Kugeln in vier verschiedenen Farben. Du ziehst nacheinander drei Kugeln ohne Zurücklegen und notierst die Farben in der Reihenfolge des Ziehens. Wie viele Pfade hat das vollständige Baumdiagramm?",
+    "payload": { "tolerance": 0 },
+    "solution": { "value": 24 },
+    "explanation": "Auf der ersten Stufe gibt es 4 Äste, auf der zweiten nur noch 3, weil eine Farbe schon gezogen ist, auf der dritten noch 2. Die Anzahl der Pfade ist 4 · 3 · 2 = 24. Wer 4 · 4 · 4 = 64 rechnet, hat übersehen, dass ohne Zurücklegen gezogen wird.",
+    "hint": "Wie viele Farben kannst du beim ersten, zweiten und dritten Zug jeweils noch ziehen?"
+  },
+  {
+    "code": "M5-018",
+    "skill_code": "M5.1",
+    "difficulty": 2,
+    "type": "mc_multi",
+    "stem": "In einer Urne liegen 3 rote und 2 grüne Kugeln. Du ziehst zweimal ohne Zurücklegen. Welche Aussagen über das Baumdiagramm sind richtig?",
+    "payload": {
+      "options": [
+        "Der Pfad rot – rot hat die Wahrscheinlichkeit 3/5 · 2/4.",
+        "Nach „grün“ auf der ersten Stufe steht am Ast „grün“ der zweiten Stufe 1/4.",
+        "Das Baumdiagramm hat 4 Pfade.",
+        "Auf der zweiten Stufe steht am Ast „rot“ immer 3/5.",
+        "Die Wahrscheinlichkeiten aller Pfade ergeben zusammen weniger als 1."
+      ]
+    },
+    "solution": { "indices": [0, 1, 2] },
+    "explanation": "Ohne Zurücklegen verkleinern sich Zähler und Nenner, daher 3/5 · 2/4 für rot – rot und 1/4 für grün nach grün. Zwei Farben auf zwei Stufen ergeben 2 · 2 = 4 Pfade. Die 3/5 auf der zweiten Stufe gelten nur mit Zurücklegen, und alle Pfade zusammen ergeben immer genau 1.",
+    "hint": "Zeichne das Baumdiagramm ohne Zurücklegen mit allen Astwahrscheinlichkeiten und prüfe jede Aussage daran."
+  },
+  {
+    "code": "M5-019",
+    "skill_code": "M5.1",
+    "difficulty": 1,
+    "type": "mc_multi",
+    "stem": "Bei welchen Experimenten bleiben die Wahrscheinlichkeiten auf jeder Stufe gleich, wie beim Ziehen mit Zurücklegen?",
+    "payload": {
+      "options": [
+        "Eine Münze wird dreimal geworfen.",
+        "Ein Glücksrad wird zweimal gedreht.",
+        "Aus einem Kartenstapel werden zwei Karten gezogen, die erste bleibt draußen.",
+        "Ein Würfel wird zweimal geworfen.",
+        "Aus einer Klasse werden nacheinander Klassensprecher und Stellvertreter ausgelost."
+      ]
+    },
+    "solution": { "indices": [0, 1, 3] },
+    "explanation": "Münze, Glücksrad und Würfel verändern sich durch einen Durchgang nicht, deshalb bleiben die Wahrscheinlichkeiten gleich. Bei den Karten und beim Auslosen der Klassensprecher fällt das erste Ergebnis weg. Das ist ein Ziehen ohne Zurücklegen.",
+    "hint": "Frag dich bei jedem Experiment: Verändert der erste Durchgang die Ausgangslage für den nächsten?"
+  },
+  {
+    "code": "M5-020",
+    "skill_code": "M5.1",
+    "difficulty": 2,
+    "type": "match",
+    "stem": "In einer Urne liegen 3 rote und 2 blaue Kugeln, es wird zweimal gezogen. Ordne jeder Situation die Wahrscheinlichkeit am Ast der **zweiten** Stufe zu.",
+    "payload": {
+      "pairs": [
+        ["mit Zurücklegen, erst rot, dann rot", "3/5"],
+        ["ohne Zurücklegen, erst rot, dann rot", "2/4"],
+        ["ohne Zurücklegen, erst blau, dann blau", "1/4"],
+        ["ohne Zurücklegen, erst blau, dann rot", "3/4"],
+        ["mit Zurücklegen, erst rot, dann blau", "2/5"]
+      ]
+    },
+    "explanation": "Mit Zurücklegen liegen vor dem zweiten Zug wieder alle 5 Kugeln in der Urne, die Wahrscheinlichkeiten sind wie auf der ersten Stufe. Ohne Zurücklegen sind es nur noch 4 Kugeln, und von der zuerst gezogenen Farbe ist eine weniger da. Nach blau sind also noch 3 rote und 1 blaue übrig.",
+    "hint": "Überlege für jede Situation, wie viele Kugeln jeder Farbe vor dem zweiten Zug in der Urne liegen."
+  },
+  {
+    "code": "M5-021",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "numeric_template",
+    "stem": "Lea trifft beim Freiwurf mit einer Wahrscheinlichkeit von {{p}} %. Sie wirft zweimal. Berechne die Wahrscheinlichkeit, dass sie mindestens einmal trifft. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "p": { "min": 40, "max": 90, "step": 5 } },
+      "formula": "100 * (1 - (1 - p / 100)^2)",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Das Gegenereignis zu \"mindestens einmal treffen\" ist \"zweimal daneben\". Dessen Wahrscheinlichkeit ist (1 − p)², wobei p die Trefferwahrscheinlichkeit als Dezimalzahl ist. Das Ergebnis ist 1 − (1 − p)², in Prozent umgerechnet.",
+    "hint": "Rechne über das Gegenereignis: Was ist das Gegenteil von „mindestens einmal treffen“?"
+  },
+  {
+    "code": "M5-022",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "numeric_template",
+    "stem": "Ein Würfel wird {{n}}-mal geworfen. Berechne die Wahrscheinlichkeit, mindestens eine Sechs zu werfen. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "n": { "min": 2, "max": 6, "step": 1 } },
+      "formula": "100 * (1 - (5 / 6)^n)",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Rechne über das Gegenereignis \"keine einzige Sechs\": Bei jedem Wurf ist das 5/6, bei n Würfen also (5/6)^n. Die gesuchte Wahrscheinlichkeit ist 1 − (5/6)^n. Alle Pfade mit mindestens einer Sechs einzeln zu addieren wäre viel aufwendiger.",
+    "hint": "Rechne über das Gegenereignis „keine einzige Sechs“ und ziehe dessen Wahrscheinlichkeit von 1 ab."
+  },
+  {
+    "code": "M5-023",
+    "skill_code": "M5.2",
+    "difficulty": 3,
+    "type": "numeric_template",
+    "stem": "Ein Glücksrad bleibt mit einer Wahrscheinlichkeit von {{p}} % auf Rot stehen. Wie oft muss man mindestens drehen, damit die Wahrscheinlichkeit für „mindestens einmal Rot“ mindestens {{q}} % beträgt?",
+    "payload": {
+      "params": { "p": { "min": 10, "max": 50, "step": 10 }, "q": { "min": 80, "max": 95, "step": 5 } },
+      "derived": { "x": "ln(1 - q / 100) / ln(1 - p / 100)" },
+      "constraints": ["abs(x - round(x, 0)) > 0.02", "x <= 12"],
+      "formula": "ceil(x)",
+      "tolerance": 0
+    },
+    "explanation": "Die Wahrscheinlichkeit für \"mindestens einmal Rot\" bei n Drehungen ist 1 − (1 − p)^n, dabei ist p der Rot-Anteil als Dezimalzahl. Gesucht ist das kleinste n, für das dieser Wert mindestens q % erreicht. Du kannst n schrittweise ausprobieren oder die Ungleichung (1 − p)^n ≤ 1 − q mit dem Logarithmus lösen und aufrunden.",
+    "hint": "Drücke „mindestens einmal Rot“ über das Gegenereignis in Abhängigkeit von n aus und probiere n schrittweise aus."
+  },
+  {
+    "code": "M5-024",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "numeric_template",
+    "stem": "In einer Urne liegen {{r}} rote und {{b}} blaue Kugeln. Du ziehst zweimal mit Zurücklegen. Berechne die Wahrscheinlichkeit, dass beide Kugeln dieselbe Farbe haben. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "r": { "min": 1, "max": 6, "step": 1 }, "b": { "min": 2, "max": 6, "step": 1 } },
+      "derived": { "n": "r + b" },
+      "formula": "100 * ((r / n)^2 + (b / n)^2)",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Zum Ereignis gehören zwei Pfade: rot – rot und blau – blau. Jeden Pfad berechnest du mit der Pfadmultiplikationsregel. Nach der Summenregel addierst du die beiden Pfadwahrscheinlichkeiten und rechnest in Prozent um.",
+    "hint": "Welche Pfade gehören zu „dieselbe Farbe“? Berechne jeden mit der Pfadregel und addiere sie."
+  },
+  {
+    "code": "M5-025",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "numeric_template",
+    "stem": "In einem Korb liegen {{r}} rote und {{g}} grüne Äpfel. Tom nimmt ohne hinzusehen nacheinander zwei Äpfel heraus. Berechne die Wahrscheinlichkeit, dass die beiden Äpfel verschiedene Farben haben. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "r": { "min": 2, "max": 8, "step": 1 }, "g": { "min": 2, "max": 8, "step": 1 } },
+      "derived": { "n": "r + g" },
+      "formula": "100 * (r / n * g / (n - 1) + g / n * r / (n - 1))",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Tom legt den ersten Apfel nicht zurück, also ist es ein Ziehen ohne Zurücklegen. Zum Ereignis gehören die Pfade rot – grün und grün – rot, bei beiden verkleinert sich der Nenner auf der zweiten Stufe um 1. Beide Pfade berechnen, addieren und in Prozent umrechnen.",
+    "hint": "Welche Pfade gehören zu „verschiedene Farben“, und legt Tom den ersten Apfel zurück?"
+  },
+  {
+    "code": "M5-026",
+    "skill_code": "M5.2",
+    "difficulty": 3,
+    "type": "numeric_template",
+    "stem": "Bei einer Tombola gibt es {{N}} Lose, davon sind {{g}} Gewinne. Du kaufst drei Lose. Berechne die Wahrscheinlichkeit, dass mindestens eines deiner Lose ein Gewinn ist. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": {
+      "params": { "N": { "min": 20, "max": 50, "step": 10 }, "g": { "min": 2, "max": 10, "step": 2 } },
+      "derived": { "m": "N - g" },
+      "formula": "100 * (1 - m / N * (m - 1) / (N - 1) * (m - 2) / (N - 2))",
+      "unit": "%",
+      "tolerance": 0.05
+    },
+    "explanation": "Das Gegenereignis ist \"drei Nieten\". Die Lose werden nicht zurückgelegt, also wird bei jedem Zug die Zahl der Nieten und die Gesamtzahl um 1 kleiner. Die Wahrscheinlichkeit für drei Nieten ziehst du von 1 ab und rechnest in Prozent um.",
+    "hint": "Rechne über das Gegenereignis „drei Nieten“ und denk daran, dass gekaufte Lose nicht zurückgelegt werden."
+  },
+  {
+    "code": "M5-027",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "numeric_template",
+    "stem": "Eine Maschine produziert {{p}} % fehlerhafte Schrauben. Aus einer sehr großen Lieferung werden zwei Schrauben zufällig geprüft. Du kannst so rechnen, als würde mit Zurücklegen gezogen. Berechne die Wahrscheinlichkeit, dass genau eine der beiden Schrauben fehlerhaft ist. Gib das Ergebnis in Prozent an, gerundet auf zwei Stellen nach dem Komma.",
+    "payload": {
+      "params": { "p": { "min": 2, "max": 10, "step": 1 } },
+      "formula": "100 * 2 * (p / 100) * (1 - p / 100)",
+      "unit": "%",
+      "tolerance": 0.005
+    },
+    "explanation": "Zum Ereignis \"genau eine fehlerhaft\" gehören zwei Pfade: fehlerhaft – in Ordnung und in Ordnung – fehlerhaft. Beide haben dieselbe Wahrscheinlichkeit p · (1 − p). Nach der Summenregel ergibt sich 2 · p · (1 − p), in Prozent umgerechnet.",
+    "hint": "Welche Pfade gehören zu „genau eine fehlerhaft“? Berechne jeden mit der Pfadregel und addiere sie."
+  },
+  {
+    "code": "M5-028",
+    "skill_code": "M5.2",
+    "difficulty": 1,
+    "type": "numeric_template",
+    "stem": "Glücksrad A bleibt mit {{a}} % Wahrscheinlichkeit auf Rot stehen, Glücksrad B mit {{b}} %. Beide werden einmal gedreht. Berechne die Wahrscheinlichkeit, dass beide auf Rot stehen bleiben. Gib das Ergebnis in Prozent an.",
+    "payload": {
+      "params": { "a": { "min": 10, "max": 90, "step": 10 }, "b": { "min": 10, "max": 90, "step": 10 } },
+      "constraints": ["a * b >= 400"],
+      "formula": "a * b / 100",
+      "unit": "%",
+      "tolerance": 0
+    },
+    "explanation": "Der Pfad \"A rot, B rot\" hat die beiden Astwahrscheinlichkeiten a und b. Nach der Pfadmultiplikationsregel werden sie multipliziert, am einfachsten als Dezimalzahlen. Das Produkt mal 100 ergibt das Ergebnis in Prozent.",
+    "hint": "Schreibe beide Prozentangaben als Dezimalzahlen und wende die Pfadmultiplikationsregel an."
+  },
+  {
+    "code": "M5-029",
+    "skill_code": "M5.2",
+    "difficulty": 3,
+    "type": "numeric_template",
+    "stem": "Auf dem Schulweg kommt Mia an zwei Ampeln vorbei, die unabhängig voneinander schalten. Die erste Ampel ist mit {{p}} % Wahrscheinlichkeit grün, die zweite mit {{q}} %. Berechne die Wahrscheinlichkeit, dass genau eine der beiden Ampeln grün ist. Gib das Ergebnis in Prozent an.",
+    "payload": {
+      "params": { "p": { "min": 20, "max": 80, "step": 10 }, "q": { "min": 20, "max": 80, "step": 10 } },
+      "formula": "(p * (100 - q) + (100 - p) * q) / 100",
+      "unit": "%",
+      "tolerance": 0
+    },
+    "explanation": "Zum Ereignis gehören zwei Pfade: erste grün und zweite nicht grün, oder erste nicht grün und zweite grün. Jeden Pfad berechnest du durch Multiplizieren, dabei ist \"nicht grün\" jeweils 1 minus die Grün-Wahrscheinlichkeit. Die beiden Pfadwahrscheinlichkeiten werden addiert.",
+    "hint": "Welche zwei Pfade gehören zu „genau eine grün“, und wie groß ist jeweils „nicht grün“?"
+  },
+  {
+    "code": "M5-030",
+    "skill_code": "M5.2",
+    "difficulty": 1,
+    "type": "mc",
+    "stem": "Ein Würfel wird dreimal geworfen. Welches Ereignis ist das Gegenereignis zu „mindestens einmal eine Sechs“?",
+    "payload": {
+      "options": ["keine einzige Sechs", "höchstens einmal eine Sechs", "genau einmal eine Sechs", "dreimal eine Sechs"]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Das Gegenereignis umfasst genau alle Ergebnisse, die nicht zum Ereignis gehören. Wenn nicht mindestens eine Sechs fällt, fällt gar keine. \"Höchstens einmal\" enthält auch den Fall mit genau einer Sechs und überschneidet sich deshalb mit dem Ereignis.",
+    "hint": "Das Gegenereignis enthält genau die Ergebnisse, die nicht zum Ereignis gehören, ohne Überschneidung."
+  },
+  {
+    "code": "M5-031",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "mc",
+    "stem": "Eine Münze wird zweimal geworfen. Wie groß ist die Wahrscheinlichkeit, mindestens einmal Kopf zu werfen?",
+    "payload": { "options": ["75 %", "50 %", "25 %", "100 %"] },
+    "solution": { "index": 0 },
+    "explanation": "Das Gegenereignis \"zweimal Zahl\" hat die Wahrscheinlichkeit 0,5 · 0,5 = 0,25. Also ist die gesuchte Wahrscheinlichkeit 1 − 0,25 = 0,75 = 75 %. Die 100 % entstehen, wenn man 50 % + 50 % addiert, statt die Pfade richtig zu betrachten.",
+    "hint": "Rechne über das Gegenereignis: Welcher Pfad enthält keinen einzigen Kopf?"
+  },
+  {
+    "code": "M5-032",
+    "skill_code": "M5.2",
+    "difficulty": 1,
+    "type": "mc",
+    "stem": "Ein Würfel wird zweimal geworfen. Wie groß ist die Wahrscheinlichkeit, zweimal eine Sechs zu werfen?",
+    "payload": { "options": ["1/36 ≈ 2,8 %", "2/6 ≈ 33,3 %", "1/12 ≈ 8,3 %", "1/6 ≈ 16,7 %"] },
+    "solution": { "index": 0 },
+    "explanation": "Nach der Pfadmultiplikationsregel gilt 1/6 · 1/6 = 1/36 ≈ 2,8 %. Die 2/6 entstehen, wenn man die Wahrscheinlichkeiten addiert statt multipliziert. Bei 1/12 wurden die Nenner addiert statt multipliziert.",
+    "hint": "Folge dem Pfad Sechs – Sechs: Werden die Astwahrscheinlichkeiten entlang eines Pfads addiert oder multipliziert?"
+  },
+  {
+    "code": "M5-033",
+    "skill_code": "M5.2",
+    "difficulty": 3,
+    "type": "mc",
+    "stem": "Ein Glücksrad bleibt mit der Wahrscheinlichkeit $0{,}4$ auf Rot stehen. Es wird dreimal gedreht. Wie groß ist die Wahrscheinlichkeit, mindestens einmal Rot zu erhalten?",
+    "payload": { "options": ["0,784", "0,216", "0,064", "0,936"] },
+    "solution": { "index": 0 },
+    "explanation": "Das Gegenereignis \"nie Rot\" hat die Wahrscheinlichkeit 0,6³ = 0,216. Also ist die gesuchte Wahrscheinlichkeit 1 − 0,216 = 0,784. Wer 0,216 wählt, hat vergessen, von 1 abzuziehen, und 0,064 = 0,4³ ist die Wahrscheinlichkeit für dreimal Rot.",
+    "hint": "Rechne über das Gegenereignis „nie Rot“ und überlege, wie du von dessen Wahrscheinlichkeit zur gesuchten kommst."
+  },
+  {
+    "code": "M5-034",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "mc",
+    "stem": "In einer Urne liegen 2 rote und 3 blaue Kugeln. Du ziehst zweimal mit Zurücklegen. Wie groß ist die Wahrscheinlichkeit, genau eine rote Kugel zu ziehen?",
+    "payload": { "options": ["0,48", "0,24", "0,52", "0,40"] },
+    "solution": { "index": 0 },
+    "explanation": "Zum Ereignis gehören die Pfade rot – blau und blau – rot, jeweils mit 0,4 · 0,6 = 0,24. Nach der Summenregel ergibt sich 0,24 + 0,24 = 0,48. Wer nur 0,24 angibt, hat den zweiten Pfad vergessen, und 0,52 ist die Wahrscheinlichkeit für zwei gleiche Farben.",
+    "hint": "Welche Pfade gehören zu „genau eine rote Kugel“? Berechne jeden mit der Pfadregel und addiere sie."
+  },
+  {
+    "code": "M5-035",
+    "skill_code": "M5.2",
+    "difficulty": 1,
+    "type": "numeric",
+    "stem": "Ein Würfel wird zweimal geworfen. Berechne die Wahrscheinlichkeit, dass keine Sechs fällt. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": { "unit": "%", "tolerance": 0.05 },
+    "solution": { "value": 69.4444 },
+    "explanation": "Bei jedem Wurf ist die Wahrscheinlichkeit für \"keine Sechs\" 5/6. Nach der Pfadmultiplikationsregel gilt 5/6 · 5/6 = 25/36 ≈ 0,694. Das sind etwa 69,4 %.",
+    "hint": "Wie groß ist die Wahrscheinlichkeit für „keine Sechs“ bei einem Wurf, und wie verknüpfst du zwei Würfe?"
+  },
+  {
+    "code": "M5-036",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "numeric",
+    "stem": "Ein Würfel wird dreimal geworfen. Berechne die Wahrscheinlichkeit, mindestens eine Sechs zu werfen. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": { "unit": "%", "tolerance": 0.05 },
+    "solution": { "value": 42.1296 },
+    "explanation": "Das Gegenereignis \"keine Sechs\" hat die Wahrscheinlichkeit (5/6)³ = 125/216 ≈ 0,579. Also gilt 1 − 125/216 = 91/216 ≈ 0,421. Das sind etwa 42,1 %.",
+    "hint": "Rechne über das Gegenereignis „keine Sechs in allen drei Würfen“."
+  },
+  {
+    "code": "M5-037",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "numeric",
+    "stem": "In einer Klasse sind 12 Mädchen und 13 Jungen. Für den Tafeldienst werden nacheinander zwei Personen ausgelost. Berechne die Wahrscheinlichkeit, dass beide Mädchen sind. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": { "unit": "%", "tolerance": 0.05 },
+    "solution": { "value": 22 },
+    "explanation": "Eine Person kann nicht zweimal ausgelost werden, also ist es ein Ziehen ohne Zurücklegen. Der Pfad Mädchen – Mädchen hat die Wahrscheinlichkeit 12/25 · 11/24 = 132/600 = 0,22. Das sind 22 %.",
+    "hint": "Kann dieselbe Person zweimal ausgelost werden? Überlege danach, wie sich Zähler und Nenner beim zweiten Zug ändern."
+  },
+  {
+    "code": "M5-038",
+    "skill_code": "M5.2",
+    "difficulty": 3,
+    "type": "numeric",
+    "stem": "Bei einer Verlosung gibt es 20 Lose, davon 4 Gewinne. Lena kauft zwei Lose. Berechne die Wahrscheinlichkeit, dass genau eines ihrer Lose ein Gewinn ist. Gib das Ergebnis in Prozent an, gerundet auf eine Stelle nach dem Komma.",
+    "payload": { "unit": "%", "tolerance": 0.05 },
+    "solution": { "value": 33.6842 },
+    "explanation": "Zum Ereignis gehören die Pfade Gewinn – Niete mit 4/20 · 16/19 und Niete – Gewinn mit 16/20 · 4/19. Beide ergeben 64/380, zusammen also 128/380 ≈ 0,337. Das sind etwa 33,7 %.",
+    "hint": "Welche zwei Pfade gehören zu „genau ein Gewinn“? Achte darauf, dass das erste Los nicht zurückgelegt wird."
+  },
+  {
+    "code": "M5-039",
+    "skill_code": "M5.2",
+    "difficulty": 3,
+    "type": "mc_multi",
+    "stem": "Ein Glücksrad bleibt mit der Wahrscheinlichkeit $0{,}3$ auf Rot stehen und wird dreimal gedreht. Mit welchen Rechnungen erhältst du die Wahrscheinlichkeit für „mindestens einmal Rot“?",
+    "payload": {
+      "options": [
+        "1 − 0,7³",
+        "1 − P(nie Rot)",
+        "0,3 + 0,3 + 0,3",
+        "3 · 0,3 · 0,7² + 3 · 0,3² · 0,7 + 0,3³",
+        "0,3³"
+      ]
+    },
+    "solution": { "indices": [0, 1, 3] },
+    "explanation": "Am schnellsten geht es über das Gegenereignis \"nie Rot\": 1 − 0,7³. Alternativ addierst du alle Pfade mit genau einmal, zweimal und dreimal Rot, das ergibt denselben Wert. Die 0,3 dreimal zu addieren ist falsch, und 0,3³ ist nur die Wahrscheinlichkeit für dreimal Rot.",
+    "hint": "Prüfe jede Rechnung: Nutzt sie das Gegenereignis richtig, oder erfasst sie alle passenden Pfade vollständig?"
+  },
+  {
+    "code": "M5-040",
+    "skill_code": "M5.2",
+    "difficulty": 2,
+    "type": "match",
+    "stem": "Eine Münze wird dreimal geworfen. Ordne jedem Ereignis sein Gegenereignis zu.",
+    "payload": {
+      "pairs": [
+        ["mindestens einmal Kopf", "keinmal Kopf"],
+        ["höchstens einmal Kopf", "mindestens zweimal Kopf"],
+        ["genau dreimal Kopf", "höchstens zweimal Kopf"],
+        ["genau einmal Kopf", "keinmal, zweimal oder dreimal Kopf"]
+      ]
+    },
+    "explanation": "Ereignis und Gegenereignis teilen alle möglichen Ergebnisse ohne Überschneidung auf, hier die Anzahlen 0, 1, 2 und 3 mal Kopf. Zu \"mindestens einmal\" gehören 1, 2, 3, also bleibt für das Gegenereignis nur 0. Genauso ergänzt du bei den anderen Ereignissen die fehlenden Anzahlen.",
+    "hint": "Liste die möglichen Anzahlen von Kopf auf und überlege, welche Anzahlen jedem Ereignis fehlen."
+  }
+]
