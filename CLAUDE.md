@@ -2,11 +2,12 @@
 
 Lern-App für Felix (10. Klasse Realschule Bayern, Zweig II: Deutsch, Englisch, Mathe II, BwR).
 Der vollständige Bauplan steht in `PLAN.md`. Die Skill-Struktur steht in `docs/lehrplan-struktur.md`. Beide zuerst lesen.
+Der Fokus-Modus (gezielt auf eine Schulaufgabe lernen) steht komplett in `docs/fokus-modus.md`.
 
 ## Nicht verhandelbar
 
 - Keine KI-API in der App. Aufgaben werden von Claude Code als JSON in `content/` geschrieben, nicht zur Laufzeit erzeugt.
-- Felix trifft keine Entscheidungen. Kein Themenwählen, keine Einstellungen. Die App zeigt "Heute starten" und sonst nichts.
+- Felix trifft keine Entscheidungen. Kein Themenwählen, keine Einstellungen. Die App zeigt "Heute starten" und sonst nichts. Einzige Ausnahme: das Eintragen einer Schulaufgabe (Fach, Datum, Themen) im Fokus-Modus, siehe `docs/fokus-modus.md`.
 - Mobile first. Jede Ansicht zuerst bei 390 px Breite prüfen. Touch-Ziele mindestens 48 px.
 - Sprache in der UI: Deutsch, Du-Form, direkt, nicht kindlich, nicht schulbuchartig. Englisch-Aufgaben auf Englisch.
 - Eltern-Login liest nur. Einzige Schreibrechte: Belohnungsbeträge und "ausgezahlt"-Markierung.

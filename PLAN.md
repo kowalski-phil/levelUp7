@@ -264,3 +264,9 @@ Opus 5.5 soll für Schritte 1-3 den `wizard`-Skill nutzen, damit Phil eine inter
 | Kalender weicht vom Unterricht ab | `unit_schedule` per SQL anpassbar. Spaced Repetition federt ab. |
 | Deutsch-Erörterung lässt sich nicht per Quiz lernen | Stimmt für den Gesamttext. Die Bausteine (Argumentstruktur, Übergänge, Gliederung, Stilmittel, Zeichensetzung) sehr wohl. Das ganze Aufsatzschreiben bleibt Aufgabe der Schule. |
 | iOS-Web-Push funktioniert nicht | Fallback: Phil erinnert. Ab iOS 16.4 funktioniert es zuverlässig im Home-Screen-Modus. |
+
+---
+
+## 12. Fokus-Modus (Nachtrag 2026-09-26)
+
+Gezielt auf eine Schulaufgabe lernen: Felix trägt Fach, Datum und Themen ein, die App liefert Fokus-Runden nur aus diesen Themen und färbt die Tagessession. Entweder Tagessession oder Fokus-Runde sichert den Streak. Vollständiger Bauplan mit Datenmodell, Engine, Tests und Screens: `docs/fokus-modus.md`. Wird vor Phase 4 gebaut.
