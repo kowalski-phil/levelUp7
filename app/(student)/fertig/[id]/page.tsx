@@ -1,10 +1,14 @@
 import { Flame, Shield, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { startFocus } from "@/app/(student)/fokus/actions";
 import { startBonus } from "@/app/(student)/session/actions";
 import { completeSession } from "@/lib/data/complete";
+import { loadExam } from "@/lib/data/exams";
 import { requireStudent } from "@/lib/data/queries";
 import { loadSession } from "@/lib/data/sessions";
+import { todayInBerlin } from "@/lib/engine/dates";
+import { activeExams } from "@/lib/engine/focus";
 import { formatNumberDe } from "@/lib/engine/template";
 
 export default async function FertigPage({ params }: PageProps<"/fertig/[id]">) {
@@ -15,13 +19,16 @@ export default async function FertigPage({ params }: PageProps<"/fertig/[id]">) 
   const summary = session.summary ?? (await completeSession(v, session));
   if (!summary) redirect(`/session/${id}`);
 
-  const daily = session.kind === "daily";
+  const headline = { daily: "Fertig für heute", bonus: "Bonus-Runde geschafft", focus: "Fokus-Runde geschafft" }[session.kind];
+  // "Noch eine Fokus-Runde" nur, solange die Schulaufgabe noch bevorsteht.
+  const exam = session.kind === "focus" && session.exam_id ? await loadExam(v, session.exam_id) : null;
+  const focusAgain = exam && activeExams([exam], todayInBerlin()).length ? exam : null;
   const minutes = Math.max(1, Math.round((session.duration_sec ?? 0) / 60));
 
   return (
     <div className="flex flex-1 flex-col gap-6 pt-6">
       <div className="text-center">
-        <p className="text-sm tracking-wide text-muted-foreground uppercase">{daily ? "Fertig für heute" : "Bonus-Runde geschafft"}</p>
+        <p className="text-sm tracking-wide text-muted-foreground uppercase">{headline}</p>
         <p className="mt-2 text-6xl font-extrabold tabular-nums">
           {session.correct}
           <span className="text-muted-foreground">/{session.total}</span>
@@ -66,9 +73,20 @@ export default async function FertigPage({ params }: PageProps<"/fertig/[id]">) 
       ))}
 
       <div className="mt-auto flex flex-col gap-3">
+        {focusAgain ? (
+          <form action={startFocus}>
+            <input type="hidden" name="exam" value={focusAgain.id} />
+            <button
+              className="h-14 w-full rounded-2xl border-2 text-lg font-bold"
+              style={{ borderColor: focusAgain.subjectColor }}
+            >
+              Noch eine Fokus-Runde
+            </button>
+          </form>
+        ) : null}
         <form action={startBonus}>
           <button className="h-14 w-full rounded-2xl border-2 border-primary text-lg font-bold text-primary">
-            {daily ? "Bonus-Runde (6 Aufgaben)" : "Noch eine Bonus-Runde"}
+            {session.kind === "bonus" ? "Noch eine Bonus-Runde" : "Bonus-Runde (6 Aufgaben)"}
           </button>
         </form>
         <Link href="/" className="grid h-14 w-full place-items-center rounded-2xl bg-primary text-lg font-bold text-primary-foreground">

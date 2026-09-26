@@ -44,11 +44,14 @@ export interface ItemStateRow {
   last_result: Result | null;
 }
 
+export type SessionKind = "daily" | "bonus" | "focus";
+
 export interface SessionRow {
   id: string;
   student_id: string;
   date: string;
-  kind: "daily" | "bonus";
+  kind: SessionKind;
+  exam_id: string | null;
   planned_item_ids: string[];
   started_at: string;
   finished_at: string | null;
@@ -90,4 +93,15 @@ export interface LedgerRow {
   amount_eur: number;
   earned_at: string;
   paid_at: string | null;
+}
+
+export interface ExamRow {
+  id: string;
+  student_id: string;
+  subject_id: string;
+  exam_date: string;
+  number: number;
+  skill_ids: string[];
+  created_at: string;
+  updated_at: string;
 }

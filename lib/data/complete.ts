@@ -9,7 +9,7 @@ const toState = (r: StreakRow | null): StreakState =>
   r ? { current: r.current, longest: r.longest, jokers: r.jokers, lastCompletedDate: r.last_completed_date } : initialStreak();
 
 /**
- * Schließt eine Session ab. Bei der Tagessession: Streak +1, Joker, Belohnungen.
+ * Schließt eine Session ab. Bei der Tagessession oder Fokus-Runde: Streak +1, Joker, Belohnungen.
  * Streak und Ledger schreibt nur der Service-Role-Client, erst nachdem geprüft ist,
  * dass alle geplanten Aufgaben beantwortet sind.
  */
@@ -45,7 +45,8 @@ export async function completeSession(v: Viewer, session: SessionRow): Promise<S
     rewards: [],
   };
 
-  if (session.kind === "daily") {
+  // Tagessession ODER Fokus-Runde sichert den Streak-Tag. completeDay zählt pro Datum nur einmal.
+  if (session.kind === "daily" || session.kind === "focus") {
     const r = completeDay(prev, session.date);
     if (r.counted) {
       await admin.from("streaks").upsert({

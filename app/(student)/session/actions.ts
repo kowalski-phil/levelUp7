@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import type { Answer } from "@/lib/content/types";
 import { completeSession } from "@/lib/data/complete";
+import { focusPlan, loadExam } from "@/lib/data/exams";
 import { requireStudent } from "@/lib/data/queries";
 import type { PlayerItem } from "@/components/session/types";
 import { createBonusSession, loadSession, planInput, rowToContentItem, toPlayerItems, type Viewer } from "@/lib/data/sessions";
@@ -124,9 +125,16 @@ export async function markNotYet(sessionId: string, itemId: string): Promise<{ r
     .upsert({ student_id: v.userId, skill_id: row.skill_id, until: addDays(today, SNOOZE_DAYS), created_at: new Date().toISOString() });
 
   // Ersatz planen (Skill ist jetzt zurückgestellt, Session-Aufgaben ausgeschlossen).
-  const [items] = await toPlayerItems(v, [itemId]);
-  const input = await planInput(v, today, new Set(session.planned_item_ids));
-  const replacementId = pickReplacement(input, items?.subjectCode ?? "M");
+  // In einer Fokus-Runde kommt der Ersatz aus der Schulaufgabe; der Skill bleibt dort gewählt.
+  const exclude = new Set(session.planned_item_ids);
+  const exam = session.kind === "focus" && session.exam_id ? await loadExam(v, session.exam_id) : null;
+  let replacementId: string | null;
+  if (exam) {
+    replacementId = (await focusPlan(v, exam, exclude, 1))[0] ?? null;
+  } else {
+    const [items] = await toPlayerItems(v, [itemId]);
+    replacementId = pickReplacement(await planInput(v, today, exclude), items?.subjectCode ?? "M");
+  }
   if (!replacementId) return { replacement: null };
 
   await v.supabase

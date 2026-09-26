@@ -7,6 +7,7 @@ import {
   type ScheduleEntry,
 } from "./calendar";
 import { diffDays, type ISODate } from "./dates";
+import { rankFocusItems } from "./focus";
 import type { Result } from "./sm2";
 
 export interface PlannerItem {
@@ -38,6 +39,8 @@ export interface PlanInput {
   exclude?: ReadonlySet<string>;
   /** Skill-Codes, die Felix als "hatten wir noch nicht" markiert hat: keine neuen Aufgaben daraus. */
   snoozedSkills?: ReadonlySet<string>;
+  /** Skills aktiver Schulaufgaben je Fach. Das Fach nimmt seine Aufgaben zuerst aus diesen Skills. */
+  focusSkills?: ReadonlyMap<string, ReadonlySet<string>>;
 }
 
 /** Reihenfolge in der Session: Fächer abwechseln. Im Prüfungsmodus Deutsch und Englisch zuerst. */
@@ -56,6 +59,18 @@ const byCode = (a: PlannerItem, b: PlannerItem) => (a.code < b.code ? -1 : a.cod
  * ungesehene aus früheren Gebieten, gesehene nach Fälligkeit, zuletzt ungesehene aus späteren Gebieten.
  */
 function rankSubject(subject: string, input: PlanInput): PlannerItem[] {
+  const focus = input.focusSkills?.get(subject);
+  if (!focus?.size) return rankSubjectBase(subject, input);
+
+  // Aktive Schulaufgabe im Fach: erst deren Skills im Drill-Modus, danach alles andere wie gewohnt.
+  const exclude = input.exclude ?? new Set<string>();
+  const focusItems = input.items.filter((i) => i.subject === subject && focus.has(i.skillCode) && !exclude.has(i.id));
+  const stateById = new Map(input.states.map((s) => [s.itemId, s]));
+  const rest = rankSubjectBase(subject, { ...input, items: input.items.filter((i) => !focus.has(i.skillCode)) });
+  return [...rankFocusItems(focusItems, stateById), ...rest];
+}
+
+function rankSubjectBase(subject: string, input: PlanInput): PlannerItem[] {
   const { schedule, today, schoolYearStart } = input;
   const exclude = input.exclude ?? new Set<string>();
   const stateById = new Map(input.states.map((s) => [s.itemId, s]));

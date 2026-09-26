@@ -1,6 +1,8 @@
 import { Flame } from "lucide-react";
+import { examStats, loadExams } from "@/lib/data/exams";
 import { requireParent } from "@/lib/data/queries";
-import { todayInBerlin } from "@/lib/engine/dates";
+import { addDays, todayInBerlin } from "@/lib/engine/dates";
+import { daysUntil } from "@/lib/engine/focus";
 import { balance } from "@/lib/engine/rewards";
 import { displayStreak, initialStreak } from "@/lib/engine/streak";
 import { formatNumberDe } from "@/lib/engine/template";
@@ -13,19 +15,24 @@ export default async function ElternPage() {
   const studentId = v.family.student_id;
   if (!studentId) return <p className="pt-10 text-muted-foreground">Noch kein Schüler-Konto verknüpft.</p>;
 
-  const [streakRes, ledgerRes, sessionsRes, snoozeRes, catalog] = await Promise.all([
+  const today = todayInBerlin();
+  const [streakRes, ledgerRes, sessionsRes, snoozeRes, catalog, allExams] = await Promise.all([
     v.supabase.from("streaks").select("*").eq("student_id", studentId).maybeSingle<StreakRow>(),
     v.supabase.from("rewards_ledger").select("*").eq("student_id", studentId),
     v.supabase
       .from("sessions")
-      .select("date, kind, correct, total, duration_sec, finished_at")
+      .select("id, date, kind, correct, total, duration_sec, finished_at")
       .eq("student_id", studentId)
-      .eq("kind", "daily")
+      .in("kind", ["daily", "focus"])
       .order("date", { ascending: false })
       .limit(14),
     v.supabase.from("skill_snooze").select("skill_id, until, created_at").eq("student_id", studentId).order("created_at", { ascending: false }),
     loadCatalog(v.supabase),
+    loadExams(v, studentId),
   ]);
+  // Schulaufgaben: kommende und die der letzten 60 Tage, neueste zuerst.
+  const exams = allExams.filter((e) => e.examDate >= addDays(today, -60)).reverse();
+  const stats = await examStats(v, exams.map((e) => e.id), studentId);
   const skillById = new Map(catalog.skills.map((sk) => [sk.id, sk]));
   const subjectName = new Map(catalog.subjects.map((x) => [x.code, x.name]));
   const snoozes = ((snoozeRes.data ?? []) as { skill_id: string; until: string; created_at: string }[]).flatMap((r) => {
@@ -36,12 +43,12 @@ export default async function ElternPage() {
   const s = streakRes.data;
   const streak = displayStreak(
     s ? { current: s.current, longest: s.longest, jokers: s.jokers, lastCompletedDate: s.last_completed_date } : initialStreak(),
-    todayInBerlin(),
+    today,
   );
   const money = balance(
     ((ledgerRes.data ?? []) as LedgerRow[]).map((l) => ({ type: l.type, label: l.label, amountEur: Number(l.amount_eur), paidAt: l.paid_at })),
   );
-  const sessions = (sessionsRes.data ?? []) as Pick<SessionRow, "date" | "correct" | "total" | "duration_sec" | "finished_at">[];
+  const sessions = (sessionsRes.data ?? []) as Pick<SessionRow, "id" | "date" | "kind" | "correct" | "total" | "duration_sec" | "finished_at">[];
 
   return (
     <div className="flex flex-col gap-6 pt-4">
@@ -66,13 +73,43 @@ export default async function ElternPage() {
         <ul className="divide-y divide-border rounded-2xl bg-card">
           {sessions.length === 0 ? <li className="p-4 text-muted-foreground">Noch keine Sessions.</li> : null}
           {sessions.map((x) => (
-            <li key={x.date} className="flex justify-between p-4 tabular-nums">
-              <span>{new Date(`${x.date}T12:00:00`).toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" })}</span>
+            <li key={x.id} className="flex justify-between p-4 tabular-nums">
+              <span>
+                {new Date(`${x.date}T12:00:00`).toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" })}
+                {x.kind === "focus" ? <span className="text-muted-foreground"> · Fokus</span> : null}
+              </span>
               <span className="text-muted-foreground">
                 {x.finished_at ? `${x.correct}/${x.total} · ${Math.round((x.duration_sec ?? 0) / 60)} Min` : `angefangen (${x.total})`}
               </span>
             </li>
           ))}
+        </ul>
+      </section>
+      <section>
+        <h2 className="mb-2 font-semibold">Schulaufgaben</h2>
+        <ul className="divide-y divide-border rounded-2xl bg-card">
+          {exams.length === 0 ? <li className="p-4 text-muted-foreground">Felix hat keine Schulaufgabe eingetragen.</li> : null}
+          {exams.map((e) => {
+            const st = stats.get(e.id);
+            const d = daysUntil(e, today);
+            const when = d < 0 ? "vorbei" : d === 0 ? "heute" : d === 1 ? "morgen" : `in ${d} Tagen`;
+            return (
+              <li key={e.id} className="p-4">
+                <p>
+                  <span className="font-semibold" style={{ color: e.subjectColor }}>
+                    {e.subjectName}
+                  </span>{" "}
+                  · {e.number}. Schulaufgabe · {fmt(`${e.examDate}T12:00:00`)} ({when})
+                </p>
+                <p className="text-sm text-muted-foreground tabular-nums">
+                  {st?.sessions
+                    ? `${st.sessions} Fokus-${st.sessions === 1 ? "Runde" : "Runden"} · ${Math.round((st.correct / Math.max(st.total, 1)) * 100)} % richtig · zuletzt ${fmt(`${st.lastDate}T12:00:00`)}`
+                    : "Noch keine Fokus-Runde"}
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">Themen: {e.skillTitles.join(", ")}</p>
+              </li>
+            );
+          })}
         </ul>
       </section>
       <section>

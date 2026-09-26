@@ -1,9 +1,11 @@
 import "server-only";
 import type { ContentItem } from "@/lib/content/types";
 import { todayInBerlin } from "@/lib/engine/dates";
+import { focusSkillsBySubject } from "@/lib/engine/focus";
 import { planBonus, planDaily, type PlanInput } from "@/lib/engine/planner";
 import type { PlayerItem } from "@/components/session/types";
 import type { ItemRow, SessionRow } from "@/lib/supabase/types";
+import { loadExams } from "./exams";
 import { loadCatalog, loadItemStates, toPlannerStates, type Viewer } from "./queries";
 
 export function rowToContentItem(row: ItemRow, skillCode = ""): ContentItem {
@@ -31,10 +33,11 @@ export async function loadSnoozedSkills(v: Viewer, today: string): Promise<Set<s
 }
 
 export async function planInput(v: Viewer, today: string, exclude?: Set<string>): Promise<PlanInput> {
-  const [catalog, states, snoozedSkills] = await Promise.all([
+  const [catalog, states, snoozedSkills, exams] = await Promise.all([
     loadCatalog(v.supabase),
     loadItemStates(v.supabase, v.userId),
     loadSnoozedSkills(v, today),
+    loadExams(v),
   ]);
   return {
     items: catalog.items,
@@ -45,6 +48,8 @@ export async function planInput(v: Viewer, today: string, exclude?: Set<string>)
     examDate: v.family.exam_date,
     exclude,
     snoozedSkills,
+    // Aktive Schulaufgaben färben die Tagessession: das Fach übt deren Themen.
+    focusSkills: focusSkillsBySubject(exams, today),
   };
 }
 

@@ -1,11 +1,14 @@
-import { Check, Flame, Shield, Star } from "lucide-react";
+import { CalendarPlus, Check, ChevronRight, Flame, Pencil, Shield, Star } from "lucide-react";
 import Link from "next/link";
+import { startFocus } from "@/app/(student)/fokus/actions";
 import { startBonus } from "@/app/(student)/session/actions";
+import { examStats, loadExams, type ExamInfo, type ExamStats } from "@/lib/data/exams";
 import { skillStars } from "@/lib/data/progress";
 import { loadAnswerHistory, loadCatalog, requireStudent } from "@/lib/data/queries";
 import { findDailySession } from "@/lib/data/sessions";
 import { activeUnits, weekOf } from "@/lib/engine/calendar";
 import { todayInBerlin } from "@/lib/engine/dates";
+import { activeExams, daysUntil, FOCUS_COUNT } from "@/lib/engine/focus";
 import { SUBJECT_ROTATION } from "@/lib/engine/planner";
 import { balance } from "@/lib/engine/rewards";
 import { displayStreak, initialStreak } from "@/lib/engine/streak";
@@ -17,14 +20,21 @@ export default async function HomePage() {
   const v = await requireStudent();
   const today = todayInBerlin();
 
-  const [catalog, history, streakRes, ledgerRes, xpRes, daily] = await Promise.all([
+  const [catalog, history, streakRes, ledgerRes, xpRes, daily, allExams] = await Promise.all([
     loadCatalog(v.supabase),
     loadAnswerHistory(v.supabase, v.userId),
     v.supabase.from("streaks").select("*").eq("student_id", v.userId).maybeSingle<StreakRow>(),
     v.supabase.from("rewards_ledger").select("amount_eur, paid_at").eq("student_id", v.userId),
     v.supabase.from("sessions").select("xp").eq("student_id", v.userId),
     findDailySession(v, today),
+    loadExams(v),
   ]);
+  const exams = activeExams(allExams, today);
+  const stats = await examStats(v, exams.map((e) => e.id));
+  const poolSize = (e: ExamInfo) => {
+    const skills = new Set(e.skillCodes);
+    return catalog.items.filter((i) => skills.has(i.skillCode)).length;
+  };
 
   const s = streakRes.data;
   const streak = displayStreak(
@@ -57,8 +67,11 @@ export default async function HomePage() {
     });
 
   const planned = daily?.planned_item_ids.length ?? 12;
-  const doneToday = !!daily?.finished_at;
-  const inProgress = daily && !daily.finished_at && daily.total > 0;
+  const dailyDone = !!daily?.finished_at;
+  // Streak-Tag gesichert: Tagessession ODER Fokus-Runde abgeschlossen.
+  const doneToday = dailyDone || s?.last_completed_date === today;
+  const inProgress = !!daily && !daily.finished_at && daily.total > 0;
+  const [nextExam, ...otherExams] = exams;
   const noContent = catalog.items.length === 0;
 
   return (
@@ -92,15 +105,28 @@ export default async function HomePage() {
             <div>
               <p className="text-xl font-bold">Heute erledigt</p>
               <p className="text-muted-foreground">
-                {daily.correct}/{daily.total} richtig. Morgen geht&apos;s weiter.
+                {dailyDone && daily ? `${daily.correct}/${daily.total} richtig. ` : null}Streak gesichert. Mehr geht immer.
               </p>
             </div>
           </div>
+          {nextExam ? <FocusButton exam={nextExam} today={today} pool={poolSize(nextExam)} variant="secondary" /> : null}
+          {!dailyDone ? (
+            <Link href="/session" className="grid h-14 w-full place-items-center rounded-2xl border-2 border-border text-lg font-bold">
+              {inProgress ? "Normale Runde weitermachen" : "Normale Runde"}
+            </Link>
+          ) : null}
           <form action={startBonus}>
             <button className="h-14 w-full rounded-2xl border-2 border-primary text-lg font-bold text-primary">
               Bonus-Runde (6 Aufgaben)
             </button>
           </form>
+        </div>
+      ) : nextExam ? (
+        <div className="flex flex-col gap-3">
+          <FocusButton exam={nextExam} today={today} pool={poolSize(nextExam)} stats={stats.get(nextExam.id)} variant="primary" />
+          <Link href="/session" className="grid min-h-14 w-full place-items-center rounded-2xl border-2 border-border px-4 text-lg font-bold">
+            {inProgress ? `Normale Runde weitermachen (${daily.total} erledigt)` : `Normale Runde (${planned} Aufgaben)`}
+          </Link>
         </div>
       ) : (
         <Link
@@ -113,6 +139,14 @@ export default async function HomePage() {
           </span>
         </Link>
       )}
+
+      {!noContent && otherExams.length > 0 ? (
+        <section className="flex flex-col gap-2">
+          {otherExams.map((e) => (
+            <ExamRow key={e.id} exam={e} today={today} pool={poolSize(e)} />
+          ))}
+        </section>
+      ) : null}
 
       <section className="grid grid-cols-2 gap-3">
         {tiles.map(({ subject, earned, max, hasItems, unitTitle }) => (
@@ -128,6 +162,124 @@ export default async function HomePage() {
           </div>
         ))}
       </section>
+
+      <Link href="/fokus/neu" className="flex h-12 items-center justify-center gap-2 text-muted-foreground">
+        <CalendarPlus className="size-5" />
+        Schulaufgabe eintragen
+      </Link>
+    </div>
+  );
+}
+
+function whenText(exam: ExamInfo, today: string): string {
+  const d = daysUntil(exam, today);
+  if (d <= 0) return "heute";
+  if (d === 1) return "morgen";
+  return `in ${d} Tagen`;
+}
+
+/** Fokus-Block der nächsten Schulaufgabe: groß vor dem Streak-Tag, als Zweitoption danach. */
+function FocusButton({
+  exam,
+  today,
+  pool,
+  stats,
+  variant,
+}: {
+  exam: ExamInfo;
+  today: string;
+  pool: number;
+  stats?: ExamStats;
+  variant: "primary" | "secondary";
+}) {
+  const count = Math.min(pool, FOCUS_COUNT);
+  const head = `${exam.subjectName} · ${exam.number}. Schulaufgabe · ${whenText(exam, today)}`;
+
+  if (variant === "secondary") {
+    return (
+      <div className="flex items-stretch overflow-hidden rounded-2xl border-2" style={{ borderColor: exam.subjectColor }}>
+        <form action={startFocus} className="flex-1">
+          <input type="hidden" name="exam" value={exam.id} />
+          <button
+            disabled={pool === 0}
+            className="flex min-h-14 w-full flex-col items-center justify-center py-2 pl-12 font-bold disabled:opacity-40"
+          >
+            <span className="text-lg">{pool === 0 ? "Noch keine Aufgaben zu diesen Themen" : "Noch eine Fokus-Runde"}</span>
+            <span className="text-xs font-normal text-muted-foreground">{head}</span>
+          </button>
+        </form>
+        <Link
+          href={`/fokus/${exam.id}`}
+          aria-label="Themen ändern"
+          className="grid w-12 shrink-0 place-items-center text-muted-foreground"
+        >
+          <Pencil className="size-4" />
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="rounded-3xl bg-card p-4" style={{ borderTop: `4px solid ${exam.subjectColor}` }}>
+      <p className="text-sm font-semibold" style={{ color: exam.subjectColor }}>
+        {head}
+      </p>
+      <form action={startFocus} className="mt-3">
+        <input type="hidden" name="exam" value={exam.id} />
+        <button
+          disabled={pool === 0}
+          className="flex min-h-24 w-full flex-col items-center justify-center rounded-2xl bg-primary p-4 text-center text-primary-foreground shadow-lg active:scale-[0.99] disabled:opacity-40"
+        >
+          <span className="text-2xl font-extrabold">{pool === 0 ? "Noch keine Aufgaben zu diesen Themen" : "Fokus starten"}</span>
+          {pool > 0 ? (
+            <span className="mt-1 line-clamp-1 text-sm opacity-80">
+              {count} Aufgaben · {exam.skillTitles.join(", ")}
+            </span>
+          ) : null}
+        </button>
+      </form>
+      <div className="mt-2 flex items-center justify-between gap-2">
+        <p className="text-xs text-muted-foreground tabular-nums">
+          {stats?.sessions
+            ? `${stats.sessions} Fokus-${stats.sessions === 1 ? "Runde" : "Runden"} · ${Math.round((stats.correct / Math.max(stats.total, 1)) * 100)} % richtig`
+            : null}
+        </p>
+        <Link href={`/fokus/${exam.id}`} className="-mr-2 flex h-12 items-center gap-0.5 px-2 text-sm text-muted-foreground">
+          Themen ändern
+          <ChevronRight className="size-4" />
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+/** Weitere Schulaufgabe als schmale Zeile: Tippen startet eine Fokus-Runde, Stift ändert die Themen. */
+function ExamRow({ exam, today, pool }: { exam: ExamInfo; today: string; pool: number }) {
+  const date = new Date(`${exam.examDate}T12:00:00`).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
+  return (
+    <div className="flex items-stretch overflow-hidden rounded-2xl bg-card" style={{ borderLeft: `4px solid ${exam.subjectColor}` }}>
+      <form action={startFocus} className="flex-1">
+        <input type="hidden" name="exam" value={exam.id} />
+        <button disabled={pool === 0} className="flex min-h-14 w-full items-center gap-2 px-4 text-left disabled:opacity-40">
+          <span className="flex-1">
+            <span className="block font-semibold">
+              {exam.subjectName} · {date}
+            </span>
+            <span className="text-xs text-muted-foreground">
+              {exam.number}. Schulaufgabe · {whenText(exam, today)}
+            </span>
+          </span>
+          <span className="text-sm font-semibold text-primary">{pool === 0 ? "Keine Aufgaben" : "Fokus starten"}</span>
+          {pool > 0 ? <ChevronRight className="size-4 text-primary" /> : null}
+        </button>
+      </form>
+      <Link
+        href={`/fokus/${exam.id}`}
+        aria-label="Themen ändern"
+        className="grid w-12 shrink-0 place-items-center border-l border-border text-muted-foreground"
+      >
+        <Pencil className="size-4" />
+      </Link>
     </div>
   );
 }

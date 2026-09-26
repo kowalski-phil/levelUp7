@@ -29,7 +29,7 @@ const FEEDBACK: Record<Exclude<Result, "skipped">, { title: string; className: s
   wrong: { title: "Nicht ganz", className: "border-red-500/60 bg-red-500/10" },
 };
 
-export function SessionPlayer({ sessionId, kind, items: initialItems, answered, preview = false }: PlayerProps) {
+export function SessionPlayer({ sessionId, kind, items: initialItems, answered, preview = false, label, labelColor }: PlayerProps) {
   const [items, setItems] = useState<PlayerItem[]>(initialItems);
   const [skipped, setSkipped] = useState<Set<string>>(
     () => new Set(Object.entries(answered).filter(([, r]) => r === "not_yet").map(([id]) => id)),
@@ -144,7 +144,12 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
         <div className="h-3 flex-1 overflow-hidden rounded-full bg-muted">
           <div className="h-full rounded-full bg-primary transition-all" style={{ width: `${(progress / Math.max(total, 1)) * 100}%` }} />
         </div>
-        <span className="w-12 text-right text-sm text-muted-foreground tabular-nums">
+        <span className="min-w-12 shrink-0 text-right text-sm text-muted-foreground tabular-nums">
+          {label ? (
+            <span className="font-semibold" style={{ color: labelColor }}>
+              {label} ·{" "}
+            </span>
+          ) : null}
           {Math.min(position + 1, total)}/{total}
         </span>
       </header>
