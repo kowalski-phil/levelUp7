@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { startFocus } from "@/app/(student)/fokus/actions";
 import { startBonus } from "@/app/(student)/session/actions";
+import { AppBadge } from "@/components/app-badge";
 import { completeSession } from "@/lib/data/complete";
 import { loadExam } from "@/lib/data/exams";
 import { requireStudent } from "@/lib/data/queries";
@@ -27,6 +28,7 @@ export default async function FertigPage({ params }: PageProps<"/fertig/[id]">) 
 
   return (
     <div className="flex flex-1 flex-col gap-6 pt-6">
+      <AppBadge count={summary.streak} />
       <div className="text-center">
         <p className="text-sm tracking-wide text-muted-foreground uppercase">{headline}</p>
         <p className="mt-2 text-6xl font-extrabold tabular-nums">

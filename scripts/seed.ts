@@ -96,7 +96,13 @@ async function seedContent() {
   if (stale.length) must(await db.from("items").update({ active: false }).in("code", stale), "items deaktivieren");
 
   const schedule = buildSchedule(
-    structure.units.map((u) => ({ code: u.code, subject: u.subject, hours: u.hours, orderIndex: unitRows.find((r) => r.code === u.code)!.order_index })),
+    structure.units.map((u) => ({
+      code: u.code,
+      subject: u.subject,
+      hours: u.hours,
+      orderIndex: unitRows.find((r) => r.code === u.code)!.order_index,
+      scheduleOrder: u.schedule_order,
+    })),
     SCHOOL_YEAR_START,
     EXAM_DATE,
   );

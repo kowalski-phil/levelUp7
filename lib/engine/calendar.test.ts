@@ -29,6 +29,22 @@ describe("calendar", () => {
     ]);
   });
 
+  it("Unterrichtsreihenfolge schlägt Lehrplanreihenfolge", () => {
+    const order: Record<string, number> = { M5: 1, M1: 2, M4: 3, M2: 4, M3: 5 };
+    const s = buildSchedule(
+      mathe.map((u) => ({ ...u, scheduleOrder: order[u.code] })),
+      START,
+      EXAM,
+    );
+    expect(s.map((e) => [e.unitCode, e.weekFrom, e.weekTo])).toEqual([
+      ["M5", 1, 4],
+      ["M1", 5, 11],
+      ["M4", 12, 23],
+      ["M2", 24, 30],
+      ["M3", 31, 34],
+    ]);
+  });
+
   it("jeder Lernbereich bekommt mindestens eine Woche", () => {
     const units = [
       { code: "X1", subject: "X", hours: 100, orderIndex: 1 },

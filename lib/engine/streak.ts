@@ -1,4 +1,4 @@
-import { diffDays, type ISODate } from "./dates";
+import { addDays, diffDays, type ISODate } from "./dates";
 
 export interface StreakState {
   current: number;
@@ -8,7 +8,8 @@ export interface StreakState {
 }
 
 export const MAX_JOKERS = 2;
-export const JOKER_EVERY = 7;
+/** Alle 14 Streak-Tage gibt es einen Joker (Phil, 2026-09-26: 7 war zu großzügig). */
+export const JOKER_EVERY = 14;
 
 export function initialStreak(): StreakState {
   return { current: 0, longest: 0, jokers: 0, lastCompletedDate: null };
@@ -68,4 +69,74 @@ export function completeDay(stored: StreakState, today: ISODate): CompletionResu
 /** Streak, wie er heute angezeigt wird (verpasste Tage bis gestern verrechnet). */
 export function displayStreak(stored: StreakState, today: ISODate): StreakState {
   return reconcile(stored, today).state;
+}
+
+export type DayMark = "done" | "saved";
+
+/**
+ * Markierung je Kalendertag für die Streak-Anzeige: "done" = Runde geschafft, "saved" = von einem Joker gerettet.
+ * Tage ohne Eintrag waren verpasst (oder liegen vor dem ersten Streak). Spielt den Verlauf mit denselben Regeln nach,
+ * inklusive der verpassten Tage bis gestern.
+ */
+export function dayMarks(completedDates: readonly ISODate[], today: ISODate): Map<ISODate, DayMark> {
+  const marks = new Map<ISODate, DayMark>();
+  const dates = [...new Set(completedDates)].filter((d) => d <= today).sort();
+  let state = initialStreak();
+  const markSaved = (from: ISODate | null, count: number) => {
+    if (!from) return;
+    for (let i = 1; i <= count; i++) marks.set(addDays(from, i), "saved");
+  };
+  for (const d of dates) {
+    const before = state.lastCompletedDate;
+    const r = completeDay(state, d);
+    markSaved(before, r.jokersUsed);
+    marks.set(d, "done");
+    state = r.state;
+  }
+  const { jokersUsed } = reconcile(state, today);
+  markSaved(state.lastCompletedDate, jokersUsed);
+  return marks;
+}
+
+export type WeekDayStatus = "done" | "saved" | "today" | "missed" | "future" | "before";
+
+export interface WeekDay {
+  date: ISODate;
+  label: string;
+  status: WeekDayStatus;
+}
+
+const WEEKDAY_LABELS = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
+
+/** Montag der Woche, in der das Datum liegt. */
+export function mondayOf(date: ISODate): ISODate {
+  const [y, m, d] = date.split("-").map(Number);
+  const dow = new Date(Date.UTC(y, m - 1, d)).getUTCDay(); // 0 = Sonntag
+  return addDays(date, -((dow + 6) % 7));
+}
+
+/**
+ * Die aktuelle Woche (Mo bis So) für die Streak-Anzeige.
+ * "before" = vor dem ersten geschafften Tag überhaupt (weder Flamme noch Lücke anzeigen).
+ */
+export function weekView(marks: ReadonlyMap<ISODate, DayMark>, today: ISODate): WeekDay[] {
+  const first = [...marks.keys()].sort()[0] ?? null;
+  const monday = mondayOf(today);
+  return WEEKDAY_LABELS.map((label, i) => {
+    const date = addDays(monday, i);
+    const mark = marks.get(date);
+    let status: WeekDayStatus;
+    if (mark) status = mark;
+    else if (date === today) status = "today";
+    else if (date > today) status = "future";
+    else if (!first || date < first) status = "before";
+    else status = "missed";
+    return { date, label, status };
+  });
+}
+
+/** Wie viele geschaffte Tage bis zum nächsten Joker; null, wenn der Vorrat voll ist. */
+export function daysToNextJoker(state: StreakState): number | null {
+  if (state.jokers >= MAX_JOKERS) return null;
+  return JOKER_EVERY - (state.current % JOKER_EVERY);
 }

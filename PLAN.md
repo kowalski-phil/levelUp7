@@ -107,7 +107,7 @@ Item mit `lapses >= 4` gilt als Problemfall und taucht im Eltern-Dashboard unter
 ### 4.4 Streak und Joker
 
 - Streak-Tag = Tagessession abgeschlossen (alle 12 beantwortet, Richtigkeit egal).
-- Alle 7 Streak-Tage: 1 Joker, max. 2 im Vorrat.
+- Alle 14 Streak-Tage: 1 Joker, max. 2 im Vorrat (bis 2026-09-26 waren es 7).
 - Verpasster Tag: Joker wird automatisch verbraucht, Streak bleibt. Kein Joker: Streak auf 0.
 - Ferien zählen ganz normal. 15 Minuten gehen immer.
 
@@ -187,7 +187,7 @@ Phils Rolle: Nach dem Seed 10 zufällige Items pro Fach in der App durchklicken.
 
 Schüler:
 1. **Login** – E-Mail, Passwort, "eingeloggt bleiben". Einmal, dann nie wieder.
-2. **Home** – Ein großer Button "Heute starten (12 Aufgaben, ~15 Min)". Darüber Streak-Zahl mit Flamme, Joker-Anzeige, Belohnungskonto in Euro. Darunter vier Fach-Kacheln mit Sterne-Fortschritt. Sonst nichts.
+2. **Home** – Ein großer Button "Heute starten (12 Aufgaben, ~15 Min)". Darüber Streak-Karte mit Wochenzeile (Tippen öffnet die Streak-Seite), nächste Schulaufgabe, Belohnungskonto in Euro. Darunter vier Fach-Kacheln mit Sterne-Fortschritt. Sonst nichts.
 3. **Session** – Eine Aufgabe pro Bildschirm, Fortschrittsbalken oben (1/12), Antwort, sofortiges Feedback grün/rot mit Erklärung, Button "Weiter". Keine Rückwärts-Navigation.
 4. **Fertig** – Ergebnis (9/12), XP, Streak +1, ggf. "Joker verdient", ggf. "Wochenbonus: +5 Euro". Buttons "Bonus-Runde" und "Fertig".
 5. **Skill-Tree** – pro Fach die Lernbereiche als Pfad (wie Duolingo), jeder Skill mit Sternen, aktueller Lernbereich hervorgehoben. Nur Ansicht, einzige Aktion: "Bonus-Runde in diesem Gebiet".

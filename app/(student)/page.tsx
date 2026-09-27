@@ -1,29 +1,31 @@
-import { CalendarPlus, Check, ChevronRight, Flame, Pencil, Shield, Star } from "lucide-react";
+import { CalendarClock, CalendarPlus, Check, ChevronRight, Flame, Pencil, Shield, Star } from "lucide-react";
 import Link from "next/link";
 import { startFocus } from "@/app/(student)/fokus/actions";
 import { startBonus } from "@/app/(student)/session/actions";
+import { AppBadge } from "@/components/app-badge";
+import { WeekRow } from "@/components/streak/week-row";
 import { examStats, loadExams, type ExamInfo, type ExamStats } from "@/lib/data/exams";
 import { skillStars } from "@/lib/data/progress";
 import { loadAnswerHistory, loadCatalog, requireStudent } from "@/lib/data/queries";
 import { findDailySession } from "@/lib/data/sessions";
+import { loadStreakView } from "@/lib/data/streak";
 import { activeUnits, weekOf } from "@/lib/engine/calendar";
 import { todayInBerlin } from "@/lib/engine/dates";
 import { activeExams, daysUntil, FOCUS_COUNT } from "@/lib/engine/focus";
 import { SUBJECT_ROTATION } from "@/lib/engine/planner";
 import { balance } from "@/lib/engine/rewards";
-import { displayStreak, initialStreak } from "@/lib/engine/streak";
 import { formatNumberDe } from "@/lib/engine/template";
 import { levelFor } from "@/lib/engine/xp";
-import type { LedgerRow, StreakRow } from "@/lib/supabase/types";
+import type { LedgerRow } from "@/lib/supabase/types";
 
 export default async function HomePage() {
   const v = await requireStudent();
   const today = todayInBerlin();
 
-  const [catalog, history, streakRes, ledgerRes, xpRes, daily, allExams] = await Promise.all([
+  const [catalog, history, streakView, ledgerRes, xpRes, daily, allExams] = await Promise.all([
     loadCatalog(v.supabase),
     loadAnswerHistory(v.supabase, v.userId),
-    v.supabase.from("streaks").select("*").eq("student_id", v.userId).maybeSingle<StreakRow>(),
+    loadStreakView(v, today),
     v.supabase.from("rewards_ledger").select("amount_eur, paid_at").eq("student_id", v.userId),
     v.supabase.from("sessions").select("xp").eq("student_id", v.userId),
     findDailySession(v, today),
@@ -36,11 +38,7 @@ export default async function HomePage() {
     return catalog.items.filter((i) => skills.has(i.skillCode)).length;
   };
 
-  const s = streakRes.data;
-  const streak = displayStreak(
-    s ? { current: s.current, longest: s.longest, jokers: s.jokers, lastCompletedDate: s.last_completed_date } : initialStreak(),
-    today,
-  );
+  const { streak } = streakView;
   const money = balance(
     ((ledgerRes.data ?? []) as Pick<LedgerRow, "amount_eur" | "paid_at">[]).map((l) => ({
       type: "",
@@ -69,32 +67,72 @@ export default async function HomePage() {
   const planned = daily?.planned_item_ids.length ?? 12;
   const dailyDone = !!daily?.finished_at;
   // Streak-Tag gesichert: Tagessession ODER Fokus-Runde abgeschlossen.
-  const doneToday = dailyDone || s?.last_completed_date === today;
+  const doneToday = dailyDone || streakView.doneToday;
   const inProgress = !!daily && !daily.finished_at && daily.total > 0;
   const [nextExam, ...otherExams] = exams;
   const noContent = catalog.items.length === 0;
 
   return (
     <div className="flex flex-1 flex-col gap-6">
+      <AppBadge count={streak.current} />
       <header className="flex items-center justify-between pt-2">
-        <div className="flex items-center gap-2">
-          <Flame className={streak.current > 0 ? "size-8 text-orange-400" : "size-8 text-muted-foreground"} />
-          <span className="text-3xl font-extrabold tabular-nums">{streak.current}</span>
-          <span className="flex gap-0.5 pl-1" aria-label={`${streak.jokers} Joker`}>
-            {Array.from({ length: 2 }, (_, i) => (
-              <Shield key={i} className={i < streak.jokers ? "size-5 text-sky-400" : "size-5 text-muted-foreground/30"} />
-            ))}
-          </span>
-        </div>
+        <p className="text-sm text-muted-foreground">
+          Level {level.level} · {level.name}
+          <br />
+          {xp} XP
+        </p>
         <div className="text-right">
           <p className="text-2xl font-bold text-green-400 tabular-nums">{formatNumberDe(money.open, 2)} €</p>
           <p className="text-xs text-muted-foreground">offen</p>
         </div>
       </header>
 
-      <p className="text-sm text-muted-foreground">
-        Level {level.level} · {level.name} · {xp} XP
-      </p>
+      <Link
+        href="/streak"
+        className="-mt-2 flex flex-col gap-3 rounded-3xl bg-gradient-to-br from-orange-500/25 to-card p-4 active:scale-[0.99]"
+        aria-label={`Streak: ${streak.current} Tage, ${streak.jokers} Joker`}
+      >
+        <div className="flex items-center gap-3">
+          <Flame
+            className={streak.current > 0 ? "size-12 fill-orange-400 text-orange-500" : "size-12 text-muted-foreground"}
+          />
+          <div className="flex-1">
+            <p className="text-4xl leading-none font-extrabold tabular-nums">{streak.current}</p>
+            <p className="text-sm text-muted-foreground">{streak.current === 1 ? "Tag in Folge" : "Tage in Folge"}</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="flex gap-0.5">
+              {Array.from({ length: 2 }, (_, i) => (
+                <Shield
+                  key={i}
+                  className={i < streak.jokers ? "size-6 fill-sky-400/30 text-sky-400" : "size-6 text-muted-foreground/30"}
+                />
+              ))}
+            </span>
+            <span className="text-xs text-muted-foreground">Joker</span>
+          </div>
+          <ChevronRight className="size-5 text-muted-foreground" />
+        </div>
+        <WeekRow week={streakView.week} />
+      </Link>
+
+      {nextExam ? (
+        <Link
+          href={`/fokus/${nextExam.id}`}
+          className="-mt-2 flex min-h-12 items-center gap-3 rounded-2xl bg-card px-4 py-2"
+          style={{ borderLeft: `4px solid ${nextExam.subjectColor}` }}
+        >
+          <CalendarClock className="size-5 shrink-0 text-muted-foreground" />
+          <span className="flex-1 text-sm">
+            <span className="text-muted-foreground">Nächste Schulaufgabe: </span>
+            <span className="font-semibold" style={{ color: nextExam.subjectColor }}>
+              {nextExam.subjectName}
+            </span>{" "}
+            · {new Date(`${nextExam.examDate}T12:00:00`).toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" })} ·{" "}
+            <span className="font-semibold">{whenText(nextExam, today)}</span>
+          </span>
+        </Link>
+      ) : null}
 
       {noContent ? (
         <div className="rounded-3xl bg-card p-6 text-center text-muted-foreground">Noch keine Aufgaben geladen.</div>

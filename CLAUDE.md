@@ -3,6 +3,7 @@
 Lern-App für Felix (10. Klasse Realschule Bayern, Zweig II: Deutsch, Englisch, Mathe II, BwR).
 Der vollständige Bauplan steht in `PLAN.md`. Die Skill-Struktur steht in `docs/lehrplan-struktur.md`. Beide zuerst lesen.
 Der Fokus-Modus (gezielt auf eine Schulaufgabe lernen) steht komplett in `docs/fokus-modus.md`.
+Felix' Schulbücher, ihre Kapitel und der aktuelle Unterrichtsstand stehen in `docs/schulbuecher.md`. Vor dem Schreiben neuer Aufgaben lesen.
 
 ## Nicht verhandelbar
 

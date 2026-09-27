@@ -7,14 +7,14 @@
     "stem": "Am 30.3.2026 überweist ein Unternehmen die Märzlöhne in Höhe von 18.500 € per Bank. Was liegt im Geschäftsjahr 2026 vor?",
     "payload": {
       "options": [
-        "Aufwand und Auszahlung, beide im Jahr 2026",
-        "Nur eine Auszahlung, aber kein Aufwand",
-        "Auszahlung 2026, Aufwand erst 2027",
-        "Nur Aufwand, aber keine Auszahlung"
+        "Aufwand und Ausgabe, beide im Jahr 2026",
+        "Nur eine Ausgabe, aber kein Aufwand",
+        "Ausgabe 2026, Aufwand erst 2027",
+        "Nur Aufwand, aber keine Ausgabe"
       ]
     },
     "solution": { "index": 0 },
-    "explanation": "Die Löhne für März mindern das Eigenkapital im März 2026, das ist Aufwand. Gleichzeitig fließt Geld vom Bankkonto ab, das ist eine Auszahlung. Weil Arbeitsleistung und Zahlung im selben Jahr liegen, fallen Aufwand und Auszahlung zusammen.",
+    "explanation": "Die Löhne für März mindern das Eigenkapital im März 2026, das ist Aufwand. Gleichzeitig fließt Geld vom Bankkonto ab, das ist eine Ausgabe. Weil Arbeitsleistung und Zahlung im selben Jahr liegen, fallen Aufwand und Ausgabe zusammen.",
     "hint": "Frag dich zweimal: Fließt Geld ab? Und für welchen Zeitraum wurde die Arbeit geleistet?"
   },
   {
@@ -22,7 +22,7 @@
     "skill_code": "B1.1",
     "type": "mc",
     "difficulty": 1,
-    "stem": "Was versteht man in der Buchführung unter einer **Auszahlung**?",
+    "stem": "Was versteht man in der Buchführung unter einer **Ausgabe**?",
     "payload": {
       "options": [
         "Abfluss von Bargeld oder Bankguthaben",
@@ -32,8 +32,8 @@
       ]
     },
     "solution": { "index": 0 },
-    "explanation": "Eine Auszahlung verringert die Zahlungsmittel, also Kasse oder Bank. Der Werteverzehr, der das Eigenkapital mindert, heißt Aufwand. Auszahlung und Aufwand können zeitlich auseinanderfallen.",
-    "hint": "Denk an das Wort selbst: Bei einer Auszahlung geht es um Geld, das sich bewegt, nicht um das Eigenkapital."
+    "explanation": "Eine Ausgabe verringert die Zahlungsmittel, also Kasse oder Bank. Der Werteverzehr, der das Eigenkapital mindert, heißt Aufwand. Ausgabe und Aufwand können zeitlich auseinanderfallen.",
+    "hint": "Denk an das Wort selbst: Bei einer Ausgabe geht es um Geld, das sich bewegt, nicht um das Eigenkapital."
   },
   {
     "code": "B1-003",
@@ -43,14 +43,14 @@
     "stem": "Am 31.12.2026 schreibt die Bank einem Unternehmen Zinsen für das Jahr 2026 in Höhe von 240 € gut. Was liegt im Jahr 2026 vor?",
     "payload": {
       "options": [
-        "Ertrag und Einzahlung",
-        "Nur eine Einzahlung, aber kein Ertrag",
-        "Nur ein Ertrag, aber keine Einzahlung",
-        "Aufwand und Auszahlung"
+        "Ertrag und Einnahme",
+        "Nur eine Einnahme, aber kein Ertrag",
+        "Nur ein Ertrag, aber keine Einnahme",
+        "Aufwand und Ausgabe"
       ]
     },
     "solution": { "index": 0 },
-    "explanation": "Die Zinsen für 2026 erhöhen das Eigenkapital im Jahr 2026, das ist ein Ertrag. Gleichzeitig steigt das Bankguthaben, das ist eine Einzahlung. Beides fällt ins selbe Geschäftsjahr, deshalb ist keine Abgrenzung nötig.",
+    "explanation": "Die Zinsen für 2026 erhöhen das Eigenkapital im Jahr 2026, das ist ein Ertrag. Gleichzeitig steigt das Bankguthaben, das ist eine Einnahme. Beides fällt ins selbe Geschäftsjahr, deshalb ist keine Abgrenzung nötig.",
     "hint": "Prüfe getrennt: Verändert sich das Bankguthaben, und für welches Jahr werden die Zinsen gezahlt?"
   },
   {
@@ -61,14 +61,14 @@
     "stem": "Ein Unternehmen hat eine Lagerhalle vermietet. Am 20.12.2026 überweist der Mieter die Miete für Januar 2027 (800 €) auf das Bankkonto des Unternehmens. Welche Aussage trifft zu?",
     "payload": {
       "options": [
-        "Einzahlung 2026, Ertrag erst 2027",
-        "Einzahlung und Ertrag 2026",
-        "Ertrag 2026, Einzahlung erst 2027",
-        "Auszahlung 2026, Aufwand erst 2027"
+        "Einnahme 2026, Ertrag erst 2027",
+        "Einnahme und Ertrag 2026",
+        "Ertrag 2026, Einnahme erst 2027",
+        "Ausgabe 2026, Aufwand erst 2027"
       ]
     },
     "solution": { "index": 0 },
-    "explanation": "Das Geld geht schon 2026 auf dem Bankkonto ein, also ist es eine Einzahlung 2026. Die Miete bezahlt aber die Nutzung im Januar 2027, deshalb ist der Ertrag erst 2027 entstanden. Wer Einzahlung und Ertrag gleichsetzt, weist den Gewinn 2026 zu hoch aus.",
+    "explanation": "Das Geld geht schon 2026 auf dem Bankkonto ein, also ist es eine Einnahme 2026. Die Miete bezahlt aber die Nutzung im Januar 2027, deshalb ist der Ertrag erst 2027 entstanden. Wer Einnahme und Ertrag gleichsetzt, weist den Gewinn 2026 zu hoch aus.",
     "hint": "Wann kommt das Geld an, und für welchen Monat wird die Halle eigentlich genutzt?"
   },
   {
@@ -76,25 +76,27 @@
     "skill_code": "B1.1",
     "type": "mc",
     "difficulty": 2,
-    "stem": "Am 30.6.2026 tilgt ein Unternehmen ein Bankdarlehen mit 5.000 € per Banküberweisung. Welche Aussage trifft zu?",
+    "stem": "Am 30.6.2026 kauft ein Unternehmen ein unbebautes Grundstück für 45.000 € und bezahlt per Banküberweisung. Welche Aussage trifft zu?",
     "payload": {
       "options": [
-        "Nur Auszahlung: Bankguthaben und Darlehensschuld sinken gleich stark, das Eigenkapital bleibt gleich.",
-        "Aufwand und Auszahlung von 5.000 €, weil Geld vom Bankkonto abfließt.",
-        "Ertrag von 5.000 €, weil die Schulden sinken.",
-        "Aufwand von 5.000 €, aber keine Auszahlung."
+        "Nur Ausgabe: Das Bankguthaben sinkt, das Anlagevermögen steigt um denselben Betrag, das Eigenkapital bleibt gleich.",
+        "Aufwand und Ausgabe von 45.000 €, weil Geld vom Bankkonto abfließt.",
+        "Ertrag von 45.000 €, weil das Unternehmen ein Grundstück dazugewinnt.",
+        "Aufwand von 45.000 €, aber keine Ausgabe."
       ]
     },
-    "solution": { "index": 0 },
-    "explanation": "Bei der Tilgung fließt Geld ab, also liegt eine Auszahlung vor. Gleichzeitig sinken die Schulden um denselben Betrag, das Eigenkapital ändert sich nicht. Deshalb ist die Tilgung weder Aufwand noch Ertrag.",
-    "hint": "Überleg, ob sich durch die Tilgung das Eigenkapital verändert oder nur Vermögen und Schulden gleichzeitig kleiner werden."
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Beim Kauf fließt Geld vom Bankkonto ab, also liegt eine Ausgabe vor. Gleichzeitig kommt ein Grundstück im selben Wert ins Anlagevermögen, das Eigenkapital ändert sich nicht. Deshalb ist der Kauf kein Aufwand. Weil sich ein Grundstück nicht abnutzt, entsteht auch später kein Aufwand durch Abschreibung.",
+    "hint": "Überleg, ob sich durch den Kauf das Eigenkapital verändert oder ob nur ein Vermögensposten gegen einen anderen getauscht wird."
   },
   {
     "code": "B1-006",
     "skill_code": "B1.1",
     "type": "mc_multi",
     "difficulty": 2,
-    "stem": "Bei welchen Geschäftsfällen fallen Aufwand und Auszahlung **vollständig** ins Jahr 2026? Wähle alle zutreffenden aus.",
+    "stem": "Bei welchen Geschäftsfällen fallen Aufwand und Ausgabe **vollständig** ins Jahr 2026? Wähle alle zutreffenden aus.",
     "payload": {
       "options": [
         "Barkauf von Büromaterial am 12.5.2026, das sofort verbraucht wird",
@@ -104,8 +106,14 @@
         "Überweisung der Grundsteuer für das Jahr 2026 am 15.8.2026"
       ]
     },
-    "solution": { "indices": [0, 1, 4] },
-    "explanation": "Büromaterial, Dezembergehälter und Grundsteuer 2026 werden 2026 bezahlt und gehören wirtschaftlich zu 2026. Bei der Kfz-Versicherung gehören neun Monate zu 2027, die Auszahlung ist also größer als der Aufwand 2026. Die Tilgung ist eine Auszahlung ohne Aufwand.",
+    "solution": {
+      "indices": [
+        0,
+        1,
+        4
+      ]
+    },
+    "explanation": "Büromaterial, Dezembergehälter und Grundsteuer 2026 werden 2026 bezahlt und gehören wirtschaftlich zu 2026. Bei der Kfz-Versicherung gehören neun Monate zu 2027, die Ausgabe ist also größer als der Aufwand 2026. Die Tilgung ist kein Aufwand, weil nur Bankguthaben und Schulden gleichzeitig sinken.",
     "hint": "Prüfe jeden Fall einzeln: Fließt 2026 Geld ab, und gehört der gesamte Werteverzehr auch zu 2026?"
   },
   {
@@ -113,19 +121,25 @@
     "skill_code": "B1.1",
     "type": "mc_multi",
     "difficulty": 3,
-    "stem": "Welche Geschäftsfälle führen im Jahr 2026 zu einer Einzahlung, die (ganz oder teilweise) **kein** Ertrag des Jahres 2026 ist? Wähle alle zutreffenden aus.",
+    "stem": "Welche Geschäftsfälle führen im Jahr 2026 zu einer Einnahme, die (ganz oder teilweise) **kein** Ertrag des Jahres 2026 ist? Wähle alle zutreffenden aus.",
     "payload": {
       "options": [
         "Ein Mieter überweist am 1.11.2026 die Miete für die Zeit vom 1.11.2026 bis 30.4.2027.",
         "Die Bank schreibt am 31.12.2026 Zinsen für das Jahr 2026 gut.",
-        "Das Unternehmen nimmt am 1.7.2026 ein Bankdarlehen über 20.000 € auf.",
-        "Ein Kunde begleicht am 10.3.2026 eine Rechnung für eine Lieferung vom Dezember 2025.",
-        "Das Unternehmen verkauft am 5.5.2026 eigene Erzeugnisse gegen Barzahlung."
+        "Ein Pächter überweist am 1.10.2026 die Jahrespacht für ein Grundstück für die Zeit vom 1.10.2026 bis 30.9.2027.",
+        "Ein Mitarbeiter überweist am 28.12.2026 die Miete für seine Werkswohnung für Januar 2027.",
+        "Die Bank schreibt am 30.6.2026 Zinsen für das erste Halbjahr 2026 gut."
       ]
     },
-    "solution": { "indices": [0, 2, 3] },
-    "explanation": "Bei der Mietvorauszahlung gehören vier Monate zum Ertrag 2027. Die Darlehensaufnahme erhöht nur die Schulden, sie ist nie ein Ertrag. Der Ertrag aus der Lieferung vom Dezember 2025 wurde schon 2025 gebucht, 2026 kommt nur das Geld.",
-    "hint": "Prüfe bei jedem Fall: Kommt 2026 Geld herein, und erhöht genau dieser Betrag das Eigenkapital des Jahres 2026?"
+    "solution": {
+      "indices": [
+        0,
+        2,
+        3
+      ]
+    },
+    "explanation": "Bei der Mietvorauszahlung gehören vier Monate zum Ertrag 2027, bei der Jahrespacht neun Monate. Die Januarmiete für die Werkswohnung ist vollständig Ertrag 2027. Bei den Zinsen für 2026 fallen Einnahme und Ertrag ins selbe Jahr.",
+    "hint": "Prüfe bei jedem Fall: Kommt 2026 Geld herein, und für welchen Zeitraum wird eigentlich bezahlt?"
   },
   {
     "code": "B1-008",
@@ -137,11 +151,11 @@
       "pairs": [
         ["Aufwand", "Werteverzehr, der das Eigenkapital mindert"],
         ["Ertrag", "Wertzuwachs, der das Eigenkapital erhöht"],
-        ["Auszahlung", "Abfluss von Bargeld oder Bankguthaben"],
-        ["Einzahlung", "Zufluss von Bargeld oder Bankguthaben"]
+        ["Ausgabe", "Abfluss von Bargeld oder Bankguthaben"],
+        ["Einnahme", "Zufluss von Bargeld oder Bankguthaben"]
       ]
     },
-    "explanation": "Aufwand und Ertrag betreffen das Eigenkapital und damit den Erfolg. Auszahlung und Einzahlung betreffen nur die Zahlungsmittel Kasse und Bank. Beide Paare können zeitlich auseinanderfallen.",
+    "explanation": "Aufwand und Ertrag betreffen das Eigenkapital und damit den Erfolg. Ausgabe und Einnahme betreffen nur die Zahlungsmittel Kasse und Bank. Beide Paare können zeitlich auseinanderfallen.",
     "hint": "Unterscheide zwei Fragen: Geht es um Geld, das fließt, oder um eine Veränderung des Eigenkapitals?"
   },
   {
@@ -152,13 +166,25 @@
     "stem": "Ordne jedem Geschäftsfall die richtige Einordnung aus Sicht des Unternehmens zu.",
     "payload": {
       "pairs": [
-        ["Überweisung der Dezemberlöhne am 30.12.2026", "Aufwand und Auszahlung 2026"],
-        ["Überweisung der Januarmiete 2027 an den Vermieter am 28.12.2026", "Auszahlung 2026, Aufwand 2027"],
-        ["Ein Mieter überweist am 29.12.2026 die Januarmiete 2027", "Einzahlung 2026, Ertrag 2027"],
-        ["Aufnahme eines Bankdarlehens am 1.4.2026", "Einzahlung 2026, kein Ertrag"]
+        [
+          "Überweisung der Dezemberlöhne am 30.12.2026",
+          "Aufwand und Ausgabe 2026"
+        ],
+        [
+          "Überweisung der Januarmiete 2027 an den Vermieter am 28.12.2026",
+          "Ausgabe 2026, Aufwand 2027"
+        ],
+        [
+          "Ein Mieter überweist am 29.12.2026 die Januarmiete 2027",
+          "Einnahme 2026, Ertrag 2027"
+        ],
+        [
+          "Die Bank schreibt am 31.12.2026 Zinsen für das Jahr 2026 gut",
+          "Einnahme und Ertrag 2026"
+        ]
       ]
     },
-    "explanation": "Entscheidend ist, in welchem Jahr die Leistung wirtschaftlich stattfindet, nicht wann das Geld fließt. Bei Vorauszahlungen fließt das Geld 2026, Aufwand oder Ertrag gehören aber zu 2027. Ein Darlehen erhöht nur Bank und Schulden, das Eigenkapital bleibt gleich.",
+    "explanation": "Entscheidend ist, in welchem Jahr die Leistung wirtschaftlich stattfindet, nicht wann das Geld fließt. Bei Vorauszahlungen fließt das Geld 2026, Aufwand oder Ertrag gehören aber zu 2027. Bei Löhnen und Zinsen für 2026 fallen Zahlung und Erfolg ins selbe Jahr.",
     "hint": "Frag bei jedem Fall: In welchem Jahr fließt das Geld, und zu welchem Jahr gehört die Leistung wirtschaftlich?"
   },
   {
@@ -169,10 +195,10 @@
     "stem": "Ordne jeder Situation zum 31.12.2026 die passende Maßnahme zu.",
     "payload": {
       "pairs": [
-        ["Auszahlung 2026, Aufwand teilweise erst 2027", "Aktive Rechnungsabgrenzung"],
-        ["Einzahlung 2026, Ertrag teilweise erst 2027", "Passive Rechnungsabgrenzung"],
+        ["Ausgabe 2026, Aufwand teilweise erst 2027", "Aktive Rechnungsabgrenzung"],
+        ["Einnahme 2026, Ertrag teilweise erst 2027", "Passive Rechnungsabgrenzung"],
         ["Aufwand 2026, Zahlung erst 2027, Höhe noch ungewiss", "Rückstellung"],
-        ["Aufwand und Auszahlung vollständig 2026", "Keine Abgrenzung nötig"]
+        ["Aufwand und Ausgabe vollständig 2026", "Keine Abgrenzung nötig"]
       ]
     },
     "explanation": "Mit der ARA wird im Voraus bezahlter Aufwand ins neue Jahr verschoben, mit der PRA im Voraus erhaltener Ertrag. Eine Rückstellung erfasst Aufwand des alten Jahres, dessen Höhe oder Fälligkeit noch nicht feststeht. Liegen Zahlung und Aufwand im selben Jahr, ist nichts abzugrenzen.",
@@ -452,7 +478,7 @@
     "skill_code": "B1.3",
     "type": "booking",
     "difficulty": 2,
-    "stem": "Ein Unternehmen hat eine Lagerhalle vermietet. Am 1.11.2026 überweist der Mieter die Miete für die Zeit vom 1.11.2026 bis 30.4.2027 in Höhe von 3.600 €. Die Einzahlung wurde auf 5400 Nebenerlöse gebucht. Bilde den Buchungssatz zum 31.12.2026.",
+    "stem": "Ein Unternehmen hat eine Lagerhalle vermietet. Am 1.11.2026 überweist der Mieter die Miete für die Zeit vom 1.11.2026 bis 30.4.2027 in Höhe von 3.600 €. Die Zahlung wurde auf 5400 Nebenerlöse gebucht. Bilde den Buchungssatz zum 31.12.2026.",
     "payload": {
       "accounts": [
         "2800 Bank",
@@ -465,8 +491,18 @@
       ]
     },
     "solution": {
-      "soll": [{ "account": "5400 Nebenerlöse", "amount": 2400 }],
-      "haben": [{ "account": "4900 Passive Rechnungsabgrenzung", "amount": 2400 }]
+      "soll": [
+        {
+          "account": "5400 Nebenerlöse",
+          "amount": 2400
+        }
+      ],
+      "haben": [
+        {
+          "account": "4900 Passive Rechnungsabgrenzung",
+          "amount": 2400
+        }
+      ]
     },
     "explanation": "Die Monatsmiete beträgt 3.600 € : 6 = 600 €. Januar bis April 2027 sind 4 Monate, also 2.400 € Ertrag des neuen Jahres. Dieser Betrag wird aus 5400 herausgenommen (Soll) und als PRA passiviert (Haben).",
     "hint": "Gehört der ganze Ertrag ins alte Jahr? Überleg, welcher Teil ins neue Jahr gehört und wie du ihn aus dem Ertragskonto herausnimmst."
@@ -547,7 +583,7 @@
     "skill_code": "B1.3",
     "type": "booking",
     "difficulty": 3,
-    "stem": "Ein Unternehmen hat eine Garage vermietet. Der Mieter überweist am 1.9.2026 die Jahresmiete für die Zeit vom 1.9.2026 bis 31.8.2027 in Höhe von 1.440 €. Die Einzahlung wurde auf 5400 Nebenerlöse gebucht. Bilde den Buchungssatz zum 31.12.2026.",
+    "stem": "Ein Unternehmen hat eine Garage vermietet. Der Mieter überweist am 1.9.2026 die Jahresmiete für die Zeit vom 1.9.2026 bis 31.8.2027 in Höhe von 1.440 €. Die Zahlung wurde auf 5400 Nebenerlöse gebucht. Bilde den Buchungssatz zum 31.12.2026.",
     "payload": {
       "accounts": [
         "2800 Bank",
@@ -560,8 +596,18 @@
       ]
     },
     "solution": {
-      "soll": [{ "account": "5400 Nebenerlöse", "amount": 960 }],
-      "haben": [{ "account": "4900 Passive Rechnungsabgrenzung", "amount": 960 }]
+      "soll": [
+        {
+          "account": "5400 Nebenerlöse",
+          "amount": 960
+        }
+      ],
+      "haben": [
+        {
+          "account": "4900 Passive Rechnungsabgrenzung",
+          "amount": 960
+        }
+      ]
     },
     "explanation": "Die Monatsmiete beträgt 1.440 € : 12 = 120 €. Zu 2027 gehören Januar bis August, also 8 Monate = 960 €, nicht die 4 Monate von 2026. Dieser Ertrag des neuen Jahres wird von 5400 auf die PRA umgebucht.",
     "hint": "Wie viele Monate der Jahresmiete gehören ins neue Jahr, und wie korrigierst du den zu hohen Ertrag im alten Jahr?"

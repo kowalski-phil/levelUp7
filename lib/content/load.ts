@@ -10,6 +10,8 @@ export interface Structure {
     subject: SubjectCode;
     title: string;
     hours: number;
+    /** Reihenfolge im Unterricht, wenn sie vom Lehrplan abweicht. Fehlt sie, gilt die Reihenfolge in dieser Datei. */
+    schedule_order?: number;
     skills: { code: string; title: string; description: string }[];
   }[];
 }

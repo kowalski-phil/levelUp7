@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Fotos der Schulbücher und Screenshot-Vorlagen (groß, nur lokal; Inhalt steht in docs/schulbuecher.md)
+assets/buecher/
+assets/streak status.jpg

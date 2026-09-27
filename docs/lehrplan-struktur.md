@@ -37,7 +37,7 @@ Quelle Termine: https://www.stark-verlag.de/blog/pruefungstermine-bayern-2027 un
 
 | LB | Titel | Std. | Skills |
 |---|---|---|---|
-| B1 | Periodenrichtige Erfolgsermittlung und Rückstellungen | 10 | Aufwand/Auszahlung und Ertrag/Einzahlung unterscheiden; Geschäftsfälle periodengerecht abgrenzen; aktive und passive Rechnungsabgrenzung; Rückstellungen bilden und auflösen |
+| B1 | Periodenrichtige Erfolgsermittlung und Rückstellungen | 10 | Ausgabe/Aufwand und Einnahme/Ertrag unterscheiden; Geschäftsfälle periodengerecht abgrenzen; aktive und passive Rechnungsabgrenzung; Rückstellungen bilden und auflösen |
 | B2 | Unternehmensabschluss und Auswertung | 17 | vereinfachte Bilanz und GuV erstellen; Konten zu Bilanzposten verdichten; Kennzahlen berechnen (Eigenkapitalquote, Rentabilität, Liquidität) und wirtschaftliche Lage beurteilen |
 | B3 | Vollkostenrechnung: Kostenarten, Kostenstellen, Kostenträger | 30 | Zusammenhang der Rechnungskreise; Aufwendungen in Kostenarten gliedern; Kostenstellen und Verteilungsschlüssel; Betriebsabrechnungsbogen (BAB); Zuschlagssätze; Selbstkosten und Angebotspreis (Vorwärts- und Rückwärtskalkulation) |
 | B4 | Teilkostenrechnung | 15 | Voll- vs. Teilkosten; Deckungsbeitrag; Gewinnschwelle (Break-even); Eigenfertigung oder Fremdbezug; Preisnachlässe und Zusatzaufträge beurteilen |

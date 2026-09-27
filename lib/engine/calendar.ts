@@ -5,6 +5,8 @@ export interface UnitInput {
   subject: string;
   hours: number;
   orderIndex: number;
+  /** Reihenfolge im Unterricht, falls sie vom Lehrplan abweicht (z. B. Mathe: Daten und Zufall zuerst). */
+  scheduleOrder?: number;
 }
 
 export interface ScheduleEntry {
@@ -48,7 +50,7 @@ export function buildSchedule(units: readonly UnitInput[], start: ISODate, examD
 
   const out: ScheduleEntry[] = [];
   for (const [subject, list] of bySubject) {
-    const sorted = [...list].sort((a, b) => a.orderIndex - b.orderIndex);
+    const sorted = [...list].sort((a, b) => (a.scheduleOrder ?? a.orderIndex) - (b.scheduleOrder ?? b.orderIndex));
     if (ROTATING_SUBJECTS.has(subject)) {
       for (const u of sorted) out.push({ subject, unitCode: u.code, weekFrom: 1, weekTo: weeks });
       continue;
