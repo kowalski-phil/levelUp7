@@ -13,3 +13,9 @@ export async function signIn(_prev: string | null, formData: FormData): Promise<
   if (error) return "E-Mail oder Passwort stimmt nicht.";
   redirect("/");
 }
+
+export async function signOut(): Promise<void> {
+  const supabase = await createClient();
+  await supabase.auth.signOut();
+  redirect("/login");
+}

@@ -11,7 +11,7 @@ Die App ist live: https://levelup10-zeta.vercel.app
 
 ## Backlog für Claude Code (in dieser Reihenfolge)
 
-1. **Logout.** Felix und Phil können sich bisher nicht abmelden. Muss auf jeden Fall rein.
+1. ~~**Logout.**~~ Erledigt 2026-09-28: "Abmelden" unten auf Home (Felix) und oben im Eltern-Überblick, mit Rückfrage.
 2. **Deutsch und Englisch.** Noch keine einzige Aufgabe. Reihenfolge nach `docs/schulbuecher.md`:
    - Deutsch D4 zuerst: Kommasetzung, Groß- und Kleinschreibung (Buch Kapitel 11.2).
    - Englisch E2 zuerst: Zeiten (Language File LF1) und Wortschatz Unit 1.

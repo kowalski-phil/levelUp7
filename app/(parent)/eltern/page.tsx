@@ -1,4 +1,5 @@
 import { Flame } from "lucide-react";
+import { LogoutButton } from "@/components/logout-button";
 import { examStats, loadExams } from "@/lib/data/exams";
 import { requireParent } from "@/lib/data/queries";
 import { addDays, todayInBerlin } from "@/lib/engine/dates";
@@ -52,7 +53,10 @@ export default async function ElternPage() {
 
   return (
     <div className="flex flex-col gap-6 pt-4">
-      <h1 className="text-2xl font-bold">Überblick</h1>
+      <header className="flex items-center justify-between">
+        <h1 className="text-2xl font-bold">Überblick</h1>
+        <LogoutButton className="-mr-2" />
+      </header>
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-2xl bg-card p-4">
           <p className="text-sm text-muted-foreground">Streak</p>
