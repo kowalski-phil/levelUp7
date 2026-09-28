@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { activeUnits, buildSchedule, isExamMode, totalWeeks, unlockedSkillCount, weekOf, newContentEnd } from "./calendar";
+import { activeUnits, buildSchedule, isExamMode, totalWeeks, unitPhase, unlockedSkillCount, weekOf, weekStart, newContentEnd } from "./calendar";
 
 const START = "2026-09-16";
 const EXAM = "2027-06-23";
@@ -92,5 +92,33 @@ describe("calendar", () => {
     expect(unlockedSkillCount(e, 5, 5)).toBe(3);
     expect(unlockedSkillCount(e, 7, 5)).toBe(5);
     expect(unlockedSkillCount(e, 99, 5)).toBe(5);
+  });
+});
+
+describe("unitPhase und weekStart", () => {
+  const schedule = [
+    { subject: "M", unitCode: "M5", weekFrom: 1, weekTo: 4 },
+    { subject: "M", unitCode: "M1", weekFrom: 5, weekTo: 12 },
+    { subject: "M", unitCode: "M4", weekFrom: 13, weekTo: 30 },
+  ];
+
+  it("vorbei, läuft gerade, kommt noch", () => {
+    expect(unitPhase(schedule, "M5", 6)).toBe("past");
+    expect(unitPhase(schedule, "M1", 6)).toBe("current");
+    expect(unitPhase(schedule, "M4", 6)).toBe("future");
+  });
+
+  it("nach dem Plan-Ende bleibt das letzte Gebiet aktuell", () => {
+    expect(unitPhase(schedule, "M4", 40)).toBe("current");
+    expect(unitPhase(schedule, "M1", 40)).toBe("past");
+  });
+
+  it("Gebiet ohne Kalendereintrag gilt als kommend", () => {
+    expect(unitPhase(schedule, "M2", 6)).toBe("future");
+  });
+
+  it("erster Tag der Schulwoche (gezählt ab Schuljahresbeginn)", () => {
+    expect(weekStart(START, 1)).toBe("2026-09-16");
+    expect(weekStart(START, 13)).toBe("2026-12-09");
   });
 });

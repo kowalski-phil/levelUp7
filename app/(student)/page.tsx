@@ -196,8 +196,16 @@ export default async function HomePage() {
 
       <section className="grid grid-cols-2 gap-3">
         {tiles.map(({ subject, earned, max, hasItems, unitTitle }) => (
-          <div key={subject.code} className="rounded-2xl bg-card p-4" style={{ borderTop: `4px solid ${subject.color}` }}>
-            <p className="font-bold">{subject.name}</p>
+          <Link
+            key={subject.code}
+            href={`/fach/${subject.code}`}
+            className="rounded-2xl bg-card p-4 active:scale-[0.98]"
+            style={{ borderTop: `4px solid ${subject.color}` }}
+          >
+            <p className="flex items-center justify-between font-bold">
+              {subject.name}
+              <ChevronRight className="size-4 text-muted-foreground" />
+            </p>
             <p className="mt-0.5 line-clamp-2 min-h-8 text-xs text-muted-foreground">
               {hasItems ? (unitTitle ?? "Alle Bereiche") : "Aufgaben folgen"}
             </p>
@@ -205,7 +213,7 @@ export default async function HomePage() {
               <Star className="size-4 fill-yellow-400 text-yellow-400" />
               {earned}/{max}
             </p>
-          </div>
+          </Link>
         ))}
       </section>
 

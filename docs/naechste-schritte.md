@@ -18,9 +18,9 @@ Die App ist live: https://levelup10-zeta.vercel.app
    - Offen: D4.1/D4.2 (Satzglieder, Konjunktiv, Aktiv/Passiv), D2 und D3 (Textverständnis, Erörterung), E1 (Reading, Writing, Speaking) und E2.3 und E2.4 vertiefen (past modals, conditionals, reported speech) und E2.5 (Relative clauses). Reihenfolge nach Unterrichtsstand, Felix fragen.
 3. ~~**Push-Erinnerung**~~ Gebaut 2026-09-28: 16 und 20 Uhr (jeweils irgendwann in der Stunde), nur wenn heute noch nicht gelernt. Knopf "Erinnerungen einschalten" auf Home, solange die Erlaubnis fehlt. Echter Test auf Felix iPhone steht noch aus.
 4. ~~**Onboarding**~~ Gebaut 2026-09-28: Screen /willkommen beim ersten Öffnen jedes Tages (5 Sätze, Erinnerungen einschalten, Los geht's), bis "Nicht mehr anzeigen" angehakt ist (profiles.onboarded_at, Tagesdatum per Cookie). Auf der Streak-Seite wieder einschaltbar.
-5. **Slash-Commands** `/mehr-aufgaben` und `/pruefe-aufgaben` in `.claude/commands/`.
-6. **Rest von PLAN.md Tag 2:**
-   - Skill-Tree-Screen (was Felix schon kann)
+5. ~~**Skill-Tree**~~ Gebaut 2026-09-28: /fach/[code], erreichbar über die Fach-Kacheln auf Home. Gebiete als Pfad, Sterne je Skill, aktuelles Gebiet hervorgehoben, Bonus-Runde nur für laufende und abgeschlossene Gebiete.
+6. **Slash-Commands** `/mehr-aufgaben` und `/pruefe-aufgaben` in `.claude/commands/`.
+7. **Rest von PLAN.md Tag 2:**
    - Konto-Screen (Belohnungen: verdient, ausgezahlt, offen)
    - Eltern-Login: Belohnungsbeträge einstellen, Auszahlungen als "bezahlt" markieren
 

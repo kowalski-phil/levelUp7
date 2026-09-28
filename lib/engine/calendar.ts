@@ -88,3 +88,18 @@ export function unlockedSkillCount(entry: ScheduleEntry, week: number, skillCoun
   const elapsed = Math.min(Math.max(week - entry.weekFrom, 0), span - 1);
   return Math.min(skillCount, Math.floor((elapsed * skillCount) / span) + 1);
 }
+
+export type UnitPhase = "past" | "current" | "future";
+
+/** Stand eines Gebiets in dieser Woche, passend zu activeUnits (nach dem Plan-Ende bleibt das letzte aktuell). */
+export function unitPhase(schedule: readonly ScheduleEntry[], unitCode: string, week: number): UnitPhase {
+  const entry = schedule.find((s) => s.unitCode === unitCode);
+  if (!entry) return "future";
+  if (activeUnits(schedule, entry.subject, week).some((a) => a.unitCode === unitCode)) return "current";
+  return entry.weekTo < week ? "past" : "future";
+}
+
+/** Erster Tag einer Schulwoche (Woche 1 beginnt am Schuljahresbeginn). */
+export function weekStart(start: ISODate, week: number): ISODate {
+  return addDays(start, (week - 1) * 7);
+}
