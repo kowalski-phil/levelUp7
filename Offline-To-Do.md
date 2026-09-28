@@ -12,7 +12,7 @@ Stand 2026-09-28. Was Phil außerhalb von Claude Code erledigt.
    3. Nach unten scrollen, **Zum Home-Bildschirm** tippen.
    4. **Als Web-App öffnen** muss an sein (normalerweise schon), dann **Hinzufügen**.
 2. **Im Icon einloggen**, nicht in Safari. Die installierte App hat einen eigenen Login.
-3. **Erinnerungen einschalten:** Auf der Startseite unter "Heute starten" auf **Erinnerungen einschalten** tippen und die Mitteilungen erlauben. Der Knopf verschwindet danach.
+3. **Willkommens-Screen:** Nach dem Login kommt "Hi Felix, willkommen im Finale." (ab dann beim ersten Öffnen jedes Tages, bis Felix "Nicht mehr anzeigen" anhakt). Dort auf **Erinnerungen einschalten** tippen und die Mitteilungen erlauben, dann **Los geht's**. (Falls der Knopf dort fehlt: Er steht auch auf der Startseite unter "Heute starten".)
 4. **Claude Code Bescheid geben.** Dann kommt sofort eine Test-Erinnerung aufs iPhone. So sehen wir, ob alles ankommt.
 
 Falls etwas anders aussieht als beschrieben: Screenshot machen und Claude Code schicken.

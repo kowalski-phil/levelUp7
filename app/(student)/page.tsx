@@ -1,5 +1,7 @@
 import { CalendarClock, CalendarPlus, Check, ChevronRight, Flame, Pencil, Shield, Star } from "lucide-react";
 import Link from "next/link";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { startFocus } from "@/app/(student)/fokus/actions";
 import { startBonus } from "@/app/(student)/session/actions";
 import { AppBadge } from "@/components/app-badge";
@@ -17,12 +19,14 @@ import { activeExams, daysUntil, FOCUS_COUNT } from "@/lib/engine/focus";
 import { SUBJECT_ROTATION } from "@/lib/engine/planner";
 import { balance } from "@/lib/engine/rewards";
 import { formatNumberDe } from "@/lib/engine/template";
+import { WELCOME_SEEN_COOKIE, welcomeDue } from "@/lib/engine/welcome";
 import { levelFor } from "@/lib/engine/xp";
 import type { LedgerRow } from "@/lib/supabase/types";
 
 export default async function HomePage() {
   const v = await requireStudent();
   const today = todayInBerlin();
+  if (welcomeDue(v.profile.onboarded_at, (await cookies()).get(WELCOME_SEEN_COOKIE)?.value, today)) redirect("/willkommen");
 
   const [catalog, history, streakView, ledgerRes, xpRes, daily, allExams] = await Promise.all([
     loadCatalog(v.supabase),

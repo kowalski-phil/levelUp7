@@ -1,5 +1,6 @@
-import { Flame, Shield, Trophy } from "lucide-react";
+import { Flame, RotateCcw, Shield, Trophy } from "lucide-react";
 import Link from "next/link";
+import { showWelcomeAgain } from "@/app/(student)/willkommen/actions";
 import { AppBadge } from "@/components/app-badge";
 import { BadgeOptIn } from "@/components/streak/badge-optin";
 import { WeekRow } from "@/components/streak/week-row";
@@ -64,6 +65,15 @@ export default async function StreakPage() {
       </section>
 
       <BadgeOptIn count={streak.current} />
+
+      {v.profile.onboarded_at ? (
+        <form action={showWelcomeAgain}>
+          <button className="flex h-12 w-full items-center justify-center gap-2 text-sm text-muted-foreground">
+            <RotateCcw className="size-4" />
+            Willkommens-Screen wieder anzeigen
+          </button>
+        </form>
+      ) : null}
 
       <div className="mt-auto">
         <Link href="/" className="grid h-14 w-full place-items-center rounded-2xl bg-primary text-lg font-bold text-primary-foreground">
