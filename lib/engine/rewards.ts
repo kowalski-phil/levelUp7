@@ -5,6 +5,8 @@ export interface Milestone {
   days: number;
   eur: number;
   label: string;
+  /** true: bei jedem Vielfachen von days erneut fällig (30, 60, 90 …), sonst nur einmal. */
+  repeat?: boolean;
 }
 
 export interface RewardsConfig {
@@ -31,6 +33,7 @@ export const DEFAULT_REWARDS: RewardsConfig = {
 };
 
 export const milestoneType = (days: number) => `milestone_${days}`;
+export const repeatType = (days: number) => `streak_every_${days}`;
 export const EXAM_DAY_TYPE = "exam_day";
 export const WEEKLY_TYPE = "weekly";
 
@@ -53,6 +56,12 @@ export function rewardsForCompletion(
     out.push({ type: WEEKLY_TYPE, amountEur: config.weeklyStreakBonusEur, label: `Wochenbonus (${next.current} Tage)` });
   }
   for (const m of config.milestones) {
+    if (m.repeat) {
+      if (next.current > 0 && next.current % m.days === 0 && m.eur > 0) {
+        out.push({ type: repeatType(m.days), amountEur: m.eur, label: `${next.current} Tage am Stück` });
+      }
+      continue;
+    }
     const type = milestoneType(m.days);
     if (next.current >= m.days && m.eur > 0 && !earnedTypes.has(type)) {
       out.push({ type, amountEur: m.eur, label: m.label });

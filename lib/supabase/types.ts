@@ -81,7 +81,7 @@ export interface StreakRow {
 export interface RewardsConfigRow {
   family_id: string;
   weekly_streak_bonus_eur: number;
-  milestones: { days: number; eur: number; label: string }[];
+  milestones: { days: number; eur: number; label: string; repeat?: boolean }[];
   exam_day_eur: number;
 }
 
