@@ -4,6 +4,7 @@ import { startFocus } from "@/app/(student)/fokus/actions";
 import { startBonus } from "@/app/(student)/session/actions";
 import { AppBadge } from "@/components/app-badge";
 import { LogoutButton } from "@/components/logout-button";
+import { BadgeOptIn } from "@/components/streak/badge-optin";
 import { WeekRow } from "@/components/streak/week-row";
 import { examStats, loadExams, type ExamInfo, type ExamStats } from "@/lib/data/exams";
 import { skillStars } from "@/lib/data/progress";
@@ -178,6 +179,8 @@ export default async function HomePage() {
           </span>
         </Link>
       )}
+
+      <BadgeOptIn count={streak.current} variant="home" />
 
       {!noContent && otherExams.length > 0 ? (
         <section className="flex flex-col gap-2">

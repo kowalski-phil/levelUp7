@@ -38,5 +38,6 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|manifest.webmanifest|sw.js|icons/|.*\\.(?:png|svg|ico|webp)$).*)"],
+  // api/: Cron-Routen prüfen selbst per CRON_SECRET und dürfen nicht zum Login umgeleitet werden.
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|manifest.webmanifest|sw.js|icons/|api/|.*\\.(?:png|svg|ico|webp)$).*)"],
 };

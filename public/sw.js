@@ -13,6 +13,40 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+// Erinnerung (lib/data/reminders.ts): Payload { title, body, badge }. iOS verlangt, dass jeder Push sichtbar angezeigt wird.
+self.addEventListener("push", (event) => {
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch {
+    data = { body: event.data ? event.data.text() : "" };
+  }
+  const tasks = [
+    self.registration.showNotification(data.title || "LevelUp10", {
+      body: data.body || "",
+      icon: "/icons/192.png",
+      tag: "reminder",
+      data: { url: "/" },
+    }),
+  ];
+  if (typeof data.badge === "number" && self.navigator.setAppBadge) {
+    tasks.push((data.badge > 0 ? self.navigator.setAppBadge(data.badge) : self.navigator.clearAppBadge()).catch(() => {}));
+  }
+  event.waitUntil(Promise.all(tasks));
+});
+
+// Tippen auf die Erinnerung öffnet die App (oder holt das offene Fenster nach vorn).
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = (event.notification.data && event.notification.data.url) || "/";
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((list) => {
+      for (const c of list) if ("focus" in c) return c.focus();
+      return self.clients.openWindow(url);
+    }),
+  );
+});
+
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
   if (event.request.method !== "GET" || url.origin !== self.location.origin) return;
