@@ -135,7 +135,6 @@
     {
       "code": "E2", "subject": "E", "title": "Language", "hours": 0,
       "skills": [
-        { "code": "E2.1", "title": "Vocabulary", "description": "Topic vocabulary, phrasal verbs, collocations." },
         { "code": "E2.2", "title": "Tenses", "description": "All tenses revisited, signal words." },
         { "code": "E2.3", "title": "Modals and conditionals", "description": "Modals, past modals, conditional sentences types 1-3." },
         { "code": "E2.4", "title": "Passive and reported speech", "description": "Passive in all tenses, reported speech with backshift." },

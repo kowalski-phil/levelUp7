@@ -1,0 +1,652 @@
+[
+  {
+    "code": "D4-001",
+    "skill_code": "D4.4",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "In welchem Satz ist das Komma richtig gesetzt?",
+    "payload": {
+      "options": [
+        "Ich glaube, dass wir morgen früher Schluss haben.",
+        "Ich glaube dass, wir morgen früher Schluss haben.",
+        "Ich glaube dass wir morgen, früher Schluss haben.",
+        "Ich glaube dass wir morgen früher Schluss haben."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Der dass-Satz ist ein Nebensatz, und Nebensätze werden immer durch Komma vom Hauptsatz getrennt. Das Komma steht direkt vor der Konjunktion *dass*, nicht dahinter. Ohne Komma fehlt die Grenze zwischen Hauptsatz und Nebensatz.",
+    "hint": "Wo endet der Hauptsatz, und mit welchem Wort beginnt der Nebensatz?"
+  },
+  {
+    "code": "D4-002",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Wähle die richtige Zeichensetzung.",
+    "payload": {
+      "text": "Wir haben das Spiel verloren[[0]] wir besser gespielt haben.",
+      "gaps": [{ "options": [", obwohl", " obwohl"] }]
+    },
+    "solution": { "answers": [", obwohl"] },
+    "explanation": "*obwohl* leitet einen Nebensatz ein, das konjugierte Verb *haben* steht am Ende. Nebensätze trennst du immer mit Komma vom Hauptsatz ab. Das Komma steht vor der Konjunktion.",
+    "hint": "Wo steht das Verb im zweiten Teil des Satzes?"
+  },
+  {
+    "code": "D4-003",
+    "skill_code": "D4.4",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welcher Satz ist richtig geschrieben?",
+    "payload": {
+      "options": [
+        "Für das Praktikum brauchst du Sicherheitsschuhe, eine Arbeitshose und Handschuhe.",
+        "Für das Praktikum brauchst du Sicherheitsschuhe, eine Arbeitshose, und Handschuhe.",
+        "Für das Praktikum brauchst du Sicherheitsschuhe eine Arbeitshose und Handschuhe.",
+        "Für das Praktikum brauchst du, Sicherheitsschuhe, eine Arbeitshose und Handschuhe."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Die Glieder einer Aufzählung werden durch Komma getrennt. Vor *und* bzw. *oder* steht in einer Aufzählung kein Komma, weil die Konjunktion die Trennung übernimmt. Nach dem Verb *brauchst du* beginnt die Aufzählung ohne Komma.",
+    "hint": "Welche Wörter zählen gleichrangige Dinge auf, und was übernimmt das *und*?"
+  },
+  {
+    "code": "D4-004",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Wähle die richtige Zeichensetzung.",
+    "payload": {
+      "text": "Ich wollte eigentlich joggen gehen[[0]] es hat den ganzen Tag geregnet.",
+      "gaps": [{ "options": [", aber", " aber"] }]
+    },
+    "solution": { "answers": [", aber"] },
+    "explanation": "Vor entgegenstellenden Konjunktionen wie *aber*, *sondern* und *doch* steht immer ein Komma. Hier verbindet *aber* zwei Hauptsätze, die einen Gegensatz ausdrücken. Anders als bei *und* ist das Komma hier Pflicht.",
+    "hint": "Drückt das Verbindungswort eine Ergänzung oder einen Gegensatz aus?"
+  },
+  {
+    "code": "D4-005",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Wähle für beide Lücken die richtige Schreibung.",
+    "payload": {
+      "text": "Das Handy[[0]] ich mir letzte Woche gekauft habe[[1]] schon kaputt.",
+      "gaps": [
+        { "options": [", das", " das", ", dass", " dass"] },
+        { "options": [", ist", " ist"] }
+      ]
+    },
+    "solution": { "answers": [", das", ", ist"] },
+    "explanation": "*das ich mir gekauft habe* ist ein Relativsatz, der sich auf *das Handy* bezieht. Das Relativpronomen *das* kannst du durch *welches* ersetzen, deshalb nur ein s. Weil der Relativsatz mitten im Hauptsatz steht, wird er vorne und hinten durch Komma abgetrennt.",
+    "hint": "Kannst du das Wort nach *Handy* durch *welches* ersetzen? Und wo endet der eingeschobene Teil?"
+  },
+  {
+    "code": "D4-006",
+    "skill_code": "D4.4",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Warum steht in diesem Satz ein Komma?\n\n*Lea, kannst du mir kurz dein Ladekabel leihen?*",
+    "payload": {
+      "options": [
+        "Es trennt eine Anrede vom Rest des Satzes.",
+        "Es trennt Hauptsatz und Nebensatz.",
+        "Es steht vor einer Infinitivgruppe mit *zu*.",
+        "Es trennt die Glieder einer Aufzählung."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "*Lea* ist eine Anrede: Die Person wird direkt angesprochen. Anreden werden immer durch Komma vom übrigen Satz abgetrennt. Einen Nebensatz gibt es hier nicht, denn der Satz hat nur ein konjugiertes Verb (*kannst*).",
+    "hint": "Welche Rolle spielt der Name *Lea* in diesem Satz?"
+  },
+  {
+    "code": "D4-007",
+    "skill_code": "D4.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Warum stehen in diesem Satz zwei Kommas?\n\n*Unser Klassenlehrer, Herr Yilmaz, organisiert die Abschlussfahrt.*",
+    "payload": {
+      "options": [
+        "*Herr Yilmaz* ist ein Einschub (Apposition), der das Nomen davor genauer erklärt.",
+        "*Herr Yilmaz* ist eine Anrede.",
+        "*Klassenlehrer* und *Herr Yilmaz* bilden eine Aufzählung.",
+        "*Herr Yilmaz* ist ein Nebensatz ohne Verb."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "*Herr Yilmaz* erklärt genauer, wer *unser Klassenlehrer* ist. Solche Beisätze (Appositionen) werden vorne und hinten durch Komma eingeschlossen. Eine Anrede wäre es nur, wenn Herr Yilmaz direkt angesprochen würde, und eine Aufzählung nennt verschiedene Dinge, nicht zweimal dieselbe Person.",
+    "hint": "Sind *Klassenlehrer* und *Herr Yilmaz* zwei verschiedene Personen?"
+  },
+  {
+    "code": "D4-008",
+    "skill_code": "D4.4",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "Warum **muss** in diesem Satz ein Komma stehen?\n\n*Ich freue mich darauf, nach den Prüfungen endlich auszuschlafen.*",
+    "payload": {
+      "options": [
+        "Die Infinitivgruppe wird durch das Wort *darauf* im Hauptsatz angekündigt.",
+        "Vor jeder Infinitivgruppe mit *zu* muss ein Komma stehen.",
+        "*nach den Prüfungen* ist ein Einschub.",
+        "*auszuschlafen* ist das Verb eines Nebensatzes mit *dass*."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Bei Infinitivgruppen ist das Komma nur in bestimmten Fällen Pflicht, zum Beispiel wenn ein Hinweiswort wie *darauf*, *daran* oder *es* die Gruppe ankündigt. Hier verweist *darauf* auf *nach den Prüfungen endlich auszuschlafen*. Nicht jede Infinitivgruppe braucht ein Komma: Bei *Ich versuche heute früher ins Bett zu gehen* ist es freigestellt.",
+    "hint": "Welches Wort im ersten Teil zeigt schon auf das, was danach kommt?"
+  },
+  {
+    "code": "D4-009",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Wähle die richtige Zeichensetzung.",
+    "payload": {
+      "text": "Ich spare jeden Monat 50 Euro[[0]] mir im Sommer einen Roller zu kaufen.",
+      "gaps": [{ "options": [", um", " um"] }]
+    },
+    "solution": { "answers": [", um"] },
+    "explanation": "Infinitivgruppen, die mit *um*, *ohne*, *statt*, *anstatt*, *außer* oder *als* eingeleitet werden, trennst du immer mit Komma ab. Hier beginnt die Gruppe mit *um … zu kaufen*. Das Komma steht vor *um*.",
+    "hint": "Mit welchem Wort beginnt die Gruppe, die auf *zu kaufen* endet?"
+  },
+  {
+    "code": "D4-010",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Wähle die richtige Zeichensetzung.",
+    "payload": {
+      "text": "Er ist zur Prüfung gegangen[[0]] vorher auch nur eine Seite gelernt zu haben.",
+      "gaps": [{ "options": [", ohne", " ohne"] }]
+    },
+    "solution": { "answers": [", ohne"] },
+    "explanation": "*ohne … gelernt zu haben* ist eine Infinitivgruppe, die mit *ohne* eingeleitet wird. Solche Gruppen werden immer durch Komma abgetrennt, genau wie bei *um … zu* und *anstatt … zu*.",
+    "hint": "Welches Einleitungswort steht vor der Gruppe mit *zu haben*?"
+  },
+  {
+    "code": "D4-011",
+    "skill_code": "D4.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Welcher Satz ist richtig geschrieben?",
+    "payload": {
+      "options": [
+        "Mein Bruder ist zwei Jahre älter als ich.",
+        "Mein Bruder ist zwei Jahre älter, als ich.",
+        "Mein Bruder, ist zwei Jahre älter als ich.",
+        "Mein Bruder ist zwei Jahre, älter als ich."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "*als ich* ist ein einfacher Vergleich ohne eigenes Verb, also kein Nebensatz. Deshalb steht kein Komma. Ein Komma käme nur bei einem Vergleichssatz mit Verb, zum Beispiel *Er ist älter, als ich dachte.*",
+    "hint": "Hat der Teil nach *als* ein eigenes Verb?"
+  },
+  {
+    "code": "D4-012",
+    "skill_code": "D4.4",
+    "type": "mc_multi",
+    "difficulty": 2,
+    "stem": "Welche Sätze sind richtig geschrieben? Wähle alle richtigen.",
+    "payload": {
+      "options": [
+        "Als ich nach Hause kam, war niemand da.",
+        "Ich weiß nicht ob das Training heute stattfindet.",
+        "Der Film war lang, aber richtig spannend.",
+        "Wir treffen uns am Bahnhof oder vor dem Kino.",
+        "Nachdem das Spiel vorbei war gingen alle nach Hause."
+      ]
+    },
+    "solution": { "indices": [0, 2, 3] },
+    "explanation": "Vorangestellte Nebensätze mit *als* oder *nachdem* werden durch Komma abgetrennt, im letzten Satz fehlt es vor *gingen*. Auch vor *ob* beginnt ein Nebensatz, dort fehlt das Komma ebenfalls. Vor *aber* steht immer ein Komma, vor *oder* zwischen zwei Ortsangaben dagegen keins.",
+    "hint": "Such in jedem Satz nach Nebensätzen: Wo steht ein konjugiertes Verb am Ende eines Satzteils?"
+  },
+  {
+    "code": "D4-013",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Wähle die richtige Zeichensetzung.",
+    "payload": {
+      "text": "Wir schreiben die Probe nicht am Dienstag[[0]] erst am Donnerstag.",
+      "gaps": [{ "options": [", sondern", " sondern"] }]
+    },
+    "solution": { "answers": [", sondern"] },
+    "explanation": "*sondern* ist eine entgegenstellende Konjunktion wie *aber* und *doch*. Vor ihr steht immer ein Komma, auch wenn danach kein ganzer Satz folgt.",
+    "hint": "Verbindet das Wort zwei gleichwertige Dinge oder stellt es etwas richtig?"
+  },
+  {
+    "code": "D4-014",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 3,
+    "stem": "Wähle für alle Lücken die richtige Schreibung.",
+    "payload": {
+      "text": "Der Ausbildungsplatz[[0]] ich mich beworben habe[[1]] leider schon vergeben[[2]] mich ziemlich ärgert.",
+      "gaps": [
+        { "options": [", um den", " um den"] },
+        { "options": [", ist", " ist"] },
+        { "options": [", was", " was", ", das", " das"] }
+      ]
+    },
+    "solution": { "answers": [", um den", ", ist", ", was"] },
+    "explanation": "*um den ich mich beworben habe* ist ein eingeschobener Relativsatz und wird deshalb vorne und hinten mit Komma abgetrennt. Der letzte Relativsatz bezieht sich nicht auf ein einzelnes Nomen, sondern auf die ganze Aussage davor. Dann heißt das Relativpronomen *was*, nicht *das*, und auch davor steht ein Komma.",
+    "hint": "Worauf bezieht sich der letzte Satzteil: auf ein Nomen oder auf den ganzen Satz davor?"
+  },
+  {
+    "code": "D4-015",
+    "skill_code": "D4.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Welcher Satz ist richtig geschrieben?",
+    "payload": {
+      "options": [
+        "Ich mache mein Praktikum in einem Handwerksberuf, und zwar bei einer Schreinerei.",
+        "Ich mache mein Praktikum in einem Handwerksberuf, und zwar, bei einer Schreinerei.",
+        "Ich mache mein Praktikum in einem Handwerksberuf und zwar bei einer Schreinerei.",
+        "Ich mache mein Praktikum in einem Handwerksberuf und zwar, bei einer Schreinerei."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "*und zwar bei einer Schreinerei* ist eine nachgestellte Erläuterung. Vor Erläuterungen mit *und zwar*, *nämlich* oder *zum Beispiel* steht ein Komma. Nach *und zwar* steht kein weiteres Komma, wenn nur eine Wortgruppe folgt.",
+    "hint": "Welcher Teil erklärt das Vorherige genauer, und wo beginnt er?"
+  },
+  {
+    "code": "D4-016",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Wähle den richtigen Satzanfang.",
+    "payload": {
+      "text": "[[0]] habe die Hausaufgaben nicht vergessen, sie liegen nur zu Hause.",
+      "gaps": [{ "options": ["Nein, ich", "Nein ich"] }]
+    },
+    "solution": { "answers": ["Nein, ich"] },
+    "explanation": "Antwortwörter wie *ja*, *nein* und *doch* am Satzanfang werden durch Komma vom Rest des Satzes abgetrennt. Das gilt genauso für Ausrufe und Anreden.",
+    "hint": "Gehört *Nein* grammatisch zum Satz oder steht es als eigene Antwort davor?"
+  },
+  {
+    "code": "D4-017",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Wähle die richtige Zeichensetzung.",
+    "payload": {
+      "text": "Wenn du morgen Zeit hast[[0]] wir zusammen für die Mathe-Probe lernen.",
+      "gaps": [{ "options": [", können", " können"] }]
+    },
+    "solution": { "answers": [", können"] },
+    "explanation": "*Wenn du morgen Zeit hast* ist ein Nebensatz, der vor dem Hauptsatz steht. Zwischen Nebensatz und Hauptsatz steht immer ein Komma. Typisch: Am Ende des Nebensatzes stößt ein Verb (*hast*) direkt auf das Verb des Hauptsatzes (*können*).",
+    "hint": "Wo stoßen zwei konjugierte Verben aufeinander?"
+  },
+  {
+    "code": "D4-018",
+    "skill_code": "D4.4",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "Welcher Satz ist vollständig richtig?",
+    "payload": {
+      "options": [
+        "Ich hoffe, dass du am Freitag kommst, weil wir ohne dich nur zu dritt sind.",
+        "Ich hoffe dass du am Freitag kommst, weil wir ohne dich nur zu dritt sind.",
+        "Ich hoffe, dass du am Freitag kommst weil wir ohne dich nur zu dritt sind.",
+        "Ich hoffe, dass, du am Freitag kommst, weil wir ohne dich nur zu dritt sind."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Der Satz hat einen Hauptsatz und zwei Nebensätze, einen mit *dass* und einen mit *weil*. Vor beiden Konjunktionen steht ein Komma. Nach *dass* steht keins, denn das Komma gehört immer vor das Einleitungswort.",
+    "hint": "Zähle die Einleitungswörter von Nebensätzen und prüf jedes einzeln."
+  },
+  {
+    "code": "D4-019",
+    "skill_code": "D4.4",
+    "type": "mc_multi",
+    "difficulty": 3,
+    "stem": "In welchen Sätzen **muss** ein Komma gesetzt werden? Wähle alle aus. (Die Kommas fehlen absichtlich.)",
+    "payload": {
+      "options": [
+        "Wir fahren nach der Prüfung ans Meer um uns zu erholen.",
+        "Ich versuche heute früher ins Bett zu gehen.",
+        "Sie hat angefangen Gitarre zu lernen.",
+        "Er denkt daran die Karten rechtzeitig zu kaufen.",
+        "Anstatt zu lernen hat er den ganzen Nachmittag gezockt."
+      ]
+    },
+    "solution": { "indices": [0, 3, 4] },
+    "explanation": "Pflicht ist das Komma bei Infinitivgruppen mit *um*, *ohne*, *statt* oder *anstatt* und wenn ein Hinweiswort wie *daran* die Gruppe ankündigt. In den Sätzen mit *versuche* und *angefangen* fehlt beides, dort darfst du ein Komma setzen, musst aber nicht. Der typische Fehler ist, bei jedem *zu* ein Pflichtkomma zu vermuten.",
+    "hint": "Steht vor der Gruppe mit *zu* ein Einleitungswort wie *um* oder *anstatt*, oder kündigt ein Wort wie *daran* sie an?"
+  },
+  {
+    "code": "D4-020",
+    "skill_code": "D4.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Wähle die richtige Schreibung.",
+    "payload": {
+      "text": "Hast du schon gehört[[0]] die Sporthalle nach den Ferien renoviert wird?",
+      "gaps": [{ "options": [", dass", " dass", ", das", " das"] }]
+    },
+    "solution": { "answers": [", dass"] },
+    "explanation": "Nach *gehört* folgt ein Nebensatz, der den Inhalt wiedergibt. Er wird mit der Konjunktion *dass* eingeleitet, weil du sie nicht durch *welches* oder *dieses* ersetzen kannst. Vor dem Nebensatz steht ein Komma.",
+    "hint": "Kannst du das Wort durch *welches* oder *dieses* ersetzen?"
+  },
+  {
+    "code": "D4-021",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Groß oder klein? Wähle die richtige Schreibung.",
+    "payload": {
+      "text": "Beim [[0]] auf den Bus höre ich immer Musik.",
+      "gaps": [{ "options": ["Warten", "warten"] }]
+    },
+    "solution": { "answers": ["Warten"] },
+    "explanation": "*Beim* ist die Verschmelzung aus *bei* und *dem*, also Präposition plus Artikel. Ein Verb, vor dem ein Artikel oder eine solche Verschmelzung steht, wird zum Nomen und großgeschrieben. Das nennt man Nominalisierung.",
+    "hint": "Welches Wort steht direkt davor, und was steckt darin?"
+  },
+  {
+    "code": "D4-022",
+    "skill_code": "D4.3",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Setze das Wort in Klammern in der richtigen Form und Schreibung ein.",
+    "payload": {
+      "text": "Ich wünsche dir für die Prüfung alles [[0]] (gut).",
+      "case_sensitive": true
+    },
+    "solution": { "answers": [["Gute"]] },
+    "explanation": "Nach *alles*, *etwas*, *nichts*, *viel* und *wenig* werden Adjektive nominalisiert und großgeschrieben: *alles Gute*, *etwas Neues*, *nichts Besonderes*. Das Adjektiv bekommt dabei eine Endung.",
+    "hint": "Welches Signalwort steht vor der Lücke?"
+  },
+  {
+    "code": "D4-023",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Groß oder klein? Wähle die richtige Schreibung.",
+    "payload": {
+      "text": "Wir treffen uns heute [[0]] im Jugendzentrum.",
+      "gaps": [{ "options": ["Abend", "abend"] }]
+    },
+    "solution": { "answers": ["Abend"] },
+    "explanation": "Nach den Zeitadverbien *heute*, *gestern* und *morgen* wird die Tageszeit großgeschrieben: *heute Abend*, *gestern Nachmittag*. Die Tageszeit ist hier ein Nomen.",
+    "hint": "Welche Wortart hat die Tageszeit nach *heute*?"
+  },
+  {
+    "code": "D4-024",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Groß oder klein? Wähle die richtige Schreibung.",
+    "payload": {
+      "text": "Das Training findet immer [[0]] statt.",
+      "gaps": [{ "options": ["dienstags", "Dienstags"] }]
+    },
+    "solution": { "answers": ["dienstags"] },
+    "explanation": "Wochentage und Tageszeiten mit der Endung *-s* sind Adverbien und bedeuten *jeden Dienstag*, *jeden Abend*. Adverbien schreibst du klein: *dienstags*, *abends*, *morgens*. Groß schreibst du dagegen *am Dienstag*.",
+    "hint": "Endet das Wort auf *-s*, und steht ein Artikel davor?"
+  },
+  {
+    "code": "D4-025",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Groß oder klein? Wähle für beide Lücken die richtige Schreibung.",
+    "payload": {
+      "text": "Am [[0]] habe ich Training, deshalb lerne ich meistens [[1]].",
+      "gaps": [
+        { "options": ["Mittwoch", "mittwoch"] },
+        { "options": ["morgens", "Morgens"] }
+      ]
+    },
+    "solution": { "answers": ["Mittwoch", "morgens"] },
+    "explanation": "In *am Mittwoch* steckt der Artikel *dem*, deshalb ist der Wochentag ein Nomen und wird großgeschrieben. Das Wort *morgens* mit der Endung *-s* ist dagegen ein Adverb. Es bedeutet *jeden Morgen*, deshalb schreibst du es klein.",
+    "hint": "Achte bei jeder Lücke auf zwei Dinge: Steht ein Artikel davor? Endet das Wort auf *-s*?"
+  },
+  {
+    "code": "D4-026",
+    "skill_code": "D4.3",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Welcher Satz ist richtig geschrieben?",
+    "payload": {
+      "options": [
+        "In der Pause gab es nichts Besonderes.",
+        "In der Pause gab es nichts besonderes.",
+        "In der Pause gab es Nichts Besonderes.",
+        "In der Pause gab es Nichts besonderes."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Nach *nichts*, *etwas*, *alles*, *viel* und *wenig* wird ein Adjektiv zum Nomen und großgeschrieben. *nichts* selbst ist ein Pronomen und bleibt klein. Deshalb: *nichts Besonderes*.",
+    "hint": "Welches der beiden Wörter ist das Signalwort, und welches wird dadurch zum Nomen?"
+  },
+  {
+    "code": "D4-027",
+    "skill_code": "D4.3",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Setze das Wort in Klammern in der richtigen Form und Schreibung ein.",
+    "payload": {
+      "text": "Kannst du mir etwas [[0]] (süß) aus der Mensa mitbringen?",
+      "case_sensitive": true
+    },
+    "solution": { "answers": [["Süßes"]] },
+    "explanation": "Nach *etwas* wird das Adjektiv nominalisiert und großgeschrieben. Es bekommt die Endung *-es*: *etwas Süßes*, *etwas Neues*. Nach langem Vokal wie in *süß* schreibst du ß.",
+    "hint": "Welches Signalwort steht vor der Lücke, und welche Endung braucht das Wort danach?"
+  },
+  {
+    "code": "D4-028",
+    "skill_code": "D4.3",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Setze das Wort in Klammern in der richtigen Schreibung ein.",
+    "payload": {
+      "text": "Das [[0]] (lesen) von langen Texten fällt vielen schwer.",
+      "case_sensitive": true
+    },
+    "solution": { "answers": [["Lesen"]] },
+    "explanation": "Vor dem Verb steht der Artikel *das*. Dadurch wird das Verb zum Nomen und großgeschrieben. Du erkennst es auch daran, dass *das Lesen* hier Subjekt des Satzes ist.",
+    "hint": "Welches Wort steht direkt vor der Lücke?"
+  },
+  {
+    "code": "D4-029",
+    "skill_code": "D4.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "In welchem Satz ist *best-* richtig geschrieben?",
+    "payload": {
+      "options": [
+        "Von allen Fächern gefällt mir Sport am besten.",
+        "Von allen Fächern gefällt mir Sport am Besten.",
+        "Beim Wettkampf gebe ich immer mein bestes.",
+        "Das beste am Sportunterricht ist das Fußballspielen."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Der Superlativ mit *am* antwortet auf die Frage *Wie?* und wird kleingeschrieben: *am besten*, *am schnellsten*. Mit Artikel oder Possessivpronomen davor wird das Adjektiv dagegen zum Nomen: *mein Bestes*, *das Beste*. Deshalb sind die beiden letzten Sätze falsch.",
+    "hint": "Fragst du mit *Wie?* oder mit *Was?* nach dem Wort?"
+  },
+  {
+    "code": "D4-030",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Groß oder klein? Wähle für beide Lücken die richtige Schreibung.",
+    "payload": {
+      "text": "In Englisch habe ich eine [[0]] geschrieben. Das Referat halten wir zu [[1]].",
+      "gaps": [
+        { "options": ["Zwei", "zwei"] },
+        { "options": ["dritt", "Dritt"] }
+      ]
+    },
+    "solution": { "answers": ["Zwei", "dritt"] },
+    "explanation": "Die Note *eine Zwei* ist ein Nomen, das erkennst du am Artikel *eine*. Die feste Wendung *zu dritt* (wie *zu zweit*) schreibst du dagegen klein, weil sie nur angibt, wie viele es sind.",
+    "hint": "Ist die Zahl ein Ding mit Artikel oder nur eine Mengenangabe?"
+  },
+  {
+    "code": "D4-031",
+    "skill_code": "D4.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Welcher Satz ist richtig geschrieben?",
+    "payload": {
+      "options": [
+        "Bei der Klassenfahrt waren wir im Bayerischen Wald.",
+        "Bei der Klassenfahrt waren wir im bayerischen Wald.",
+        "Bei der Klassenfahrt waren wir im Bayerischen wald.",
+        "Bei der Klassenfahrt waren wir im bayerischen wald."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "*Bayerischer Wald* ist ein Eigenname, also der Name eines bestimmten Gebirges. In Eigennamen wird auch das Adjektiv großgeschrieben, wie bei *das Rote Kreuz* oder *der Stille Ozean*. Ohne Eigennamen bleibt es klein: *die bayerische Küche*.",
+    "hint": "Ist das irgendein Wald in Bayern oder der Name eines bestimmten Gebiets?"
+  },
+  {
+    "code": "D4-032",
+    "skill_code": "D4.3",
+    "type": "mc_multi",
+    "difficulty": 2,
+    "stem": "Welche Sätze sind richtig geschrieben? Wähle alle richtigen.",
+    "payload": {
+      "options": [
+        "Wir haben uns am Freitagabend im Kino getroffen.",
+        "Wir treffen uns am freitag im Park.",
+        "Gestern Nachmittag war das Freibad voll.",
+        "Ich schlafe samstags immer lange.",
+        "Heute morgen habe ich den Bus verpasst."
+      ]
+    },
+    "solution": { "indices": [0, 2, 3] },
+    "explanation": "Mit Artikel ist der Wochentag ein Nomen: *am Freitag*, *am Freitagabend*. Nach *heute*, *gestern* und *morgen* schreibst du die Tageszeit groß: *heute Morgen*, *gestern Nachmittag*. Wochentage mit *-s* wie *samstags* sind Adverbien und werden kleingeschrieben.",
+    "hint": "Prüf bei jedem Zeitwort: Artikel davor, Zeitadverb davor oder Endung *-s*?"
+  },
+  {
+    "code": "D4-033",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Aus einer E-Mail an eine Ausbildungsleiterin. Wähle die richtige Schreibung.",
+    "payload": {
+      "text": "Sehr geehrte Frau Berger, vielen Dank für [[0]] schnelle Antwort auf meine Bewerbung.",
+      "gaps": [{ "options": ["Ihre", "ihre"] }]
+    },
+    "solution": { "answers": ["Ihre"] },
+    "explanation": "Die höfliche Anrede *Sie* und alle ihre Formen (*Ihnen*, *Ihr*, *Ihre*) werden immer großgeschrieben. Kleingeschrieben würde *ihre* bedeuten, dass es um die Antwort einer anderen Person geht, nicht um die der Angesprochenen.",
+    "hint": "Wen sprichst du in der E-Mail direkt an?"
+  },
+  {
+    "code": "D4-034",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Du schreibst Frau Berger, der Ausbildungsleiterin eines Betriebs, und sprichst sie direkt an. Wähle für beide Lücken die richtige Schreibung.",
+    "payload": {
+      "text": "Ich würde mich freuen, wenn [[0]] mir mitteilen könnten, ob ich das Praktikum bei [[1]] machen darf.",
+      "gaps": [
+        { "options": ["Sie", "sie"] },
+        { "options": ["Ihnen", "ihnen"] }
+      ]
+    },
+    "solution": { "answers": ["Sie", "Ihnen"] },
+    "explanation": "Frau Berger wird höflich angesprochen, deshalb schreibst du *Sie* und *Ihnen* groß. Das gilt überall im Satz, nicht nur am Anfang. Kleingeschriebenes *sie* oder *ihnen* bezieht sich auf andere Personen, über die man spricht.",
+    "hint": "Sprichst du über jemanden oder sprichst du die Person direkt an?"
+  },
+  {
+    "code": "D4-035",
+    "skill_code": "D4.3",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "In welchem Satz ist alles richtig geschrieben?",
+    "payload": {
+      "options": [
+        "Nach dem Essen hilft Tom beim Abspülen, weil ihm das Kochen keinen Spaß macht.",
+        "Nach dem essen hilft Tom beim Abspülen, weil ihm das Kochen keinen Spaß macht.",
+        "Nach dem Essen hilft Tom beim abspülen, weil ihm das Kochen keinen Spaß macht.",
+        "Nach dem Essen hilft Tom beim Abspülen, weil ihm das kochen keinen Spaß macht."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Im Satz stecken drei nominalisierte Verben: *nach dem Essen*, *beim Abspülen* und *das Kochen*. Vor allen dreien steht ein Artikel oder eine Verschmelzung aus Präposition und Artikel (*beim* = *bei dem*). Deshalb werden alle drei großgeschrieben.",
+    "hint": "Such alle Verben, vor denen ein Artikel oder *beim*, *zum*, *vom* steht."
+  },
+  {
+    "code": "D4-036",
+    "skill_code": "D4.3",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Setze die Wörter in Klammern in der richtigen Form und Schreibung ein.",
+    "payload": {
+      "text": "Im [[0]] (allgemein) ist das [[1]] (neu) an der Ausbildung, dass man eigenes Geld verdient.",
+      "case_sensitive": true
+    },
+    "solution": { "answers": [["Allgemeinen"], ["Neue"]] },
+    "explanation": "In festen Wendungen mit Präposition und Artikel wird das Adjektiv großgeschrieben: *im Allgemeinen*, *im Übrigen*. Auch *das Neue* ist ein nominalisiertes Adjektiv, das du am Artikel *das* erkennst.",
+    "hint": "Was steckt in *im*, und welches Wort steht vor der zweiten Lücke?"
+  },
+  {
+    "code": "D4-037",
+    "skill_code": "D4.3",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "Welcher Satz ist richtig geschrieben?",
+    "payload": {
+      "options": [
+        "Von den beiden Jacken nehme ich die blaue.",
+        "Von den beiden Jacken nehme ich die Blaue.",
+        "Das blaue an der Jacke gefällt mir.",
+        "Von den Beiden Jacken nehme ich die blaue."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "*die blaue* bezieht sich auf das Nomen *Jacken* davor, gemeint ist *die blaue Jacke*. Wenn du das Nomen im Kopf ergänzen kannst, bleibt das Adjektiv klein. *Das Blaue an der Jacke* wäre dagegen ein echtes Nomen und groß, und *beiden* ist ein Zahlwort, das kleingeschrieben wird.",
+    "hint": "Kannst du nach dem Adjektiv ein Nomen aus dem Satz ergänzen?"
+  },
+  {
+    "code": "D4-038",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "*das* oder *dass*? Wähle die richtige Schreibung.",
+    "payload": {
+      "text": "Ich finde es gut, [[0]] wir nächste Woche einen Wandertag haben.",
+      "gaps": [{ "options": ["dass", "das"] }]
+    },
+    "solution": { "answers": ["dass"] },
+    "explanation": "*dass* ist eine Konjunktion und leitet einen Nebensatz ein. Mit einem s schreibst du *das* nur, wenn du es durch *welches* oder *dieses* ersetzen kannst. *Ich finde es gut, welches wir …* ergibt keinen Sinn, also *dass*.",
+    "hint": "Mach die Ersatzprobe mit *welches* oder *dieses*."
+  },
+  {
+    "code": "D4-039",
+    "skill_code": "D4.3",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "*das* oder *dass*? Wähle für beide Lücken die richtige Schreibung.",
+    "payload": {
+      "text": "Das Buch, [[0]] wir in Deutsch lesen, ist ziemlich spannend. Ich hoffe, [[1]] es auch einen Film dazu gibt.",
+      "gaps": [
+        { "options": ["das", "dass"] },
+        { "options": ["dass", "das"] }
+      ]
+    },
+    "solution": { "answers": ["das", "dass"] },
+    "explanation": "In der ersten Lücke steht ein Relativpronomen, das sich auf *das Buch* bezieht: *das Buch, welches wir lesen*. Deshalb nur ein s. In der zweiten Lücke leitet *dass* einen Nebensatz nach *Ich hoffe* ein, die Ersatzprobe mit *welches* funktioniert dort nicht.",
+    "hint": "Mach für jede Lücke die Ersatzprobe mit *welches*."
+  },
+  {
+    "code": "D4-040",
+    "skill_code": "D4.3",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "In welchem Satz sind *das* und *dass* richtig geschrieben?",
+    "payload": {
+      "options": [
+        "Ich glaube, dass das Spiel verschoben wird.",
+        "Ich glaube, das dass Spiel verschoben wird.",
+        "Ich glaube, das das Spiel verschoben wird.",
+        "Ich glaube, dass dass Spiel verschoben wird."
+      ]
+    },
+    "solution": { "index": 0 },
+    "explanation": "Das erste Wort leitet den Nebensatz nach *Ich glaube* ein, das ist die Konjunktion *dass*. Das zweite Wort ist der Artikel von *Spiel* und lässt sich durch *dieses* ersetzen, also *das*. Ein Artikel wird nie mit ss geschrieben.",
+    "hint": "Welches der beiden Wörter gehört als Artikel zu *Spiel*?"
+  }
+]

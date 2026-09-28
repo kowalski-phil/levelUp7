@@ -17,8 +17,9 @@ function gapCount(text: string): number {
   return idx.length;
 }
 
-function sentences(s: string): number {
-  return s.split(/(?<=[.!?])\s+(?=[A-ZÄÖÜ0-9$])/).filter((x) => x.trim()).length;
+/** Satzgrenze auch vor und nach Anführungszeichen oder *kursiv*: `... now. "Since ...` zählt als zwei Sätze. */
+export function sentences(s: string): number {
+  return s.split(/(?<=[.!?]["“”*]?)\s+(?=["„“]*[A-ZÄÖÜ0-9$]|\*)/).filter((x) => x.trim()).length;
 }
 
 function checkItem(item: ContentItem, unitCode: string, skills: Set<string>, push: (level: Issue["level"], msg: string) => void) {

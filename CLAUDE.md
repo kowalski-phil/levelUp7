@@ -37,6 +37,7 @@ docs/                 Lehrplanstruktur, Entscheidungen
 - `explanation` ist Pflicht und erklärt den Lösungsweg in 2-4 Sätzen.
 - MC-Distraktoren sind typische Schülerfehler (Vorzeichenfehler, vertauschte Konten, falsche Zeitform), keine Unsinns-Optionen.
 - Deutsch/Englisch: alle Texte selbst geschrieben. Keine Zitate aus Schulbüchern oder Romanen.
+- Keine Vokabelaufgaben. Felix lernt Vokabeln aus dem Vokabelteil des Buchs oder E-Books, die App kennt seine Liste nicht. Englisch-Aufgaben prüfen Grammatik, Leseverstehen und Schreiben mit einfachem Grundwortschatz.
 - Mathe/BwR: Zahlen realistisch, Ergebnisse dort glatt, wo es im Unterricht üblich ist. Bei `numeric_template` Bereiche so wählen, dass keine unsinnigen Werte entstehen (keine negativen Längen, keine Beträge mit 7 Nachkommastellen).
 - BwR-Kontenrahmen: der an bayerischen Realschulen übliche Schulkontenrahmen. Bei Unsicherheit über eine Kontonummer nur den Kontonamen verwenden.
 - `item.code` ist stabil und eindeutig: `<unit_code>-<laufende Nummer>`, z. B. `M4-017`. Nie umnummerieren.

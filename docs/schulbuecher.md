@@ -70,4 +70,4 @@ ISBN 978-3-464-31121-9
 | Language File | 102 | LF1 tenses, LF2 modals, LF3 passive, LF4 adverbs, LF5 comparison, LF6 relative clauses, LF7 if-sentences, LF8 reported speech |
 | Skills File | 120 | Listening, Viewing, Reading, Writing (formal letter, complaint), Mediation, Speaking |
 
-Unterricht (Stand 2026-09-26): Vokabeln und Wiederholung der Zeiten (Language File LF1). Beim Schreiben der Englisch-Aufgaben E2 mit den Zeiten und dem Wortschatz aus Unit 1 beginnen.
+Unterricht (Stand 2026-09-26): Vokabeln und Wiederholung der Zeiten (Language File LF1). Beim Schreiben der Englisch-Aufgaben E2 mit den Zeiten beginnen. Vokabeln lernt Felix aus dem Buch, dafür gibt es keine Aufgaben in der App.

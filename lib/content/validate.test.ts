@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Structure } from "./load";
-import { validateContent } from "./validate";
+import { sentences, validateContent } from "./validate";
 
 const structure: Structure = {
   subjects: [{ code: "B", name: "BwR", color: "#000" }],
@@ -52,5 +52,12 @@ describe("validateContent", () => {
     };
     const errors = run([booking, { ...good, code: "B4-003", stem: "anders" }]);
     expect(errors.map((e) => e.msg)).toEqual(expect.arrayContaining(["Summe Soll ≠ Summe Haben", "code doppelt"]));
+  });
+
+  it("zählt Sätze auch mit Anführungszeichen und Kursivschrift", () => {
+    expect(sentences('Use "for" with a period. "Since" needs a point in time.')).toBe(2);
+    expect(sentences('It means "werden." It never means "bekommen".')).toBe(2);
+    expect(sentences("Das Komma steht davor. *dass* leitet einen Nebensatz ein.")).toBe(2);
+    expect(sentences("Beträge wie 3.600 € sind glatt. Das passt.")).toBe(2);
   });
 });

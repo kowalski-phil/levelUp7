@@ -128,7 +128,7 @@ Item mit `lapses >= 4` gilt als Problemfall und taucht im Eltern-Dashboard unter
 | `numeric` Zahleneingabe mit Toleranz und Einheit | `abs(x - lösung) <= toleranz` | M, B |
 | `numeric_template` parametrisierte Aufgabe: Zahlen werden beim Ausspielen zufällig aus Bereichen gezogen, Lösung per Formel im Payload berechnet | Formel-Auswertung im Code | M, B (unendlicher Vorrat für Rechenroutine) |
 | `cloze` Lückentext, Auswahl aus Dropdown pro Lücke | exakt | D, E |
-| `cloze_free` Lückentext mit Texteingabe, mehrere akzeptierte Schreibweisen | normalisierter Vergleich | E (Vokabeln), D (Rechtschreibung) |
+| `cloze_free` Lückentext mit Texteingabe, mehrere akzeptierte Schreibweisen | normalisierter Vergleich | E (Verbformen), D (Rechtschreibung) |
 | `order` Elemente in richtige Reihenfolge bringen | exakt | D (Erörterung: Einleitung, These, Argument, Beleg...), B (Kalkulationsschema) |
 | `match` Paare zuordnen | exakt | B (Konto zu Bilanzposten), E (Wort zu Definition) |
 | `booking` Buchungssatz: Soll-Konto, Haben-Konto, Betrag | exakt pro Feld | B |
@@ -167,7 +167,7 @@ Mengenziel für den ersten Build:
 - Mathe II: 5 Units × 40 Items, davon mindestens 15 `numeric_template` pro Unit
 - BwR: 4 Units × 40 Items, davon mindestens 10 `booking` und 10 `numeric_template` pro Unit
 - Deutsch: 4 Units × 35 Items, Schwerpunkt D3 (Erörterung/TGA-Bausteine) und D4 (Rechtschreibung, Kommaregeln, Grammatik)
-- Englisch: E1 und E2 je 60 Items (Vokabeln aus den Themengebieten, Grammatik-Cloze, Reading-MC mit kurzen selbstgeschriebenen Texten, Speaking-Prompts als `self_check`)
+- Englisch: E1 und E2 je 60 Items (Grammatik-Cloze, Reading-MC mit kurzen selbstgeschriebenen Texten, Speaking-Prompts als `self_check`). Keine Vokabelaufgaben: Vokabeln lernt Felix aus dem Vokabelteil des Buchs oder E-Books, nicht in der App (Phil, 2026-09-28).
 - Summe ca. 800 Items. Mit Templates und Spaced Repetition reicht das für Monate.
 
 Nachschub: Claude-Code-Command `/mehr-aufgaben <unit_code> <anzahl>` (Slash-Command im Repo) erzeugt weitere Items in dieselbe Datei. Das Seed-Skript ist idempotent (Upsert nach `item.code`).
