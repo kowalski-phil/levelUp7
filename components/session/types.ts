@@ -1,5 +1,5 @@
 import type { ContentItem } from "@/lib/content/types";
-import type { AnswerResult } from "@/lib/engine/grading";
+import type { AttemptState } from "@/lib/engine/grading";
 import type { SessionKind } from "@/lib/supabase/types";
 
 /** Eine Aufgabe, wie der Server sie an die Session-UI übergibt. */
@@ -19,7 +19,8 @@ export interface PlayerProps {
   label?: string;
   labelColor?: string;
   items: PlayerItem[];
-  answered: Record<string, AnswerResult>;
+  /** Gespeicherter Stand je Aufgabe (erste Antwort, gelöst, Versuche). */
+  answered: Record<string, AttemptState>;
   /** Nur lokale Vorschau: nichts speichern. */
   preview?: boolean;
 }

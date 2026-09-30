@@ -8,10 +8,22 @@ import { requireStudent } from "@/lib/data/queries";
 import type { PlayerItem } from "@/components/session/types";
 import { createBonusSession, loadSession, planInput, rowToContentItem, toPlayerItems, type Viewer } from "@/lib/data/sessions";
 import { addDays, todayInBerlin } from "@/lib/engine/dates";
-import { grade, instanceSeed, withHint, type AnswerResult } from "@/lib/engine/grading";
+import {
+  attemptSeed,
+  extraAttempts,
+  grade,
+  instanceSeed,
+  isMistake,
+  isSolved,
+  MAX_ATTEMPTS,
+  withHint,
+  type AnswerResult,
+  type AttemptState,
+} from "@/lib/engine/grading";
 import { pickReplacement } from "@/lib/engine/planner";
 import { initialSrs, review, type Result } from "@/lib/engine/sm2";
 import { xpFor } from "@/lib/engine/xp";
+import { createAdminClient } from "@/lib/supabase/server";
 import type { ItemRow, ItemStateRow } from "@/lib/supabase/types";
 
 /** Wie lange ein Skill nach "hatten wir noch nicht" ruht. */
@@ -19,13 +31,16 @@ const SNOOZE_DAYS = 21;
 
 /** Zähler aus den Antworten neu berechnen statt hochzuzählen: robust bei Doppel-Taps. "not_yet" zählt nicht. */
 async function recount(v: Viewer, sessionId: string) {
-  const { data: all } = await v.supabase.from("answers").select("result").eq("session_id", sessionId);
-  const results = (all ?? []).map((a: { result: AnswerResult }) => a.result).filter((r): r is Result => r !== "not_yet");
+  const { data: all } = await v.supabase.from("answers").select("result, solved, attempts").eq("session_id", sessionId);
+  const rows = (all ?? []) as AttemptState[];
+  const results = rows.map((a) => a.result).filter((r): r is Result => r !== "not_yet");
   await v.supabase
     .from("sessions")
     .update({
       total: results.length,
       correct: results.filter((r) => r === "correct").length,
+      mistakes: rows.filter(isMistake).length,
+      retries: rows.reduce((s, a) => s + extraAttempts(a), 0),
       xp: results.reduce((s, r) => s + xpFor(r), 0),
     })
     .eq("id", sessionId);
@@ -52,7 +67,9 @@ export async function submitAnswer(
 
   const { data: row } = await v.supabase.from("items").select("*").eq("id", itemId).single<ItemRow>();
   if (!row) throw new Error("Aufgabe nicht gefunden");
-  const result = withHint(grade(rowToContentItem(row), answer, instanceSeed(sessionId, row.code)), hintUsed);
+  const item = rowToContentItem(row);
+  const raw = grade(item, answer, instanceSeed(sessionId, row.code));
+  const result = withHint(raw, hintUsed);
 
   const { error } = await v.supabase.from("answers").insert({
     session_id: sessionId,
@@ -61,6 +78,8 @@ export async function submitAnswer(
     result,
     answer,
     hint_used: hintUsed,
+    solved: isSolved(item, raw),
+    attempts: 1,
     time_sec: Math.max(0, Math.min(Math.round(timeSec), 1800)),
   });
   if (error) {
@@ -94,6 +113,54 @@ export async function submitAnswer(
   await recount(v, sessionId);
 
   return { result };
+}
+
+/**
+ * Wiederholung einer falsch gelösten Aufgabe in derselben Runde. SM-2 und "richtig"-Zähler bleiben beim ersten Versuch;
+ * hier zählen nur Versuche, Zeit und ob sie jetzt gelöst ist. `attempt` = Anzahl bisheriger Versuche (1 beim ersten Wiederholen).
+ * Schon gezählt (Doppel-Tap, erneutes Senden): gibt den gespeicherten Stand zurück.
+ */
+export async function retryAnswer(
+  sessionId: string,
+  itemId: string,
+  attempt: number,
+  answer: Answer,
+  timeSec: number,
+): Promise<{ solved: boolean }> {
+  const v = await requireStudent();
+  const session = await loadSession(v, sessionId);
+  if (!session || session.finished_at || !session.planned_item_ids.includes(itemId)) throw new Error("Aufgabe gehört nicht zu dieser Session");
+
+  const { data: prev } = await v.supabase
+    .from("answers")
+    .select("result, solved, attempts, time_sec")
+    .eq("session_id", sessionId)
+    .eq("item_id", itemId)
+    .maybeSingle<AttemptState & { time_sec: number }>();
+  if (!prev || prev.result === "not_yet") throw new Error("Aufgabe wurde noch nicht beantwortet");
+  if (prev.solved || prev.attempts !== attempt || attempt >= MAX_ATTEMPTS) return { solved: prev.solved };
+
+  const { data: row } = await v.supabase.from("items").select("*").eq("id", itemId).single<ItemRow>();
+  if (!row) throw new Error("Aufgabe nicht gefunden");
+  const item = rowToContentItem(row);
+  const solved = isSolved(item, grade(item, answer, attemptSeed(sessionId, row.code, attempt)));
+
+  // Schreiben über Service Role: Schüler haben kein Update-Recht auf answers. Der Filter auf attempts
+  // sorgt dafür, dass ein doppelt gesendeter Versuch nur einmal zählt.
+  await createAdminClient()
+    .from("answers")
+    .update({
+      solved,
+      attempts: attempt + 1,
+      time_sec: prev.time_sec + Math.max(0, Math.min(Math.round(timeSec), 1800)),
+    })
+    .eq("session_id", sessionId)
+    .eq("item_id", itemId)
+    .eq("student_id", v.userId)
+    .eq("attempts", attempt);
+
+  await recount(v, sessionId);
+  return { solved };
 }
 
 /**

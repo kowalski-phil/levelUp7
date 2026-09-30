@@ -3,10 +3,10 @@
 import { Check, Lightbulb, Loader2, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
-import { finishSession, markNotYet, submitAnswer } from "@/app/(student)/session/actions";
+import { finishSession, markNotYet, retryAnswer, submitAnswer } from "@/app/(student)/session/actions";
 import { MathText } from "@/components/math-text";
 import type { Answer, ContentItem } from "@/lib/content/types";
-import { grade, instanceSeed, withHint } from "@/lib/engine/grading";
+import { attemptSeed, grade, isDone, isSolved, MAX_ATTEMPTS, withHint, type AttemptState } from "@/lib/engine/grading";
 import type { Result } from "@/lib/engine/sm2";
 import { fillTemplate, instantiate } from "@/lib/engine/template";
 import { cn } from "@/lib/utils";
@@ -29,19 +29,37 @@ const FEEDBACK: Record<Exclude<Result, "skipped">, { title: string; className: s
   wrong: { title: "Nicht ganz", className: "border-red-500/60 bg-red-500/10" },
 };
 
+/** Ein Schritt der Runde: Aufgabe plus Versuch (0 = erster Versuch, ab 1 Wiederholung am Ende der Runde). */
+interface Step {
+  pi: PlayerItem;
+  attempt: number;
+}
+
+/** Nach dem Neuladen: alle Aufgaben, dahinter die noch offenen Wiederholungen. */
+function initialSteps(items: PlayerItem[], answered: Record<string, AttemptState>): Step[] {
+  const retries = items.flatMap((pi) => {
+    const a = answered[pi.id];
+    return a && !isDone(a) ? [{ pi, attempt: a.attempts }] : [];
+  });
+  return [...items.map((pi) => ({ pi, attempt: 0 })), ...retries];
+}
+
 export function SessionPlayer({ sessionId, kind, items: initialItems, answered, preview = false, label, labelColor }: PlayerProps) {
-  const [items, setItems] = useState<PlayerItem[]>(initialItems);
+  const [steps, setSteps] = useState<Step[]>(() => initialSteps(initialItems, answered));
   const [skipped, setSkipped] = useState<Set<string>>(
-    () => new Set(Object.entries(answered).filter(([, r]) => r === "not_yet").map(([id]) => id)),
+    () => new Set(Object.entries(answered).filter(([, a]) => a.result === "not_yet").map(([id]) => id)),
   );
-  const firstOpen = initialItems.findIndex((it) => !answered[it.id]);
-  const [index, setIndex] = useState(firstOpen < 0 ? initialItems.length - 1 : firstOpen);
+  const [index, setIndex] = useState(() => {
+    const open = steps.findIndex((st) => st.attempt > 0 || !answered[st.pi.id]);
+    return open < 0 ? steps.length - 1 : open;
+  });
   const [answer, setAnswer] = useState<Answer | null>(null);
   const [result, setResult] = useState<Result | null>(() => {
-    if (firstOpen >= 0) return null;
-    const r = answered[initialItems.at(-1)?.id ?? ""];
-    return r && r !== "not_yet" ? r : null;
+    const a = steps[index].attempt === 0 ? answered[steps[index].pi.id] : undefined;
+    return a && a.result !== "not_yet" ? a.result : null;
   });
+  /** Falsch gelöst, kommt am Ende der Runde nochmal. */
+  const [requeued, setRequeued] = useState(false);
   const [hintShown, setHintShown] = useState(false);
   const [confirmNotYet, setConfirmNotYet] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -54,16 +72,18 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
     startedAt.current = Date.now();
   }, [index]);
 
-  const current = items[index];
-  const seed = instanceSeed(sessionId, current.item.code);
-  const isLast = index === items.length - 1;
+  const step = steps[index];
+  const current = step.pi;
+  const isRetry = step.attempt > 0;
+  const seed = attemptSeed(sessionId, current.item.code, step.attempt);
+  const isLast = index === steps.length - 1;
 
   const stem = useMemo(() => {
     if (current.item.type !== "numeric_template") return current.item.stem;
     return fillTemplate(current.item.stem, instantiate(current.item.payload, seed).values);
   }, [current, seed]);
 
-  const advance = (list: PlayerItem[]) => {
+  const advance = (list: Step[]) => {
     if (index >= list.length - 1) {
       if (preview) window.location.reload();
       else startFinish(() => finishSession(sessionId));
@@ -72,21 +92,36 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
     setIndex(index + 1);
     setAnswer(null);
     setResult(null);
+    setRequeued(false);
     setHintShown(false);
     setConfirmNotYet(false);
     window.scrollTo({ top: 0 });
   };
 
+  /** Erster Versuch zählt für Statistik und Wiederholplan, jede Wiederholung nur als Versuch. */
+  const save = async (a: Answer) => {
+    const secs = (Date.now() - startedAt.current) / 1000;
+    if (isRetry) {
+      await retryAnswer(sessionId, current.id, step.attempt, a, secs);
+      return;
+    }
+    const { result: server } = await submitAnswer(sessionId, current.id, a, secs, hintShown);
+    if (server !== "not_yet") setResult(server);
+  };
+
   const submit = async (a: Answer | null = answer) => {
     if (!a || result || saving) return;
-    setResult(withHint(grade(current.item, a, seed), hintShown));
+    const raw = grade(current.item, a, seed);
+    // Beim Wiederholen ist der Tipp kein Abzug: dort zählt nur, ob es jetzt sitzt.
+    setResult(isRetry ? raw : withHint(raw, hintShown));
+    if (!isSolved(current.item, raw) && step.attempt + 1 < MAX_ATTEMPTS) {
+      setRequeued(true);
+      setSteps([...steps, { pi: current, attempt: step.attempt + 1 }]);
+    }
     setSaving(true);
     setError(null);
     try {
-      if (!preview) {
-        const { result: server } = await submitAnswer(sessionId, current.id, a, (Date.now() - startedAt.current) / 1000, hintShown);
-        if (server !== "not_yet") setResult(server);
-      }
+      if (!preview) await save(a);
     } catch {
       setError("Speichern hat nicht geklappt. Prüf die Verbindung und tipp nochmal auf Weiter.");
     } finally {
@@ -99,7 +134,7 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
       // Erneut speichern, bevor es weitergeht.
       setSaving(true);
       try {
-        await submitAnswer(sessionId, current.id, answer, (Date.now() - startedAt.current) / 1000, hintShown);
+        await save(answer);
         setError(null);
       } catch {
         setSaving(false);
@@ -107,7 +142,7 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
       }
       setSaving(false);
     }
-    advance(items);
+    advance(steps);
   };
 
   const notYet = async () => {
@@ -115,8 +150,8 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
     setError(null);
     try {
       const replacement = preview ? null : (await markNotYet(sessionId, current.id)).replacement;
-      const list = replacement ? [...items, replacement] : items;
-      setItems(list);
+      const list = replacement ? [...steps, { pi: replacement, attempt: 0 }] : steps;
+      setSteps(list);
       setSkipped(new Set([...skipped, current.id]));
       advance(list);
     } catch {
@@ -127,12 +162,15 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
   };
 
   const locked = result !== null;
-  // Fortschritt ohne übersprungene Aufgaben ("hatten wir noch nicht").
-  const total = items.filter((it) => !skipped.has(it.id)).length;
-  const position = items.slice(0, index).filter((it) => !skipped.has(it.id)).length;
+  // Fortschritt ohne übersprungene Aufgaben ("hatten wir noch nicht"). Wiederholungen verlängern die Runde sichtbar.
+  const total = steps.filter((st) => !skipped.has(st.pi.id)).length;
+  const position = steps.slice(0, index).filter((st) => !skipped.has(st.pi.id)).length;
   const progress = position + (locked ? 1 : 0);
   // Mit Tipp richtig gelöst: zählt als "teilweise", wird aber als Erfolg angezeigt.
-  const solvedWithHint = hintShown && result === "partial" && answer !== null && grade(current.item, answer, seed) === "correct";
+  const solvedWithHint =
+    !isRetry && hintShown && result === "partial" && answer !== null && grade(current.item, answer, seed) === "correct";
+  // Letzter Versuch daneben: weiter, die Aufgabe kommt über den Wiederholplan in den nächsten Tagen wieder.
+  const givenUp = isRetry && locked && !requeued && result !== "correct";
   const showSolution = result === "wrong" || (result === "partial" && !solvedWithHint);
 
   return (
@@ -159,7 +197,11 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
           {current.subjectName}
         </span>
         <span className="truncate text-muted-foreground">{current.skillTitle}</span>
-        {kind === "bonus" ? <span className="ml-auto text-xs text-primary">Bonus</span> : null}
+        {isRetry ? (
+          <span className="ml-auto shrink-0 text-xs font-semibold text-amber-400">Nochmal</span>
+        ) : kind === "bonus" ? (
+          <span className="ml-auto text-xs text-primary">Bonus</span>
+        ) : null}
       </div>
 
       <MathText text={stem} className="text-lg leading-relaxed" />
@@ -170,7 +212,9 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-sky-400" />
             <div className="text-base">
               <MathText text={current.item.hint} />
-              <p className="mt-1 text-xs text-muted-foreground">Mit Tipp zählt eine richtige Antwort als teilweise richtig.</p>
+              {isRetry ? null : (
+                <p className="mt-1 text-xs text-muted-foreground">Mit Tipp zählt eine richtige Antwort als teilweise richtig.</p>
+              )}
             </div>
           </div>
         ) : (
@@ -184,7 +228,7 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
         )
       ) : null}
 
-      <div key={current.id}>
+      <div key={`${current.id}:${step.attempt}`}>
         <ItemInput
           item={current.item}
           seed={seed}
@@ -211,10 +255,19 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
             </div>
           ) : null}
           <MathText text={current.item.explanation} className="text-base text-foreground/90" />
+          {requeued ? (
+            <p className="mt-3 border-t border-border pt-3 text-sm font-semibold">
+              Lies dir die Erklärung durch. Die Aufgabe kommt am Ende der Runde nochmal, neu gemischt.
+            </p>
+          ) : givenUp ? (
+            <p className="mt-3 border-t border-border pt-3 text-sm text-muted-foreground">
+              Für heute lassen wir sie. Sie kommt in den nächsten Tagen wieder.
+            </p>
+          ) : null}
         </div>
       ) : null}
 
-      {!locked ? (
+      {!locked && !isRetry ? (
         confirmNotYet ? (
           <div className="rounded-xl border border-border bg-card p-3">
             <p className="text-sm">Dann kommt dieses Thema erst in 3 Wochen wieder. Die Aufgabe zählt nicht, du bekommst eine andere.</p>

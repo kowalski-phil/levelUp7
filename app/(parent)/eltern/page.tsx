@@ -17,16 +17,18 @@ export default async function ElternPage() {
   if (!studentId) return <p className="pt-10 text-muted-foreground">Noch kein Schüler-Konto verknüpft.</p>;
 
   const today = todayInBerlin();
-  const [streakRes, ledgerRes, sessionsRes, snoozeRes, catalog, allExams] = await Promise.all([
+  const [streakRes, ledgerRes, sessionsRes, totalsRes, snoozeRes, catalog, allExams] = await Promise.all([
     v.supabase.from("streaks").select("*").eq("student_id", studentId).maybeSingle<StreakRow>(),
     v.supabase.from("rewards_ledger").select("*").eq("student_id", studentId),
     v.supabase
       .from("sessions")
-      .select("id, date, kind, correct, total, duration_sec, finished_at")
+      .select("id, date, kind, correct, total, mistakes, retries, duration_sec, finished_at")
       .eq("student_id", studentId)
       .in("kind", ["daily", "focus"])
       .order("date", { ascending: false })
       .limit(14),
+    // Summen seit Start über alle Runden (Tag, Fokus, Bonus).
+    v.supabase.from("sessions").select("total, mistakes, duration_sec").eq("student_id", studentId),
     v.supabase.from("skill_snooze").select("skill_id, until, created_at").eq("student_id", studentId).order("created_at", { ascending: false }),
     loadCatalog(v.supabase),
     loadExams(v, studentId),
@@ -49,7 +51,14 @@ export default async function ElternPage() {
   const money = balance(
     ((ledgerRes.data ?? []) as LedgerRow[]).map((l) => ({ type: l.type, label: l.label, amountEur: Number(l.amount_eur), paidAt: l.paid_at })),
   );
-  const sessions = (sessionsRes.data ?? []) as Pick<SessionRow, "id" | "date" | "kind" | "correct" | "total" | "duration_sec" | "finished_at">[];
+  const sessions = (sessionsRes.data ?? []) as Pick<
+    SessionRow,
+    "id" | "date" | "kind" | "correct" | "total" | "mistakes" | "retries" | "duration_sec" | "finished_at"
+  >[];
+  const totals = ((totalsRes.data ?? []) as Pick<SessionRow, "total" | "mistakes" | "duration_sec">[]).reduce(
+    (t, x) => ({ items: t.items + x.total, mistakes: t.mistakes + x.mistakes, minutes: t.minutes + (x.duration_sec ?? 0) / 60 }),
+    { items: 0, mistakes: 0, minutes: 0 },
+  );
 
   return (
     <div className="flex flex-col gap-6 pt-4">
@@ -72,18 +81,43 @@ export default async function ElternPage() {
           <p className="text-xs text-muted-foreground">verdient {formatNumberDe(money.earned, 2)} €</p>
         </div>
       </div>
+      <div className="grid grid-cols-3 gap-3 rounded-2xl bg-card p-4 text-center tabular-nums">
+        <div>
+          <p className="text-2xl font-bold">{totals.items}</p>
+          <p className="text-xs text-muted-foreground">Aufgaben gesamt</p>
+        </div>
+        <div>
+          <p className="text-2xl font-bold text-red-400">{totals.mistakes}</p>
+          <p className="text-xs text-muted-foreground">
+            Fehler{totals.items ? ` (${Math.round((totals.mistakes / totals.items) * 100)} %)` : ""}
+          </p>
+        </div>
+        <div>
+          <p className="text-2xl font-bold">{Math.round(totals.minutes)}</p>
+          <p className="text-xs text-muted-foreground">Minuten</p>
+        </div>
+      </div>
       <section>
-        <h2 className="mb-2 font-semibold">Letzte Tage</h2>
+        <h2 className="mb-1 font-semibold">Letzte Tage</h2>
+        <p className="mb-2 text-sm text-muted-foreground">
+          Fehler = beim ersten Versuch falsch. Falsche Aufgaben muss Felix am Ende der Runde nochmal lösen, das sind die Wiederholungen.
+        </p>
         <ul className="divide-y divide-border rounded-2xl bg-card">
           {sessions.length === 0 ? <li className="p-4 text-muted-foreground">Noch keine Sessions.</li> : null}
           {sessions.map((x) => (
-            <li key={x.id} className="flex justify-between p-4 tabular-nums">
+            <li key={x.id} className="flex justify-between gap-3 p-4 tabular-nums">
               <span>
                 {new Date(`${x.date}T12:00:00`).toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" })}
                 {x.kind === "focus" ? <span className="text-muted-foreground"> · Fokus</span> : null}
               </span>
-              <span className="text-muted-foreground">
-                {x.finished_at ? `${x.correct}/${x.total} · ${Math.round((x.duration_sec ?? 0) / 60)} Min` : `angefangen (${x.total})`}
+              <span className="text-right">
+                <span className="block">
+                  {x.total} Aufgaben · <span className={x.mistakes ? "text-red-400" : undefined}>{x.mistakes} Fehler</span>
+                </span>
+                <span className="block text-xs text-muted-foreground">
+                  {x.finished_at ? `${Math.round((x.duration_sec ?? 0) / 60)} Min` : "nicht abgeschlossen"}
+                  {x.retries ? ` · ${x.retries}× wiederholt` : ""}
+                </span>
               </span>
             </li>
           ))}

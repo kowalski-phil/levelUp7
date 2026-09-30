@@ -13,6 +13,41 @@ export function withHint(result: Result, hintUsed: boolean): Result {
 /** Seed für Zufallswerte und Mischreihenfolge: gleiche Session + gleiche Aufgabe = gleiche Zahlen. */
 export const instanceSeed = (sessionId: string, itemCode: string) => `${sessionId}:${itemCode}`;
 
+/**
+ * Seed pro Versuch: Beim Wiederholen in derselben Runde sind die Optionen neu gemischt und
+ * die Zahlen neu gewürfelt, damit er nicht einfach die Position der richtigen Antwort merkt.
+ */
+export const attemptSeed = (sessionId: string, itemCode: string, attempt: number) =>
+  attempt === 0 ? instanceSeed(sessionId, itemCode) : `${instanceSeed(sessionId, itemCode)}:${attempt}`;
+
+/** Versuche pro Aufgabe und Runde. Danach geht es weiter, damit eine Aufgabe die Runde nie blockiert. */
+export const MAX_ATTEMPTS = 3;
+
+/** Gelöst = wirklich richtig (Tipp erlaubt). Selbsteinschätzung wird nicht wiederholt, die Musterlösung kennt er schon. */
+export function isSolved(item: Pick<ContentItem, "type">, raw: Result): boolean {
+  return item.type === "self_check" || raw === "correct";
+}
+
+export interface AttemptState {
+  result: AnswerResult;
+  solved: boolean;
+  attempts: number;
+}
+
+/** Aufgabe ist für diese Runde erledigt: gelöst, zurückgestellt oder alle Versuche verbraucht. */
+export function isDone(a: AttemptState): boolean {
+  return a.result === "not_yet" || a.solved || a.attempts >= MAX_ATTEMPTS;
+}
+
+/** Fehler für die Elternansicht: beim ersten Versuch nicht gelöst oder als "Daneben" selbst eingeschätzt. */
+export function isMistake(a: AttemptState): boolean {
+  if (a.result === "not_yet") return false;
+  return a.result === "wrong" || !a.solved || a.attempts > 1;
+}
+
+/** Zusätzliche Versuche nach dem ersten. */
+export const extraAttempts = (a: AttemptState) => (a.result === "not_yet" ? 0 : Math.max(0, a.attempts - 1));
+
 function fraction(hits: number, total: number): Result {
   if (total > 0 && hits === total) return "correct";
   if (total > 0 && hits / total >= 0.5) return "partial";

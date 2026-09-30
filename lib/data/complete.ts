@@ -1,4 +1,5 @@
 import "server-only";
+import { isDone, type AttemptState } from "@/lib/engine/grading";
 import { rewardsForCompletion, type RewardsConfig } from "@/lib/engine/rewards";
 import { completeDay, initialStreak, type StreakState } from "@/lib/engine/streak";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -11,14 +12,17 @@ const toState = (r: StreakRow | null): StreakState =>
 /**
  * Schließt eine Session ab. Bei der Tagessession oder Fokus-Runde: Streak +1, Joker, Belohnungen.
  * Streak und Ledger schreibt nur der Service-Role-Client, erst nachdem geprüft ist,
- * dass alle geplanten Aufgaben beantwortet sind.
+ * dass alle geplanten Aufgaben erledigt sind (falsche wiederholt, bis gelöst oder Versuche aufgebraucht).
  */
 export async function completeSession(v: Viewer, session: SessionRow): Promise<SessionSummary | null> {
   if (session.finished_at) return session.summary;
 
-  const { data: answers } = await v.supabase.from("answers").select("item_id, time_sec").eq("session_id", session.id);
-  const answered = new Set((answers ?? []).map((a: { item_id: string }) => a.item_id));
-  if (!session.planned_item_ids.every((id) => answered.has(id))) return null;
+  const { data: answers } = await v.supabase
+    .from("answers")
+    .select("item_id, time_sec, result, solved, attempts")
+    .eq("session_id", session.id);
+  const done = new Set(((answers ?? []) as (AttemptState & { item_id: string })[]).filter(isDone).map((a) => a.item_id));
+  if (!session.planned_item_ids.every((id) => done.has(id))) return null;
 
   const admin = createAdminClient();
   const duration = (answers ?? []).reduce((s: number, a: { time_sec: number }) => s + a.time_sec, 0);

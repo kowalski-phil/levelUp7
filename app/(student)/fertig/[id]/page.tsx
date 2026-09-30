@@ -35,7 +35,7 @@ export default async function FertigPage({ params }: PageProps<"/fertig/[id]">) 
           {session.correct}
           <span className="text-muted-foreground">/{session.total}</span>
         </p>
-        <p className="mt-1 text-muted-foreground">richtig · {minutes} Min</p>
+        <p className="mt-1 text-muted-foreground">beim ersten Versuch richtig · {minutes} Min</p>
       </div>
 
       <div className="grid grid-cols-2 gap-3">

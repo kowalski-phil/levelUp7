@@ -58,6 +58,10 @@ export interface SessionRow {
   duration_sec: number | null;
   correct: number;
   total: number;
+  /** Aufgaben, die beim ersten Versuch nicht gelöst wurden. */
+  mistakes: number;
+  /** Zusätzliche Versuche beim Wiederholen in derselben Runde. */
+  retries: number;
   xp: number;
   summary: SessionSummary | null;
 }

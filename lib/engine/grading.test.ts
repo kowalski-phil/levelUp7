@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { ContentItem } from "@/lib/content/types";
-import { grade, withHint } from "./grading";
+import { attemptSeed, extraAttempts, grade, instanceSeed, isDone, isMistake, isSolved, MAX_ATTEMPTS, withHint } from "./grading";
 import { instantiate } from "./template";
 
 const base = { code: "X-001", skill_code: "X.1", difficulty: 1 as const, stem: "", explanation: "" };
@@ -108,5 +108,49 @@ describe("withHint", () => {
     expect(withHint("correct", false)).toBe("correct");
     expect(withHint("wrong", true)).toBe("wrong");
     expect(withHint("partial", true)).toBe("partial");
+  });
+});
+
+describe("Wiederholen in derselben Runde", () => {
+  it("erster Versuch nutzt den bisherigen Seed, weitere Versuche einen neuen", () => {
+    expect(attemptSeed("s1", "M4-001", 0)).toBe(instanceSeed("s1", "M4-001"));
+    expect(attemptSeed("s1", "M4-001", 1)).not.toBe(attemptSeed("s1", "M4-001", 0));
+    expect(attemptSeed("s1", "M4-001", 2)).not.toBe(attemptSeed("s1", "M4-001", 1));
+  });
+
+  it("neuer Versuch würfelt bei numeric_template neue Zahlen", () => {
+    const spec = { params: { a: { min: 1, max: 50, step: 1 }, b: { min: 1, max: 50, step: 1 } }, formula: "a * b" };
+    const seeds = [0, 1, 2].map((n) => JSON.stringify(instantiate(spec, attemptSeed("s1", "M4-001", n)).values));
+    expect(new Set(seeds).size).toBeGreaterThan(1);
+  });
+
+  it("gelöst nur bei wirklich richtig, Selbsteinschätzung zählt immer als gelöst", () => {
+    expect(isSolved({ type: "mc" }, "correct")).toBe(true);
+    expect(isSolved({ type: "cloze" }, "partial")).toBe(false);
+    expect(isSolved({ type: "mc" }, "wrong")).toBe(false);
+    expect(isSolved({ type: "self_check" }, "wrong")).toBe(true);
+  });
+
+  it("erledigt: gelöst, zurückgestellt oder Versuche aufgebraucht", () => {
+    expect(isDone({ result: "wrong", solved: false, attempts: 1 })).toBe(false);
+    expect(isDone({ result: "wrong", solved: false, attempts: MAX_ATTEMPTS - 1 })).toBe(false);
+    expect(isDone({ result: "wrong", solved: false, attempts: MAX_ATTEMPTS })).toBe(true);
+    expect(isDone({ result: "wrong", solved: true, attempts: 2 })).toBe(true);
+    expect(isDone({ result: "not_yet", solved: false, attempts: 1 })).toBe(true);
+  });
+
+  it("Fehler: erster Versuch daneben, mit Tipp gelöst ist kein Fehler", () => {
+    expect(isMistake({ result: "correct", solved: true, attempts: 1 })).toBe(false);
+    expect(isMistake({ result: "partial", solved: true, attempts: 1 })).toBe(false); // richtig mit Tipp
+    expect(isMistake({ result: "partial", solved: false, attempts: 1 })).toBe(true);
+    expect(isMistake({ result: "wrong", solved: true, attempts: 2 })).toBe(true);
+    expect(isMistake({ result: "wrong", solved: true, attempts: 1 })).toBe(true); // Selbsteinschätzung "Daneben"
+    expect(isMistake({ result: "not_yet", solved: false, attempts: 1 })).toBe(false);
+  });
+
+  it("zusätzliche Versuche", () => {
+    expect(extraAttempts({ result: "correct", solved: true, attempts: 1 })).toBe(0);
+    expect(extraAttempts({ result: "wrong", solved: false, attempts: 3 })).toBe(2);
+    expect(extraAttempts({ result: "not_yet", solved: false, attempts: 1 })).toBe(0);
   });
 });

@@ -3,7 +3,7 @@ import { SessionPlayer } from "@/components/session/player";
 import { loadExam } from "@/lib/data/exams";
 import { requireStudent } from "@/lib/data/queries";
 import { loadSession, toPlayerItems } from "@/lib/data/sessions";
-import type { AnswerResult } from "@/lib/engine/grading";
+import type { AttemptState } from "@/lib/engine/grading";
 
 export default async function SessionPage({ params }: PageProps<"/session/[id]">) {
   const { id } = await params;
@@ -14,13 +14,13 @@ export default async function SessionPage({ params }: PageProps<"/session/[id]">
 
   const [items, answersRes, exam] = await Promise.all([
     toPlayerItems(v, session.planned_item_ids),
-    v.supabase.from("answers").select("item_id, result").eq("session_id", id),
+    v.supabase.from("answers").select("item_id, result, solved, attempts").eq("session_id", id),
     session.kind === "focus" && session.exam_id ? loadExam(v, session.exam_id) : null,
   ]);
   if (!items.length) redirect("/");
 
-  const answered: Record<string, AnswerResult> = {};
-  for (const a of (answersRes.data ?? []) as { item_id: string; result: AnswerResult }[]) answered[a.item_id] = a.result;
+  const answered: Record<string, AttemptState> = {};
+  for (const { item_id, ...a } of (answersRes.data ?? []) as (AttemptState & { item_id: string })[]) answered[item_id] = a;
 
   return (
     <SessionPlayer
