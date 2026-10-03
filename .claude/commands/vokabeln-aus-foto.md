@@ -1,20 +1,30 @@
 ---
 description: Fotos aus dem Vokabelteil des Englischbuchs in Vokabelaufgaben umwandeln und einspielen
-argument-hint: "[foto-pfade …]  (leer = alle neuen Fotos in assets/buecher/englisch/vokabeln/)"
+argument-hint: "<Vokabelseiten, z. B. 143-144>  oder  bis S. <Buchseite, z. B. bis S. 14>"
 ---
 
 Wandle Fotos aus dem Vokabelteil von Felix' Englischbuch (Cornelsen „Go Ahead 10“, siehe `docs/schulbuecher.md`) in Aufgaben für `content/englisch/E3.json` um und spiele sie ein.
 
-Fotos: $ARGUMENTS
-Ohne Angabe: alle Bilder in `assets/buecher/englisch/vokabeln/`, die in `docs/vokabeln.md` noch nicht als verarbeitet stehen.
+Auswahl: $ARGUMENTS
+
+## 0. Welche Seiten
+
+Die Fotos liegen in `assets/buecher/englisch/vokabeln/`. Der Dateiname beginnt mit der Seitenzahl im Vokabelteil, z. B. `143.jpg` oder `143 Unit 1.jpg`. Es liegen oft mehr Seiten da, als im Unterricht schon dran waren. Importiert wird **nur, was Phil angibt**:
+
+- **Vokabelseiten** (`143`, `143-144`, `143, 145`): alle Wörter dieser Fotos.
+- **Bis zu einer Buchseite** (`bis S. 14`): Im Vokabelteil steht links neben den Wörtern, zu welcher Buchseite sie gehören (`pp. 10/11`, `p. 12`, `p. 13` …). Importiert werden alle Wörter bis einschließlich dieser Buchseite, auch wenn die Grenze mitten auf einem Foto liegt. Dafür die Fotos in Seitenreihenfolge lesen, bis eine höhere Buchseite beginnt.
+
+Ohne Angabe: nichts importieren. Stattdessen kurz auflisten, welche Fotos (Vokabelseite, Unit, Buchseiten-Bereich laut Randmarken) daliegen und was laut `docs/vokabeln.md` schon importiert ist, und Phil fragen, wie weit der Unterricht ist.
+
+Fehlt ein angegebenes Foto oder lässt sich ein Dateiname keiner Seite zuordnen: nachfragen, nicht raten.
 
 ## 1. Lesen
 
-- Jedes Foto mit dem Read-Tool ansehen. Die Vokabeltabelle abschreiben: englischer Eintrag, deutsche Bedeutung(en), Seitenzahl, Unit-Überschrift.
+- Jedes ausgewählte Foto mit dem Read-Tool ansehen. Die Vokabeltabelle abschreiben: englischer Eintrag, deutsche Bedeutung(en), Vokabelseite, Buchseite (Randmarke), Unit-Überschrift.
 - Lautschrift, Bilder und die Beispielsätze des Buchs ignorieren. Beispielsätze des Buchs nie übernehmen.
-- Was nicht sicher lesbar ist (unscharf, abgeschnitten, verdeckt), wird übersprungen und am Ende gemeldet. Nie raten.
+- Was nicht sicher lesbar ist (unscharf, abgeschnitten, verdeckt), wird übersprungen und am Ende gemeldet. Nie raten. Angeschnittene Nachbarseiten am Bildrand gehören nicht dazu.
 - Eigennamen (Orte, Personen) überspringen.
-- Wörter, die schon in `E3.json` stehen (Vergleich über `vocabKey` aus `lib/engine/grading.ts`), überspringen.
+- Wörter, die schon in `E3.json` stehen (Vergleich über `vocabKey` aus `lib/engine/grading.ts`), überspringen. Deshalb schadet es nicht, wenn eine schon teilweise importierte Seite nochmal ausgewählt wird.
 
 ## 2. Aufgaben schreiben
 
@@ -43,7 +53,7 @@ Pro Wort zwei Items mit aufeinanderfolgenden Codes, zuerst Erkennen, dann Schrei
 {
   "code": "E3-002", "skill_code": "E3.1", "type": "vocab", "difficulty": 2,
   "stem": "Wie heißt das auf Englisch? **sich über etw. beschweren**",
-  "payload": { "page": 152 },
+  "payload": { "page": 143 },
   "solution": { "answers": ["to complain about sth"] },
   "hint": "Beginnt mit „c“, zwei Wörter (ohne to).",
   "explanation": "to complain about sth = sich über etw. beschweren. Beispiel: Many guests complained about the noise at night."
@@ -63,11 +73,11 @@ Pro Wort zwei Items mit aufeinanderfolgenden Codes, zuerst Erkennen, dann Schrei
 1. `npm run content:check`, alle Fehler beheben.
 2. Bevor zum ersten Mal Vokabeln eingespielt werden: prüfen, dass der Code für den Typ `vocab` live ist (`git fetch` und `git log origin/main --oneline -- lib/engine/planner.ts` enthält den Vokabel-Commit). Sonst Phil bitten, erst zu pushen. Der Seed schreibt direkt in die Live-Datenbank, und die alte App kann `vocab` nicht anzeigen.
 3. `npm run seed`.
-4. In `docs/vokabeln.md` eine Zeile anhängen: Datum, Fotodatei(en), Seiten, Unit, Item-Codes von–bis, Anzahl Wörter, übersprungene Wörter.
+4. In `docs/vokabeln.md` eine Zeile anhängen: Datum, Vokabelseiten, Buchseiten bis einschließlich, Unit, Item-Codes von–bis, Anzahl Wörter, übersprungene Wörter.
 5. Commit mit Inhalt und Log. Nicht pushen, ohne Phil zu fragen.
 
 ## 4. Bericht an Phil (kurz)
 
-- Wie viele Wörter, wie viele Aufgaben, von welchen Seiten.
+- Wie viele Wörter, wie viele Aufgaben, von welchen Vokabelseiten, bis zu welcher Buchseite.
 - Welche Einträge übersprungen wurden und warum (unlesbar, Eigenname, schon vorhanden).
 - Grob, nach wie vielen Tagen alle neuen Wörter einmal dran waren: Aufgaben geteilt durch `VOCAB_PER_DAY` in `lib/engine/planner.ts`, fällige Wiederholungen gehen vor.

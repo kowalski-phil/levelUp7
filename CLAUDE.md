@@ -46,7 +46,7 @@ docs/                 Lehrplanstruktur, Entscheidungen
 
 - `/mehr-aufgaben <unit_code> <anzahl>`: liest die bestehende JSON, erzeugt neue Items ohne Dopplung, hängt an, führt Seed aus.
 - `/pruefe-aufgaben <unit_code>`: liest die JSON, rechnet jede Lösung nach, meldet Zweifelsfälle.
-- `/vokabeln-aus-foto [fotos]`: liest Fotos aus dem Vokabelteil, schreibt E3-Items (Erkennen und Schreiben), führt Seed aus, protokolliert in `docs/vokabeln.md`.
+- `/vokabeln-aus-foto <143-144 | bis S. 14>`: liest die angegebenen Fotos aus dem Vokabelteil (nur was im Unterricht dran war), schreibt E3-Items (Erkennen und Schreiben), führt Seed aus, protokolliert in `docs/vokabeln.md`.
 
 ## Arbeitsweise
 
