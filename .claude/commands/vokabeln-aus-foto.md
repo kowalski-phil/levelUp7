@@ -1,6 +1,6 @@
 ---
 description: Fotos aus dem Vokabelteil des Englischbuchs in Vokabelaufgaben umwandeln und einspielen
-argument-hint: "<Vokabelseiten, z. B. 143-144>  oder  bis S. <Buchseite, z. B. bis S. 14>"
+argument-hint: "<Vokabelseiten, z. B. 148-149>  oder  bis S. <Buchseite, z. B. bis S. 14>"
 ---
 
 Wandle Fotos aus dem Vokabelteil von Felix' Englischbuch (Cornelsen „Go Ahead 10“, siehe `docs/schulbuecher.md`) in Aufgaben für `content/englisch/E3.json` um und spiele sie ein.
@@ -9,9 +9,9 @@ Auswahl: $ARGUMENTS
 
 ## 0. Welche Seiten
 
-Die Fotos liegen in `assets/buecher/englisch/vokabeln/`. Der Dateiname beginnt mit der Seitenzahl im Vokabelteil, z. B. `143.jpg` oder `143 Unit 1.jpg`. Es liegen oft mehr Seiten da, als im Unterricht schon dran waren. Importiert wird **nur, was Phil angibt**:
+Die Fotos liegen in `assets/buecher/englisch/vokabeln/` und heißen `Unit<Nummer>_S<Seite>.jpg`, z. B. `Unit1_S148.jpg`: Unit des Buchs und Seitenzahl im Vokabelteil. Die Unit aus dem Dateinamen bestimmt den `skill_code`. Andere Dateien im Ordner ignorieren. Es liegen oft mehr Seiten da, als im Unterricht schon dran waren. Importiert wird **nur, was Phil angibt**:
 
-- **Vokabelseiten** (`143`, `143-144`, `143, 145`): alle Wörter dieser Fotos.
+- **Vokabelseiten** (`148`, `148-149`, `148, 150`): alle Wörter dieser Fotos.
 - **Bis zu einer Buchseite** (`bis S. 14`): Im Vokabelteil steht links neben den Wörtern, zu welcher Buchseite sie gehören (`pp. 10/11`, `p. 12`, `p. 13` …). Importiert werden alle Wörter bis einschließlich dieser Buchseite, auch wenn die Grenze mitten auf einem Foto liegt. Dafür die Fotos in Seitenreihenfolge lesen, bis eine höhere Buchseite beginnt.
 
 Ohne Angabe: nichts importieren. Stattdessen kurz auflisten, welche Fotos (Vokabelseite, Unit, Buchseiten-Bereich laut Randmarken) daliegen und was laut `docs/vokabeln.md` schon importiert ist, und Phil fragen, wie weit der Unterricht ist.
@@ -53,7 +53,7 @@ Pro Wort zwei Items mit aufeinanderfolgenden Codes, zuerst Erkennen, dann Schrei
 {
   "code": "E3-002", "skill_code": "E3.1", "type": "vocab", "difficulty": 2,
   "stem": "Wie heißt das auf Englisch? **sich über etw. beschweren**",
-  "payload": { "page": 143 },
+  "payload": { "page": 148 },
   "solution": { "answers": ["to complain about sth"] },
   "hint": "Beginnt mit „c“, zwei Wörter (ohne to).",
   "explanation": "to complain about sth = sich über etw. beschweren. Beispiel: Many guests complained about the noise at night."
