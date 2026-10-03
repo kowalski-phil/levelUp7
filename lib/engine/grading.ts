@@ -70,13 +70,20 @@ export function normalizeText(s: string, caseSensitive: boolean): string {
 export function vocabKey(s: string): string {
   return normalizeText(s, false)
     .replace(/\([^)]*\)/g, " ")
-    .replace(/\b(sb|sth)\b('s)?\.?/g, " ")
+    .replace(/\b(sb|sth)\b\.?('s)?/g, " ")
     // Ausgeschrieben zählt auch, aber nur nach einem anderen Wort: "someone" allein ist selbst eine Vokabel.
     .replace(/(?<=\S )(something|somebody|someone)('s)?(?=\s|$)/g, " ")
     .replace(/(^|\s)\/(?=\s|$)/g, " ")
     .replace(/\s+/g, " ")
     .trim()
     .replace(/^to /, "");
+}
+
+/** Vergleichsformen mit und ohne Klammerinhalt: "(not) necessarily" gilt als "necessarily" und als "not necessarily". */
+export function vocabKeys(s: string): string[] {
+  const without = vocabKey(s);
+  const with_ = vocabKey(s.replace(/[()]/g, ""));
+  return without === with_ ? [without] : [without, with_];
 }
 
 /** Anzahl Tipp-, Lösch-, Einfüge- und Dreherfehler zwischen zwei Wörtern ("complian" statt "complain" = 1). */
@@ -95,7 +102,7 @@ export function editDistance(a: string, b: string): number {
 function gradeVocab(input: string, answers: readonly string[]): Result {
   const given = vocabKey(input);
   if (!given) return "wrong";
-  const keys = answers.map(vocabKey);
+  const keys = answers.flatMap(vocabKeys);
   if (keys.includes(given)) return "correct";
   return keys.some((k) => k.length >= 5 && editDistance(k, given) === 1) ? "partial" : "wrong";
 }

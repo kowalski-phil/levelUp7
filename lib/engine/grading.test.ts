@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { ContentItem } from "@/lib/content/types";
-import { attemptSeed, extraAttempts, grade, instanceSeed, isDone, isMistake, isSolved, MAX_ATTEMPTS, withHint } from "./grading";
+import { attemptSeed, extraAttempts, grade, instanceSeed, isDone, isMistake, isSolved, MAX_ATTEMPTS, vocabKey, withHint } from "./grading";
 import { instantiate } from "./template";
 
 const base = { code: "X-001", skill_code: "X.1", difficulty: 1 as const, stem: "", explanation: "" };
@@ -72,6 +72,13 @@ describe("grade", () => {
     expect(grade(alt, { type: "vocab", input: "take care of" }, "s")).toBe("correct");
     expect(grade(alt, { type: "vocab", input: "look after sb's" }, "s")).toBe("correct");
     // Kurze Wörter: ein Buchstabe macht ein anderes Wort (form/from), kein Schreibfehler-Bonus.
+    const brackets: ContentItem = { ...item, solution: { answers: ["(to) agree (on) sth."] } };
+    expect(grade(brackets, { type: "vocab", input: "agree on" }, "s")).toBe("correct");
+    expect(grade(brackets, { type: "vocab", input: "to agree" }, "s")).toBe("correct");
+    const not: ContentItem = { ...item, solution: { answers: ["(not) necessarily"] } };
+    expect(grade(not, { type: "vocab", input: "not necessarily" }, "s")).toBe("correct");
+    expect(grade(not, { type: "vocab", input: "necessarily" }, "s")).toBe("correct");
+    expect(vocabKey("(to) weigh heavily on sb./sb.'s shoulders")).toBe("weigh heavily on shoulders");
     const someone: ContentItem = { ...item, solution: { answers: ["someone", "somebody"] } };
     expect(grade(someone, { type: "vocab", input: "someone" }, "s")).toBe("correct");
     const short: ContentItem = { ...item, solution: { answers: ["form"] } };
