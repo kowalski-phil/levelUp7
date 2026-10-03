@@ -13,6 +13,7 @@ import type {
   McItem,
   McMultiItem,
   OrderItem,
+  VocabItem,
 } from "@/lib/content/types";
 import { shuffle } from "@/lib/engine/template";
 import { cn } from "@/lib/utils";
@@ -368,5 +369,30 @@ export function BookingInput({ item, disabled, onChange }: InputProps<BookingIte
       <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">Haben</p>
       {renderLines(haben, setHaben, soll, "haben")}
     </div>
+  );
+}
+
+export function VocabInput({ disabled, onChange, onSubmit }: Omit<InputProps<VocabItem>, "item" | "seed">) {
+  const [value, setValue] = useState("");
+  return (
+    <input
+      autoComplete="off"
+      autoCapitalize="off"
+      autoCorrect="off"
+      spellCheck={false}
+      enterKeyHint="done"
+      lang="en"
+      disabled={disabled}
+      value={value}
+      placeholder="auf Englisch"
+      onChange={(e) => {
+        setValue(e.target.value);
+        onChange(e.target.value.trim() ? { type: "vocab", input: e.target.value } : null);
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" && value.trim()) onSubmit?.();
+      }}
+      className="h-14 w-full rounded-xl border-2 border-border bg-card px-4 text-xl outline-none focus:border-primary"
+    />
   );
 }

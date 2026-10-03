@@ -167,7 +167,7 @@ Mengenziel für den ersten Build:
 - Mathe II: 5 Units × 40 Items, davon mindestens 15 `numeric_template` pro Unit
 - BwR: 4 Units × 40 Items, davon mindestens 10 `booking` und 10 `numeric_template` pro Unit
 - Deutsch: 4 Units × 35 Items, Schwerpunkt D3 (Erörterung/TGA-Bausteine) und D4 (Rechtschreibung, Kommaregeln, Grammatik)
-- Englisch: E1 und E2 je 60 Items (Grammatik-Cloze, Reading-MC mit kurzen selbstgeschriebenen Texten, Speaking-Prompts als `self_check`). Keine Vokabelaufgaben: Vokabeln lernt Felix aus dem Vokabelteil des Buchs oder E-Books, nicht in der App (Phil, 2026-09-28).
+- Englisch: E1 und E2 je 60 Items (Grammatik-Cloze, Reading-MC mit kurzen selbstgeschriebenen Texten, Speaking-Prompts als `self_check`). Vokabeln (E3) nur aus abfotografierten Seiten des Vokabelteils, eigene Spur mit bis zu 10 Vokabeln pro Tag zusätzlich zu den 12 Aufgaben (Phil, 2026-10-03; vorher ab 2026-09-28 keine Vokabeln).
 - Summe ca. 800 Items. Mit Templates und Spaced Repetition reicht das für Monate.
 
 Nachschub: Claude-Code-Command `/mehr-aufgaben <unit_code> <anzahl>` (Slash-Command im Repo) erzeugt weitere Items in dieselbe Datei. Das Seed-Skript ist idempotent (Upsert nach `item.code`).

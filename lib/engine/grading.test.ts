@@ -58,6 +58,26 @@ describe("grade", () => {
     expect(grade(de, { type: "cloze_free", answers: ["das laufen"] }, "s")).toBe("wrong");
   });
 
+  it("vocab: to, sb/sth und Klammern optional, ein Tippfehler ist teilweise richtig", () => {
+    const item: ContentItem = { ...base, type: "vocab", payload: { page: 150 }, solution: { answers: ["to apply for sth"] } };
+    const g = (input: string) => grade(item, { type: "vocab", input }, "s");
+    expect(g("to apply for sth")).toBe("correct");
+    expect(g("Apply for")).toBe("correct");
+    expect(g("  to apply for something ")).toBe("correct");
+    expect(g("to aply for")).toBe("partial");
+    expect(g("to apply fro")).toBe("partial");
+    expect(g("to ask for")).toBe("wrong");
+    expect(g("")).toBe("wrong");
+    const alt: ContentItem = { ...item, solution: { answers: ["(to) look after sb/sth", "to take care of sb"] } };
+    expect(grade(alt, { type: "vocab", input: "take care of" }, "s")).toBe("correct");
+    expect(grade(alt, { type: "vocab", input: "look after sb's" }, "s")).toBe("correct");
+    // Kurze Wörter: ein Buchstabe macht ein anderes Wort (form/from), kein Schreibfehler-Bonus.
+    const someone: ContentItem = { ...item, solution: { answers: ["someone", "somebody"] } };
+    expect(grade(someone, { type: "vocab", input: "someone" }, "s")).toBe("correct");
+    const short: ContentItem = { ...item, solution: { answers: ["form"] } };
+    expect(grade(short, { type: "vocab", input: "from" }, "s")).toBe("wrong");
+  });
+
   it("order und match", () => {
     const order: ContentItem = { ...base, type: "order", payload: { items: ["a", "b", "c", "d"] } };
     expect(grade(order, { type: "order", items: ["a", "b", "c", "d"] }, "s")).toBe("correct");

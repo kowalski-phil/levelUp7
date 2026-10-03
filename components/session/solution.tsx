@@ -81,5 +81,14 @@ export function SolutionView({ item, seed }: { item: ContentItem; seed: string }
       );
     case "self_check":
       return null;
+    case "vocab":
+      return (
+        <span>
+          <span className="text-lg font-semibold">{item.solution.answers[0]}</span>
+          {item.solution.answers.length > 1 ? (
+            <span className="text-muted-foreground"> · auch: {item.solution.answers.slice(1).join(", ")}</span>
+          ) : null}
+        </span>
+      );
   }
 }

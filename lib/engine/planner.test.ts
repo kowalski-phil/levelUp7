@@ -1,6 +1,14 @@
 import { describe, expect, it } from "vitest";
 import { buildSchedule } from "./calendar";
-import { pickReplacement, planBonus, planDaily, type PlanInput, type PlannerItem, type PlannerState } from "./planner";
+import {
+  pickReplacement,
+  planBonus,
+  planDaily,
+  VOCAB_PER_DAY,
+  type PlanInput,
+  type PlannerItem,
+  type PlannerState,
+} from "./planner";
 
 const START = "2026-09-16";
 const EXAM = "2027-06-23";
@@ -149,5 +157,64 @@ describe("hatten wir noch nicht", () => {
     expect(item.subject).toBe("M");
     expect(item.skillCode).not.toBe("M1.1");
     expect(today).not.toContain(r);
+  });
+});
+
+describe("Vokabeln", () => {
+  // E3: 2 Buch-Units, je 6 Wörter × (Erkennen difficulty 1, Schreiben difficulty 2).
+  const vocab: PlannerItem[] = [];
+  for (let u = 0; u < 2; u++) {
+    for (let k = 0; k < 12; k++) {
+      const code = `E3-${String(u * 12 + k + 1).padStart(3, "0")}`;
+      vocab.push({ id: code, code, subject: "E", unitCode: "E3", skillCode: `E3.${u + 1}`, skillOrder: u, difficulty: k % 2 === 0 ? 1 : 2 });
+    }
+  }
+  const withVocab = (over: Partial<PlanInput> = {}) => base({ items: [...allItems, ...vocab], ...over });
+  const isVocabId = (id: string) => id.startsWith("E3-");
+  const diff = (id: string) => vocab.find((i) => i.id === id)!.difficulty;
+
+  it("12 Fach-Aufgaben bleiben, dazu die Vokabeln verteilt statt als Block", () => {
+    const plan = planDaily(withVocab());
+    const main = plan.filter((id) => !isVocabId(id));
+    expect(main).toEqual(planDaily(base()));
+    expect(plan.filter(isVocabId)).toHaveLength(VOCAB_PER_DAY);
+    expect(isVocabId(plan[0])).toBe(false);
+    expect(plan.slice(0, 6).some(isVocabId)).toBe(true);
+  });
+
+  it("neue Wörter: erste Buch-Unit zuerst, darin erst Erkennen, dann Schreiben", () => {
+    const v = planDaily(withVocab()).filter(isVocabId);
+    expect(v.every((id) => vocab.find((i) => i.id === id)!.skillOrder === 0)).toBe(true);
+    expect(v.slice(0, 6).every((id) => diff(id) === 1)).toBe(true);
+  });
+
+  it("fällige Vokabeln vor neuen, nicht fällige bleiben weg", () => {
+    const states: PlannerState[] = [
+      { itemId: "E3-020", dueDate: "2026-09-22", lapses: 1, lastResult: "wrong" },
+      { itemId: "E3-001", dueDate: "2026-09-30", lapses: 0, lastResult: "correct" },
+    ];
+    const v = planDaily(withVocab({ states })).filter(isVocabId);
+    expect(v[0]).toBe("E3-020");
+    expect(v).not.toContain("E3-001");
+  });
+
+  it("Englisch-Plätze und Ersatz nehmen nie Vokabeln, auch nicht bei Schulaufgabe mit Vokabel-Thema", () => {
+    const focusSkills = new Map([["E", new Set(["E3.1", "E2.1"])]]);
+    const plan = planDaily(withVocab({ focusSkills }));
+    expect(plan.filter((id) => !isVocabId(id) && subj(id) === "E")).toHaveLength(3);
+    const r = pickReplacement(withVocab({ exclude: new Set(plan) }), "E");
+    expect(isVocabId(r!)).toBe(false);
+  });
+
+  it("ohne Vokabeln im Katalog ändert sich nichts", () => {
+    expect(planDaily(base())).toHaveLength(12);
+  });
+
+  it("Bonus-Runde im Vokabel-Gebiet", () => {
+    const today = planDaily(withVocab());
+    const bonus = planBonus(withVocab({ exclude: new Set(today) }), "E3");
+    expect(bonus).toHaveLength(6);
+    expect(bonus.every(isVocabId)).toBe(true);
+    expect(bonus.some((id) => today.includes(id))).toBe(false);
   });
 });

@@ -19,6 +19,7 @@ import {
   McMultiInput,
   NumericInput,
   OrderInput,
+  VocabInput,
 } from "./inputs";
 import { SolutionView } from "./solution";
 import type { PlayerItem, PlayerProps } from "./types";
@@ -246,7 +247,11 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
         <div className={cn("rounded-xl border-2 p-4", FEEDBACK[solvedWithHint ? "correct" : result].className)}>
           <p className="mb-2 flex items-center gap-2 text-lg font-bold">
             {result === "correct" ? <Check className="size-5" /> : null}
-            {solvedWithHint ? "Richtig, mit Tipp" : FEEDBACK[result].title}
+            {solvedWithHint
+              ? "Richtig, mit Tipp"
+              : result === "partial" && current.item.type === "vocab"
+                ? "Fast, nur ein Tippfehler"
+                : FEEDBACK[result].title}
           </p>
           {showSolution && current.item.type !== "self_check" ? (
             <div className="mb-3">
@@ -267,7 +272,7 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
         </div>
       ) : null}
 
-      {!locked && !isRetry ? (
+      {!locked && !isRetry && current.item.type !== "vocab" ? (
         confirmNotYet ? (
           <div className="rounded-xl border border-border bg-card p-3">
             <p className="text-sm">Dann kommt dieses Thema erst in 3 Wochen wieder. Die Aufgabe zählt nicht, du bekommst eine andere.</p>
@@ -356,6 +361,8 @@ function ItemInput({
       return <BookingInput item={item} seed={seed} disabled={disabled} onChange={onChange} />;
     case "self_check":
       return <SelfCheck item={item} disabled={disabled} onRate={onSelfRate} />;
+    case "vocab":
+      return <VocabInput disabled={disabled} onChange={onChange} onSubmit={onSubmit} />;
   }
 }
 

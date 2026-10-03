@@ -140,6 +140,15 @@
         { "code": "E2.4", "title": "Passive and reported speech", "description": "Passive in all tenses, reported speech with backshift." },
         { "code": "E2.5", "title": "Relative clauses", "description": "Defining and non-defining relative clauses, contact clauses." }
       ]
+    },
+    {
+      "code": "E3", "subject": "E", "title": "Vocabulary", "hours": 0,
+      "skills": [
+        { "code": "E3.1", "title": "Vokabeln Unit 1", "description": "A diverse nation (inkl. English connects). Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "E3.2", "title": "Vokabeln Unit 2", "description": "Aotearoa, New Zealand. Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "E3.3", "title": "Vokabeln Unit 3", "description": "Into the world. Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "E3.4", "title": "Vokabeln Unit 4", "description": "The future in our hands. Aus den abfotografierten Seiten des Vokabelteils." }
+      ]
     }
   ]
 }

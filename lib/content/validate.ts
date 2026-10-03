@@ -1,4 +1,5 @@
 // Strukturprüfung der Aufgaben. Fehler blockieren den Seed, Warnungen sind Hinweise für die Durchsicht.
+import { vocabKey } from "@/lib/engine/grading";
 import { instantiate } from "@/lib/engine/template";
 import type { ContentFile, Structure } from "./load";
 import { ITEM_TYPES, type ContentItem } from "./types";
@@ -140,6 +141,13 @@ function checkItem(item: ContentItem, unitCode: string, skills: Set<string>, pus
     case "self_check":
       if (!item.payload.sample_answer?.trim()) push("error", "sample_answer fehlt");
       break;
+    case "vocab": {
+      const answers = item.solution?.answers ?? [];
+      if (!answers.length) push("error", "vocab braucht mindestens eine Antwort");
+      if (answers.some((a) => !vocabKey(a))) push("error", "leere Antwort (nach Entfernen von to/sb/sth/Klammern)");
+      if (answers.some((a) => vocabKey(a).split(" ").length > 5)) push("warn", "lange Wendung, besser als mc abfragen");
+      break;
+    }
   }
 }
 

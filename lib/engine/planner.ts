@@ -51,6 +51,12 @@ export const DAILY_PER_SUBJECT = 3;
 export const MAX_DUE_PER_SUBJECT = 2;
 export const BONUS_COUNT = 6;
 
+/** Vokabeln aus abfotografierten Buchseiten: eigene Spur neben den 12 Aufgaben (docs/entscheidungen.md, 2026-10-03). */
+export const VOCAB_UNIT = "E3";
+export const VOCAB_PER_DAY = 10;
+
+const isVocab = (i: PlannerItem) => i.unitCode === VOCAB_UNIT;
+
 const byCode = (a: PlannerItem, b: PlannerItem) => (a.code < b.code ? -1 : a.code > b.code ? 1 : 0);
 
 /**
@@ -58,7 +64,9 @@ const byCode = (a: PlannerItem, b: PlannerItem) => (a.code < b.code ? -1 : a.cod
  * max. 2 fällige Wiederholungen, neue Aufgaben aus dem aktuellen Gebiet, restliche fällige,
  * ungesehene aus früheren Gebieten, gesehene nach Fälligkeit, zuletzt ungesehene aus späteren Gebieten.
  */
-function rankSubject(subject: string, input: PlanInput): PlannerItem[] {
+function rankSubject(subject: string, all: PlanInput): PlannerItem[] {
+  // Vokabeln laufen in ihrer eigenen Spur (rankVocab), nie in den Fach-Plätzen.
+  const input = { ...all, items: all.items.filter((i) => !isVocab(i)) };
   const focus = input.focusSkills?.get(subject);
   if (!focus?.size) return rankSubjectBase(subject, input);
 
@@ -177,15 +185,51 @@ function assemble(ranked: Map<string, PlannerItem[]>, rotation: string[], perSub
   return out;
 }
 
-/** Tagesplan: 12 Aufgaben, 3 pro Fach. Fehlt ein Fach (noch kein Inhalt), übernehmen die anderen. */
+/**
+ * Vokabeln in Lernreihenfolge: fällige Wiederholungen (älteste zuerst), dann neue Wörter
+ * (pro Buch-Unit erst Erkennen, dann Schreiben, jeweils in Listenreihenfolge), dann gesehene nach Fälligkeit.
+ * `onlyDueAndNew` lässt die noch nicht fälligen weg (Tagesplan).
+ */
+function rankVocab(input: PlanInput, onlyDueAndNew: boolean): PlannerItem[] {
+  const exclude = input.exclude ?? new Set<string>();
+  const stateById = new Map(input.states.map((s) => [s.itemId, s]));
+  const items = input.items.filter((i) => isVocab(i) && !exclude.has(i.id));
+  const due = (i: PlannerItem) => stateById.get(i.id)!.dueDate;
+
+  const seen = items.filter((i) => stateById.has(i.id)).sort((a, b) => due(a).localeCompare(due(b)) || byCode(a, b));
+  const fresh = items
+    .filter((i) => !stateById.has(i.id))
+    .sort((a, b) => a.skillOrder - b.skillOrder || a.difficulty - b.difficulty || byCode(a, b));
+  const dueNow = seen.filter((i) => due(i) <= input.today);
+  const later = seen.filter((i) => due(i) > input.today);
+  return [...dueNow, ...fresh, ...(onlyDueAndNew ? [] : later)];
+}
+
+/** Verteilt `extra` gleichmäßig zwischen `main`, damit die Vokabeln nicht als Block am Ende kommen. */
+function interleave(main: string[], extra: string[]): string[] {
+  if (!main.length) return extra;
+  const out: string[] = [];
+  let placed = 0;
+  main.forEach((id, i) => {
+    out.push(id);
+    const target = Math.round(((i + 1) * extra.length) / main.length);
+    while (placed < target) out.push(extra[placed++]);
+  });
+  return out;
+}
+
+/** Tagesplan: 12 Aufgaben, 3 pro Fach, dazu bis zu 10 Vokabeln. Fehlt ein Fach (noch kein Inhalt), übernehmen die anderen. */
 export function planDaily(input: PlanInput): string[] {
   const rotation = isExamMode(input.today, input.examDate) ? EXAM_ROTATION : SUBJECT_ROTATION;
   const ranked = new Map(rotation.map((s) => [s, rankSubject(s, input)]));
-  return assemble(ranked, rotation, DAILY_PER_SUBJECT, DAILY_PER_SUBJECT * rotation.length);
+  const main = assemble(ranked, rotation, DAILY_PER_SUBJECT, DAILY_PER_SUBJECT * rotation.length);
+  const vocab = rankVocab(input, true).slice(0, VOCAB_PER_DAY).map((i) => i.id);
+  return interleave(main, vocab);
 }
 
 /** Bonus-Runde: 6 weitere Aufgaben nach denselben Prioritäten, ohne die heutigen. Optional auf ein Gebiet beschränkt. */
 export function planBonus(input: PlanInput, onlyUnit?: string): string[] {
+  if (onlyUnit === VOCAB_UNIT) return rankVocab(input, false).slice(0, BONUS_COUNT).map((i) => i.id);
   const rotation = isExamMode(input.today, input.examDate) ? EXAM_ROTATION : SUBJECT_ROTATION;
   const items = onlyUnit ? input.items.filter((i) => i.unitCode === onlyUnit) : input.items;
   const ranked = new Map(rotation.map((s) => [s, rankSubject(s, { ...input, items })]));

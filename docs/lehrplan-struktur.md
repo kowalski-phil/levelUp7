@@ -61,4 +61,4 @@ Quelle Termine: https://www.stark-verlag.de/blog/pruefungstermine-bayern-2027 un
 | E4 | Text- und Medienkompetenzen | Bilder und Textstruktur analysieren, Argumentation erkennen, Quellen bewerten |
 | E5 | Themengebiete (ca. 80 Std.) | Die 5 Themengebiete des Fachlehrplans (Details auf der Lehrplanseite abrufen, Titel beim Build eintragen) |
 
-Für Englisch werden E1 und E2 (ohne Wortschatz) zum Aufgabenpool. Vokabeln kommen nicht in die App, Felix lernt sie aus dem Vokabelteil des Buchs oder E-Books.
+Für Englisch werden E1 und E2 (ohne Wortschatz) zum Aufgabenpool. Dazu kommt E3 Vocabulary (kein Lernbereich des Lehrplans): Vokabeln nur aus abfotografierten Seiten des Vokabelteils, ein Skill pro Buch-Unit, siehe `/vokabeln-aus-foto`.

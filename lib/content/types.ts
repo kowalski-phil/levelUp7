@@ -85,6 +85,15 @@ export interface SelfCheckItem extends Base {
   solution?: null;
 }
 
+/** Vokabel aus einer abfotografierten Buchseite: stem fragt nach dem deutschen Wort, Felix tippt das englische. */
+export interface VocabItem extends Base {
+  type: "vocab";
+  /** Seite im Vokabelteil des Buchs, nur zur Nachverfolgung. */
+  payload: { page?: number };
+  /** Akzeptierte englische Schreibweisen, die erste wird als Lösung gezeigt. "to", "sb", "sth" und (...) sind optional. */
+  solution: { answers: string[] };
+}
+
 export type ContentItem =
   | McItem
   | McMultiItem
@@ -95,7 +104,8 @@ export type ContentItem =
   | OrderItem
   | MatchItem
   | BookingItem
-  | SelfCheckItem;
+  | SelfCheckItem
+  | VocabItem;
 
 export type ItemType = ContentItem["type"];
 
@@ -110,6 +120,7 @@ export const ITEM_TYPES: ItemType[] = [
   "match",
   "booking",
   "self_check",
+  "vocab",
 ];
 
 /** Antwortformen, wie die Session-UI sie an die Auswertung übergibt. */
@@ -123,4 +134,5 @@ export type Answer =
   | { type: "order"; items: string[] }
   | { type: "match"; pairs: [string, string][] }
   | { type: "booking"; soll: { account: string; amount: string }[]; haben: { account: string; amount: string }[] }
-  | { type: "self_check"; text: string; rating: "correct" | "partial" | "wrong" };
+  | { type: "self_check"; text: string; rating: "correct" | "partial" | "wrong" }
+  | { type: "vocab"; input: string };

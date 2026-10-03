@@ -63,6 +63,43 @@ export function normalizeText(s: string, caseSensitive: boolean): string {
   return caseSensitive ? t : t.toLowerCase();
 }
 
+/**
+ * Vergleichsform einer Vokabel: ohne Groß/klein, ohne Platzhalter sb/sth/something, ohne Klammern, ohne führendes "to".
+ * "(to) apply for sb/sth" und "apply for" ergeben beide "apply for".
+ */
+export function vocabKey(s: string): string {
+  return normalizeText(s, false)
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/\b(sb|sth)\b('s)?\.?/g, " ")
+    // Ausgeschrieben zählt auch, aber nur nach einem anderen Wort: "someone" allein ist selbst eine Vokabel.
+    .replace(/(?<=\S )(something|somebody|someone)('s)?(?=\s|$)/g, " ")
+    .replace(/(^|\s)\/(?=\s|$)/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/^to /, "");
+}
+
+/** Anzahl Tipp-, Lösch-, Einfüge- und Dreherfehler zwischen zwei Wörtern ("complian" statt "complain" = 1). */
+export function editDistance(a: string, b: string): number {
+  const d = Array.from({ length: a.length + 1 }, (_, i) => Array.from({ length: b.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0)));
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+    }
+  }
+  return d[a.length][b.length];
+}
+
+/** Ein Buchstabe daneben oder ein Dreher gilt bei Wörtern ab 5 Buchstaben als Schreibfehler: teilweise richtig, kommt nochmal. */
+function gradeVocab(input: string, answers: readonly string[]): Result {
+  const given = vocabKey(input);
+  if (!given) return "wrong";
+  const keys = answers.map(vocabKey);
+  if (keys.includes(given)) return "correct";
+  return keys.some((k) => k.length >= 5 && editDistance(k, given) === 1) ? "partial" : "wrong";
+}
+
 function numbersMatch(input: string, expected: number, tolerance: number): boolean {
   const n = parseNumberDe(input);
   return n !== null && Math.abs(n - expected) <= tolerance + 1e-9;
@@ -151,5 +188,8 @@ export function grade(item: ContentItem, answer: Answer, seed: string): Result {
 
     case "self_check":
       return (answer as Extract<Answer, { type: "self_check" }>).rating;
+
+    case "vocab":
+      return gradeVocab((answer as Extract<Answer, { type: "vocab" }>).input, item.solution.answers);
   }
 }
