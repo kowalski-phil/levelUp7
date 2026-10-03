@@ -6,3 +6,4 @@ Aufgaben stehen in `content/englisch/E3.json`, pro Wort ein `mc` (Erkennen) und 
 
 | Datum | Vokabelseiten | bis Buchseite | Unit | Items | Wörter | Übersprungen |
 |---|---|---|---|---|---|---|
+| 2026-10-03 | 143–146 | 15 | Unit 1 (E3.1) | E3-001 bis E3-137 | 72 | keine; nur Erkennen (gleich geschrieben, Vorsilbe oder zu lang): apartheid, non-, weigh heavily on sb's shoulders, reform, township, revolution, stomp (Verwechslung mit stamp). Seite 146 verwackelt, alle Einträge über die Beispielspalte abgesichert |
