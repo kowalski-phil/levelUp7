@@ -1,6 +1,6 @@
 ---
 description: Fotos aus dem Vokabelteil des Englischbuchs in Vokabelaufgaben umwandeln und einspielen
-argument-hint: "<Vokabelseiten, z. B. 148-149>  oder  bis S. <Buchseite, z. B. bis S. 14>"
+argument-hint: "<148-149 | bis S. 14> [test]  oder  einspielen"
 ---
 
 Wandle Fotos aus dem Vokabelteil von Felix' Englischbuch (Cornelsen „Go Ahead 10“, siehe `docs/schulbuecher.md`) in Aufgaben für `content/englisch/E3.json` um und spiele sie ein.
@@ -13,6 +13,10 @@ Die Fotos liegen in `assets/buecher/englisch/vokabeln/` und heißen `Unit<Nummer
 
 - **Vokabelseiten** (`148`, `148-149`, `148, 150`): alle Wörter dieser Fotos.
 - **Bis zu einer Buchseite** (`bis S. 14`): Im Vokabelteil steht links neben den Wörtern, zu welcher Buchseite sie gehören (`pp. 10/11`, `p. 12`, `p. 13` …). Importiert werden alle Wörter bis einschließlich dieser Buchseite, auch wenn die Grenze mitten auf einem Foto liegt. Dafür die Fotos in Seitenreihenfolge lesen, bis eine höhere Buchseite beginnt.
+
+Zusatz **`test`** (z. B. `148-149 test`): Aufgaben schreiben und prüfen, aber **nicht** einspielen. Die Live-Datenbank, Felix' Tagesrunde und sein Streak bleiben unberührt. Stattdessen `npm run dev` im Hintergrund starten und Phil die Vorschau nennen: `http://localhost:3000/vorschau?unit=E3` (alle neuen Vokabeln, ohne Login, ohne Speichern; einzelne mit `?code=E3-001,E3-002`). Kein Log-Eintrag, kein Commit.
+
+**`einspielen`** (ohne Seiten): die Aufgaben, die ein Testlauf in `E3.json` geschrieben hat, jetzt einspielen. Direkt weiter mit Abschnitt 3, Schritt 2. Die Wörter für Log und Bericht sind die Items in `E3.json`, die noch in keiner Zeile von `docs/vokabeln.md` stehen.
 
 Ohne Angabe: nichts importieren. Stattdessen kurz auflisten, welche Fotos (Vokabelseite, Unit, Buchseiten-Bereich laut Randmarken) daliegen und was laut `docs/vokabeln.md` schon importiert ist, und Phil fragen, wie weit der Unterricht ist.
 
@@ -70,7 +74,7 @@ Pro Wort zwei Items mit aufeinanderfolgenden Codes, zuerst Erkennen, dann Schrei
 
 ## 3. Prüfen und einspielen
 
-1. `npm run content:check`, alle Fehler beheben.
+1. `npm run content:check`, alle Fehler beheben. Bei `test` hier aufhören und die Vorschau nennen (siehe Abschnitt 0).
 2. Bevor zum ersten Mal Vokabeln eingespielt werden: prüfen, dass der Code für den Typ `vocab` live ist (`git fetch` und `git log origin/main --oneline -- lib/engine/planner.ts` enthält den Vokabel-Commit). Sonst Phil bitten, erst zu pushen. Der Seed schreibt direkt in die Live-Datenbank, und die alte App kann `vocab` nicht anzeigen.
 3. `npm run seed`.
 4. In `docs/vokabeln.md` eine Zeile anhängen: Datum, Vokabelseiten, Buchseiten bis einschließlich, Unit, Item-Codes von–bis, Anzahl Wörter, übersprungene Wörter.
