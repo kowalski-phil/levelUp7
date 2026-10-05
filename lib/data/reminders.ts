@@ -7,7 +7,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import type { StreakRow } from "@/lib/supabase/types";
 
 /** Kontakt für die Push-Dienste (Apple, Google). Muss eine https- oder mailto-Adresse sein. */
-const VAPID_SUBJECT = "https://levelup7.vercel.app";
+const VAPID_SUBJECT = "https://levelup7-liard.vercel.app";
 /** Kommt das Handy länger nicht ins Netz, verfällt die Erinnerung nach 3 Stunden. */
 const TTL_SECONDS = 3 * 60 * 60;
 
