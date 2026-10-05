@@ -102,8 +102,9 @@ Neu (Tag 2): Akzentleiste über dem Eingabefeld bei Französisch-Aufgaben (`voca
 | Tag | Wer | Was |
 |---|---|---|
 | 0 (2026-10-05) | Claude Code | Klon mit Git-Historie, Umbenennung, Engine-Konstanten, Struktur, Doku, erste Englisch-Aufgaben E1 |
-| 1 (2026-10-05, erledigt) | Phil | Supabase selbst gehostet in Easypanel, Migrationen im Studio eingespielt, Seed, Vercel-Projekt `levelup7` mit Env-Vars. Fotos der Inhaltsverzeichnisse, Unterrichtsstand. Claude Code schreibt F0 und die aktuelle Unité. |
-| 2 | Claude Code | Akzentleiste, Bewertung (Akzente, Artikel, qn/qc), `/vokabeln-aus-foto` für zwei Sprachen, erste Vokabelfotos. Paula legt die App aufs iPhone. |
+| 1 (2026-10-05, erledigt) | Phil | Supabase selbst gehostet in Easypanel, Migrationen im Studio eingespielt, Seed, Vercel-Projekt `levelup7` mit Env-Vars, App live: https://levelup7-liard.vercel.app. Testdaten danach zurückgesetzt, Paula startet bei 0. |
+| 2 (2026-10-05, teilweise erledigt) | Claude Code | Erledigt: Bewertung (Akzente, Artikel, qn/qc), `/vokabeln-aus-foto` für zwei Sprachen, 71 Vokabeln Band 1 (S. 195–199, FV.0), Push-Knopf auch auf Android. Offen: Akzentleiste. Paula legt die App auf ihr Android-Handy. |
+| offen | Phil, dann Claude Code | Foto des Inhaltsverzeichnisses von Découvertes 2 (und Green Line 3), Unterrichtsstand Französisch und Englisch, Band-1-Themen der Wiederholung. Danach schreibt Claude Code F0 (Wiederholung Band 1) und die Grammatik der laufenden Unité und passt den Kalender an. |
 | 3 | Claude Code | Was Paula nervt, wird gefixt, bevor irgendetwas Neues gebaut wird. |
 
 Was Phil liefern muss: `docs/naechste-schritte.md`.
