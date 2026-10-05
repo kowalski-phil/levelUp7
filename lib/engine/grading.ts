@@ -64,13 +64,13 @@ export function normalizeText(s: string, caseSensitive: boolean): string {
 }
 
 /**
- * Vergleichsform einer Vokabel: ohne Groß/klein, ohne Platzhalter sb/sth/something, ohne Klammern, ohne führendes "to".
+ * Vergleichsform einer Vokabel: ohne Groß/klein, ohne Platzhalter sb/sth/something (französisch qn/qc), ohne Klammern, ohne führendes "to".
  * "(to) apply for sb/sth" und "apply for" ergeben beide "apply for".
  */
 export function vocabKey(s: string): string {
   return normalizeText(s, false)
     .replace(/\([^)]*\)/g, " ")
-    .replace(/\b(sb|sth)\b\.?('s)?/g, " ")
+    .replace(/\b(sb|sth|qn|qc)\b\.?('s)?/g, " ")
     // Ausgeschrieben zählt auch, aber nur nach einem anderen Wort: "someone" allein ist selbst eine Vokabel.
     .replace(/(?<=\S )(something|somebody|someone)('s)?(?=\s|$)/g, " ")
     .replace(/(^|\s)\/(?=\s|$)/g, " ")
@@ -98,13 +98,31 @@ export function editDistance(a: string, b: string): number {
   return d[a.length][b.length];
 }
 
-/** Ein Buchstabe daneben oder ein Dreher gilt bei Wörtern ab 5 Buchstaben als Schreibfehler: teilweise richtig, kommt nochmal. */
+/** Ohne Akzente: "rentrée" → "rentree", "sœur" → "soeur". */
+function stripAccents(s: string): string {
+  return s.normalize("NFD").replace(/\p{M}/gu, "").replace(/œ/g, "oe").replace(/æ/g, "ae");
+}
+
+/** Ohne französischen Artikel am Anfang: "la rentrée" → "rentrée", "l'école" → "école". */
+function stripArticle(s: string): string {
+  return s.replace(/^(?:(?:les|le|la|une|un|des)\s+|l')/, "");
+}
+
+/**
+ * Teilweise richtig (kommt nochmal, die Lösung zeigt die Schreibweise):
+ * ein Buchstabe daneben oder ein Dreher bei Wörtern ab 5 Buchstaben,
+ * Akzent vergessen oder falsch, französischer Artikel fehlt oder ist falsch.
+ */
 function gradeVocab(input: string, answers: readonly string[]): Result {
   const given = vocabKey(input);
   if (!given) return "wrong";
   const keys = answers.flatMap(vocabKeys);
   if (keys.includes(given)) return "correct";
-  return keys.some((k) => k.length >= 5 && editDistance(k, given) === 1) ? "partial" : "wrong";
+  const loose = (k: string) => stripArticle(stripAccents(k));
+  const g = loose(given);
+  // Die Länge zählt ohne Artikel: "le lit" / "le lait" sind zwei Wörter, kein Tippfehler.
+  const close = (k: string) => loose(k) === g || (loose(k).length >= 5 && editDistance(loose(k), g) === 1);
+  return keys.some(close) ? "partial" : "wrong";
 }
 
 function numbersMatch(input: string, expected: number, tolerance: number): boolean {

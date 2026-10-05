@@ -1,0 +1,2656 @@
+[
+  {
+    "code": "FV-001",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **la pop**?",
+    "payload": {
+      "options": [
+        "der Pop (Musikrichtung)",
+        "der Hip-Hop",
+        "ein Akkordeon",
+        "ein Text"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "la pop = der Pop (Musikrichtung). Beispiel: J'aime la pop et le rap. (Ich mag Pop und Rap.)",
+    "hint": "Elle écoute de la pop dans sa chambre."
+  },
+  {
+    "code": "FV-002",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **der Pop (Musikrichtung)**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "la pop"
+      ]
+    },
+    "explanation": "la pop = der Pop (Musikrichtung). Beispiel: J'aime la pop et le rap. (Ich mag Pop und Rap.)",
+    "hint": "Nomen mit Artikel, beginnt mit „p“."
+  },
+  {
+    "code": "FV-003",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **le hip-hop**?",
+    "payload": {
+      "options": [
+        "der Pop (Musikrichtung)",
+        "der Hip-Hop",
+        "ein Klavier",
+        "eine E-Mail"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "le hip-hop = der Hip-Hop. Beispiel: Léo écoute du hip-hop avec ses copains. (Léo hört mit seinen Freunden Hip-Hop.)",
+    "hint": "Mon frère danse sur du hip-hop."
+  },
+  {
+    "code": "FV-004",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **der Hip-Hop**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "le hip-hop"
+      ]
+    },
+    "explanation": "le hip-hop = der Hip-Hop. Beispiel: Léo écoute du hip-hop avec ses copains. (Léo hört mit seinen Freunden Hip-Hop.)",
+    "hint": "Nomen mit Artikel, beginnt mit „h“, mit Bindestrich."
+  },
+  {
+    "code": "FV-005",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **préféré/préférée**?",
+    "payload": {
+      "options": [
+        "berühmt",
+        "modern",
+        "bevorzugt; Lieblings-",
+        "super; genial"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "préféré/préférée = bevorzugt; Lieblings-. Beispiel: Mon sport préféré, c'est le foot. (Mein Lieblingssport ist Fußball.)",
+    "hint": "Le rouge, c'est ma couleur préférée."
+  },
+  {
+    "code": "FV-006",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **bevorzugt; Lieblings-**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "préféré/préférée",
+        "préféré",
+        "préférée"
+      ]
+    },
+    "explanation": "préféré/préférée = bevorzugt; Lieblings-. Beispiel: Mon sport préféré, c'est le foot. (Mein Lieblingssport ist Fußball.)",
+    "hint": "Adjektiv, beginnt mit „p“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-007",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un texte**?",
+    "payload": {
+      "options": [
+        "ein Name",
+        "eine Antwort",
+        "eine Sache; ein Ding",
+        "ein Text"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "un texte = ein Text. Beispiel: Le prof écrit un texte au tableau. (Der Lehrer schreibt einen Text an die Tafel.)",
+    "hint": "Lis le texte à la page 20."
+  },
+  {
+    "code": "FV-008",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Text**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "un texte"
+      ]
+    },
+    "explanation": "un texte = ein Text. Beispiel: Le prof écrit un texte au tableau. (Der Lehrer schreibt einen Text an die Tafel.)",
+    "hint": "Nomen mit Artikel, beginnt mit „t“."
+  },
+  {
+    "code": "FV-009",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un piano**?",
+    "payload": {
+      "options": [
+        "ein Klavier",
+        "ein Akkordeon",
+        "ein Text",
+        "ein Bol (eine Trinkschale)"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "un piano = ein Klavier. Beispiel: Il y a un piano dans le salon. (Im Wohnzimmer steht ein Klavier.)",
+    "hint": "Ma sœur fait du piano."
+  },
+  {
+    "code": "FV-010",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Klavier**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "un piano"
+      ]
+    },
+    "explanation": "un piano = ein Klavier. Beispiel: Il y a un piano dans le salon. (Im Wohnzimmer steht ein Klavier.)",
+    "hint": "Nomen mit Artikel, beginnt mit „p“."
+  },
+  {
+    "code": "FV-011",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un accordéon**?",
+    "payload": {
+      "options": [
+        "ein Klavier",
+        "ein Akkordeon",
+        "ein Denkmal; ein Monument",
+        "ein Andenken; eine Erinnerung"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "un accordéon = ein Akkordeon. Beispiel: Mon oncle a un accordéon. (Mein Onkel hat ein Akkordeon.)",
+    "hint": "Mon grand-père fait de l'accordéon."
+  },
+  {
+    "code": "FV-012",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Akkordeon**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "un accordéon"
+      ]
+    },
+    "explanation": "un accordéon = ein Akkordeon. Beispiel: Mon oncle a un accordéon. (Mein Onkel hat ein Akkordeon.)",
+    "hint": "Nomen mit Artikel, beginnt mit „a“."
+  },
+  {
+    "code": "FV-013",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un courriel**?",
+    "payload": {
+      "options": [
+        "eine SMS",
+        "eine Postkarte; eine Ansichtskarte",
+        "eine E-Mail",
+        "ein Text"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "un courriel = eine E-Mail. Beispiel: Lucas lit le courriel de sa copine. (Lucas liest die E-Mail seiner Freundin.)",
+    "hint": "J'écris un courriel à Marie."
+  },
+  {
+    "code": "FV-014",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine E-Mail**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "un courriel"
+      ]
+    },
+    "explanation": "un courriel = eine E-Mail. Beispiel: Lucas lit le courriel de sa copine. (Lucas liest die E-Mail seiner Freundin.)",
+    "hint": "Nomen mit Artikel, beginnt mit „c“."
+  },
+  {
+    "code": "FV-015",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **cher/chère**?",
+    "payload": {
+      "options": [
+        "berühmt",
+        "bevorzugt; Lieblings-",
+        "super; genial",
+        "Lieber …/Liebe … (Anrede); teuer"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "cher/chère = Lieber …/Liebe … (Anrede); teuer. Beispiel: Cher Paul, merci pour la carte. (Lieber Paul, danke für die Karte.) Nach der Anrede beginnt das nächste Wort mit einem Großbuchstaben.",
+    "hint": "Chère Emma, comment ça va?"
+  },
+  {
+    "code": "FV-016",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **Lieber …/Liebe … (Anrede); teuer**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "cher/chère",
+        "cher",
+        "chère"
+      ]
+    },
+    "explanation": "cher/chère = Lieber …/Liebe … (Anrede); teuer. Beispiel: Cher Paul, merci pour la carte. (Lieber Paul, danke für die Karte.) Nach der Anrede beginnt das nächste Wort mit einem Großbuchstaben.",
+    "hint": "Adjektiv, beginnt mit „c“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-017",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **enfin**?",
+    "payload": {
+      "options": [
+        "endlich; schließlich",
+        "vielleicht",
+        "vor (zeitlich); vorher",
+        "wenig(e) (+ Nomen)"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "enfin = endlich; schließlich. Beispiel: Enfin, le bus arrive. (Endlich kommt der Bus.)",
+    "hint": "Enfin les vacances!"
+  },
+  {
+    "code": "FV-018",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **endlich; schließlich**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "enfin"
+      ]
+    },
+    "explanation": "enfin = endlich; schließlich. Beispiel: Enfin, le bus arrive. (Endlich kommt der Bus.)",
+    "hint": "Ein Wort, beginnt mit „e“."
+  },
+  {
+    "code": "FV-019",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **peu de + Nomen**?",
+    "payload": {
+      "options": [
+        "viel(e) (+ Nomen)",
+        "wenig(e) (+ Nomen)",
+        "wie viel(e) (+ Nomen)",
+        "kein/keine … mehr (+ Nomen)"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "peu de + Nomen = wenig(e) (+ Nomen). Beispiel: J'ai peu de devoirs aujourd'hui. (Ich habe heute wenig Hausaufgaben.) Das Gegenteil ist beaucoup de.",
+    "hint": "J'ai peu de temps aujourd'hui."
+  },
+  {
+    "code": "FV-020",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **wenig(e) (+ Nomen)**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "peu de"
+      ]
+    },
+    "explanation": "peu de + Nomen = wenig(e) (+ Nomen). Beispiel: J'ai peu de devoirs aujourd'hui. (Ich habe heute wenig Hausaufgaben.) Das Gegenteil ist beaucoup de.",
+    "hint": "Zwei Wörter, beginnt mit „p“."
+  },
+  {
+    "code": "FV-021",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **ne … plus de + Nomen**?",
+    "payload": {
+      "options": [
+        "kein/keine (+ Nomen)",
+        "wenig(e) (+ Nomen)",
+        "kein/keine … mehr (+ Nomen)",
+        "viel(e) (+ Nomen)"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "ne … plus de + Nomen = kein/keine … mehr (+ Nomen). Beispiel: Je n'ai plus de lait. (Ich habe keine Milch mehr.) Nach der Mengenangabe steht de, nicht du oder des.",
+    "hint": "Il n'y a plus de pain."
+  },
+  {
+    "code": "FV-022",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **kein/keine … mehr (+ Nomen)**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "ne … plus de",
+        "ne ... plus de",
+        "ne plus de"
+      ]
+    },
+    "explanation": "ne … plus de + Nomen = kein/keine … mehr (+ Nomen). Beispiel: Je n'ai plus de lait. (Ich habe keine Milch mehr.) Nach der Mengenangabe steht de, nicht du oder des.",
+    "hint": "Die Verneinung steht um das Verb, danach kommt „de“."
+  },
+  {
+    "code": "FV-023",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **beaucoup de + Nomen**?",
+    "payload": {
+      "options": [
+        "wenig(e) (+ Nomen)",
+        "wie viel(e) (+ Nomen)",
+        "kein/keine (+ Nomen)",
+        "viel(e) (+ Nomen)"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "beaucoup de + Nomen = viel(e) (+ Nomen). Beispiel: Elle a beaucoup de copines. (Sie hat viele Freundinnen.) Das Gegenteil ist peu de.",
+    "hint": "Il y a beaucoup de touristes à Paris."
+  },
+  {
+    "code": "FV-024",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **viel(e) (+ Nomen)**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "beaucoup de"
+      ]
+    },
+    "explanation": "beaucoup de + Nomen = viel(e) (+ Nomen). Beispiel: Elle a beaucoup de copines. (Sie hat viele Freundinnen.) Das Gegenteil ist peu de.",
+    "hint": "Zwei Wörter, beginnt mit „b“."
+  },
+  {
+    "code": "FV-025",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **ne … pas de + Nomen**?",
+    "payload": {
+      "options": [
+        "kein/keine (+ Nomen)",
+        "kein/keine … mehr (+ Nomen)",
+        "viel(e) (+ Nomen)",
+        "wie viel(e) (+ Nomen)"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "ne … pas de + Nomen = kein/keine (+ Nomen). Beispiel: Nous n'avons pas de chat. (Wir haben keine Katze.)",
+    "hint": "Je n'ai pas de frère."
+  },
+  {
+    "code": "FV-026",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **kein/keine (+ Nomen)**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "ne … pas de",
+        "ne ... pas de",
+        "ne pas de"
+      ]
+    },
+    "explanation": "ne … pas de + Nomen = kein/keine (+ Nomen). Beispiel: Nous n'avons pas de chat. (Wir haben keine Katze.)",
+    "hint": "Die Verneinung steht um das Verb, danach kommt „de“."
+  },
+  {
+    "code": "FV-027",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **combien de + Nomen**?",
+    "payload": {
+      "options": [
+        "viel(e) (+ Nomen)",
+        "wie viel(e) (+ Nomen)",
+        "wenig(e) (+ Nomen)",
+        "welcher/welche/welches (Fragebegleiter)"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "combien de + Nomen = wie viel(e) (+ Nomen). Beispiel: Combien de croissants tu veux? (Wie viele Croissants willst du?)",
+    "hint": "Combien de frères as-tu?"
+  },
+  {
+    "code": "FV-028",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **wie viel(e) (+ Nomen)**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "combien de"
+      ]
+    },
+    "explanation": "combien de + Nomen = wie viel(e) (+ Nomen). Beispiel: Combien de croissants tu veux? (Wie viele Croissants willst du?)",
+    "hint": "Zwei Wörter, beginnt mit „c“."
+  },
+  {
+    "code": "FV-029",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **j'aimerais faire qc**?",
+    "payload": {
+      "options": [
+        "etw. tun können",
+        "etw. tun wollen",
+        "ich würde gern (etw. tun)",
+        "jemanden/etwas sehr gern mögen"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "j'aimerais faire qc = ich würde gern (etw. tun). Beispiel: J'aimerais manger une crêpe. (Ich würde gern einen Crêpe essen.)",
+    "hint": "J'aimerais visiter Paris."
+  },
+  {
+    "code": "FV-030",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ich würde gern (etw. tun)**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "j'aimerais faire qc",
+        "j'aimerais"
+      ]
+    },
+    "explanation": "j'aimerais faire qc = ich würde gern (etw. tun). Beispiel: J'aimerais manger une crêpe. (Ich würde gern einen Crêpe essen.)",
+    "hint": "Beginnt mit „j'“."
+  },
+  {
+    "code": "FV-031",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **rencontrer qn**?",
+    "payload": {
+      "options": [
+        "etwas vergessen",
+        "jdn. interessieren",
+        "etwas besichtigen",
+        "jemanden treffen; jemandem begegnen"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "rencontrer qn = jemanden treffen; jemandem begegnen. Beispiel: Le samedi, je rencontre mes copines en ville. (Samstags treffe ich meine Freundinnen in der Stadt.) Nicht verwechseln mit raconter (erzählen).",
+    "hint": "Je rencontre Léa au parc."
+  },
+  {
+    "code": "FV-032",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **jemanden treffen; jemandem begegnen**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "rencontrer qn"
+      ]
+    },
+    "explanation": "rencontrer qn = jemanden treffen; jemandem begegnen. Beispiel: Le samedi, je rencontre mes copines en ville. (Samstags treffe ich meine Freundinnen in der Stadt.) Nicht verwechseln mit raconter (erzählen).",
+    "hint": "Ein Verb, beginnt mit „r“."
+  },
+  {
+    "code": "FV-033",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une chose**?",
+    "payload": {
+      "options": [
+        "eine Sache; ein Ding",
+        "ein Ort",
+        "ein Name",
+        "eine Person"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "une chose = eine Sache; ein Ding. Beispiel: Il y a beaucoup de choses dans ma chambre. (In meinem Zimmer sind viele Sachen.)",
+    "hint": "J'ai une chose pour toi."
+  },
+  {
+    "code": "FV-034",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Sache; ein Ding**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "une chose"
+      ]
+    },
+    "explanation": "une chose = eine Sache; ein Ding. Beispiel: Il y a beaucoup de choses dans ma chambre. (In meinem Zimmer sind viele Sachen.)",
+    "hint": "Nomen mit Artikel, beginnt mit „c“."
+  },
+  {
+    "code": "FV-035",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **oublier qc**?",
+    "payload": {
+      "options": [
+        "jemanden treffen; jemandem begegnen",
+        "etwas vergessen",
+        "etwas lesen",
+        "etwas besichtigen"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "oublier qc = etwas vergessen. Beispiel: Tu oublies toujours ton livre! (Du vergisst immer dein Buch!)",
+    "hint": "Je n'oublie pas mon sac."
+  },
+  {
+    "code": "FV-036",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **etwas vergessen**",
+    "payload": {
+      "page": 195
+    },
+    "solution": {
+      "answers": [
+        "oublier qc"
+      ]
+    },
+    "explanation": "oublier qc = etwas vergessen. Beispiel: Tu oublies toujours ton livre! (Du vergisst immer dein Buch!)",
+    "hint": "Ein Verb, beginnt mit „o“."
+  },
+  {
+    "code": "FV-037",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une semaine**?",
+    "payload": {
+      "options": [
+        "eine Stadt",
+        "ein Ort",
+        "eine Woche",
+        "eine Karte"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "une semaine = eine Woche. Beispiel: Nous restons une semaine à Paris. (Wir bleiben eine Woche in Paris.)",
+    "hint": "Une semaine a sept jours."
+  },
+  {
+    "code": "FV-038",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Woche**",
+    "payload": {
+      "page": 196
+    },
+    "solution": {
+      "answers": [
+        "une semaine"
+      ]
+    },
+    "explanation": "une semaine = eine Woche. Beispiel: Nous restons une semaine à Paris. (Wir bleiben eine Woche in Paris.)",
+    "hint": "Nomen mit Artikel, beginnt mit „s“."
+  },
+  {
+    "code": "FV-039",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un reportage**?",
+    "payload": {
+      "options": [
+        "eine E-Mail",
+        "eine Antwort",
+        "eine Postkarte; eine Ansichtskarte",
+        "eine Reportage"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "un reportage = eine Reportage. Beispiel: Nous regardons un reportage sur la Bretagne. (Wir schauen eine Reportage über die Bretagne.) Achtung: Im Französischen ist reportage männlich.",
+    "hint": "Le journaliste fait un reportage sur Paris."
+  },
+  {
+    "code": "FV-040",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Reportage**",
+    "payload": {
+      "page": 196
+    },
+    "solution": {
+      "answers": [
+        "un reportage"
+      ]
+    },
+    "explanation": "un reportage = eine Reportage. Beispiel: Nous regardons un reportage sur la Bretagne. (Wir schauen eine Reportage über die Bretagne.) Achtung: Im Französischen ist reportage männlich.",
+    "hint": "Nomen mit Artikel, beginnt mit „r“."
+  },
+  {
+    "code": "FV-041",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une ville**?",
+    "payload": {
+      "options": [
+        "eine Stadt",
+        "eine Woche",
+        "eine Kirche",
+        "ein Ort"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "une ville = eine Stadt. Beispiel: Lyon est une ville en France. (Lyon ist eine Stadt in Frankreich.)",
+    "hint": "Paris est une grande ville."
+  },
+  {
+    "code": "FV-042",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Stadt**",
+    "payload": {
+      "page": 196
+    },
+    "solution": {
+      "answers": [
+        "une ville"
+      ]
+    },
+    "explanation": "une ville = eine Stadt. Beispiel: Lyon est une ville en France. (Lyon ist eine Stadt in Frankreich.)",
+    "hint": "Nomen mit Artikel, beginnt mit „v“."
+  },
+  {
+    "code": "FV-043",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un assistant/une assistante**?",
+    "payload": {
+      "options": [
+        "ein Journalist/eine Journalistin",
+        "ein Assistent/eine Assistentin",
+        "ein Tourist/eine Touristin",
+        "ein Führer/eine Führerin"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "un assistant/une assistante = ein Assistent/eine Assistentin. Beispiel: Monsieur Martin a un assistant. (Herr Martin hat einen Assistenten.)",
+    "hint": "L'assistante parle avec le prof."
+  },
+  {
+    "code": "FV-044",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Assistent/eine Assistentin**",
+    "payload": {
+      "page": 196
+    },
+    "solution": {
+      "answers": [
+        "un assistant/une assistante",
+        "un assistant",
+        "une assistante"
+      ]
+    },
+    "explanation": "un assistant/une assistante = ein Assistent/eine Assistentin. Beispiel: Monsieur Martin a un assistant. (Herr Martin hat einen Assistenten.)",
+    "hint": "Nomen mit Artikel, beginnt mit „a“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-045",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **visiter qc**?",
+    "payload": {
+      "options": [
+        "etwas vergessen",
+        "etwas lesen",
+        "etwas besichtigen",
+        "jdn. interessieren"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "visiter qc = etwas besichtigen. Beispiel: Les touristes visitent la cathédrale. (Die Touristen besichtigen die Kathedrale.) Englisch: to visit.",
+    "hint": "Nous visitons un musée."
+  },
+  {
+    "code": "FV-046",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **etwas besichtigen**",
+    "payload": {
+      "page": 196
+    },
+    "solution": {
+      "answers": [
+        "visiter qc"
+      ]
+    },
+    "explanation": "visiter qc = etwas besichtigen. Beispiel: Les touristes visitent la cathédrale. (Die Touristen besichtigen die Kathedrale.) Englisch: to visit.",
+    "hint": "Ein Verb, beginnt mit „v“."
+  },
+  {
+    "code": "FV-047",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un endroit**?",
+    "payload": {
+      "options": [
+        "eine Stadt",
+        "eine Woche",
+        "ein Name",
+        "ein Ort"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "un endroit = ein Ort. Beispiel: Ma chambre, c'est mon endroit préféré. (Mein Zimmer ist mein Lieblingsort.)",
+    "hint": "C'est un endroit super."
+  },
+  {
+    "code": "FV-048",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Ort**",
+    "payload": {
+      "page": 196
+    },
+    "solution": {
+      "answers": [
+        "un endroit"
+      ]
+    },
+    "explanation": "un endroit = ein Ort. Beispiel: Ma chambre, c'est mon endroit préféré. (Mein Zimmer ist mein Lieblingsort.)",
+    "hint": "Nomen mit Artikel, beginnt mit „e“."
+  },
+  {
+    "code": "FV-049",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un touriste/une touriste**?",
+    "payload": {
+      "options": [
+        "ein Tourist/eine Touristin",
+        "ein Journalist/eine Journalistin",
+        "ein Fan",
+        "ein Führer/eine Führerin"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "un touriste/une touriste = ein Tourist/eine Touristin. Beispiel: Les touristes prennent des photos. (Die Touristen machen Fotos.)",
+    "hint": "Il y a beaucoup de touristes à la tour Eiffel."
+  },
+  {
+    "code": "FV-050",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Tourist/eine Touristin**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "un touriste/une touriste",
+        "un touriste",
+        "une touriste"
+      ]
+    },
+    "explanation": "un touriste/une touriste = ein Tourist/eine Touristin. Beispiel: Les touristes prennent des photos. (Die Touristen machen Fotos.)",
+    "hint": "Nomen mit Artikel, beginnt mit „t“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-051",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un journaliste/une journaliste**?",
+    "payload": {
+      "options": [
+        "ein Tourist/eine Touristin",
+        "ein Journalist/eine Journalistin",
+        "ein Assistent/eine Assistentin",
+        "ein Fan"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "un journaliste/une journaliste = ein Journalist/eine Journalistin. Beispiel: Le journaliste pose une question. (Der Journalist stellt eine Frage.)",
+    "hint": "La journaliste écrit un texte."
+  },
+  {
+    "code": "FV-052",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Journalist/eine Journalistin**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "un journaliste/une journaliste",
+        "un journaliste",
+        "une journaliste"
+      ]
+    },
+    "explanation": "un journaliste/une journaliste = ein Journalist/eine Journalistin. Beispiel: Le journaliste pose une question. (Der Journalist stellt eine Frage.)",
+    "hint": "Nomen mit Artikel, beginnt mit „j“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-053",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un musée**?",
+    "payload": {
+      "options": [
+        "eine Kirche",
+        "ein Denkmal; ein Monument",
+        "ein Museum",
+        "eine Kathedrale"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "un musée = ein Museum. Beispiel: À Paris, il y a beaucoup de musées. (In Paris gibt es viele Museen.) Achtung: musée ist männlich, obwohl es auf -ée endet.",
+    "hint": "Nous allons au musée."
+  },
+  {
+    "code": "FV-054",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Museum**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "un musée"
+      ]
+    },
+    "explanation": "un musée = ein Museum. Beispiel: À Paris, il y a beaucoup de musées. (In Paris gibt es viele Museen.) Achtung: musée ist männlich, obwohl es auf -ée endet.",
+    "hint": "Nomen mit Artikel, beginnt mit „m“."
+  },
+  {
+    "code": "FV-055",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une cathédrale**?",
+    "payload": {
+      "options": [
+        "eine Kirche",
+        "ein Turm",
+        "ein Museum",
+        "eine Kathedrale"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "une cathédrale = eine Kathedrale. Beispiel: La cathédrale est très grande. (Die Kathedrale ist sehr groß.)",
+    "hint": "Notre-Dame est une cathédrale."
+  },
+  {
+    "code": "FV-056",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Kathedrale**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "une cathédrale"
+      ]
+    },
+    "explanation": "une cathédrale = eine Kathedrale. Beispiel: La cathédrale est très grande. (Die Kathedrale ist sehr groß.)",
+    "hint": "Nomen mit Artikel, beginnt mit „c“."
+  },
+  {
+    "code": "FV-057",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une église**?",
+    "payload": {
+      "options": [
+        "eine Kirche",
+        "eine Kathedrale",
+        "ein Turm",
+        "ein Restaurant"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "une église = eine Kirche. Beispiel: L'église est à côté du parc. (Die Kirche ist neben dem Park.)",
+    "hint": "Il y a une église dans ma ville."
+  },
+  {
+    "code": "FV-058",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Kirche**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "une église"
+      ]
+    },
+    "explanation": "une église = eine Kirche. Beispiel: L'église est à côté du parc. (Die Kirche ist neben dem Park.)",
+    "hint": "Nomen mit Artikel, beginnt mit „é“."
+  },
+  {
+    "code": "FV-059",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une tour**?",
+    "payload": {
+      "options": [
+        "eine Kirche",
+        "ein Turm",
+        "ein Denkmal; ein Monument",
+        "eine Stadt"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "une tour = ein Turm. Beispiel: De la tour, on a une belle vue. (Vom Turm aus hat man eine schöne Aussicht.) Achtung: un tour ist eine Tour oder ein Rundgang, une tour ist ein Turm.",
+    "hint": "La tour Eiffel est une tour célèbre."
+  },
+  {
+    "code": "FV-060",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Turm**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "une tour"
+      ]
+    },
+    "explanation": "une tour = ein Turm. Beispiel: De la tour, on a une belle vue. (Vom Turm aus hat man eine schöne Aussicht.) Achtung: un tour ist eine Tour oder ein Rundgang, une tour ist ein Turm.",
+    "hint": "Nomen mit Artikel, beginnt mit „t“."
+  },
+  {
+    "code": "FV-061",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **moderne**?",
+    "payload": {
+      "options": [
+        "berühmt",
+        "bevorzugt; Lieblings-",
+        "modern",
+        "super; genial"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "moderne = modern. Beispiel: Le collège est très moderne. (Die Schule ist sehr modern.)",
+    "hint": "Ma ville a un musée moderne."
+  },
+  {
+    "code": "FV-062",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **modern**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "moderne"
+      ]
+    },
+    "explanation": "moderne = modern. Beispiel: Le collège est très moderne. (Die Schule ist sehr modern.)",
+    "hint": "Adjektiv, beginnt mit „m“."
+  },
+  {
+    "code": "FV-063",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un monument**?",
+    "payload": {
+      "options": [
+        "ein Museum",
+        "ein Turm",
+        "ein Andenken; eine Erinnerung",
+        "ein Denkmal; ein Monument"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "un monument = ein Denkmal; ein Monument. Beispiel: Les touristes visitent un monument. (Die Touristen besichtigen ein Denkmal.)",
+    "hint": "Paris a beaucoup de monuments."
+  },
+  {
+    "code": "FV-064",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Denkmal; ein Monument**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "un monument"
+      ]
+    },
+    "explanation": "un monument = ein Denkmal; ein Monument. Beispiel: Les touristes visitent un monument. (Die Touristen besichtigen ein Denkmal.)",
+    "hint": "Nomen mit Artikel, beginnt mit „m“."
+  },
+  {
+    "code": "FV-065",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **célèbre**?",
+    "payload": {
+      "options": [
+        "berühmt",
+        "modern",
+        "Lieber …/Liebe … (Anrede); teuer",
+        "bevorzugt; Lieblings-"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "célèbre = berühmt. Beispiel: Le Louvre est un musée célèbre. (Der Louvre ist ein berühmtes Museum.) Die weibliche Form ist gleich: célèbre.",
+    "hint": "Astérix est célèbre en France."
+  },
+  {
+    "code": "FV-066",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **berühmt**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "célèbre"
+      ]
+    },
+    "explanation": "célèbre = berühmt. Beispiel: Le Louvre est un musée célèbre. (Der Louvre ist ein berühmtes Museum.) Die weibliche Form ist gleich: célèbre.",
+    "hint": "Adjektiv, beginnt mit „c“."
+  },
+  {
+    "code": "FV-067",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **quel/quelle/quels/quelles**?",
+    "payload": {
+      "options": [
+        "dieser/diese/dieses (Demonstrativbegleiter)",
+        "welcher/welche/welches (Fragebegleiter)",
+        "wie viel(e) (+ Nomen)",
+        "kein/keine (+ Nomen)"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "quel/quelle/quels/quelles = welcher/welche/welches (Fragebegleiter). Beispiel: Quel film tu regardes? (Welchen Film schaust du?)",
+    "hint": "Tu aimes quel sport?"
+  },
+  {
+    "code": "FV-068",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **welcher/welche/welches (Fragebegleiter)**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "quel/quelle/quels/quelles",
+        "quel"
+      ]
+    },
+    "explanation": "quel/quelle/quels/quelles = welcher/welche/welches (Fragebegleiter). Beispiel: Quel film tu regardes? (Welchen Film schaust du?)",
+    "hint": "Beginnt mit „q“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-069",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un nom**?",
+    "payload": {
+      "options": [
+        "eine Antwort",
+        "ein Text",
+        "ein Name",
+        "eine Sache; ein Ding"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "un nom = ein Name. Beispiel: Le nom de mon chien, c'est Max. (Mein Hund heißt Max.)",
+    "hint": "Quel est le nom de ton chien?"
+  },
+  {
+    "code": "FV-070",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Name**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "un nom"
+      ]
+    },
+    "explanation": "un nom = ein Name. Beispiel: Le nom de mon chien, c'est Max. (Mein Hund heißt Max.)",
+    "hint": "Nomen mit Artikel, beginnt mit „n“."
+  },
+  {
+    "code": "FV-071",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **ce/cet/cette/ces**?",
+    "payload": {
+      "options": [
+        "welcher/welche/welches (Fragebegleiter)",
+        "wie viel(e) (+ Nomen)",
+        "kein/keine (+ Nomen)",
+        "dieser/diese/dieses (Demonstrativbegleiter)"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "ce/cet/cette/ces = dieser/diese/dieses (Demonstrativbegleiter). Beispiel: Cet endroit est super. (Dieser Ort ist super.) Vor einem männlichen Nomen mit Vokal am Anfang steht cet.",
+    "hint": "Cette église est très belle."
+  },
+  {
+    "code": "FV-072",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **dieser/diese/dieses (Demonstrativbegleiter)**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "ce/cet/cette/ces",
+        "ce"
+      ]
+    },
+    "explanation": "ce/cet/cette/ces = dieser/diese/dieses (Demonstrativbegleiter). Beispiel: Cet endroit est super. (Dieser Ort ist super.) Vor einem männlichen Nomen mit Vokal am Anfang steht cet.",
+    "hint": "Beginnt mit „c“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-073",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une réponse**?",
+    "payload": {
+      "options": [
+        "eine Antwort",
+        "ein Name",
+        "eine Sache; ein Ding",
+        "ein Text"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "une réponse = eine Antwort. Beispiel: Je n'ai pas la réponse. (Ich habe die Antwort nicht.)",
+    "hint": "Tu as la réponse?"
+  },
+  {
+    "code": "FV-074",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Antwort**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "une réponse"
+      ]
+    },
+    "explanation": "une réponse = eine Antwort. Beispiel: Je n'ai pas la réponse. (Ich habe die Antwort nicht.)",
+    "hint": "Nomen mit Artikel, beginnt mit „r“."
+  },
+  {
+    "code": "FV-075",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un arbre**?",
+    "payload": {
+      "options": [
+        "ein Ort",
+        "ein Baum",
+        "ein Turm",
+        "ein Bol (eine Trinkschale)"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "un arbre = ein Baum. Beispiel: Il y a un grand arbre dans le jardin. (Im Garten steht ein großer Baum.)",
+    "hint": "Le chat est dans l'arbre."
+  },
+  {
+    "code": "FV-076",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Baum**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "un arbre"
+      ]
+    },
+    "explanation": "un arbre = ein Baum. Beispiel: Il y a un grand arbre dans le jardin. (Im Garten steht ein großer Baum.)",
+    "hint": "Nomen mit Artikel, beginnt mit „a“."
+  },
+  {
+    "code": "FV-077",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un fan/une fan**?",
+    "payload": {
+      "options": [
+        "ein Tourist/eine Touristin",
+        "ein Journalist/eine Journalistin",
+        "ein Fan",
+        "ein Führer/eine Führerin"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "un fan/une fan = ein Fan. Beispiel: Lucie est une fan de Stromae. (Lucie ist ein Fan von Stromae.)",
+    "hint": "Je suis fan de foot."
+  },
+  {
+    "code": "FV-078",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Fan**",
+    "payload": {
+      "page": 197
+    },
+    "solution": {
+      "answers": [
+        "un fan/une fan",
+        "un fan",
+        "une fan"
+      ]
+    },
+    "explanation": "un fan/une fan = ein Fan. Beispiel: Lucie est une fan de Stromae. (Lucie ist ein Fan von Stromae.)",
+    "hint": "Nomen mit Artikel, beginnt mit „f“."
+  },
+  {
+    "code": "FV-079",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une personne**?",
+    "payload": {
+      "options": [
+        "ein Name",
+        "eine Sache; ein Ding",
+        "ein Fan",
+        "eine Person"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "une personne = eine Person. Beispiel: Ma mère est une personne très sympa. (Meine Mutter ist ein sehr netter Mensch.) Achtung: une personne ist immer weiblich, auch bei einem Mann.",
+    "hint": "Il y a trois personnes dans la voiture."
+  },
+  {
+    "code": "FV-080",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Person**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "une personne"
+      ]
+    },
+    "explanation": "une personne = eine Person. Beispiel: Ma mère est une personne très sympa. (Meine Mutter ist ein sehr netter Mensch.) Achtung: une personne ist immer weiblich, auch bei einem Mann.",
+    "hint": "Nomen mit Artikel, beginnt mit „p“."
+  },
+  {
+    "code": "FV-081",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **intéresser qn**?",
+    "payload": {
+      "options": [
+        "jdn. interessieren",
+        "jemanden treffen; jemandem begegnen",
+        "etwas besichtigen",
+        "jemanden/etwas sehr gern mögen"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "intéresser qn = jdn. interessieren. Beispiel: L'histoire de Paris intéresse les touristes. (Die Geschichte von Paris interessiert die Touristen.)",
+    "hint": "La musique m'intéresse."
+  },
+  {
+    "code": "FV-082",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **jdn. interessieren**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "intéresser qn"
+      ]
+    },
+    "explanation": "intéresser qn = jdn. interessieren. Beispiel: L'histoire de Paris intéresse les touristes. (Die Geschichte von Paris interessiert die Touristen.)",
+    "hint": "Ein Verb, beginnt mit „i“."
+  },
+  {
+    "code": "FV-083",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **lire qc**?",
+    "payload": {
+      "options": [
+        "jemandem etwas schreiben",
+        "etwas lesen",
+        "etwas vergessen",
+        "etwas besichtigen"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "lire qc = etwas lesen. Beispiel: Mon père lit un livre. (Mein Vater liest ein Buch.) Formen: je lis, tu lis, il lit, nous lisons, vous lisez, ils lisent.",
+    "hint": "Je lis une BD."
+  },
+  {
+    "code": "FV-084",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **etwas lesen**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "lire qc"
+      ]
+    },
+    "explanation": "lire qc = etwas lesen. Beispiel: Mon père lit un livre. (Mein Vater liest ein Buch.) Formen: je lis, tu lis, il lit, nous lisons, vous lisez, ils lisent.",
+    "hint": "Ein Verb, beginnt mit „l“."
+  },
+  {
+    "code": "FV-085",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un guide/une guide**?",
+    "payload": {
+      "options": [
+        "ein Tourist/eine Touristin",
+        "ein Journalist/eine Journalistin",
+        "ein Führer/eine Führerin (zum Beispiel im Museum)",
+        "ein Assistent/eine Assistentin"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "un guide/une guide = ein Führer/eine Führerin (zum Beispiel im Museum). Beispiel: La guide montre le musée aux touristes. (Die Führerin zeigt den Touristen das Museum.)",
+    "hint": "Le guide parle de la tour Eiffel."
+  },
+  {
+    "code": "FV-086",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Führer/eine Führerin (zum Beispiel im Museum)**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "un guide/une guide",
+        "un guide",
+        "une guide"
+      ]
+    },
+    "explanation": "un guide/une guide = ein Führer/eine Führerin (zum Beispiel im Museum). Beispiel: La guide montre le musée aux touristes. (Die Führerin zeigt den Touristen das Museum.)",
+    "hint": "Nomen mit Artikel, beginnt mit „g“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-087",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **la vue**?",
+    "payload": {
+      "options": [
+        "eine Karte",
+        "ein Ort",
+        "ein Denkmal; ein Monument",
+        "die Aussicht"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "la vue = die Aussicht. Beispiel: De ma chambre, j'ai une belle vue sur la ville. (Von meinem Zimmer aus habe ich eine schöne Aussicht auf die Stadt.)",
+    "hint": "D'ici, la vue est super!"
+  },
+  {
+    "code": "FV-088",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **die Aussicht**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "la vue"
+      ]
+    },
+    "explanation": "la vue = die Aussicht. Beispiel: De ma chambre, j'ai une belle vue sur la ville. (Von meinem Zimmer aus habe ich eine schöne Aussicht auf die Stadt.)",
+    "hint": "Nomen mit Artikel, beginnt mit „v“."
+  },
+  {
+    "code": "FV-089",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **écrire qc à qn**?",
+    "payload": {
+      "options": [
+        "jemandem etwas schreiben",
+        "etwas lesen",
+        "etwas vergessen",
+        "jdn. interessieren"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "écrire qc à qn = jemandem etwas schreiben. Beispiel: Léa écrit un texto à sa mère. (Léa schreibt ihrer Mutter eine SMS.) Formen: j'écris, tu écris, il écrit, nous écrivons, vous écrivez, ils écrivent.",
+    "hint": "J'écris à ma copine."
+  },
+  {
+    "code": "FV-090",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **jemandem etwas schreiben**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "écrire qc à qn",
+        "écrire"
+      ]
+    },
+    "explanation": "écrire qc à qn = jemandem etwas schreiben. Beispiel: Léa écrit un texto à sa mère. (Léa schreibt ihrer Mutter eine SMS.) Formen: j'écris, tu écris, il écrit, nous écrivons, vous écrivez, ils écrivent.",
+    "hint": "Ein Verb, beginnt mit „é“."
+  },
+  {
+    "code": "FV-091",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une carte**?",
+    "payload": {
+      "options": [
+        "eine Antwort",
+        "eine Karte",
+        "ein Text",
+        "eine Sache; ein Ding"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "une carte = eine Karte. Beispiel: Regarde la carte: le musée est ici. (Schau auf die Karte: Das Museum ist hier.)",
+    "hint": "Tu as une carte de Paris?"
+  },
+  {
+    "code": "FV-092",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Karte**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "une carte"
+      ]
+    },
+    "explanation": "une carte = eine Karte. Beispiel: Regarde la carte: le musée est ici. (Schau auf die Karte: Das Museum ist hier.)",
+    "hint": "Nomen mit Artikel, beginnt mit „c“."
+  },
+  {
+    "code": "FV-093",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une carte postale**?",
+    "payload": {
+      "options": [
+        "eine E-Mail",
+        "eine SMS",
+        "eine Postkarte; eine Ansichtskarte",
+        "ein Andenken; eine Erinnerung"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "une carte postale = eine Postkarte; eine Ansichtskarte. Beispiel: Cette carte postale montre la tour Eiffel. (Diese Postkarte zeigt den Eiffelturm.)",
+    "hint": "J'achète une carte postale au musée."
+  },
+  {
+    "code": "FV-094",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Postkarte; eine Ansichtskarte**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "une carte postale"
+      ]
+    },
+    "explanation": "une carte postale = eine Postkarte; eine Ansichtskarte. Beispiel: Cette carte postale montre la tour Eiffel. (Diese Postkarte zeigt den Eiffelturm.)",
+    "hint": "Nomen mit Artikel, zwei Wörter, beginnt mit „c“."
+  },
+  {
+    "code": "FV-095",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un restaurant**?",
+    "payload": {
+      "options": [
+        "eine Boutique; ein Ladengeschäft",
+        "ein Büro; ein Schreibtisch",
+        "ein Museum",
+        "ein Restaurant"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "un restaurant = ein Restaurant. Beispiel: Ce soir, nous mangeons au restaurant. (Heute Abend essen wir im Restaurant.)",
+    "hint": "On mange au restaurant."
+  },
+  {
+    "code": "FV-096",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Restaurant**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "un restaurant"
+      ]
+    },
+    "explanation": "un restaurant = ein Restaurant. Beispiel: Ce soir, nous mangeons au restaurant. (Heute Abend essen wir im Restaurant.)",
+    "hint": "Nomen mit Artikel, beginnt mit „r“."
+  },
+  {
+    "code": "FV-097",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une boutique**?",
+    "payload": {
+      "options": [
+        "eine Boutique; ein Ladengeschäft",
+        "ein Restaurant",
+        "ein Büro; ein Schreibtisch",
+        "eine Kirche"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "une boutique = eine Boutique; ein Ladengeschäft. Beispiel: La boutique est à côté du musée. (Der Laden ist neben dem Museum.)",
+    "hint": "J'achète un T-shirt dans une boutique."
+  },
+  {
+    "code": "FV-098",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Boutique; ein Ladengeschäft**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "une boutique"
+      ]
+    },
+    "explanation": "une boutique = eine Boutique; ein Ladengeschäft. Beispiel: La boutique est à côté du musée. (Der Laden ist neben dem Museum.)",
+    "hint": "Nomen mit Artikel, beginnt mit „b“."
+  },
+  {
+    "code": "FV-099",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un souvenir**?",
+    "payload": {
+      "options": [
+        "eine Postkarte; eine Ansichtskarte",
+        "ein Andenken; eine Erinnerung",
+        "ein Denkmal; ein Monument",
+        "eine Sache; ein Ding"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "un souvenir = ein Andenken; eine Erinnerung. Beispiel: Ce T-shirt est un souvenir de Paris. (Dieses T-Shirt ist ein Andenken an Paris.)",
+    "hint": "J'achète un souvenir pour ma mère."
+  },
+  {
+    "code": "FV-100",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Andenken; eine Erinnerung**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "un souvenir"
+      ]
+    },
+    "explanation": "un souvenir = ein Andenken; eine Erinnerung. Beispiel: Ce T-shirt est un souvenir de Paris. (Dieses T-Shirt ist ein Andenken an Paris.)",
+    "hint": "Nomen mit Artikel, beginnt mit „s“."
+  },
+  {
+    "code": "FV-101",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **peut-être**?",
+    "payload": {
+      "options": [
+        "vor (zeitlich); vorher",
+        "endlich; schließlich",
+        "vielleicht",
+        "wenig(e) (+ Nomen)"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "peut-être = vielleicht. Beispiel: Demain, nous allons peut-être au cinéma. (Morgen gehen wir vielleicht ins Kino.)",
+    "hint": "Tu viens demain? Peut-être."
+  },
+  {
+    "code": "FV-102",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **vielleicht**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "peut-être"
+      ]
+    },
+    "explanation": "peut-être = vielleicht. Beispiel: Demain, nous allons peut-être au cinéma. (Morgen gehen wir vielleicht ins Kino.)",
+    "hint": "Ein Wort mit Bindestrich, beginnt mit „p“."
+  },
+  {
+    "code": "FV-103",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un bureau**?",
+    "payload": {
+      "options": [
+        "ein Restaurant",
+        "eine Boutique; ein Ladengeschäft",
+        "eine Kirche",
+        "ein Büro; ein Schreibtisch"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "un bureau = ein Büro; ein Schreibtisch. Beispiel: Mon livre est sur le bureau. (Mein Buch liegt auf dem Schreibtisch.)",
+    "hint": "Mon père travaille dans un bureau."
+  },
+  {
+    "code": "FV-104",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Büro; ein Schreibtisch**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "un bureau"
+      ]
+    },
+    "explanation": "un bureau = ein Büro; ein Schreibtisch. Beispiel: Mon livre est sur le bureau. (Mein Buch liegt auf dem Schreibtisch.)",
+    "hint": "Nomen mit Artikel, beginnt mit „b“."
+  },
+  {
+    "code": "FV-105",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **avant**?",
+    "payload": {
+      "options": [
+        "vor (zeitlich); vorher",
+        "vielleicht",
+        "endlich; schließlich",
+        "wenig(e) (+ Nomen)"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "avant = vor (zeitlich); vorher. Beispiel: Avant l'école, je prends le petit-déjeuner. (Vor der Schule frühstücke ich.)",
+    "hint": "Avant le dîner, je fais mes devoirs."
+  },
+  {
+    "code": "FV-106",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **vor (zeitlich); vorher**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "avant"
+      ]
+    },
+    "explanation": "avant = vor (zeitlich); vorher. Beispiel: Avant l'école, je prends le petit-déjeuner. (Vor der Schule frühstücke ich.)",
+    "hint": "Ein Wort, beginnt mit „a“."
+  },
+  {
+    "code": "FV-107",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un texto**?",
+    "payload": {
+      "options": [
+        "eine E-Mail",
+        "eine SMS",
+        "eine Postkarte; eine Ansichtskarte",
+        "ein Text"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "un texto = eine SMS. Beispiel: Je lis le texto de ma copine. (Ich lese die SMS meiner Freundin.) Nicht verwechseln mit un texte (ein Text).",
+    "hint": "J'écris un texto à mon frère."
+  },
+  {
+    "code": "FV-108",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine SMS**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "un texto"
+      ]
+    },
+    "explanation": "un texto = eine SMS. Beispiel: Je lis le texto de ma copine. (Ich lese die SMS meiner Freundin.) Nicht verwechseln mit un texte (ein Text).",
+    "hint": "Nomen mit Artikel, beginnt mit „t“."
+  },
+  {
+    "code": "FV-109",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **papi (fam.)**?",
+    "payload": {
+      "options": [
+        "Omi (ugs.)",
+        "Kuckuck!; Hallo!",
+        "Opi (ugs.)",
+        "ein Küsschen; ein Busserl (ugs.)"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "papi (fam.) = Opi (ugs.). Beispiel: Le dimanche, je vais chez papi. (Sonntags gehe ich zu Opi.)",
+    "hint": "Papi a 70 ans."
+  },
+  {
+    "code": "FV-110",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **Opi (ugs.)**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "papi"
+      ]
+    },
+    "explanation": "papi (fam.) = Opi (ugs.). Beispiel: Le dimanche, je vais chez papi. (Sonntags gehe ich zu Opi.)",
+    "hint": "Ein Wort ohne Artikel, beginnt mit „p“."
+  },
+  {
+    "code": "FV-111",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **mamie (fam.)**?",
+    "payload": {
+      "options": [
+        "Opi (ugs.)",
+        "Viele Grüße und Küsse",
+        "eine Person",
+        "Omi (ugs.)"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "mamie (fam.) = Omi (ugs.). Beispiel: Mamie habite à Lyon. (Omi wohnt in Lyon.)",
+    "hint": "Mamie fait des crêpes."
+  },
+  {
+    "code": "FV-112",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **Omi (ugs.)**",
+    "payload": {
+      "page": 198
+    },
+    "solution": {
+      "answers": [
+        "mamie"
+      ]
+    },
+    "explanation": "mamie (fam.) = Omi (ugs.). Beispiel: Mamie habite à Lyon. (Omi wohnt in Lyon.)",
+    "hint": "Ein Wort ohne Artikel, beginnt mit „m“."
+  },
+  {
+    "code": "FV-113",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **Comment allez-vous?**?",
+    "payload": {
+      "options": [
+        "Wie geht es euch/Ihnen?",
+        "Viele Grüße und Küsse",
+        "Kuckuck!; Hallo!",
+        "aufpassen; Acht geben"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Comment allez-vous? = Wie geht es euch/Ihnen?. Beispiel: Bonjour, monsieur Martin! Comment allez-vous? (Guten Tag, Herr Martin! Wie geht es Ihnen?) Zu einer Person, die man duzt, sagt man: Comment vas-tu?",
+    "hint": "Bonjour madame, comment allez-vous?"
+  },
+  {
+    "code": "FV-114",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **Wie geht es euch/Ihnen?**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "Comment allez-vous?"
+      ]
+    },
+    "explanation": "Comment allez-vous? = Wie geht es euch/Ihnen?. Beispiel: Bonjour, monsieur Martin! Comment allez-vous? (Guten Tag, Herr Martin! Wie geht es Ihnen?) Zu einer Person, die man duzt, sagt man: Comment vas-tu?",
+    "hint": "Beginnt mit „C“, mit Bindestrich."
+  },
+  {
+    "code": "FV-115",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **génial/géniale**?",
+    "payload": {
+      "options": [
+        "berühmt",
+        "super; genial",
+        "modern",
+        "bevorzugt; Lieblings-"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "génial/géniale = super; genial. Beispiel: La vue de la tour est géniale. (Die Aussicht vom Turm ist genial.)",
+    "hint": "Le film est génial!"
+  },
+  {
+    "code": "FV-116",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **super; genial**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "génial/géniale",
+        "génial",
+        "géniale"
+      ]
+    },
+    "explanation": "génial/géniale = super; genial. Beispiel: La vue de la tour est géniale. (Die Aussicht vom Turm ist genial.)",
+    "hint": "Adjektiv, beginnt mit „g“. Die männliche Form genügt."
+  },
+  {
+    "code": "FV-117",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un bisou (fam.)**?",
+    "payload": {
+      "options": [
+        "Viele Grüße und Küsse",
+        "Kuckuck!; Hallo!",
+        "ein Küsschen; ein Busserl (ugs.)",
+        "Opi (ugs.)"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "un bisou (fam.) = ein Küsschen; ein Busserl (ugs.). Beispiel: Il fait un bisou à sa mère. (Er gibt seiner Mutter ein Küsschen.) Am Briefende schreibt man unter guten Freunden auch: Bisous!",
+    "hint": "Bisous, à demain!"
+  },
+  {
+    "code": "FV-118",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Küsschen; ein Busserl (ugs.)**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "un bisou"
+      ]
+    },
+    "explanation": "un bisou (fam.) = ein Küsschen; ein Busserl (ugs.). Beispiel: Il fait un bisou à sa mère. (Er gibt seiner Mutter ein Küsschen.) Am Briefende schreibt man unter guten Freunden auch: Bisous!",
+    "hint": "Nomen mit Artikel, beginnt mit „b“."
+  },
+  {
+    "code": "FV-119",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une bise (fam.)**?",
+    "payload": {
+      "options": [
+        "Kuckuck!; Hallo!",
+        "Omi (ugs.)",
+        "Wie geht es euch/Ihnen?",
+        "ein Kuss auf die Wange (zur Begrüßung)"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "une bise (fam.) = ein Kuss auf die Wange (zur Begrüßung). Beispiel: Pour dire bonjour, Emma fait la bise à sa tante. (Zur Begrüßung gibt Emma ihrer Tante einen Kuss auf die Wange.) faire la bise à qn = jemandem einen Begrüßungskuss geben.",
+    "hint": "Léa fait la bise à Tom."
+  },
+  {
+    "code": "FV-120",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Kuss auf die Wange (zur Begrüßung)**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "une bise"
+      ]
+    },
+    "explanation": "une bise (fam.) = ein Kuss auf die Wange (zur Begrüßung). Beispiel: Pour dire bonjour, Emma fait la bise à sa tante. (Zur Begrüßung gibt Emma ihrer Tante einen Kuss auf die Wange.) faire la bise à qn = jemandem einen Begrüßungskuss geben.",
+    "hint": "Nomen mit Artikel, beginnt mit „b“."
+  },
+  {
+    "code": "FV-121",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **Coucou!**?",
+    "payload": {
+      "options": [
+        "Kuckuck!; Hallo!",
+        "Wie geht es euch/Ihnen?",
+        "Viele Grüße und Küsse",
+        "vielleicht"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Coucou! = Kuckuck!; Hallo!. Beispiel: Coucou Léa, ça va? (Hallo Léa, wie geht's?)",
+    "hint": "Coucou, c'est moi!"
+  },
+  {
+    "code": "FV-122",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **Kuckuck!; Hallo!**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "Coucou!"
+      ]
+    },
+    "explanation": "Coucou! = Kuckuck!; Hallo!. Beispiel: Coucou Léa, ça va? (Hallo Léa, wie geht's?)",
+    "hint": "Ein Wort, beginnt mit „c“."
+  },
+  {
+    "code": "FV-123",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **Grosses bises**?",
+    "payload": {
+      "options": [
+        "Wie geht es euch/Ihnen?",
+        "Viele Grüße und Küsse (am Ende einer Karte)",
+        "Kuckuck!; Hallo!",
+        "Lieber …/Liebe … (Anrede); teuer"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Grosses bises = Viele Grüße und Küsse (am Ende einer Karte). Beispiel: Une carte à mamie finit souvent avec: Grosses bises! (Eine Karte an Omi endet oft mit: Viele Grüße und Küsse!)",
+    "hint": "À bientôt! Grosses bises, Marie"
+  },
+  {
+    "code": "FV-124",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **Viele Grüße und Küsse (am Ende einer Karte)**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "Grosses bises"
+      ]
+    },
+    "explanation": "Grosses bises = Viele Grüße und Küsse (am Ende einer Karte). Beispiel: Une carte à mamie finit souvent avec: Grosses bises! (Eine Karte an Omi endet oft mit: Viele Grüße und Küsse!)",
+    "hint": "Zwei Wörter, beginnt mit „G“."
+  },
+  {
+    "code": "FV-125",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **bouger**?",
+    "payload": {
+      "options": [
+        "aufpassen; Acht geben",
+        "etw. tun können",
+        "sich bewegen",
+        "etwas besichtigen"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "bouger = sich bewegen. Beispiel: Nous bougeons beaucoup au sport. (Im Sport bewegen wir uns viel.) Wie bei manger: nous bougeons mit e.",
+    "hint": "Les enfants bougent beaucoup."
+  },
+  {
+    "code": "FV-126",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **sich bewegen**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "bouger"
+      ]
+    },
+    "explanation": "bouger = sich bewegen. Beispiel: Nous bougeons beaucoup au sport. (Im Sport bewegen wir uns viel.) Wie bei manger: nous bougeons mit e.",
+    "hint": "Ein Verb, beginnt mit „b“."
+  },
+  {
+    "code": "FV-127",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **pouvoir faire qc**?",
+    "payload": {
+      "options": [
+        "etw. tun wollen",
+        "ich würde gern (etw. tun)",
+        "sich bewegen",
+        "etw. tun können"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "pouvoir faire qc = etw. tun können. Beispiel: Je peux aller au cinéma? (Kann ich ins Kino gehen?) Formen: je peux, tu peux, il peut, nous pouvons, vous pouvez, ils peuvent.",
+    "hint": "Tu peux venir demain?"
+  },
+  {
+    "code": "FV-128",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **etw. tun können**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "pouvoir faire qc",
+        "pouvoir"
+      ]
+    },
+    "explanation": "pouvoir faire qc = etw. tun können. Beispiel: Je peux aller au cinéma? (Kann ich ins Kino gehen?) Formen: je peux, tu peux, il peut, nous pouvons, vous pouvez, ils peuvent.",
+    "hint": "Ein Verb, beginnt mit „p“."
+  },
+  {
+    "code": "FV-129",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **faire attention**?",
+    "payload": {
+      "options": [
+        "aufpassen; Acht geben",
+        "sich bewegen",
+        "etw. tun können",
+        "etwas vergessen"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "faire attention = aufpassen; Acht geben. Beispiel: Fais attention à ton sac! (Pass auf deine Tasche auf!)",
+    "hint": "Fais attention au chien!"
+  },
+  {
+    "code": "FV-130",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **aufpassen; Acht geben**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "faire attention"
+      ]
+    },
+    "explanation": "faire attention = aufpassen; Acht geben. Beispiel: Fais attention à ton sac! (Pass auf deine Tasche auf!)",
+    "hint": "Zwei Wörter, beginnt mit „f“."
+  },
+  {
+    "code": "FV-131",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **un bol**?",
+    "payload": {
+      "options": [
+        "eine Scheibe Brot mit Aufstrich",
+        "ein Bol (eine Trinkschale)",
+        "das Frühstück",
+        "ein Baguette"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "un bol = ein Bol (eine Trinkschale). Beispiel: Il y a du café dans le bol. (In der Schale ist Kaffee.) Englisch: bowl.",
+    "hint": "Le matin, je bois un bol de chocolat."
+  },
+  {
+    "code": "FV-132",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Bol (eine Trinkschale)**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "un bol"
+      ]
+    },
+    "explanation": "un bol = ein Bol (eine Trinkschale). Beispiel: Il y a du café dans le bol. (In der Schale ist Kaffee.) Englisch: bowl.",
+    "hint": "Nomen mit Artikel, beginnt mit „b“."
+  },
+  {
+    "code": "FV-133",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **le petit-déjeuner**?",
+    "payload": {
+      "options": [
+        "eine Scheibe Brot mit Aufstrich",
+        "ein Bol (eine Trinkschale)",
+        "das Frühstück",
+        "ein Baguette"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "le petit-déjeuner = das Frühstück. Beispiel: Au petit-déjeuner, je mange une tartine. (Zum Frühstück esse ich ein Brot mit Aufstrich.) prendre le petit-déjeuner = frühstücken.",
+    "hint": "Le petit-déjeuner est prêt."
+  },
+  {
+    "code": "FV-134",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **das Frühstück**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "le petit-déjeuner"
+      ]
+    },
+    "explanation": "le petit-déjeuner = das Frühstück. Beispiel: Au petit-déjeuner, je mange une tartine. (Zum Frühstück esse ich ein Brot mit Aufstrich.) prendre le petit-déjeuner = frühstücken.",
+    "hint": "Nomen mit Artikel, beginnt mit „p“, mit Bindestrich."
+  },
+  {
+    "code": "FV-135",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **adorer qn/qc**?",
+    "payload": {
+      "options": [
+        "ich würde gern (etw. tun)",
+        "etw. tun wollen",
+        "jdn. interessieren",
+        "jemanden/etwas sehr gern mögen"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "adorer qn/qc = jemanden/etwas sehr gern mögen. Beispiel: Ma sœur adore le chocolat. (Meine Schwester liebt Schokolade.)",
+    "hint": "J'adore les crêpes!"
+  },
+  {
+    "code": "FV-136",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **jemanden/etwas sehr gern mögen**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "adorer qn/qc",
+        "adorer"
+      ]
+    },
+    "explanation": "adorer qn/qc = jemanden/etwas sehr gern mögen. Beispiel: Ma sœur adore le chocolat. (Meine Schwester liebt Schokolade.)",
+    "hint": "Ein Verb, beginnt mit „a“."
+  },
+  {
+    "code": "FV-137",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une baguette**?",
+    "payload": {
+      "options": [
+        "ein Baguette",
+        "eine Scheibe Brot mit Aufstrich",
+        "das Frühstück",
+        "ein Bol (eine Trinkschale)"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "une baguette = ein Baguette. Beispiel: Papa achète une baguette à la boulangerie. (Papa kauft ein Baguette in der Bäckerei.) Achtung: Im Französischen ist baguette weiblich.",
+    "hint": "J'achète une baguette."
+  },
+  {
+    "code": "FV-138",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **ein Baguette**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "une baguette"
+      ]
+    },
+    "explanation": "une baguette = ein Baguette. Beispiel: Papa achète une baguette à la boulangerie. (Papa kauft ein Baguette in der Bäckerei.) Achtung: Im Französischen ist baguette weiblich.",
+    "hint": "Nomen mit Artikel, beginnt mit „b“."
+  },
+  {
+    "code": "FV-139",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **une tartine**?",
+    "payload": {
+      "options": [
+        "ein Baguette",
+        "eine Scheibe Brot mit Aufstrich",
+        "das Frühstück",
+        "ein Bol (eine Trinkschale)"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "une tartine = eine Scheibe Brot mit Aufstrich. Beispiel: Le matin, Léo mange une tartine. (Morgens isst Léo ein Brot mit Aufstrich.)",
+    "hint": "Je mange une tartine avec de la confiture."
+  },
+  {
+    "code": "FV-140",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **eine Scheibe Brot mit Aufstrich**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "une tartine"
+      ]
+    },
+    "explanation": "une tartine = eine Scheibe Brot mit Aufstrich. Beispiel: Le matin, Léo mange une tartine. (Morgens isst Léo ein Brot mit Aufstrich.)",
+    "hint": "Nomen mit Artikel, beginnt mit „t“."
+  },
+  {
+    "code": "FV-141",
+    "skill_code": "FV.0",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **vouloir faire qc**?",
+    "payload": {
+      "options": [
+        "etw. tun können",
+        "ich würde gern (etw. tun)",
+        "etw. tun wollen",
+        "jemanden/etwas sehr gern mögen"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "vouloir faire qc = etw. tun wollen. Beispiel: Nous voulons visiter Paris. (Wir wollen Paris besichtigen.) Formen: je veux, tu veux, il veut, nous voulons, vous voulez, ils veulent.",
+    "hint": "Tu veux jouer avec nous?"
+  },
+  {
+    "code": "FV-142",
+    "skill_code": "FV.0",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Französisch? **etw. tun wollen**",
+    "payload": {
+      "page": 199
+    },
+    "solution": {
+      "answers": [
+        "vouloir faire qc",
+        "vouloir"
+      ]
+    },
+    "explanation": "vouloir faire qc = etw. tun wollen. Beispiel: Nous voulons visiter Paris. (Wir wollen Paris besichtigen.) Formen: je veux, tu veux, il veut, nous voulons, vous voulez, ils veulent.",
+    "hint": "Ein Verb, beginnt mit „v“."
+  }
+]

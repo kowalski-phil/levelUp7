@@ -250,7 +250,7 @@ export function SessionPlayer({ sessionId, kind, items: initialItems, answered, 
             {solvedWithHint
               ? "Richtig, mit Tipp"
               : result === "partial" && current.item.type === "vocab"
-                ? "Fast, nur ein Tippfehler"
+                ? "Fast richtig, achte auf die Schreibweise"
                 : FEEDBACK[result].title}
           </p>
           {showSolution && current.item.type !== "self_check" ? (

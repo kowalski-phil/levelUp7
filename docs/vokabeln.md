@@ -7,3 +7,4 @@ Protokoll von `/vokabeln-aus-foto` (wird an Tag 2 für zwei Sprachen umgebaut). 
 
 | Datum | Sprache | Vokabelseiten | bis Buchseite | Unit | Items | Wörter | Übersprungen |
 |---|---|---|---|---|---|---|---|
+| 2026-10-05 | Französisch (Band 1) | 195–199 | – | Unité 6 (Ende) und Unité 7 bis Station 2 (FV.0) | FV-001 bis FV-142 | 71 | Eigennamen (la Joconde, le Louvre, Notre-Dame, la Défense, la Grande Arche, l'Arc de triomphe, la place du Trocadéro, la tour Eiffel, Versailles, Gustave Eiffel); Kästen „Auf einen Blick“, „Mon dico personnel“ und „Tu te rappelles?“ |

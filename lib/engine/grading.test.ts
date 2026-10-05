@@ -85,6 +85,31 @@ describe("grade", () => {
     expect(grade(short, { type: "vocab", input: "from" }, "s")).toBe("wrong");
   });
 
+  it("vocab Französisch: qn/qc optional, Akzent oder Artikel daneben ist teilweise richtig", () => {
+    const fr = (answers: string[]): ContentItem => ({ ...base, type: "vocab", payload: { page: 195 }, solution: { answers } });
+    const g = (answers: string[], input: string) => grade(fr(answers), { type: "vocab", input }, "s");
+    expect(g(["parler à qn"], "parler à")).toBe("correct");
+    expect(g(["parler à qn"], "parler à qn")).toBe("correct");
+    expect(g(["demander qc à qn"], "demander à")).toBe("correct");
+    expect(g(["la rentrée"], "La rentrée")).toBe("correct");
+    expect(g(["l'élève (m./f.)"], "l’élève")).toBe("correct");
+    // Akzent vergessen oder falsch
+    expect(g(["la rentrée"], "la rentree")).toBe("partial");
+    expect(g(["la rentrée"], "la rentrèe")).toBe("partial");
+    expect(g(["parler à qn"], "parler a")).toBe("partial");
+    expect(g(["la sœur"], "la soeur")).toBe("partial");
+    // Artikel fehlt oder falsch, auch bei kurzen Wörtern
+    expect(g(["la rentrée"], "rentrée")).toBe("partial");
+    expect(g(["le lit"], "la lit")).toBe("partial");
+    expect(g(["le lit"], "lit")).toBe("partial");
+    expect(g(["les vacances (f., pl.)"], "vacances")).toBe("partial");
+    expect(g(["l'école (f.)"], "école")).toBe("partial");
+    expect(g(["la rentrée"], "rentree")).toBe("partial");
+    // Anderes Wort bleibt falsch
+    expect(g(["la rentrée"], "la sortie")).toBe("wrong");
+    expect(g(["le lit"], "le lait")).toBe("wrong");
+  });
+
   it("order und match", () => {
     const order: ContentItem = { ...base, type: "order", payload: { items: ["a", "b", "c", "d"] } };
     expect(grade(order, { type: "order", items: ["a", "b", "c", "d"] }, "s")).toBe("correct");
