@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "LevelUp10",
-    short_name: "LevelUp10",
-    description: "15 Minuten am Tag bis zur Abschlussprüfung.",
+    name: "LevelUp7",
+    short_name: "LevelUp7",
+    description: "Englisch und Französisch, ein paar Minuten am Tag.",
     start_url: "/",
     display: "standalone",
     orientation: "portrait",

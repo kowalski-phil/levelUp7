@@ -3,6 +3,8 @@ description: Fotos aus dem Vokabelteil des Englischbuchs in Vokabelaufgaben umwa
 argument-hint: "<148-149 | bis S. 14> [test]  oder  einspielen"
 ---
 
+> **Noch nicht für LevelUp7 umgebaut.** Diese Fassung stammt aus LevelUp10 (Felix, Go Ahead 10, `E3.json`) und wird an Tag 2 für Englisch und Französisch neu geschrieben (`KLON-PLAN.md` Abschnitt 6). Bis dahin nicht ausführen.
+
 Wandle Fotos aus dem Vokabelteil von Felix' Englischbuch (Cornelsen „Go Ahead 10“, siehe `docs/schulbuecher.md`) in Aufgaben für `content/englisch/E3.json` um und spiele sie ein.
 
 Auswahl: $ARGUMENTS

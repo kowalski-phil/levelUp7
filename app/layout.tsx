@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LevelUp10",
-  description: "15 Minuten am Tag bis zur Abschlussprüfung.",
-  appleWebApp: { capable: true, title: "LevelUp10", statusBarStyle: "black-translucent" },
+  title: "LevelUp7",
+  description: "Englisch und Französisch, ein paar Minuten am Tag.",
+  appleWebApp: { capable: true, title: "LevelUp7", statusBarStyle: "black-translucent" },
   formatDetection: { telephone: false },
 };
 

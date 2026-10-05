@@ -1,153 +1,130 @@
 {
   "subjects": [
-    { "code": "M", "name": "Mathe", "color": "#3b82f6" },
-    { "code": "D", "name": "Deutsch", "color": "#ef4444" },
-    { "code": "B", "name": "BwR", "color": "#facc15" },
-    { "code": "E", "name": "Englisch", "color": "#22c55e" }
+    { "code": "E", "name": "Englisch", "color": "#22c55e" },
+    { "code": "F", "name": "Französisch", "color": "#3b82f6" }
   ],
   "units": [
     {
-      "code": "M1", "subject": "M", "title": "Trigonometrie", "hours": 21, "schedule_order": 2,
+      "code": "E1", "subject": "E", "title": "Unit 1: Find your place", "hours": 31,
       "skills": [
-        { "code": "M1.1", "title": "Sinus, Kosinus, Tangens am Einheitskreis", "description": "Werte am Einheitskreis ablesen und berechnen, Taschenrechner für Werte und Umkehrwerte nutzen, Beziehungen wie sin(180° − α) = sin α." },
-        { "code": "M1.2", "title": "Winkel zwischen Geraden", "description": "Neigungswinkel über m = tan α bestimmen, Schnittwinkel zweier Geraden berechnen." },
-        { "code": "M1.3", "title": "Sinusfunktion und periodische Vorgänge", "description": "Graph von y = a · sin(b · x) beschreiben, Periode und Amplitude bestimmen." },
-        { "code": "M1.4", "title": "Sinussatz und Kosinussatz", "description": "Seiten und Winkel in beliebigen Dreiecken berechnen, Flächeninhalt mit A = ½ · a · b · sin γ." },
-        { "code": "M1.5", "title": "Geometrie mit Trigonometrie", "description": "Ebene und räumliche Figuren berechnen, funktionale Abhängigkeiten von Winkeln." }
+        { "code": "E1.1", "title": "Reflexive pronouns und each other", "description": "myself, yourself … themselves; Abgrenzung zu Personalpronomen und zu each other; reflexive Verben im Deutschen, die im Englischen nicht reflexiv sind." },
+        { "code": "E1.2", "title": "Adverbs of manner", "description": "Adverbien bilden (-ly, Sonderformen wie well, fast, hard), Adjektiv oder Adverb, Steigerung der Adverbien." },
+        { "code": "E1.3", "title": "one/ones und possessive pronouns", "description": "Stützwort one/ones statt Wiederholung des Nomens; mine, yours, his, hers, ours, theirs." },
+        { "code": "E1.4", "title": "Reading und Use of English", "description": "Kurze eigene Texte im Wortschatz der Unit: persönliche Stärken, Jugendliche in Nordamerika, Sprachwandel." }
       ]
     },
     {
-      "code": "M2", "subject": "M", "title": "Raumgeometrie", "hours": 20, "schedule_order": 4,
+      "code": "E2", "subject": "E", "title": "Unit 2: Let's go to Wales", "hours": 34,
       "skills": [
-        { "code": "M2.1", "title": "Achsenschnitte von Rotationskörpern", "description": "Achsenschnitt von Zylinder, Kegel, Kugel zeichnen und Maße ablesen." },
-        { "code": "M2.2", "title": "Prinzip von Cavalieri", "description": "Volumengleichheit von Körpern mit gleichen Querschnitten begründen." },
-        { "code": "M2.3", "title": "Netze und Abwicklungen", "description": "Netze erkennen, Mantel von Kegel (Kreissektor) und Zylinder berechnen." },
-        { "code": "M2.4", "title": "Volumen und Oberfläche", "description": "Prisma, Pyramide, Zylinder, Kegel, Kugel: Volumen und Oberfläche berechnen, auch zusammengesetzte Körper." },
-        { "code": "M2.5", "title": "Extremwerte bei Körpern", "description": "Volumen oder Oberfläche in Abhängigkeit einer Größe darstellen und Extremwerte bestimmen." }
+        { "code": "E2.1", "title": "Present perfect progressive", "description": "Handlung, die bis jetzt andauert, mit for und since; Abgrenzung zum present perfect simple." },
+        { "code": "E2.2", "title": "Conditional sentences type 2", "description": "Wiederholung type 1; Bedingung und Folge mit type 2 (if + simple past, would); Ratschläge mit If I were you …" },
+        { "code": "E2.3", "title": "Reading und Use of English", "description": "Kurze eigene Texte im Wortschatz der Unit: Wales, Burgen, Sagen, Reisen." }
       ]
     },
     {
-      "code": "M3", "subject": "M", "title": "Exponentialfunktionen und Logarithmen", "hours": 10, "schedule_order": 5,
+      "code": "E3", "subject": "E", "title": "Unit 3: What was it like?", "hours": 38,
       "skills": [
-        { "code": "M3.1", "title": "Exponentialfunktionen", "description": "y = k · a^x erkennen, Eigenschaften und Graph, Einfluss von k und a." },
-        { "code": "M3.2", "title": "Logarithmen und Exponentialgleichungen", "description": "Logarithmus als Umkehrung, Exponentialgleichungen lösen." },
-        { "code": "M3.3", "title": "Wachstum und Zerfall", "description": "Prozentuales Wachstum und Zerfall modellieren, Verdopplungs- und Halbwertszeit." }
+        { "code": "E3.1", "title": "Past perfect", "description": "Vorzeitigkeit in der Vergangenheit ausdrücken; simple past und past perfect unterscheiden." },
+        { "code": "E3.2", "title": "Conditional sentences type 3", "description": "Über hypothetische Situationen in der Vergangenheit sprechen (if + past perfect, would have)." },
+        { "code": "E3.3", "title": "Reading und Use of English", "description": "Kurze eigene Texte im Wortschatz der Unit: Epochen der britischen Geschichte, historische Personen." }
       ]
     },
     {
-      "code": "M4", "subject": "M", "title": "Quadratische Funktionen und Gleichungen", "hours": 35, "schedule_order": 3,
+      "code": "E4", "subject": "E", "title": "Unit 4: In the Desert Southwest", "hours": 21,
       "skills": [
-        { "code": "M4.1", "title": "Normalform und Scheitelform", "description": "Zwischen y = ax² + bx + c und y = a(x − d)² + e umformen (quadratische Ergänzung)." },
-        { "code": "M4.2", "title": "Funktionsgleichung bestimmen", "description": "Gleichung aus Scheitel und Punkt oder aus Punkten bestimmen." },
-        { "code": "M4.3", "title": "Scheitel und Graph", "description": "Scheitelpunkt, Öffnung, Streckung, Verschiebung der Parabel." },
-        { "code": "M4.4", "title": "Extremwertaufgaben", "description": "Größten oder kleinsten Wert einer quadratischen Größe über den Scheitel bestimmen." },
-        { "code": "M4.5", "title": "Quadratische Gleichungen lösen", "description": "Lösungsformel, Diskriminante und Anzahl der Lösungen." },
-        { "code": "M4.6", "title": "Schnittpunkte und Gleichungssysteme", "description": "Schnittpunkte von Parabel und Gerade oder zwei Parabeln berechnen." }
+        { "code": "E4.1", "title": "Conditional clauses with mixed tenses", "description": "Bedingungen und Wünsche ausdrücken, Bedingungssätze mit gemischten Zeiten." },
+        { "code": "E4.2", "title": "Zeitliche und logische Bezüge", "description": "Verbindungswörter für Zeit, Grund, Gegensatz und Folge." },
+        { "code": "E4.3", "title": "Indirect speech (rezeptiv)", "description": "Indirekte Aussagesätze erkennen und verstehen, noch nicht selbst bilden." },
+        { "code": "E4.4", "title": "Reading und Use of English", "description": "Kurze eigene Texte im Wortschatz der Unit: Desert Southwest, Nationalparks, Schule in den USA." }
       ]
     },
     {
-      "code": "M5", "subject": "M", "title": "Daten und Zufall", "hours": 10, "schedule_order": 1,
+      "code": "EV", "subject": "E", "title": "Vokabeln", "hours": 0,
       "skills": [
-        { "code": "M5.1", "title": "Baumdiagramme", "description": "Mehrstufige Zufallsexperimente als Baumdiagramm darstellen, mit und ohne Zurücklegen." },
-        { "code": "M5.2", "title": "Pfadregeln", "description": "Wahrscheinlichkeiten mit Produkt- und Summenregel berechnen, Gegenereignis nutzen." }
+        { "code": "EV.1", "title": "Vokabeln Unit 1", "description": "Find your place. Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "EV.2", "title": "Vokabeln Unit 2", "description": "Let's go to Wales. Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "EV.3", "title": "Vokabeln Unit 3", "description": "What was it like? Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "EV.4", "title": "Vokabeln Unit 4", "description": "In the Desert Southwest. Aus den abfotografierten Seiten des Vokabelteils." }
       ]
     },
     {
-      "code": "B1", "subject": "B", "title": "Periodenrichtige Erfolgsermittlung und Rückstellungen", "hours": 10,
+      "code": "F0", "subject": "F", "title": "Wiederholung Band 1", "hours": 2,
+      "skills": []
+    },
+    {
+      "code": "F1", "subject": "F", "title": "Unité 1: Schulbeginn in Frankreich", "hours": 18,
       "skills": [
-        { "code": "B1.1", "title": "Aufwand, Ausgabe, Ertrag, Einnahme", "description": "Begriffe unterscheiden und Geschäftsfällen zuordnen." },
-        { "code": "B1.2", "title": "Periodengerechte Abgrenzung", "description": "Erkennen, welcher Teil eines Betrags in welches Geschäftsjahr gehört." },
-        { "code": "B1.3", "title": "Aktive und passive Rechnungsabgrenzung", "description": "ARA und PRA bilden und im neuen Jahr auflösen." },
-        { "code": "B1.4", "title": "Rückstellungen", "description": "Rückstellungen bilden und im Folgejahr auflösen (Zahlung gleich, niedriger oder höher)." }
+        { "code": "F1.1", "title": "Pronoms disjoints", "description": "moi, toi, lui, elle, nous, vous, eux, elles: nach Präpositionen, nach c'est, zur Betonung." },
+        { "code": "F1.2", "title": "Relativsätze mit qui, que, où", "description": "qui als Subjekt, que als Objekt, où für Ort und Zeit." },
+        { "code": "F1.3", "title": "connaître, savoir, mettre", "description": "Konjugation im Präsens, connaître oder savoir." },
+        { "code": "F1.4", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Schulbeginn, Klassenstufen im Collège, Lyon." }
       ]
     },
     {
-      "code": "B2", "subject": "B", "title": "Unternehmensabschluss und Auswertung", "hours": 17,
+      "code": "F2", "subject": "F", "title": "Unité 2: Erlebnisse erzählen", "hours": 24,
       "skills": [
-        { "code": "B2.1", "title": "Abschluss der Konten", "description": "Aufwands- und Ertragskonten über GUV, Bestandskonten über SBK abschließen." },
-        { "code": "B2.2", "title": "Bilanz und GuV", "description": "Vereinfachte Bilanz und GuV erstellen, Konten zu Bilanzposten verdichten." },
-        { "code": "B2.3", "title": "Kennzahlen", "description": "Eigenkapitalquote, Eigen- und Gesamtkapitalrentabilität, Umsatzrentabilität, Liquidität berechnen." },
-        { "code": "B2.4", "title": "Wirtschaftliche Lage beurteilen", "description": "Kennzahlen deuten und vergleichen." }
+        { "code": "F2.1", "title": "Passé composé mit avoir: Verben auf -er und -dre", "description": "Bildung mit avoir und participe passé (-é, -u), Verneinung ne … pas um das Hilfsverb." },
+        { "code": "F2.2", "title": "Passé composé mit avoir: unregelmäßige Verben", "description": "Participes passés wie fait, vu, dû, ouvert, pris, eu, été." },
+        { "code": "F2.3", "title": "voir, devoir, ouvrir", "description": "Konjugation im Präsens." },
+        { "code": "F2.4", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Erlebnisse, Briefe, Lyon." }
       ]
     },
     {
-      "code": "B3", "subject": "B", "title": "Vollkostenrechnung", "hours": 30,
+      "code": "F3", "subject": "F", "title": "Unité 3: Tagesablauf und Kleidung", "hours": 20,
       "skills": [
-        { "code": "B3.1", "title": "Rechnungskreise und Abgrenzung", "description": "Aufwand und Kosten, Ertrag und Leistung unterscheiden, neutrale Aufwendungen und Erträge." },
-        { "code": "B3.2", "title": "Kostenarten", "description": "Einzel- und Gemeinkosten, fixe und variable Kosten." },
-        { "code": "B3.3", "title": "Kostenstellen und BAB", "description": "Gemeinkosten mit Verteilungsschlüsseln auf Kostenstellen verteilen." },
-        { "code": "B3.4", "title": "Zuschlagssätze", "description": "Material-, Fertigungs-, Verwaltungs- und Vertriebsgemeinkostenzuschlag berechnen." },
-        { "code": "B3.5", "title": "Kalkulation", "description": "Selbstkosten und Angebotspreis mit Vorwärts- und Rückwärtskalkulation." }
+        { "code": "F3.1", "title": "Verbes pronominaux", "description": "Reflexive Verben im Präsens: je me lève, tu te lèves …" },
+        { "code": "F3.2", "title": "Passé composé mit être", "description": "Verben der Bewegung und reflexive Verben, Angleichung des participe passé." },
+        { "code": "F3.3", "title": "dormir und venir", "description": "Verben auf -ir ohne -iss- (dormir, partir, sortir) und venir im Präsens." },
+        { "code": "F3.4", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Tagesablauf, Kleidung, Feste." }
       ]
     },
     {
-      "code": "B4", "subject": "B", "title": "Teilkostenrechnung", "hours": 15,
+      "code": "F4", "subject": "F", "title": "Unité 4: Bretagne, Wetter, Klassenfahrt", "hours": 24,
       "skills": [
-        { "code": "B4.1", "title": "Voll- und Teilkosten", "description": "Fixe und variable Kosten, Grenzen der Vollkostenrechnung." },
-        { "code": "B4.2", "title": "Deckungsbeitrag", "description": "Stückdeckungsbeitrag und Gesamtdeckungsbeitrag, Betriebsergebnis." },
-        { "code": "B4.3", "title": "Gewinnschwelle", "description": "Break-even-Menge und Break-even-Umsatz berechnen." },
-        { "code": "B4.4", "title": "Entscheidungen mit Deckungsbeiträgen", "description": "Eigenfertigung oder Fremdbezug, Zusatzaufträge, Preisuntergrenzen." }
+        { "code": "F4.1", "title": "Pronoms objets indirects", "description": "lui, leur (auch me, te, nous, vous) und ihre Stellung vor dem Verb." },
+        { "code": "F4.2", "title": "Discours indirect und interrogation indirecte", "description": "Indirekte Rede und indirekte Frage im Präsens: Il dit que …, Elle demande si …" },
+        { "code": "F4.3", "title": "Imparfait", "description": "Bildung (Stamm der 1. Person Plural + -ais, -ait …) und Verwendung für Zustände und Gewohnheiten." },
+        { "code": "F4.4", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Jahreszeiten, Wetter, Klassenfahrt." }
       ]
     },
     {
-      "code": "D1", "subject": "D", "title": "Sprechen und Zuhören", "hours": 0,
+      "code": "F5", "subject": "F", "title": "Unité 5: Sport", "hours": 20,
       "skills": [
-        { "code": "D1.1", "title": "Verstehend zuhören", "description": "Kernaussagen erfassen und zusammenfassen." },
-        { "code": "D1.2", "title": "Vor anderen sprechen", "description": "Redebeiträge strukturieren, Argumente mündlich vertreten." }
+        { "code": "F5.1", "title": "Comparatif und superlatif", "description": "plus/moins/aussi … que, le plus …, bon – meilleur." },
+        { "code": "F5.2", "title": "tout, toute, tous, toutes", "description": "Formen des Begleiters tout." },
+        { "code": "F5.3", "title": "Imparfait oder passé composé", "description": "Hintergrund und Zustand (imparfait) oder einmalige Handlung (passé composé)." },
+        { "code": "F5.4", "title": "Verben auf -ir mit -iss-", "description": "finir, choisir … im Präsens und im passé composé." },
+        { "code": "F5.5", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Sportarten und Bewegung." }
       ]
     },
     {
-      "code": "D2", "subject": "D", "title": "Lesen: mit Texten und Medien umgehen", "hours": 0,
+      "code": "F6", "subject": "F", "title": "Unité 6: Essen und Einkaufen", "hours": 20,
       "skills": [
-        { "code": "D2.1", "title": "Lesestrategien", "description": "Texte erschließen, Schlüsselstellen markieren." },
-        { "code": "D2.2", "title": "Literarische Texte verstehen", "description": "Erzählperspektive, Figuren, sprachliche Mittel, Deutungshypothese." },
-        { "code": "D2.3", "title": "Pragmatische Texte verstehen", "description": "Argumentationsstruktur, Intention, Sachtextanalyse." },
-        { "code": "D2.4", "title": "Weitere Medien", "description": "Grafiken, Diagramme und Medienbeiträge auswerten." }
+        { "code": "F6.1", "title": "il faut", "description": "il faut + Infinitiv, il faut qc." },
+        { "code": "F6.2", "title": "Article partitif und Mengenangaben", "description": "du, de la, de l', des; Mengenangaben mit de (un kilo de, beaucoup de), de nach Verneinung." },
+        { "code": "F6.3", "title": "Pronomen en", "description": "en als Ersatz für Teilungsartikel und Mengenangaben, Stellung vor dem Verb." },
+        { "code": "F6.4", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Lebensmittel, Einkaufen, Mahlzeiten." }
       ]
     },
     {
-      "code": "D3", "subject": "D", "title": "Schreiben", "hours": 0,
+      "code": "F7", "subject": "F", "title": "Unité 7: Stadt und Land", "hours": 24,
       "skills": [
-        { "code": "D3.1", "title": "Schreibfertigkeiten", "description": "Zitieren, Überleitungen, sachlicher Stil." },
-        { "code": "D3.2", "title": "Materialgestützte Erörterung", "description": "These, Argument, Beleg, Beispiel, Gliederung, Einleitung, Schluss." },
-        { "code": "D3.3", "title": "Inhaltsangabe, Analyse, Stellungnahme", "description": "Bausteine der Textanalyse." },
-        { "code": "D3.4", "title": "Texte überarbeiten", "description": "Fehler finden, Formulierungen verbessern." }
+        { "code": "F7.1", "title": "Impératif", "description": "Bejahter und verneinter Imperativ, unregelmäßig: sois, aie …" },
+        { "code": "F7.2", "title": "Impératif mit Pronomen", "description": "Stellung der Pronomen beim bejahten (Donne-lui le livre !) und verneinten Imperativ (Ne lui donne pas le livre !)." },
+        { "code": "F7.3", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Stadt und Land, Sehenswürdigkeiten, Musik." }
       ]
     },
     {
-      "code": "D4", "subject": "D", "title": "Sprachgebrauch und Sprache untersuchen", "hours": 0,
+      "code": "FV", "subject": "F", "title": "Vocabulaire", "hours": 0,
       "skills": [
-        { "code": "D4.1", "title": "Sprachliche Verständigung", "description": "Sprachvarietäten, Wirkung von Sprache." },
-        { "code": "D4.2", "title": "Sprachliche Strukturen", "description": "Satzglieder, Nebensätze, Konjunktiv, indirekte Rede, Aktiv und Passiv." },
-        { "code": "D4.3", "title": "Rechtschreibung", "description": "Groß- und Kleinschreibung, Getrennt- und Zusammenschreibung, das/dass." },
-        { "code": "D4.4", "title": "Zeichensetzung", "description": "Kommaregeln bei Nebensätzen, Infinitivgruppen, Einschüben, Aufzählungen." }
-      ]
-    },
-    {
-      "code": "E1", "subject": "E", "title": "Communicative Skills", "hours": 0,
-      "skills": [
-        { "code": "E1.1", "title": "Reading", "description": "Emails, articles and short stories: gist and detail." },
-        { "code": "E1.2", "title": "Writing", "description": "Email, formal letter, review, article: phrases and structure." },
-        { "code": "E1.3", "title": "Speaking", "description": "Speaking test formats: personal info, picture comparison, negotiating." },
-        { "code": "E1.4", "title": "Mediation", "description": "German to English, meaning not word for word." }
-      ]
-    },
-    {
-      "code": "E2", "subject": "E", "title": "Language", "hours": 0,
-      "skills": [
-        { "code": "E2.2", "title": "Tenses", "description": "All tenses revisited, signal words." },
-        { "code": "E2.3", "title": "Modals and conditionals", "description": "Modals, past modals, conditional sentences types 1-3." },
-        { "code": "E2.4", "title": "Passive and reported speech", "description": "Passive in all tenses, reported speech with backshift." },
-        { "code": "E2.5", "title": "Relative clauses", "description": "Defining and non-defining relative clauses, contact clauses." }
-      ]
-    },
-    {
-      "code": "E3", "subject": "E", "title": "Vocabulary", "hours": 0,
-      "skills": [
-        { "code": "E3.1", "title": "Vokabeln Unit 1", "description": "A diverse nation (inkl. English connects). Aus den abfotografierten Seiten des Vokabelteils." },
-        { "code": "E3.2", "title": "Vokabeln Unit 2", "description": "Aotearoa, New Zealand. Aus den abfotografierten Seiten des Vokabelteils." },
-        { "code": "E3.3", "title": "Vokabeln Unit 3", "description": "Into the world. Aus den abfotografierten Seiten des Vokabelteils." },
-        { "code": "E3.4", "title": "Vokabeln Unit 4", "description": "The future in our hands. Aus den abfotografierten Seiten des Vokabelteils." }
+        { "code": "FV.0", "title": "Vokabeln Band 1", "description": "Découvertes 1, nur was gerade wiederholt wird. Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "FV.1", "title": "Vokabeln Unité 1", "description": "Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "FV.2", "title": "Vokabeln Unité 2", "description": "Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "FV.3", "title": "Vokabeln Unité 3", "description": "Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "FV.4", "title": "Vokabeln Unité 4", "description": "Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "FV.5", "title": "Vokabeln Unité 5", "description": "Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "FV.6", "title": "Vokabeln Unité 6", "description": "Aus den abfotografierten Seiten des Vokabelteils." },
+        { "code": "FV.7", "title": "Vokabeln Unité 7", "description": "Aus den abfotografierten Seiten des Vokabelteils." }
       ]
     }
   ]

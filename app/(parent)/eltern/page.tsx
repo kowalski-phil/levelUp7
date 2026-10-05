@@ -100,7 +100,7 @@ export default async function ElternPage() {
       <section>
         <h2 className="mb-1 font-semibold">Letzte Tage</h2>
         <p className="mb-2 text-sm text-muted-foreground">
-          Fehler = beim ersten Versuch falsch. Falsche Aufgaben muss Felix am Ende der Runde nochmal lösen, das sind die Wiederholungen.
+          Fehler = beim ersten Versuch falsch. Falsche Aufgaben muss Paula am Ende der Runde nochmal lösen, das sind die Wiederholungen.
         </p>
         <ul className="divide-y divide-border rounded-2xl bg-card">
           {sessions.length === 0 ? <li className="p-4 text-muted-foreground">Noch keine Sessions.</li> : null}
@@ -126,7 +126,7 @@ export default async function ElternPage() {
       <section>
         <h2 className="mb-2 font-semibold">Schulaufgaben</h2>
         <ul className="divide-y divide-border rounded-2xl bg-card">
-          {exams.length === 0 ? <li className="p-4 text-muted-foreground">Felix hat keine Schulaufgabe eingetragen.</li> : null}
+          {exams.length === 0 ? <li className="p-4 text-muted-foreground">Paula hat keine Schulaufgabe eingetragen.</li> : null}
           {exams.map((e) => {
             const st = stats.get(e.id);
             const d = daysUntil(e, today);
@@ -152,7 +152,7 @@ export default async function ElternPage() {
       </section>
       <section>
         <h2 className="mb-1 font-semibold">&bdquo;Hatten wir noch nicht&ldquo;</h2>
-        <p className="mb-2 text-sm text-muted-foreground">Themen, die Felix als noch nicht im Unterricht markiert hat. Sie ruhen 3 Wochen.</p>
+        <p className="mb-2 text-sm text-muted-foreground">Themen, die Paula als noch nicht im Unterricht markiert hat. Sie ruhen 3 Wochen.</p>
         <ul className="divide-y divide-border rounded-2xl bg-card">
           {snoozes.length === 0 ? <li className="p-4 text-muted-foreground">Nichts markiert.</li> : null}
           {snoozes.map((x) => (

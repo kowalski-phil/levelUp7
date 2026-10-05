@@ -3,7 +3,7 @@
 import { AlertTriangle, Check, ChevronDown, Loader2, Minus } from "lucide-react";
 import { useMemo, useState, useTransition } from "react";
 import { createExamAction, deleteExamAction, updateExamAction, type ExamFormResult } from "@/app/(student)/fokus/actions";
-import type { ScheduleEntry } from "@/lib/engine/calendar";
+import { ROTATING_SUBJECTS, type ScheduleEntry } from "@/lib/engine/calendar";
 import { daysUntil, overDeselectedUnits, suggestSkills } from "@/lib/engine/focus";
 import { cn } from "@/lib/utils";
 
@@ -39,7 +39,7 @@ export function ExamForm(props: ExamFormProps) {
   const [selected, setSelected] = useState<Set<string>>(() => new Set(initial?.skillCodes ?? []));
   const [baseline, setBaseline] = useState<Set<string>>(() => new Set(initial?.skillCodes ?? []));
   const [touched, setTouched] = useState(mode === "edit");
-  // Beim Bearbeiten teilweise gewählte Lernbereiche aufklappen, damit Felix sieht, was fehlt.
+  // Beim Bearbeiten teilweise gewählte Lernbereiche aufklappen, damit Paula sieht, was fehlt.
   const [expanded, setExpanded] = useState<Set<string>>(() => {
     const chosen = new Set(initial?.skillCodes ?? []);
     const units = new Set(props.skills.filter((x) => chosen.has(x.code)).map((x) => x.unitCode));
@@ -93,7 +93,7 @@ export function ExamForm(props: ExamFormProps) {
     );
     setSelected(next);
     setBaseline(next);
-    // Teilweise vorgeschlagene Lernbereiche gleich aufklappen, damit Felix sieht, was fehlt.
+    // Teilweise vorgeschlagene Lernbereiche gleich aufklappen, damit Paula sieht, was fehlt.
     setExpanded(
       new Set(
         [...unitsWithItems].filter((u) => {
@@ -120,7 +120,7 @@ export function ExamForm(props: ExamFormProps) {
 
   const chooseDate = (value: string) => {
     setDate(value);
-    // Solange Felix keinen Haken selbst gesetzt hat, folgt der Vorschlag dem Datum.
+    // Solange Paula keinen Haken selbst gesetzt hat, folgt der Vorschlag dem Datum.
     if (subject && value && !touched) applySuggestion(subject, value);
   };
 
@@ -155,7 +155,7 @@ export function ExamForm(props: ExamFormProps) {
     setExpanded(next);
   };
 
-  // Warnung nur für Lernbereiche, die Felix selbst verändert hat.
+  // Warnung nur für Lernbereiche, die Paula selbst verändert hat.
   const warnUnits = overDeselectedUnits(unitSkillCodes, selected).filter((u) =>
     (unitSkillCodes.get(u) ?? []).some((c) => selected.has(c) !== baseline.has(c)),
   );
@@ -178,7 +178,7 @@ export function ExamForm(props: ExamFormProps) {
     else run(() => createExamAction(subject, date, codes));
   };
 
-  const hasSuggestion = subject === "M" || subject === "B";
+  const hasSuggestion = !!subject && !ROTATING_SUBJECTS.has(subject);
   const days = date ? daysUntil({ examDate: date }, props.today) : null;
 
   return (

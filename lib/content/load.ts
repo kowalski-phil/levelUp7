@@ -16,7 +16,7 @@ export interface Structure {
   }[];
 }
 
-export const SUBJECT_DIRS: Record<SubjectCode, string> = { M: "mathe", D: "deutsch", B: "bwr", E: "englisch" };
+export const SUBJECT_DIRS: Record<SubjectCode, string> = { E: "englisch", F: "franzoesisch" };
 
 export function loadStructure(root: string): Structure {
   return JSON.parse(readFileSync(join(root, "content", "structure.json"), "utf8"));

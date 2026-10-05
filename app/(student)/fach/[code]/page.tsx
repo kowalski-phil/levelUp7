@@ -5,6 +5,7 @@ import { startBonus } from "@/app/(student)/session/actions";
 import { skillStars } from "@/lib/data/progress";
 import { loadAnswerHistory, loadCatalog, requireStudent } from "@/lib/data/queries";
 import { ROTATING_SUBJECTS, unitPhase, unlockedSkillCount, weekOf, weekStart, type UnitPhase } from "@/lib/engine/calendar";
+import { isVocabUnit } from "@/lib/engine/planner";
 import { todayInBerlin } from "@/lib/engine/dates";
 
 // Skill-Tree eines Fachs (PLAN.md Abschnitt 7): Gebiete als Pfad in Unterrichtsreihenfolge, Skills mit Sternen,
@@ -18,7 +19,7 @@ export default async function FachPage({ params }: PageProps<"/fach/[code]">) {
 
   const today = todayInBerlin();
   const week = weekOf(today, v.family.school_year_start);
-  const rotating = ROTATING_SUBJECTS.has(subject.code);
+  const rotatingSubject = ROTATING_SUBJECTS.has(subject.code);
   const stars = skillStars(catalog, history);
   const itemsPerSkill = new Map<string, number>();
   for (const i of catalog.items) itemsPerSkill.set(i.skillCode, (itemsPerSkill.get(i.skillCode) ?? 0) + 1);
@@ -31,13 +32,15 @@ export default async function FachPage({ params }: PageProps<"/fach/[code]">) {
       const skills = catalog.skills.filter((s) => s.unitCode === u.code).sort((a, b) => a.orderIndex - b.orderIndex);
       const phase = unitPhase(catalog.schedule, u.code, week);
       const entry = scheduleOf(u.code);
+      // Vokabeln laufen das ganze Jahr neben den Units, freigeschaltet ist, was abfotografiert wurde.
+      const rotating = rotatingSubject || isVocabUnit(u.code);
       // Geordnete Fächer: Im laufenden Gebiet werden die Skills nacheinander freigeschaltet.
       const unlocked = rotating || phase === "past" ? skills.length : phase === "current" && entry ? unlockedSkillCount(entry, week, skills.length) : 0;
       const hasItems = skills.some((s) => (itemsPerSkill.get(s.code) ?? 0) > 0);
-      return { unit: u, skills, phase, entry, unlocked, hasItems };
+      return { unit: u, skills, phase, entry, unlocked, hasItems, rotating };
     })
-    // Deutsch/Englisch laufen parallel: Gebiete mit Aufgaben zuerst.
-    .sort((a, b) => (rotating ? Number(b.hasItems) - Number(a.hasItems) : 0));
+    // Rotierende Fächer laufen parallel: Gebiete mit Aufgaben zuerst.
+    .sort((a, b) => (rotatingSubject ? Number(b.hasItems) - Number(a.hasItems) : 0));
 
   const earned = units.flatMap((u) => u.skills).reduce((sum, s) => sum + (stars.get(s.id) ?? 0), 0);
   const max = units.reduce((sum, u) => sum + u.skills.length * 3, 0);
@@ -60,7 +63,7 @@ export default async function FachPage({ params }: PageProps<"/fach/[code]">) {
 
       <ol className="relative flex flex-col gap-4">
         <span aria-hidden className="absolute top-6 bottom-6 left-[1.1rem] w-0.5 bg-border" />
-        {units.map(({ unit, skills, phase, entry, unlocked, hasItems }) => {
+        {units.map(({ unit, skills, phase, entry, unlocked, hasItems, rotating }) => {
           const current = phase === "current" && hasItems;
           return (
             <li key={unit.code} className="relative flex gap-3">

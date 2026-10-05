@@ -15,7 +15,7 @@ export interface PlayerItem {
 export interface PlayerProps {
   sessionId: string;
   kind: SessionKind;
-  /** Zusatz im Kopf, z. B. "Fokus BwR". */
+  /** Zusatz im Kopf, z. B. "Fokus Englisch". */
   label?: string;
   labelColor?: string;
   items: PlayerItem[];

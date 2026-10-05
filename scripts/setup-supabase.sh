@@ -180,7 +180,7 @@ finish() {
 }
 
 # ──────────────────────────────────────────────────────────────────────────
-# STAGES — LevelUp10: Supabase einrichten (Tag 1). Vercel/GitHub folgt an Tag 2.
+# STAGES — LevelUp7: Supabase einrichten (Tag 1). Vercel/GitHub folgt an Tag 2.
 # Aufruf im Projektordner (Git Bash):  bash scripts/setup-supabase.sh
 # ──────────────────────────────────────────────────────────────────────────
 
@@ -205,13 +205,13 @@ need() {
   done
 }
 
-banner "LevelUp10 · Supabase einrichten"
+banner "LevelUp7 · Supabase einrichten"
 
 # ── 1 ────────────────────────────────────────────────────────────────────
 stage "Supabase-Projekt anlegen"
 open_url "https://supabase.com/dashboard/new"
 step "Organisation wählen (oder anlegen, falls noch keine da ist)."
-step "Project name: levelup10"
+step "Project name: levelup7"
 step "Database Password: ein starkes Passwort erzeugen und im Passwort-Manager speichern (wird hier nicht gebraucht)."
 step "Region: Central EU (Frankfurt)."
 step "Create new project klicken und warten, bis das Projekt bereit ist (1-2 Minuten)."
@@ -238,12 +238,12 @@ write_env SUPABASE_SECRET_KEY "$SUPABASE_SECRET_KEY"
 pause "Weiter mit Enter."
 
 # ── 3 ────────────────────────────────────────────────────────────────────
-stage "Datenbank-Tabellen anlegen (Migration)"
+stage "Datenbank-Tabellen anlegen (Migrationen 0001 bis 0005)"
 if command -v clip.exe >/dev/null 2>&1; then
-  clip.exe < supabase/migrations/0001_init.sql
-  say "Die Migration liegt jetzt in deiner Zwischenablage."
+  cat supabase/migrations/*.sql | clip.exe
+  say "Alle Migrationen liegen jetzt hintereinander in deiner Zwischenablage."
 else
-  warn "Zwischenablage nicht verfügbar. Öffne supabase/migrations/0001_init.sql und kopiere den ganzen Inhalt."
+  warn "Zwischenablage nicht verfügbar. Kopiere die Dateien in supabase/migrations/ der Reihe nach (0001 bis 0005) in den SQL Editor."
 fi
 open_url "https://supabase.com/dashboard/project/${SUPABASE_PROJECT_REF}/sql/new"
 step "Im SQL Editor: Strg+V (ganzer Inhalt), dann Run klicken."
@@ -251,13 +251,13 @@ step "Erwartet: 'Success. No rows returned'. Bei einer Fehlermeldung hier abbrec
 pause "Migration ohne Fehler gelaufen? Enter."
 
 # ── 4 ────────────────────────────────────────────────────────────────────
-stage "Accounts für Felix und dich"
+stage "Accounts für Paula und dich"
 say "Die Seed-Datei legt beide Logins an. Passwörter vergibst du hier."
-need SEED_STUDENT_EMAIL "E-Mail für Felix:"
+need SEED_STUDENT_EMAIL "E-Mail für Paula:"
 write_env SEED_STUDENT_EMAIL "$SEED_STUDENT_EMAIL"
-need SEED_STUDENT_PASSWORD "Passwort für Felix (mind. 6 Zeichen, unsichtbar):" secret
+need SEED_STUDENT_PASSWORD "Passwort für Paula (mind. 6 Zeichen, unsichtbar):" secret
 write_env SEED_STUDENT_PASSWORD "$SEED_STUDENT_PASSWORD"
-write_env SEED_STUDENT_NAME "Felix"
+write_env SEED_STUDENT_NAME "Paula"
 need SEED_PARENT_EMAIL "Deine E-Mail (Eltern-Login):"
 write_env SEED_PARENT_EMAIL "$SEED_PARENT_EMAIL"
 need SEED_PARENT_PASSWORD "Dein Passwort (mind. 6 Zeichen, unsichtbar):" secret
@@ -267,7 +267,7 @@ pause "Weiter mit Enter."
 
 # ── 5 ────────────────────────────────────────────────────────────────────
 stage "Aufgaben und Accounts laden (Seed)"
-say "Lädt 360 Aufgaben (Mathe, BwR), den Schuljahres-Kalender und beide Accounts."
+say "Lädt die Aufgaben (Englisch, Französisch), den Schuljahres-Kalender und beide Accounts."
 note "Kann jederzeit erneut laufen: npm run seed (ändert nur, was sich geändert hat)."
 if confirm "Seed jetzt ausführen?"; then
   if npm run seed; then
@@ -282,5 +282,5 @@ fi
 pause "Weiter mit Enter."
 
 finish
-say "Lokal testen:  npm run dev   → http://localhost:3000   (als Felix einloggen)"
+say "Lokal testen:  npm run dev   → http://localhost:3000   (als Paula einloggen)"
 printf '\n'

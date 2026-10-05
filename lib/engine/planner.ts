@@ -37,25 +37,28 @@ export interface PlanInput {
   examDate: ISODate;
   /** Item-IDs, die heute schon dran waren (für die Bonus-Runde). */
   exclude?: ReadonlySet<string>;
-  /** Skill-Codes, die Felix als "hatten wir noch nicht" markiert hat: keine neuen Aufgaben daraus. */
+  /** Skill-Codes, die Paula als "hatten wir noch nicht" markiert hat: keine neuen Aufgaben daraus. */
   snoozedSkills?: ReadonlySet<string>;
   /** Skills aktiver Schulaufgaben je Fach. Das Fach nimmt seine Aufgaben zuerst aus diesen Skills. */
   focusSkills?: ReadonlyMap<string, ReadonlySet<string>>;
 }
 
-/** Reihenfolge in der Session: Fächer abwechseln. Im Prüfungsmodus Deutsch und Englisch zuerst. */
-export const SUBJECT_ROTATION = ["M", "D", "B", "E"];
-export const EXAM_ROTATION = ["D", "E", "M", "B"];
+/** Reihenfolge in der Session: Englisch und Französisch abwechseln, auch in den Wiederholungswochen vor Schuljahresende. */
+export const SUBJECT_ROTATION = ["E", "F"];
+export const EXAM_ROTATION = ["E", "F"];
 
-export const DAILY_PER_SUBJECT = 3;
+export const DAILY_PER_SUBJECT = 4;
 export const MAX_DUE_PER_SUBJECT = 2;
 export const BONUS_COUNT = 6;
 
-/** Vokabeln aus abfotografierten Buchseiten: eigene Spur neben den 12 Aufgaben (docs/entscheidungen.md, 2026-10-03). */
-export const VOCAB_UNIT = "E3";
-export const VOCAB_PER_DAY = 10;
+/** Vokabeln aus abfotografierten Buchseiten: eine eigene Spur pro Sprache neben den 8 Aufgaben. */
+export const VOCAB_UNITS: Readonly<Record<string, string>> = { E: "EV", F: "FV" };
+/** Pro Sprache. Hat eine Sprache weniger, füllt die andere bis 12 auf. */
+export const VOCAB_PER_DAY = 6;
 
-const isVocab = (i: PlannerItem) => i.unitCode === VOCAB_UNIT;
+const VOCAB_CODES: ReadonlySet<string> = new Set(Object.values(VOCAB_UNITS));
+export const isVocabUnit = (unitCode: string) => VOCAB_CODES.has(unitCode);
+const isVocab = (i: PlannerItem) => isVocabUnit(i.unitCode);
 
 const byCode = (a: PlannerItem, b: PlannerItem) => (a.code < b.code ? -1 : a.code > b.code ? 1 : 0);
 
@@ -190,10 +193,10 @@ function assemble(ranked: Map<string, PlannerItem[]>, rotation: string[], perSub
  * (pro Buch-Unit erst Erkennen, dann Schreiben, jeweils in Listenreihenfolge), dann gesehene nach Fälligkeit.
  * `onlyDueAndNew` lässt die noch nicht fälligen weg (Tagesplan).
  */
-function rankVocab(input: PlanInput, onlyDueAndNew: boolean): PlannerItem[] {
+function rankVocab(input: PlanInput, unitCode: string, onlyDueAndNew: boolean): PlannerItem[] {
   const exclude = input.exclude ?? new Set<string>();
   const stateById = new Map(input.states.map((s) => [s.itemId, s]));
-  const items = input.items.filter((i) => isVocab(i) && !exclude.has(i.id));
+  const items = input.items.filter((i) => i.unitCode === unitCode && !exclude.has(i.id));
   const due = (i: PlannerItem) => stateById.get(i.id)!.dueDate;
 
   const seen = items.filter((i) => stateById.has(i.id)).sort((a, b) => due(a).localeCompare(due(b)) || byCode(a, b));
@@ -218,18 +221,22 @@ function interleave(main: string[], extra: string[]): string[] {
   return out;
 }
 
-/** Tagesplan: 12 Aufgaben, 3 pro Fach, dazu bis zu 10 Vokabeln. Fehlt ein Fach (noch kein Inhalt), übernehmen die anderen. */
+/**
+ * Tagesplan: 8 Aufgaben, 4 pro Fach, dazu bis zu 12 Vokabeln (6 pro Sprache, beide Sprachen abwechselnd).
+ * Fehlt ein Fach (noch kein Inhalt), übernimmt das andere. Dasselbe gilt für die Vokabeln.
+ */
 export function planDaily(input: PlanInput): string[] {
   const rotation = isExamMode(input.today, input.examDate) ? EXAM_ROTATION : SUBJECT_ROTATION;
   const ranked = new Map(rotation.map((s) => [s, rankSubject(s, input)]));
   const main = assemble(ranked, rotation, DAILY_PER_SUBJECT, DAILY_PER_SUBJECT * rotation.length);
-  const vocab = rankVocab(input, true).slice(0, VOCAB_PER_DAY).map((i) => i.id);
+  const vocabRanked = new Map(SUBJECT_ROTATION.map((s) => [s, VOCAB_UNITS[s] ? rankVocab(input, VOCAB_UNITS[s], true) : []]));
+  const vocab = assemble(vocabRanked, SUBJECT_ROTATION, VOCAB_PER_DAY, VOCAB_PER_DAY * SUBJECT_ROTATION.length);
   return interleave(main, vocab);
 }
 
 /** Bonus-Runde: 6 weitere Aufgaben nach denselben Prioritäten, ohne die heutigen. Optional auf ein Gebiet beschränkt. */
 export function planBonus(input: PlanInput, onlyUnit?: string): string[] {
-  if (onlyUnit === VOCAB_UNIT) return rankVocab(input, false).slice(0, BONUS_COUNT).map((i) => i.id);
+  if (onlyUnit && isVocabUnit(onlyUnit)) return rankVocab(input, onlyUnit, false).slice(0, BONUS_COUNT).map((i) => i.id);
   const rotation = isExamMode(input.today, input.examDate) ? EXAM_ROTATION : SUBJECT_ROTATION;
   const items = onlyUnit ? input.items.filter((i) => i.unitCode === onlyUnit) : input.items;
   const ranked = new Map(rotation.map((s) => [s, rankSubject(s, { ...input, items })]));

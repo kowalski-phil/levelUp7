@@ -4,10 +4,19 @@ import { createClient } from "@supabase/supabase-js";
 import { loadContentFiles, loadStructure } from "../lib/content/load";
 import { validateContent } from "../lib/content/validate";
 import { buildSchedule } from "../lib/engine/calendar";
-import { DEFAULT_REWARDS } from "../lib/engine/rewards";
+import type { RewardsConfig } from "../lib/engine/rewards";
 
 const SCHOOL_YEAR_START = "2026-09-16";
-const EXAM_DATE = "2027-06-23"; // erste Prüfung (Deutsch)
+// Keine Abschlussprüfung: exam_date ist der letzte Schultag vor den Sommerferien (km.bayern.de: Ferien ab 2.8.2027).
+// Die 14 Tage davor laufen nur Wiederholung (EXAM_PREP_DAYS).
+const EXAM_DATE = "2027-07-30";
+
+/** Wie bei Felix: 10 € für je 30 Tage am Stück, sonst nichts (docs/entscheidungen.md). */
+const REWARDS: RewardsConfig = {
+  weeklyStreakBonusEur: 0,
+  milestones: [{ days: 30, eur: 10, label: "30 Tage am Stück", repeat: true }],
+  examDayEur: 0,
+};
 
 function env(name: string, required = true): string {
   const v = process.env[name]?.trim() ?? "";
@@ -167,7 +176,7 @@ async function seedAccounts() {
 
   must(
     await db.from("profiles").upsert([
-      { id: studentId, role: "student", family_id: familyId, display_name: env("SEED_STUDENT_NAME", false) || "Felix" },
+      { id: studentId, role: "student", family_id: familyId, display_name: env("SEED_STUDENT_NAME", false) || "Paula" },
       { id: parentId, role: "parent", family_id: familyId, display_name: env("SEED_PARENT_NAME", false) || "Phil" },
     ]),
     "profiles",
@@ -177,9 +186,9 @@ async function seedAccounts() {
     await db.from("rewards_config").upsert(
       {
         family_id: familyId,
-        weekly_streak_bonus_eur: DEFAULT_REWARDS.weeklyStreakBonusEur,
-        milestones: DEFAULT_REWARDS.milestones,
-        exam_day_eur: DEFAULT_REWARDS.examDayEur,
+        weekly_streak_bonus_eur: REWARDS.weeklyStreakBonusEur,
+        milestones: REWARDS.milestones,
+        exam_day_eur: REWARDS.examDayEur,
       },
       { onConflict: "family_id", ignoreDuplicates: true },
     ),

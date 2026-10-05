@@ -8,7 +8,7 @@ import { WELCOME_SEEN_COOKIE } from "@/lib/engine/welcome";
 
 /**
  * "Los geht's": heute nicht mehr zeigen. Mit Haken "Nicht mehr anzeigen" nie wieder
- * (profiles.onboarded_at), bis Felix es auf der Streak-Seite wieder einschaltet.
+ * (profiles.onboarded_at), bis Paula es auf der Streak-Seite wieder einschaltet.
  */
 export async function closeWelcome(formData: FormData): Promise<void> {
   const v = await requireStudent();

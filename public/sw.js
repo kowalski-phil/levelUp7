@@ -1,6 +1,6 @@
 // App-Shell-Cache: nur unveränderliche Build-Dateien (/_next/static) und Icons.
 // Seiten und Daten kommen immer frisch vom Server (kein Offline-Lernen in Phase 1).
-const CACHE = "levelup10-shell-v1";
+const CACHE = "levelup7-shell-v1";
 
 self.addEventListener("install", () => self.skipWaiting());
 
@@ -22,7 +22,7 @@ self.addEventListener("push", (event) => {
     data = { body: event.data ? event.data.text() : "" };
   }
   const tasks = [
-    self.registration.showNotification(data.title || "LevelUp10", {
+    self.registration.showNotification(data.title || "LevelUp7", {
       body: data.body || "",
       icon: "/icons/192.png",
       tag: "reminder",

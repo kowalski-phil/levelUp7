@@ -70,7 +70,7 @@ function unlockWeek(entry: ScheduleEntry, k: number, skillCount: number): number
  * Vorangehakte Skill-Codes für eine neue Schulaufgabe.
  * Fenster: seit der letzten Schulaufgabe im Fach, sonst die letzten 6 Wochen bis zum Termin.
  * Ein Skill ist "dran" von seiner Freischaltung bis kurz vor der Freischaltung des nächsten (der letzte bis Gebietsende).
- * Vorgeschlagen wird, wessen Zeitraum das Fenster schneidet. Deutsch und Englisch: kein Vorschlag.
+ * Vorgeschlagen wird, wessen Zeitraum das Fenster schneidet. Rotierende Fächer (bei Paula keine): kein Vorschlag.
  */
 export function suggestSkills(input: SuggestInput): string[] {
   if (ROTATING_SUBJECTS.has(input.subject)) return [];
@@ -167,7 +167,7 @@ export interface FocusPlanInput {
 
 /**
  * Fokus-Runde: bis zu 12 Aufgaben nur aus den Skills der Schulaufgabe.
- * "Hatten wir noch nicht" wird ignoriert, Felix hat die Skills ausdrücklich gewählt.
+ * "Hatten wir noch nicht" wird ignoriert, Paula hat die Skills ausdrücklich gewählt.
  */
 export function planFocus(input: FocusPlanInput, count = FOCUS_COUNT): string[] {
   const skills = new Set(input.exam.skillCodes);

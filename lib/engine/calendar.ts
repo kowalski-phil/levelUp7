@@ -5,7 +5,7 @@ export interface UnitInput {
   subject: string;
   hours: number;
   orderIndex: number;
-  /** Reihenfolge im Unterricht, falls sie vom Lehrplan abweicht (z. B. Mathe: Daten und Zufall zuerst). */
+  /** Reihenfolge im Unterricht, falls sie vom Lehrplan abweicht (z. B. eine Unit vorgezogen). */
   scheduleOrder?: number;
 }
 
@@ -16,11 +16,14 @@ export interface ScheduleEntry {
   weekTo: number;
 }
 
-/** Deutsch und Englisch haben keine feste Reihenfolge: alle Gebiete laufen das ganze Jahr, Skills rotieren wöchentlich. */
-export const ROTATING_SUBJECTS: ReadonlySet<string> = new Set(["D", "E"]);
+/**
+ * Fächer ohne feste Reihenfolge: alle Gebiete laufen das ganze Jahr, Skills rotieren wöchentlich.
+ * Bei Paula leer: Englisch und Französisch laufen Unit für Unit wie im Buch.
+ */
+export const ROTATING_SUBJECTS: ReadonlySet<string> = new Set<string>();
 
-/** Neustoff endet 6 Wochen vor der ersten Prüfung, danach Prüfungsmodus. */
-export const EXAM_PREP_DAYS = 42;
+/** Neustoff endet 2 Wochen vor dem Schuljahresende (exam_date), danach nur Wiederholung. */
+export const EXAM_PREP_DAYS = 14;
 
 export function newContentEnd(examDate: ISODate): ISODate {
   return addDays(examDate, -EXAM_PREP_DAYS);
@@ -42,6 +45,7 @@ export function isExamMode(date: ISODate, examDate: ISODate): boolean {
 /**
  * Verteilt die Lernbereiche jedes Fachs in Lehrplan-Reihenfolge proportional zu ihren Stunden auf die Wochen.
  * Grenzen über kumuliertes Runden, jeder Lernbereich bekommt mindestens eine Woche.
+ * Gebiete ohne Stunden (Vokabeln) laufen das ganze Jahr neben der Reihe.
  */
 export function buildSchedule(units: readonly UnitInput[], start: ISODate, examDate: ISODate): ScheduleEntry[] {
   const weeks = totalWeeks(start, newContentEnd(examDate));
@@ -50,11 +54,10 @@ export function buildSchedule(units: readonly UnitInput[], start: ISODate, examD
 
   const out: ScheduleEntry[] = [];
   for (const [subject, list] of bySubject) {
-    const sorted = [...list].sort((a, b) => (a.scheduleOrder ?? a.orderIndex) - (b.scheduleOrder ?? b.orderIndex));
-    if (ROTATING_SUBJECTS.has(subject)) {
-      for (const u of sorted) out.push({ subject, unitCode: u.code, weekFrom: 1, weekTo: weeks });
-      continue;
-    }
+    const all = [...list].sort((a, b) => (a.scheduleOrder ?? a.orderIndex) - (b.scheduleOrder ?? b.orderIndex));
+    const rotating = ROTATING_SUBJECTS.has(subject);
+    for (const u of all) if (rotating || u.hours <= 0) out.push({ subject, unitCode: u.code, weekFrom: 1, weekTo: weeks });
+    const sorted = rotating ? [] : all.filter((u) => u.hours > 0);
     const totalHours = sorted.reduce((s, u) => s + u.hours, 0);
     let cum = 0;
     let prevEnd = 0;

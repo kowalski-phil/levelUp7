@@ -6,7 +6,7 @@ import { loadCatalog, loadItemStates, toPlannerStates, type Catalog, type Viewer
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 
-/** Datenbankfehler: Original ins Server-Log, Felix bekommt einen deutschen Satz. */
+/** Datenbankfehler: Original ins Server-Log, Paula bekommt einen deutschen Satz. */
 function fail(error: { message: string }): never {
   console.error("[exams]", error.message);
   throw new Error("Speichern hat nicht geklappt. Versuch es nochmal.");
@@ -66,10 +66,10 @@ export async function loadExam(v: Viewer, examId: string): Promise<ExamInfo | nu
   return (await loadExams(v)).find((e) => e.id === examId) ?? null;
 }
 
-/** Prüft Eingaben und übersetzt Skill-Codes in IDs. Wirft mit einer Meldung für Felix. */
+/** Prüft Eingaben und übersetzt Skill-Codes in IDs. Wirft mit einer Meldung für Paula. */
 function validate(v: Viewer, catalog: Catalog, subjectCode: string, examDate: string, skillCodes: readonly string[]) {
   if (!ISO.test(examDate)) throw new Error("Bitte ein Datum wählen.");
-  if (examDate > v.family.exam_date) throw new Error("Das Datum liegt nach der Abschlussprüfung.");
+  if (examDate > v.family.exam_date) throw new Error("Das Datum liegt nach dem Schuljahresende.");
   const subject = catalog.subjects.find((s) => s.code === subjectCode);
   if (!subject) throw new Error("Bitte ein Fach wählen.");
   const skills = catalog.skills.filter((s) => s.subjectCode === subjectCode && skillCodes.includes(s.code));

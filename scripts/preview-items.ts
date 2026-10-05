@@ -1,4 +1,4 @@
-// Zeigt Aufgaben so, wie Felix sie sieht, inkl. gezogener Zahlen und Lösung.
+// Zeigt Aufgaben so, wie Paula sie sieht, inkl. gezogener Zahlen und Lösung.
 // Aufruf: npm run content:preview -- <item_code> [<item_code> ...]   oder   -- <unit_code>
 import { loadContentFiles } from "../lib/content/load";
 import { fillTemplate, formatNumberDe, instantiate } from "../lib/engine/template";

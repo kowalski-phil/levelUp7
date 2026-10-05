@@ -11,12 +11,12 @@ export default async function WillkommenPage() {
   return (
     <div className="flex flex-1 flex-col gap-6 pt-6">
       <Flame className="size-14 fill-orange-400 text-orange-500" aria-hidden />
-      <h1 className="text-3xl leading-tight font-extrabold">Hi {v.profile.display_name}, willkommen im Finale.</h1>
+      <h1 className="text-3xl leading-tight font-extrabold">Hi {v.profile.display_name}, willkommen bei LevelUp7.</h1>
 
       <div className="flex flex-col gap-4 text-lg leading-relaxed text-foreground/90">
         <p>
-          Die Abschlussprüfung im Juni fragt den Stoff des ganzen Jahres ab, Aufholen auf den letzten Metern wird eng.
-          Deshalb gibt es hier jeden Tag 15 Minuten Mathe, Deutsch, BwR und Englisch, abgestimmt auf eure Schulbücher.
+          Vokabeln und Grammatik sitzen nur, wenn man sie oft übt, nicht erst am Abend vor der Schulaufgabe.
+          Deshalb gibt es hier jeden Tag ein paar Minuten Englisch und Französisch, abgestimmt auf eure Schulbücher.
         </p>
         <p>Was noch nicht sitzt, kommt öfter wieder, was sitzt, seltener.</p>
         <p>Jeder Tag verlängert deinen Streak, und für alle 30 Tage am Stück gibt es 10 €.</p>

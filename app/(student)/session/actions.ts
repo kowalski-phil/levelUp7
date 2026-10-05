@@ -200,7 +200,7 @@ export async function markNotYet(sessionId: string, itemId: string): Promise<{ r
     replacementId = (await focusPlan(v, exam, exclude, 1))[0] ?? null;
   } else {
     const [items] = await toPlayerItems(v, [itemId]);
-    replacementId = pickReplacement(await planInput(v, today, exclude), items?.subjectCode ?? "M");
+    replacementId = pickReplacement(await planInput(v, today, exclude), items?.subjectCode ?? "E");
   }
   if (!replacementId) return { replacement: null };
 

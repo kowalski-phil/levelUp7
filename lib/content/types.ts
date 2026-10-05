@@ -3,7 +3,7 @@
 
 import type { TemplateSpec } from "@/lib/engine/template";
 
-export type SubjectCode = "M" | "D" | "B" | "E";
+export type SubjectCode = "E" | "F";
 
 interface Base {
   code: string;
@@ -85,12 +85,12 @@ export interface SelfCheckItem extends Base {
   solution?: null;
 }
 
-/** Vokabel aus einer abfotografierten Buchseite: stem fragt nach dem deutschen Wort, Felix tippt das englische. */
+/** Vokabel aus einer abfotografierten Buchseite: stem fragt nach dem deutschen Wort, Paula tippt das englische oder französische. */
 export interface VocabItem extends Base {
   type: "vocab";
   /** Seite im Vokabelteil des Buchs, nur zur Nachverfolgung. */
   payload: { page?: number };
-  /** Akzeptierte englische Schreibweisen, die erste wird als Lösung gezeigt. "to", "sb", "sth" und (...) sind optional. */
+  /** Akzeptierte Schreibweisen, die erste wird als Lösung gezeigt. "to", "sb", "sth" und (...) sind optional. */
   solution: { answers: string[] };
 }
 

@@ -3,8 +3,8 @@ import type { Structure } from "./load";
 import { sentences, validateContent } from "./validate";
 
 const structure: Structure = {
-  subjects: [{ code: "B", name: "BwR", color: "#000" }],
-  units: [{ code: "B4", subject: "B", title: "T", hours: 1, skills: [{ code: "B4.2", title: "", description: "" }] }],
+  subjects: [{ code: "F", name: "Französisch", color: "#000" }],
+  units: [{ code: "B4", subject: "F", title: "T", hours: 1, skills: [{ code: "B4.2", title: "", description: "" }] }],
 };
 
 const good = {

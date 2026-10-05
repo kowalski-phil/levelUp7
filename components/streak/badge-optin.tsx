@@ -44,7 +44,7 @@ export function BadgeOptIn({ count, variant = "streak" }: { count: number; varia
     if (variant === "home") return null;
     return (
       <p className="text-sm text-muted-foreground">
-        Für Erinnerungen und den Streak aufs App-Icon: iPhone-Einstellungen, Mitteilungen, LevelUp10, Mitteilungen erlauben.
+        Für Erinnerungen und den Streak aufs App-Icon: iPhone-Einstellungen, Mitteilungen, LevelUp7, Mitteilungen erlauben.
       </p>
     );
   }
