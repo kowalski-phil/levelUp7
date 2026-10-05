@@ -8,16 +8,19 @@ type BadgeNavigator = Navigator & { setAppBadge?: (n?: number) => Promise<void> 
 type State = "unsupported" | "default" | "granted" | "denied";
 
 /**
- * Einmalige Erlaubnis für Benachrichtigungen: Erinnerungen per Push und der Streak als Zahl auf dem App-Icon.
+ * Einmalige Erlaubnis für Benachrichtigungen: Erinnerungen per Push und, wo das Gerät es kann (iPhone, Desktop), der Streak als Zahl auf dem App-Icon.
+ * Android-Chrome kennt kein App-Badge (setAppBadge), Push geht dort trotzdem.
  * Ist die Erlaubnis da, wird das Gerät bei jedem Aufruf still fürs Push-Abo angemeldet (falls es noch fehlt).
  * variant "home": nur der Knopf, solange noch nicht gefragt wurde. "streak": mit Status und Hinweis bei Ablehnung.
  */
 const subscribe = () => () => {};
 function readPermission(): State {
   const nav = navigator as BadgeNavigator;
-  if (!nav.setAppBadge || typeof Notification === "undefined") return "unsupported";
+  if (typeof Notification === "undefined" || !("serviceWorker" in nav) || typeof PushManager === "undefined") return "unsupported";
   return Notification.permission as State;
 }
+
+const hasBadge = () => typeof navigator !== "undefined" && !!(navigator as BadgeNavigator).setAppBadge;
 
 export function BadgeOptIn({ count, variant = "streak" }: { count: number; variant?: "home" | "streak" }) {
   const initial = useSyncExternalStore(subscribe, readPermission, () => "unsupported" as State);
@@ -35,7 +38,7 @@ export function BadgeOptIn({ count, variant = "streak" }: { count: number; varia
     return (
       <p className="flex items-center gap-2 text-sm text-muted-foreground">
         <Check className="size-4 text-green-400" />
-        Erinnerungen sind an, dein Streak steht auf dem App-Icon.
+        {hasBadge() ? "Erinnerungen sind an, dein Streak steht auf dem App-Icon." : "Erinnerungen sind an."}
       </p>
     );
   }
@@ -44,7 +47,7 @@ export function BadgeOptIn({ count, variant = "streak" }: { count: number; varia
     if (variant === "home") return null;
     return (
       <p className="text-sm text-muted-foreground">
-        Für Erinnerungen und den Streak aufs App-Icon: iPhone-Einstellungen, Mitteilungen, LevelUp7, Mitteilungen erlauben.
+        Für Erinnerungen: in den Einstellungen des Handys bei LevelUp7 Mitteilungen bzw. Benachrichtigungen erlauben.
       </p>
     );
   }
@@ -66,7 +69,7 @@ export function BadgeOptIn({ count, variant = "streak" }: { count: number; varia
         Erinnerungen einschalten
       </button>
       <p className="text-center text-xs text-muted-foreground">
-        Nachmittags eine Erinnerung, abends noch eine, falls du noch nicht gelernt hast. Dazu dein Streak aufs App-Icon.
+        Nachmittags eine Erinnerung, abends noch eine, falls du noch nicht gelernt hast.
       </p>
     </div>
   );
