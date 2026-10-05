@@ -35,14 +35,14 @@ export function reminderMessage(slot: ReminderSlot, stored: StreakState, today: 
 
   if (slot === "first") {
     return {
-      title: "Deine 15 Minuten für heute",
+      title: "Deine 10 Minuten für heute",
       body: n > 0 ? `Dein Streak: ${days(n)}. Mach heute den ${n + 1}. Tag draus.` : "Heute ist Tag 1. Leg los.",
       badge: n,
     };
   }
   return {
     title: "Heute noch offen",
-    body: n > 0 ? `15 Minuten, dann steht dein Streak bei ${n + 1} Tagen.` : "15 Minuten reichen für Tag 1.",
+    body: n > 0 ? `10 Minuten, dann steht dein Streak bei ${n + 1} Tagen.` : "10 Minuten reichen für Tag 1.",
     badge: n,
   };
 }

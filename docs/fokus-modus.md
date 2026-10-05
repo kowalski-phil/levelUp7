@@ -3,11 +3,13 @@
 Geplant mit Fable 5.1 am 2026-09-26, gebaut wird mit Opus 5.5. Entscheidungen hat Phil getroffen, sie stehen in Abschnitt 1 und werden nicht neu diskutiert.
 Dieses Dokument ist vollständig: Datenmodell, Engine, Screens, Texte, Tests, Reihenfolge. Bei Widerspruch zu `PLAN.md` gilt dieses Dokument für den Fokus-Modus.
 
+> **LevelUp7 (Paula), Stand 2026-10-05:** Übernommen aus LevelUp10, nur die Namen sind angepasst. Die Beispiele (BwR, Mathe, Lernbereiche B1, M1) stammen aus Felix' App. Bei Paula gilt sinngemäß: Englisch und Französisch laufen beide Unit für Unit (`ROTATING_SUBJECTS` ist leer), deshalb bekommen **beide** Fächer einen Themenvorschlag aus dem Kalender. Die Tagesrunde hat 8 Aufgaben (4 pro Fach) plus Vokabeln, in ihr kommen die 4 Aufgaben des Schulaufgaben-Fachs aus den Schulaufgaben-Themen. Die Fokus-Runde bleibt bei 12 Aufgaben (`FOCUS_COUNT`).
+
 ## 0. Worum es geht (Beispiel)
 
-Heute ist der 26.09. Felix weiß, dass er am 05.10. BwR schreibt. Er tippt auf dem Home-Screen auf "Schulaufgabe eintragen", wählt BwR, den 05.10., und sieht die Lernbereiche von BwR als Liste. B1 ist schon angehakt, weil der Kalender sagt, dass B1 seit Schuljahresbeginn dran ist. Er klappt B1 auf und hakt "Rückstellungen" ab, weil das im Unterricht noch nicht kam. Tippt "Los".
+Heute ist der 26.09. Paula weiß, dass sie am 05.10. BwR schreibt. Sie tippt auf dem Home-Screen auf "Schulaufgabe eintragen", wählt BwR, den 05.10., und sieht die Lernbereiche von BwR als Liste. B1 ist schon angehakt, weil der Kalender sagt, dass B1 seit Schuljahresbeginn dran ist. Sie klappt B1 auf und hakt "Rückstellungen" ab, weil das im Unterricht noch nicht kam. Tippt "Los".
 
-Ab jetzt steht auf dem Home-Screen ganz oben: "BwR-Schulaufgabe in 9 Tagen. Fokus starten (12 Aufgaben)". Diese 12 Aufgaben kommen nur aus den angehakten B1-Skills. Schafft er die Fokus-Runde, ist der Streak-Tag gesichert, genau wie bei der normalen Tagessession. Die Tagessession gibt es weiterhin, sie ist jetzt der zweite Button. In der Tagessession kommen die 3 BwR-Aufgaben ebenfalls aus den Schulaufgaben-Themen, die 9 anderen laufen normal weiter.
+Ab jetzt steht auf dem Home-Screen ganz oben: "BwR-Schulaufgabe in 9 Tagen. Fokus starten (12 Aufgaben)". Diese 12 Aufgaben kommen nur aus den angehakten B1-Skills. Schafft sie die Fokus-Runde, ist der Streak-Tag gesichert, genau wie bei der normalen Tagessession. Die Tagessession gibt es weiterhin, sie ist jetzt der zweite Button. In der Tagessession kommen die 3 BwR-Aufgaben ebenfalls aus den Schulaufgaben-Themen, die 9 anderen laufen normal weiter.
 
 Am 06.10. ist die Schulaufgabe vorbei, der Block verschwindet von selbst. Phil sieht im Eltern-Dashboard: "BwR, 05.10., 6 Fokus-Runden, 71 % richtig".
 
@@ -18,20 +20,20 @@ Am 06.10. ist die Schulaufgabe vorbei, der Block verschwindet von selbst. Phil s
 | Streak | Entweder-oder: Tagessession ODER Fokus-Session abgeschlossen = Streak-Tag. Zweite Session am selben Tag zählt nicht doppelt. |
 | Themenauswahl | Lernbereiche als Liste, jeder aufklappbar auf seine Skills. Haken am Lernbereich = alle Skills. Einzelne Skills abwählbar. Wer in einem angehakten Lernbereich mehr als die Hälfte der Skills abwählt, bekommt einen Hinweis und muss bestätigen. |
 | Tagessession | Färbt sich: die 3 Aufgaben des Prüfungsfachs kommen aus den Schulaufgaben-Themen. Die anderen 9 bleiben normal. |
-| Wer legt an | Felix in der App. Phil sieht es im Eltern-Dashboard, kann nichts ändern. Eltern-Login bleibt lesend. |
+| Wer legt an | Paula in der App. Phil sieht es im Eltern-Dashboard, kann nichts ändern. Eltern-Login bleibt lesend. |
 | Umfang | 12 Aufgaben pro Fokus-Session, ca. 15 Minuten. Mehrere Fokus-Sessions pro Tag erlaubt. |
 | Parallel | Mehrere Schulaufgaben gleichzeitig. Die nächste steht oben. |
 | Vorschlag | Beim Anlegen sind die Lernbereiche vorangehakt, die laut Kalender bis zum Termin dran waren (Regel in 3.3). |
 | Belohnung | Kein Geld. XP und Streak wie bei der Tagessession. |
 
-Bewusste Ausnahme von "Felix trifft keine Entscheidungen": Das Eintragen der Schulaufgabe (Fach, Datum, Themen) ist die eine Stelle, an der Felix Eingaben macht. Grund: Nur er weiß, wann er schreibt und was dran war. Alles danach entscheidet die App.
+Bewusste Ausnahme von "Paula trifft keine Entscheidungen": Das Eintragen der Schulaufgabe (Fach, Datum, Themen) ist die eine Stelle, an der Paula Eingaben macht. Grund: Nur sie weiß, wann sie schreibt und was dran war. Alles danach entscheidet die App.
 
 ## 2. Datenmodell
 
 Neue Migration `supabase/migrations/0003_fokus.sql`. Muster und Hilfsfunktionen (`is_parent_of`) wie in `0001_init.sql`.
 
 ```sql
--- Schulaufgaben, die Felix eingetragen hat.
+-- Schulaufgaben, die Paula eingetragen hat.
 create table public.exams (
   id uuid primary key default gen_random_uuid(),
   student_id uuid not null references auth.users (id) on delete cascade,
@@ -167,7 +169,7 @@ export function planFocus(input: FocusPlanInput, count = FOCUS_COUNT): string[]
 
 Ranking, anders als der Tagesplan: Fälligkeit (SM-2 `dueDate`) spielt keine Rolle mehr, es wird gedrillt. Aber SM-2 wird beim Antworten ganz normal fortgeschrieben (`submitAnswer` bleibt unverändert).
 
-1. Kandidaten: `items` mit `skillCode` in `exam.skillCodes`, ohne `exclude`. Snooze ("hatten wir noch nicht") wird hier ignoriert, Felix hat den Skill ausdrücklich gewählt.
+1. Kandidaten: `items` mit `skillCode` in `exam.skillCodes`, ohne `exclude`. Snooze ("hatten wir noch nicht") wird hier ignoriert, Paula hat den Skill ausdrücklich gewählt.
 2. Pro Skill eine Warteschlange, sortiert:
    - zuerst ungesehene (kein `state`), nach `difficulty` aufsteigend, dann `code`
    - dann schwache: `lastResult` in `wrong`/`partial` oder `lapses > 0`, nach `dueDate` aufsteigend (überfällig zuerst), dann `code`
@@ -233,7 +235,7 @@ export async function loadExams(v: Viewer, studentId = v.userId): Promise<FocusE
 
 export async function createExam(v: Viewer, subjectCode: string, examDate: ISODate, skillCodes: string[]): Promise<ExamRow>
   // number = Anzahl bisheriger exams des Schülers in diesem Fach + 1
-  // löscht skill_snooze-Zeilen für die gewählten Skills (Felix sagt: das hatten wir)
+  // löscht skill_snooze-Zeilen für die gewählten Skills (Paula sagt: das hatten wir)
 
 export async function updateExam(v: Viewer, examId: string, examDate: ISODate, skillCodes: string[]): Promise<void>
 export async function deleteExam(v: Viewer, examId: string): Promise<void>
@@ -286,7 +288,7 @@ Wenn der Pool leer ist (kein Item zu den Skills, `planFocus` liefert `[]`): Butt
 
 ### 5.2 Schulaufgabe anlegen (`app/(student)/fokus/neu/page.tsx`, Client-Komponente `components/fokus/exam-form.tsx`)
 
-Ein Screen, drei Blöcke untereinander, kein Wizard. Server liefert Katalog, Vorschlag je Fach und Datum wird client-seitig aus einer vorab berechneten Tabelle geholt: Der Server berechnet `suggestSkills` nicht für jedes mögliche Datum, sondern die Client-Komponente bekommt `schedule`, `skills`, `schoolYearStart`, `previousExamDateBySubject`, `snoozedSkills` und ruft `suggestSkills` selbst auf (reine Funktion, läuft im Browser). Der Vorschlag wird neu berechnet, wenn Fach oder Datum sich ändern, aber nur solange Felix noch keinen Haken selbst verändert hat (Flag `touched`).
+Ein Screen, drei Blöcke untereinander, kein Wizard. Server liefert Katalog, Vorschlag je Fach und Datum wird client-seitig aus einer vorab berechneten Tabelle geholt: Der Server berechnet `suggestSkills` nicht für jedes mögliche Datum, sondern die Client-Komponente bekommt `schedule`, `skills`, `schoolYearStart`, `previousExamDateBySubject`, `snoozedSkills` und ruft `suggestSkills` selbst auf (reine Funktion, läuft im Browser). Der Vorschlag wird neu berechnet, wenn Fach oder Datum sich ändern, aber nur solange Paula noch keinen Haken selbst verändert hat (Flag `touched`).
 
 **Block 1: Fach.** Vier Kacheln nebeneinander in 2×2, Fachfarbe als Rahmen, gewählt = gefüllt. Fächer ohne Aufgaben (aktuell D, E) sind wählbar, aber ihre Lernbereiche zeigen "Aufgaben folgen" und sind nicht anhakbar.
 
@@ -295,7 +297,7 @@ Ein Screen, drei Blöcke untereinander, kein Wizard. Server liefert Katalog, Vor
 **Block 3: Themen.** Überschrift "Was kommt dran?". Liste der Lernbereiche des Fachs in `orderIndex`-Reihenfolge. Jede Zeile: Checkbox (48 px), Titel, rechts Anzahl Aufgaben ("38 Aufgaben") und Chevron zum Aufklappen. Aufgeklappt: Skills als eingerückte Checkbox-Zeilen. Zustände der Lernbereich-Checkbox: alle Skills = voll, einige = Minus-Symbol, keine = leer. Tipp auf die Lernbereich-Checkbox: alle an bzw. alle aus.
 Bei D und E ohne Vorschlag steht über der Liste: "Hak an, was drankommt."
 
-**Warnung:** Wenn `overDeselectedUnits` nicht leer ist, erscheint unter der Liste eine gelbe Box: "Du hast in *Periodenrichtige Erfolgsermittlung* über die Hälfte abgewählt. Sicher?" mit Button "Ja, passt so" (48 px). Erst nach Bestätigung ist "Los" aktiv. Ändert Felix danach wieder Haken, wird die Bestätigung zurückgesetzt.
+**Warnung:** Wenn `overDeselectedUnits` nicht leer ist, erscheint unter der Liste eine gelbe Box: "Du hast in *Periodenrichtige Erfolgsermittlung* über die Hälfte abgewählt. Sicher?" mit Button "Ja, passt so" (48 px). Erst nach Bestätigung ist "Los" aktiv. Ändert Paula danach wieder Haken, wird die Bestätigung zurückgesetzt.
 
 **Button "Los"** (primär, unten, `sticky bottom`): deaktiviert, solange kein Fach, kein Datum oder kein Skill gewählt ist oder eine unbestätigte Warnung offen ist. Server Action `createExamAction` in `app/(student)/fokus/actions.ts`, danach `redirect("/")`.
 
@@ -325,7 +327,7 @@ BwR · 2. Schulaufgabe · 05.10. (in 9 Tagen)
 Themen: Aufwand/Ertrag, Abgrenzung, ARA/PRA
 ```
 
-Nur lesen. Ist nichts eingetragen: "Felix hat keine Schulaufgabe eingetragen."
+Nur lesen. Ist nichts eingetragen: "Paula hat keine Schulaufgabe eingetragen."
 
 ## 6. Texte (Du-Form, direkt)
 
@@ -352,7 +354,7 @@ Nur lesen. Ist nichts eingetragen: "Felix hat keine Schulaufgabe eingetragen."
 | Ändern, Löschen | Schulaufgabe löschen / Wirklich löschen? Deine Fokus-Runden bleiben in der Statistik. / Ja, löschen |
 | Fertig | Fokus-Runde geschafft |
 | Player-Kopf | Fokus {Fach} · {i}/{n} |
-| Eltern, leer | Felix hat keine Schulaufgabe eingetragen. |
+| Eltern, leer | Paula hat keine Schulaufgabe eingetragen. |
 
 ## 7. Randfälle, entschieden
 

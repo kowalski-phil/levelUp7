@@ -1,27 +1,24 @@
 # Nächste Schritte
 
-Stand 2026-09-28. Was zuletzt gebaut und entschieden wurde, steht in `docs/entscheidungen.md`.
-Die App ist live: https://levelup10-zeta.vercel.app
+Stand 2026-10-05, nach Tag 0. Was entschieden wurde, steht in `docs/entscheidungen.md`, der Ablauf in `PLAN.md` Abschnitt 8.
 
-## Für Phil
+## Für Phil (Tag 1)
 
-1. Heute Abend mit Felix: App auf seinem iPhone zum Home-Bildschirm hinzufügen, einloggen und auf "Erinnerungen einschalten" tippen (Erlaubnis erteilen). Danach Claude Code Bescheid geben, dann kommt eine Test-Erinnerung.
-2. Optional: schönere Adresse in Vercel (Projekt → Settings → Domains), bevor Felix die App auf den Home-Bildschirm legt.
-3. Optional: GitHub-Repo auf privat stellen (laut PLAN.md so gedacht, ist aktuell öffentlich).
+1. **Supabase-Projekt** `levelup7` anlegen, mit dem Wizard: `bash scripts/setup-supabase.sh` in Git Bash. Er fragt Paulas E-Mail und Passwort und deine Eltern-E-Mail ab, spielt die Migrationen 0001 bis 0005 ein und startet den Seed.
+2. **Vercel-Projekt** mit dem Repo `kowalski-phil/levelUp7` verbinden, Env-Vars wie bei LevelUp10 setzen (Supabase-URL und Keys, VAPID-Keys für Push, Cron-Secret). Den Wizard dafür baut Claude Code an Tag 1.
+3. **Fotos der Inhaltsverzeichnisse** von Green Line 3, Découvertes 2 und Découvertes 1.
+4. **Unterrichtsstand**: Welche Unit läuft in Englisch, welche Unité in Französisch, welche Band-1-Themen werden gerade wiederholt?
+5. **Repo privat?** Der Klon-Plan sah ein privates Repo vor, `levelUp7` ist öffentlich (wie `levelup10`).
+6. Später: Fotos der Vokabelseiten bis zum Unterrichtsstand, Termine der nächsten Schulaufgaben.
 
 ## Backlog für Claude Code (in dieser Reihenfolge)
 
-1. ~~**Logout.**~~ Erledigt 2026-09-28: "Abmelden" unten auf Home (Felix) und oben im Eltern-Überblick, mit Rückfrage.
-2. **Deutsch und Englisch.** Erste Runde am 2026-09-28 eingespielt:
-   - Deutsch D4: 40 Aufgaben, je 20 zu Kommasetzung (D4.4) und Groß-/Kleinschreibung inkl. das/dass (D4.3).
-   - Englisch E2: 60 Aufgaben: 30 Zeiten (E2.2, LF1), 15 Passiv (E2.4), 15 Modalverben (E2.3). Die zuerst geschriebenen 30 Vokabelaufgaben sind wieder raus, Vokabeln gehören nicht in die App.
-   - Offen: D4.1/D4.2 (Satzglieder, Konjunktiv, Aktiv/Passiv), D2 und D3 (Textverständnis, Erörterung), E1 (Reading, Writing, Speaking) und E2.3 und E2.4 vertiefen (past modals, conditionals, reported speech) und E2.5 (Relative clauses). Reihenfolge nach Unterrichtsstand, Felix fragen.
-3. ~~**Push-Erinnerung**~~ Gebaut 2026-09-28: 16 und 20 Uhr (jeweils irgendwann in der Stunde), nur wenn heute noch nicht gelernt. Knopf "Erinnerungen einschalten" auf Home, solange die Erlaubnis fehlt. Echter Test auf Felix iPhone steht noch aus.
-4. ~~**Onboarding**~~ Gebaut 2026-09-28: Screen /willkommen beim ersten Öffnen jedes Tages (5 Sätze, Erinnerungen einschalten, Los geht's), bis "Nicht mehr anzeigen" angehakt ist (profiles.onboarded_at, Tagesdatum per Cookie). Auf der Streak-Seite wieder einschaltbar.
-5. ~~**Skill-Tree**~~ Gebaut 2026-09-28: /fach/[code], erreichbar über die Fach-Kacheln auf Home. Gebiete als Pfad, Sterne je Skill, aktuelles Gebiet hervorgehoben, Bonus-Runde nur für laufende und abgeschlossene Gebiete.
-6. **Slash-Commands** `/mehr-aufgaben` und `/pruefe-aufgaben` in `.claude/commands/`.
-7. **Rest von PLAN.md Tag 2:**
-   - Konto-Screen (Belohnungen: verdient, ausgezahlt, offen)
-   - Eltern-Login: Belohnungsbeträge einstellen, Auszahlungen als "bezahlt" markieren
+1. **Tag 1:** Vercel-Teil des Wizards, F0 nach Phils Themen, Grammatik der aktuellen Unité, `schedule_order`/Stunden nach Unterrichtsstand, Unité-Titel aus dem Inhaltsverzeichnis.
+2. **Tag 2:** Akzentleiste (Französisch, `vocab` und `cloze_free`), Bewertung `vocab` mit Akzenten, Artikel und qn/qc (mit Tests), `/vokabeln-aus-foto` für zwei Sprachen, erste Vokabelfotos.
+3. **Slash-Commands** `/mehr-aufgaben` und `/pruefe-aufgaben`.
+4. **E1.4 Reading** und die Grammatik von E2 vor Ende von Unit 1.
+5. `VAPID_SUBJECT` in `lib/data/reminders.ts` auf die echte Vercel-Adresse setzen, sobald sie feststeht (jetzt Platzhalter `https://levelup7.vercel.app`).
 
-Tag-3-Regel: Was Felix nervt, wird gefixt, bevor irgendetwas Neues gebaut wird.
+Offen zum Nachdenken: Wählt Paula im Fokus-Modus ein Vokabel-Thema (EV.1), kommen in der Fokus-Runde Vokabeln, in der Tagesrunde nicht (die Vokabelspur ignoriert Schulaufgaben). Erst klären, wenn es Paula auffällt.
+
+Tag-3-Regel: Was Paula nervt, wird gefixt, bevor irgendetwas Neues gebaut wird.

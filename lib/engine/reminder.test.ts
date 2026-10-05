@@ -12,21 +12,21 @@ describe("reminder", () => {
 
   it("erste Erinnerung mit laufendem Streak", () => {
     expect(reminderMessage("first", st(5, "2026-09-30"), "2026-10-01")).toEqual({
-      title: "Deine 15 Minuten für heute",
+      title: "Deine 10 Minuten für heute",
       body: "Dein Streak: 5 Tage. Mach heute den 6. Tag draus.",
       badge: 5,
     });
   });
 
   it("zweite Erinnerung nennt den Streak nach dem Lernen, Einzahl bei 1", () => {
-    expect(reminderMessage("second", st(5, "2026-09-30"), "2026-10-01")?.body).toBe("15 Minuten, dann steht dein Streak bei 6 Tagen.");
-    expect(reminderMessage("second", st(1, "2026-09-30"), "2026-10-01")?.body).toBe("15 Minuten, dann steht dein Streak bei 2 Tagen.");
+    expect(reminderMessage("second", st(5, "2026-09-30"), "2026-10-01")?.body).toBe("10 Minuten, dann steht dein Streak bei 6 Tagen.");
+    expect(reminderMessage("second", st(1, "2026-09-30"), "2026-10-01")?.body).toBe("10 Minuten, dann steht dein Streak bei 2 Tagen.");
     expect(reminderMessage("first", st(1, "2026-09-30"), "2026-10-01")?.body).toBe("Dein Streak: 1 Tag. Mach heute den 2. Tag draus.");
   });
 
   it("ohne Streak: Tag 1", () => {
     expect(reminderMessage("first", st(0, null), "2026-10-01")?.body).toBe("Heute ist Tag 1. Leg los.");
-    expect(reminderMessage("second", st(0, null), "2026-10-01")?.body).toBe("15 Minuten reichen für Tag 1.");
+    expect(reminderMessage("second", st(0, null), "2026-10-01")?.body).toBe("10 Minuten reichen für Tag 1.");
   });
 
   it("verpasster Tag ohne Joker: Streak wie in der App auf 0", () => {

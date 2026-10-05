@@ -16,7 +16,7 @@ export default async function StreakPage() {
   const message = doneToday
     ? "Heute geschafft. Morgen wieder."
     : streak.current > 0
-      ? "Heute noch offen. 15 Minuten halten den Streak."
+      ? "Heute noch offen. 10 Minuten halten den Streak."
       : "Heute ist Tag 1. Leg los.";
 
   return (

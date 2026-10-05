@@ -16,7 +16,7 @@ import { loadStreakView } from "@/lib/data/streak";
 import { activeUnits, weekOf } from "@/lib/engine/calendar";
 import { todayInBerlin } from "@/lib/engine/dates";
 import { activeExams, daysUntil, FOCUS_COUNT } from "@/lib/engine/focus";
-import { SUBJECT_ROTATION } from "@/lib/engine/planner";
+import { DAILY_PER_SUBJECT, isVocabUnit, SUBJECT_ROTATION } from "@/lib/engine/planner";
 import { balance } from "@/lib/engine/rewards";
 import { formatNumberDe } from "@/lib/engine/template";
 import { WELCOME_SEEN_COOKIE, welcomeDue } from "@/lib/engine/welcome";
@@ -64,13 +64,14 @@ export default async function HomePage() {
       const skills = catalog.skills.filter((sk) => sk.subjectCode === subject.code);
       const earned = skills.reduce((sum, sk) => sum + (stars.get(sk.id) ?? 0), 0);
       const hasItems = catalog.items.some((i) => i.subject === subject.code);
-      const current = activeUnits(catalog.schedule, subject.code, week);
+      // Vokabeln laufen das ganze Jahr nebenher und zählen nicht als laufende Unit.
+      const current = activeUnits(catalog.schedule, subject.code, week).filter((e) => !isVocabUnit(e.unitCode));
       const unitTitle =
         current.length === 1 ? catalog.units.find((u) => u.code === current[0].unitCode)?.title : undefined;
       return { subject, earned, max: skills.length * 3, hasItems, unitTitle };
     });
 
-  const planned = daily?.planned_item_ids.length ?? 12;
+  const planned = daily?.planned_item_ids.length ?? DAILY_PER_SUBJECT * SUBJECT_ROTATION.length;
   const dailyDone = !!daily?.finished_at;
   // Streak-Tag gesichert: Tagessession ODER Fokus-Runde abgeschlossen.
   const doneToday = dailyDone || streakView.doneToday;
@@ -179,7 +180,7 @@ export default async function HomePage() {
         >
           <span className="text-3xl font-extrabold">{inProgress ? "Weitermachen" : "Heute starten"}</span>
           <span className="mt-1 text-base opacity-80">
-            {inProgress ? `${daily.total} erledigt` : `${planned} Aufgaben · ca. 15 Min`}
+            {inProgress ? `${daily.total} erledigt` : `${planned} Aufgaben · ca. 10 Min`}
           </span>
         </Link>
       )}
