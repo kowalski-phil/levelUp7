@@ -49,7 +49,7 @@ docs/                 Lehrplanstruktur, Schulbücher, Entscheidungen
 
 ## Slash-Commands (in `.claude/commands/`)
 
-- `/vokabeln-aus-foto <englisch|französisch> <Seiten | bis S. n> [test]`: wird an Tag 2 für zwei Sprachen umgebaut, die jetzige Fassung ist noch Felix' Version.
+- `/vokabeln-aus-foto <englisch|französisch|französisch-band1> <Seiten | bis S. n> [test]`: Fotos aus dem Vokabelteil → `EV.json` bzw. `FV.json`, einspielen, Log in `docs/vokabeln.md`.
 - `/mehr-aufgaben <unit_code> <anzahl>` und `/pruefe-aufgaben <unit_code>`: noch anzulegen.
 
 ## Arbeitsweise

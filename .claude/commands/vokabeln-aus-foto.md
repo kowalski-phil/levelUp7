@@ -1,89 +1,91 @@
 ---
-description: Fotos aus dem Vokabelteil des Englischbuchs in Vokabelaufgaben umwandeln und einspielen
-argument-hint: "<148-149 | bis S. 14> [test]  oder  einspielen"
+description: Fotos aus dem Vokabelteil (Englisch oder Französisch) in Vokabelaufgaben umwandeln und einspielen
+argument-hint: "<englisch | französisch | französisch-band1> <195-199 | bis S. 14> [test]  oder  einspielen"
 ---
 
-> **Noch nicht für LevelUp7 umgebaut.** Diese Fassung stammt aus LevelUp10 (Felix, Go Ahead 10, `E3.json`) und wird an Tag 2 für Englisch und Französisch neu geschrieben (`KLON-PLAN.md` Abschnitt 6). Bis dahin nicht ausführen.
-
-Wandle Fotos aus dem Vokabelteil von Felix' Englischbuch (Cornelsen „Go Ahead 10“, siehe `docs/schulbuecher.md`) in Aufgaben für `content/englisch/E3.json` um und spiele sie ein.
+Wandle Fotos aus dem Vokabelteil von Paulas Büchern in Vokabelaufgaben um und spiele sie ein.
 
 Auswahl: $ARGUMENTS
 
-## 0. Welche Seiten
+## 0. Welche Sprache, welche Seiten
 
-Die Fotos liegen in `assets/buecher/englisch/vokabeln/` und heißen `Unit<Nummer>_S<Seite>.jpg`, z. B. `Unit1_S148.jpg`: Unit des Buchs und Seitenzahl im Vokabelteil. Die Unit aus dem Dateinamen bestimmt den `skill_code`. Andere Dateien im Ordner ignorieren. Es liegen oft mehr Seiten da, als im Unterricht schon dran waren. Importiert wird **nur, was Phil angibt**:
+Das erste Wort wählt Buch, Ordner, Datei und Skill:
 
-- **Vokabelseiten** (`148`, `148-149`, `148, 150`): alle Wörter dieser Fotos.
-- **Bis zu einer Buchseite** (`bis S. 14`): Im Vokabelteil steht links neben den Wörtern, zu welcher Buchseite sie gehören (`pp. 10/11`, `p. 12`, `p. 13` …). Importiert werden alle Wörter bis einschließlich dieser Buchseite, auch wenn die Grenze mitten auf einem Foto liegt. Dafür die Fotos in Seitenreihenfolge lesen, bis eine höhere Buchseite beginnt.
+| Argument | Buch | Fotos in | Datei | Skill |
+|---|---|---|---|---|
+| `englisch` | Green Line 3 | `assets/buecher/englisch/vokabeln/` | `content/englisch/EV.json`, Codes `EV-NNN` | `EV.1` bis `EV.4` nach Unit |
+| `französisch` | Découvertes 2 | `assets/buecher/franzoesisch/vokabeln/` | `content/franzoesisch/FV.json`, Codes `FV-NNN` | `FV.1` bis `FV.7` nach Unité |
+| `französisch-band1` | Découvertes 1 (Wiederholung) | `assets/buecher/franzoesisch-band1/vokabeln/` | `content/franzoesisch/FV.json`, Codes `FV-NNN` | immer `FV.0` |
 
-Zusatz **`test`** (z. B. `148-149 test`): Aufgaben schreiben und prüfen, aber **nicht** einspielen. Die Live-Datenbank, Felix' Tagesrunde und sein Streak bleiben unberührt. Stattdessen `npm run dev` im Hintergrund starten und Phil die Vorschau nennen: `http://localhost:3000/vorschau?unit=E3` (alle neuen Vokabeln, ohne Login, ohne Speichern; einzelne mit `?code=E3-001,E3-002`). Kein Log-Eintrag, kein Commit.
+Die Dateinamen enthalten die Seitenzahl im Vokabelteil (`S195.jpg`, `Unite7_S195.jpg`, `Unit1_S148.jpg`). Die Unit bzw. Unité steht oben auf der Seite und in den Zwischenüberschriften, nicht unbedingt im Dateinamen. Es liegen oft mehr Fotos da, als im Unterricht dran waren. Importiert wird **nur, was Phil angibt**:
 
-**`einspielen`** (ohne Seiten): die Aufgaben, die ein Testlauf in `E3.json` geschrieben hat, jetzt einspielen. Direkt weiter mit Abschnitt 3, Schritt 2. Die Wörter für Log und Bericht sind die Items in `E3.json`, die noch in keiner Zeile von `docs/vokabeln.md` stehen.
+- **Vokabelseiten** (`195`, `195-199`, `195, 197`): alle Wörter dieser Fotos.
+- **Bis zu einer Buchseite** (`bis S. 14`): Am Rand steht, zu welchem Abschnitt bzw. welcher Buchseite die Wörter gehören. Importiert wird bis einschließlich dieser Stelle, auch mitten auf einem Foto.
 
-Ohne Angabe: nichts importieren. Stattdessen kurz auflisten, welche Fotos (Vokabelseite, Unit, Buchseiten-Bereich laut Randmarken) daliegen und was laut `docs/vokabeln.md` schon importiert ist, und Phil fragen, wie weit der Unterricht ist.
+Zusatz **`test`**: Aufgaben schreiben und prüfen, aber **nicht** einspielen. `npm run dev` im Hintergrund starten und Phil die Vorschau nennen: `http://localhost:3000/vorschau?unit=FV` (bzw. `EV`; einzelne mit `?code=FV-001,FV-002`). Kein Log-Eintrag, kein Commit.
 
-Fehlt ein angegebenes Foto oder lässt sich ein Dateiname keiner Seite zuordnen: nachfragen, nicht raten.
+**`einspielen`** (ohne Seiten): die Aufgaben eines Testlaufs jetzt einspielen, weiter mit Abschnitt 3, Schritt 2.
+
+Ohne Seitenangabe: nichts importieren. Auflisten, welche Fotos daliegen und was laut `docs/vokabeln.md` schon importiert ist, und Phil fragen, wie weit der Unterricht ist. Fehlt ein Foto oder ist eine Seite nicht zuzuordnen: nachfragen, nicht raten.
 
 ## 1. Lesen
 
-- Jedes ausgewählte Foto mit dem Read-Tool ansehen. Die Vokabeltabelle abschreiben: englischer Eintrag, deutsche Bedeutung(en), Vokabelseite, Buchseite (Randmarke), Unit-Überschrift.
-- Lautschrift, Bilder und die Beispielsätze des Buchs ignorieren. Beispielsätze des Buchs nie übernehmen.
-- Was nicht sicher lesbar ist (unscharf, abgeschnitten, verdeckt), wird übersprungen und am Ende gemeldet. Nie raten. Angeschnittene Nachbarseiten am Bildrand gehören nicht dazu.
-- Eigennamen (Orte, Personen) überspringen.
-- Wörter, die schon in `E3.json` stehen (Vergleich über `vocabKey` aus `lib/engine/grading.ts`), überspringen. Deshalb schadet es nicht, wenn eine schon teilweise importierte Seite nochmal ausgewählt wird.
+- Jedes ausgewählte Foto mit dem Read-Tool ansehen und die Vokabeltabelle abschreiben: Eintrag wie im Buch (Französisch **mit Artikel**, so wie das Buch ihn druckt: `une chose`, `le petit-déjeuner`), deutsche Bedeutung(en), Seite.
+- Lautschrift, Bilder und die Beispielsätze des Buchs ignorieren. Beispielsätze nie übernehmen.
+- Überspringen und am Ende melden: Unlesbares (nie raten), Eigennamen (Orte, Personen, Bauwerke wie le Louvre, la tour Eiffel), Kästen außerhalb der Vokabeltabelle („Auf einen Blick“, „Mon dico personnel“, „Tu te rappelles?“, Grammatik-Übersichten), angeschnittene Nachbarseiten.
+- Wörter, die schon in der Zieldatei stehen (Vergleich über `vocabKey` aus `lib/engine/grading.ts`), überspringen.
 
 ## 2. Aufgaben schreiben
 
-Pro Wort zwei Items mit aufeinanderfolgenden Codes, zuerst Erkennen, dann Schreiben. Codes setzen die höchste vorhandene `E3-NNN` fort, nie umnummerieren.
-`skill_code` nach Unit: Unit 1 (und English connects) `E3.1`, Unit 2 `E3.2`, Unit 3 `E3.3`, Unit 4 `E3.4`.
+Pro Wort zwei Items mit aufeinanderfolgenden Codes, zuerst Erkennen, dann Schreiben. Codes setzen die höchste vorhandene Nummer fort, nie umnummerieren. Vorlage für das Erzeugen: siehe Git-Historie von `content/franzoesisch/FV.json` (Commit „Französisch: Vokabeln Band 1 S. 195-199“).
 
-**Erkennen (Englisch → Deutsch), `mc`, difficulty 1:**
-
-```json
-{
-  "code": "E3-001", "skill_code": "E3.1", "type": "mc", "difficulty": 1,
-  "stem": "Was bedeutet **to complain about sth**?",
-  "payload": { "options": ["sich über etw. beschweren", "etw. vergleichen", "etw. erklären", "sich um etw. bewerben"] },
-  "solution": { "index": 0 },
-  "hint": "The soup was cold, so she complained about it to the waiter.",
-  "explanation": "to complain about sth = sich über etw. beschweren. Beispiel: Many guests complained about the noise at night."
-}
-```
-
-- Falsche Optionen: Bedeutungen anderer Wörter von derselben Seite, möglichst gleiche Wortart. Nie ein Synonym oder eine zweite Bedeutung des gesuchten Worts.
-- `hint`: ein eigener, einfacher englischer Satz, in dem das Wort vorkommt.
-
-**Schreiben (Deutsch → Englisch), `vocab`, difficulty 2:**
+**Erkennen (Fremdsprache → Deutsch), `mc`, difficulty 1:**
 
 ```json
 {
-  "code": "E3-002", "skill_code": "E3.1", "type": "vocab", "difficulty": 2,
-  "stem": "Wie heißt das auf Englisch? **sich über etw. beschweren**",
-  "payload": { "page": 148 },
-  "solution": { "answers": ["to complain about sth"] },
-  "hint": "Beginnt mit „c“, zwei Wörter (ohne to).",
-  "explanation": "to complain about sth = sich über etw. beschweren. Beispiel: Many guests complained about the noise at night."
+  "code": "FV-001", "skill_code": "FV.0", "type": "mc", "difficulty": 1,
+  "stem": "Was bedeutet **une chose**?",
+  "payload": { "options": ["ein Ort", "eine Sache; ein Ding", "ein Name", "eine Person"] },
+  "solution": { "index": 1 },
+  "hint": "J'ai une chose pour toi.",
+  "explanation": "une chose = eine Sache; ein Ding. Beispiel: Il y a beaucoup de choses dans ma chambre. (In meinem Zimmer sind viele Sachen.)"
 }
 ```
 
-- `answers[0]` ist der Eintrag wie im Buch. Weitere Einträge nur für Schreibvarianten, die das Buch selbst nennt (BE/AE, Kurzform).
-- Die Bewertung ignoriert Groß/klein, ein führendes `to`, `sb`/`sth`/`something`/`someone` nach einem Wort und alles in Klammern. Ein Buchstabe daneben oder ein Dreher (ab 5 Buchstaben) zählt als teilweise richtig.
-- Hat dasselbe deutsche Wort auf den Seiten mehrere englische Entsprechungen, den `stem` eindeutig machen (z. B. „Umwelt (Natur)“), nicht alle als richtig zählen.
-- Wendungen mit mehr als 5 Wörtern nur als `mc` abfragen, ohne `vocab`-Item.
-- `hint`: Anfangsbuchstabe und Anzahl der Wörter ohne `to`.
+- Falsche Optionen: Bedeutungen anderer Wörter von denselben Seiten, möglichst gleiche Wortart. Nie ein Synonym oder eine zweite Bedeutung des gesuchten Worts (bisou/bise nicht gegeneinander).
+- `hint`: ein eigener, sehr einfacher Satz in der Fremdsprache, in dem das Wort vorkommt.
 
-**Für beide:** `explanation` hat 2 Sätze: Gleichung „englisch = deutsch“ und ein eigener Beispielsatz zum Thema der Unit. Bei unregelmäßigen Verben die Formen nennen, wenn das Buch sie angibt. Einfacher Grundwortschatz in Beispielsätzen.
+**Schreiben (Deutsch → Fremdsprache), `vocab`, difficulty 2:**
+
+```json
+{
+  "code": "FV-002", "skill_code": "FV.0", "type": "vocab", "difficulty": 2,
+  "stem": "Wie heißt das auf Französisch? **eine Sache; ein Ding**",
+  "payload": { "page": 195 },
+  "solution": { "answers": ["une chose"] },
+  "hint": "Nomen mit Artikel, beginnt mit „c“.",
+  "explanation": "une chose = eine Sache; ein Ding. Beispiel: Il y a beaucoup de choses dans ma chambre. (In meinem Zimmer sind viele Sachen.)"
+}
+```
+
+- `answers[0]` ist der Eintrag wie im Buch (ohne Zusätze wie „+ Nomen“, „(fam.)“). Weitere Einträge nur für Formen, die gleich gelten: männliche Form allein bei `préféré/préférée`, `un touriste` und `une touriste` bei `un touriste/une touriste`, `j'aimerais` bei `j'aimerais faire qc`, `ne plus de` und `ne ... plus de` bei `ne … plus de`.
+- Die Bewertung ignoriert Groß/klein, Satzzeichen am Ende, `to`, `sb`/`sth`, `qn`/`qc` und Klammern. Teilweise richtig (kommt nochmal, Lösung wird gezeigt): ein Tippfehler ab 5 Buchstaben, Akzent vergessen oder falsch, französischer Artikel fehlt oder falsch.
+- Hat dasselbe deutsche Wort mehrere Entsprechungen auf den Seiten, den `stem` eindeutig machen („ein Kuss auf die Wange (zur Begrüßung)“ für une bise, „ein Küsschen; ein Busserl (ugs.)“ für un bisou).
+- Wendungen mit mehr als 5 Wörtern nur als `mc`.
+- `hint`: Wortart und Anfangsbuchstabe, bei Nomen „Nomen mit Artikel“, aber **nie das Genus** (sonst ist der Artikel geschenkt).
+
+**Für beide:** `explanation` = „Eintrag = Bedeutung. Beispiel: eigener Satz (deutsche Übersetzung).“ Danach höchstens ein Zusatz: unregelmäßige Formen, wenn das Buch sie nennt; Genus-Falle (un musée, une personne, un reportage); Verwechslungsgefahr (un texte/un texto, un tour/une tour). Beispielsätze nur mit Grundwortschatz und Zeiten, die Paula schon hatte (Französisch Band 1: Präsens, futur proche, kein passé composé).
 
 ## 3. Prüfen und einspielen
 
-1. `npm run content:check`, alle Fehler beheben. Bei `test` hier aufhören und die Vorschau nennen (siehe Abschnitt 0).
-2. Bevor zum ersten Mal Vokabeln eingespielt werden: prüfen, dass der Code für den Typ `vocab` live ist (`git fetch` und `git log origin/main --oneline -- lib/engine/planner.ts` enthält den Vokabel-Commit). Sonst Phil bitten, erst zu pushen. Der Seed schreibt direkt in die Live-Datenbank, und die alte App kann `vocab` nicht anzeigen.
+1. `npm run content:check -- FV` (bzw. `EV`), alle Fehler beheben. Danach mit `grade()` aus `lib/engine/grading.ts` prüfen, dass jede Antwort in `answers` als `correct` zählt und keine Lösung eines Worts bei einem anderen Wort als `correct` durchgeht. Bei `test` hier aufhören.
+2. Wurde Code geändert (z. B. Bewertung), erst committen und pushen, damit die Live-App ihn hat. Der Seed schreibt sofort in die Live-Datenbank.
 3. `npm run seed`.
-4. In `docs/vokabeln.md` eine Zeile anhängen: Datum, Vokabelseiten, Buchseiten bis einschließlich, Unit, Item-Codes von–bis, Anzahl Wörter, übersprungene Wörter.
-5. Commit mit Inhalt und Log. Nicht pushen, ohne Phil zu fragen.
+4. In `docs/vokabeln.md` eine Zeile anhängen: Datum, Sprache, Vokabelseiten, bis Buchseite, Unit/Unité und Skill, Item-Codes von–bis, Anzahl Wörter, Übersprungenes.
+5. Commit mit Inhalt und Log, dann pushen.
 
 ## 4. Bericht an Phil (kurz)
 
-- Wie viele Wörter, wie viele Aufgaben, von welchen Vokabelseiten, bis zu welcher Buchseite.
-- Welche Einträge übersprungen wurden und warum (unlesbar, Eigenname, schon vorhanden).
-- Grob, nach wie vielen Tagen alle neuen Wörter einmal dran waren: Aufgaben geteilt durch `VOCAB_PER_DAY` in `lib/engine/planner.ts`, fällige Wiederholungen gehen vor.
+- Wie viele Wörter und Aufgaben, von welchen Seiten.
+- Was übersprungen wurde und warum.
+- Grob, nach wie vielen Tagen alle neuen Wörter einmal dran waren: Aufgaben geteilt durch `VOCAB_PER_DAY` in `lib/engine/planner.ts` (6 pro Sprache; hat die andere Sprache nichts Neues, bis zu 12). Fällige Wiederholungen gehen vor.
