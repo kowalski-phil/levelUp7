@@ -14,7 +14,7 @@ Ziel: Paula lernt jeden Tag ca. 10 Minuten Grammatik und Vokabeln, ohne etwas en
 |---|---|---|
 | Keine Live-KI in der App | Alle Aufgaben schreibt Claude Code als JSON ins Repo, ein Seed-Skript lädt sie in die Datenbank. | Kein API-Budget, keine laufenden Kosten. Wie bei Felix. |
 | Die App entscheidet, nicht Paula | Paula öffnet die App und sieht "Heute starten". Kein Themenwählen, keine Einstellungen. Einzige Ausnahme: Schulaufgabe eintragen (Fokus-Modus). | Jede Entscheidung ist ein Ausstiegspunkt. |
-| Eigene App statt Mehrkind-Modus | Eigenes Repo, eigenes Supabase-, eigenes Vercel-Projekt. | Felix' App läuft live und wird nicht angefasst. Null inhaltliche Überschneidung. |
+| Eigene App statt Mehrkind-Modus | Eigenes Repo, eigene Datenbank (selbst gehostetes Supabase), eigenes Vercel-Projekt. | Felix' App läuft live und wird nicht angefasst. Null inhaltliche Überschneidung. |
 | Kalender folgt den Buch-Units | Englisch Unit 1 bis 4, Französisch Unité 1 bis 7, nacheinander, gewichtet nach den Stunden aus den Klett-Stoffverteilungsplänen. Die letzten 14 Tage vor den Sommerferien nur Wiederholung. | Schulaufgaben werden pro Unit geschrieben, Grammatik hängt an der Unit. Dadurch funktioniert auch der Themenvorschlag im Fokus-Modus für beide Fächer. |
 | Tägliche Dosis | 8 Aufgaben (4 Englisch, 4 Französisch) plus bis zu 12 Vokabeln (6 pro Sprache). Fertig = Streak-Tag. | Felix braucht ca. 18 Sekunden pro Aufgabe (gemessen 2026-10-03). Das Tagesziel bleibt unter 10 Minuten. |
 | Belohnung | 10 € für je 30 Tage am Stück, wie bei Felix. Kein Wochenbonus, keine einmaligen Meilensteine, kein Prüfungsbonus. | Phils Wahl für beide Kinder. |
@@ -26,6 +26,8 @@ Ziel: Paula lernt jeden Tag ca. 10 Minuten Grammatik und Vokabeln, ohne etwas en
 ## 2. Tech-Stack
 
 Unverändert aus LevelUp10: Next.js (App Router, TypeScript), Tailwind, shadcn/ui, Supabase (Auth, Postgres, RLS), Vitest, Vercel, Web Push (`web-push`, Vercel Cron). KaTeX ist noch eingebunden, wird für Sprachen aber nicht gebraucht.
+
+Supabase läuft **selbst gehostet** auf Phils Hostinger-VPS (Easypanel, Dienst `supabase-lu7`, https://apps-supabase-lu7.xbaryy.easypanel.host), weil die zwei Gratis-Projekte bei Supabase belegt sind. Der App-Code ist derselbe, nur URL und Schlüssel unterscheiden sich (`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` = `ANON_KEY`, `SUPABASE_SECRET_KEY` = `SERVICE_ROLE_KEY`). Backups macht Supabase dort nicht selbst.
 
 Nicht verwenden: Redux, Prisma, tRPC, eigene Backend-Server, Native-Wrapper, KI-APIs.
 
@@ -100,7 +102,7 @@ Neu (Tag 2): Akzentleiste über dem Eingabefeld bei Französisch-Aufgaben (`voca
 | Tag | Wer | Was |
 |---|---|---|
 | 0 (2026-10-05) | Claude Code | Klon mit Git-Historie, Umbenennung, Engine-Konstanten, Struktur, Doku, erste Englisch-Aufgaben E1 |
-| 1 | Phil, ca. 30 Min | Supabase-Projekt `levelup7` (Wizard `scripts/setup-supabase.sh`), Vercel-Projekt, Env-Vars, Seed. Fotos der Inhaltsverzeichnisse, Unterrichtsstand. Claude Code schreibt F0 und die aktuelle Unité. |
+| 1 (2026-10-05, erledigt) | Phil | Supabase selbst gehostet in Easypanel, Migrationen im Studio eingespielt, Seed, Vercel-Projekt `levelup7` mit Env-Vars. Fotos der Inhaltsverzeichnisse, Unterrichtsstand. Claude Code schreibt F0 und die aktuelle Unité. |
 | 2 | Claude Code | Akzentleiste, Bewertung (Akzente, Artikel, qn/qc), `/vokabeln-aus-foto` für zwei Sprachen, erste Vokabelfotos. Paula legt die App aufs iPhone. |
 | 3 | Claude Code | Was Paula nervt, wird gefixt, bevor irgendetwas Neues gebaut wird. |
 

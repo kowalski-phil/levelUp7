@@ -17,6 +17,7 @@ Paulas Schulbücher, ihre Units und der Unterrichtsstand stehen in `docs/schulbu
 ## Stack
 
 Next.js App Router mit TypeScript, Tailwind, shadcn/ui, Supabase (`@supabase/ssr`, RLS), Vitest, Vercel.
+Supabase ist selbst gehostet (Easypanel auf Phils VPS), nicht supabase.com. Neue Migrationen im Studio unter „SQL Editor“ ausführen. In Easypanel nie `POSTGRES_PASSWORD` ändern.
 Keine zusätzlichen State-Bibliotheken, kein ORM, keine Native-Wrapper.
 
 ## Struktur
