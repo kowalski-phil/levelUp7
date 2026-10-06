@@ -8,13 +8,13 @@
       "code": "E1", "subject": "E", "title": "Unit 1: Find your place", "hours": 31,
       "skills": [
         { "code": "E1.1", "title": "Reflexive pronouns und each other", "description": "myself, yourself … themselves; Abgrenzung zu Personalpronomen und zu each other; reflexive Verben im Deutschen, die im Englischen nicht reflexiv sind." },
-        { "code": "E1.2", "title": "Adverbs of manner", "description": "Adverbien bilden (-ly, Sonderformen wie well, fast, hard), Adjektiv oder Adverb, Steigerung der Adverbien." },
+        { "code": "E1.2", "title": "Adverbs of manner", "description": "Adverbien bilden (-ly, Sonderformen wie well, fast, hard), Adjektiv oder Adverb, Adjektive nach Verben wie look, sound, feel, Steigerung der Adverbien." },
         { "code": "E1.3", "title": "one/ones und possessive pronouns", "description": "Stützwort one/ones statt Wiederholung des Nomens; mine, yours, his, hers, ours, theirs." },
         { "code": "E1.4", "title": "Reading und Use of English", "description": "Kurze eigene Texte im Wortschatz der Unit: persönliche Stärken, Jugendliche in Nordamerika, Sprachwandel." }
       ]
     },
     {
-      "code": "E2", "subject": "E", "title": "Unit 2: Let's go to Wales", "hours": 34,
+      "code": "E2", "subject": "E", "title": "Unit 2: Let's go to Wales!", "hours": 34,
       "skills": [
         { "code": "E2.1", "title": "Present perfect progressive", "description": "Handlung, die bis jetzt andauert, mit for und since; Abgrenzung zum present perfect simple." },
         { "code": "E2.2", "title": "Conditional sentences type 2", "description": "Wiederholung type 1; Bedingung und Folge mit type 2 (if + simple past, would); Ratschläge mit If I were you …" },
@@ -32,8 +32,8 @@
     {
       "code": "E4", "subject": "E", "title": "Unit 4: In the Desert Southwest", "hours": 21,
       "skills": [
-        { "code": "E4.1", "title": "Conditional clauses with mixed tenses", "description": "Bedingungen und Wünsche ausdrücken, Bedingungssätze mit gemischten Zeiten." },
-        { "code": "E4.2", "title": "Zeitliche und logische Bezüge", "description": "Verbindungswörter für Zeit, Grund, Gegensatz und Folge." },
+        { "code": "E4.1", "title": "Conditional clauses with mixed tenses", "description": "Bedingungen und Wünsche ausdrücken, Bedingungssätze mit gemischten Zeiten, I wish …, If only …" },
+        { "code": "E4.2", "title": "Zeitliche und logische Bezüge", "description": "Zeitenfolge (sequence of tenses) und Verbindungswörter (linking words) für Zeit, Grund, Gegensatz und Folge." },
         { "code": "E4.3", "title": "Indirect speech (rezeptiv)", "description": "Indirekte Aussagesätze erkennen und verstehen, noch nicht selbst bilden." },
         { "code": "E4.4", "title": "Reading und Use of English", "description": "Kurze eigene Texte im Wortschatz der Unit: Desert Southwest, Nationalparks, Schule in den USA." }
       ]
@@ -52,7 +52,7 @@
       "skills": []
     },
     {
-      "code": "F1", "subject": "F", "title": "Unité 1: Schulbeginn in Frankreich", "hours": 18,
+      "code": "F1", "subject": "F", "title": "Unité 1: C'est la rentrée!", "hours": 18,
       "skills": [
         { "code": "F1.1", "title": "Pronoms disjoints", "description": "moi, toi, lui, elle, nous, vous, eux, elles: nach Präpositionen, nach c'est, zur Betonung." },
         { "code": "F1.2", "title": "Relativsätze mit qui, que, où", "description": "qui als Subjekt, que als Objekt, où für Ort und Zeit." },
@@ -61,16 +61,16 @@
       ]
     },
     {
-      "code": "F2", "subject": "F", "title": "Unité 2: Erlebnisse erzählen", "hours": 24,
+      "code": "F2", "subject": "F", "title": "Unité 2: Lyon mystérieux", "hours": 24,
       "skills": [
-        { "code": "F2.1", "title": "Passé composé mit avoir: Verben auf -er und -dre", "description": "Bildung mit avoir und participe passé (-é, -u), Verneinung ne … pas um das Hilfsverb." },
-        { "code": "F2.2", "title": "Passé composé mit avoir: unregelmäßige Verben", "description": "Participes passés wie fait, vu, dû, ouvert, pris, eu, été." },
+        { "code": "F2.1", "title": "Passé composé mit avoir: Verben auf -er und faire", "description": "Bildung mit avoir und participe passé auf -é, dazu fait; Verneinung ne … pas um das Hilfsverb." },
+        { "code": "F2.2", "title": "Passé composé mit avoir: Verben auf -dre und unregelmäßige Verben", "description": "Participes passés auf -u (attendu, vendu) und unregelmäßige wie vu, dû, ouvert, pris, eu, été." },
         { "code": "F2.3", "title": "voir, devoir, ouvrir", "description": "Konjugation im Präsens." },
         { "code": "F2.4", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Erlebnisse, Briefe, Lyon." }
       ]
     },
     {
-      "code": "F3", "subject": "F", "title": "Unité 3: Tagesablauf und Kleidung", "hours": 20,
+      "code": "F3", "subject": "F", "title": "Unité 3: Quelle journée, Léonie!", "hours": 20,
       "skills": [
         { "code": "F3.1", "title": "Verbes pronominaux", "description": "Reflexive Verben im Präsens: je me lève, tu te lèves …" },
         { "code": "F3.2", "title": "Passé composé mit être", "description": "Verben der Bewegung und reflexive Verben, Angleichung des participe passé." },
@@ -79,16 +79,16 @@
       ]
     },
     {
-      "code": "F4", "subject": "F", "title": "Unité 4: Bretagne, Wetter, Klassenfahrt", "hours": 24,
+      "code": "F4", "subject": "F", "title": "Unité 4: Une semaine en Bretagne", "hours": 24,
       "skills": [
         { "code": "F4.1", "title": "Pronoms objets indirects", "description": "lui, leur (auch me, te, nous, vous) und ihre Stellung vor dem Verb." },
         { "code": "F4.2", "title": "Discours indirect und interrogation indirecte", "description": "Indirekte Rede und indirekte Frage im Präsens: Il dit que …, Elle demande si …" },
-        { "code": "F4.3", "title": "Imparfait", "description": "Bildung (Stamm der 1. Person Plural + -ais, -ait …) und Verwendung für Zustände und Gewohnheiten." },
+        { "code": "F4.3", "title": "Imparfait", "description": "Bildung (Stamm der 1. Person Plural + -ais, -ait …) und Verwendung für Zustände und Gewohnheiten; Verb vivre." },
         { "code": "F4.4", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Jahreszeiten, Wetter, Klassenfahrt." }
       ]
     },
     {
-      "code": "F5", "subject": "F", "title": "Unité 5: Sport", "hours": 20,
+      "code": "F5", "subject": "F", "title": "Unité 5: La Fête du sport", "hours": 20,
       "skills": [
         { "code": "F5.1", "title": "Comparatif und superlatif", "description": "plus/moins/aussi … que, le plus …, bon – meilleur." },
         { "code": "F5.2", "title": "tout, toute, tous, toutes", "description": "Formen des Begleiters tout." },
@@ -98,20 +98,20 @@
       ]
     },
     {
-      "code": "F6", "subject": "F", "title": "Unité 6: Essen und Einkaufen", "hours": 20,
+      "code": "F6", "subject": "F", "title": "Unité 6: Fou de cuisine!", "hours": 20,
       "skills": [
-        { "code": "F6.1", "title": "il faut", "description": "il faut + Infinitiv, il faut qc." },
+        { "code": "F6.1", "title": "il faut und boire", "description": "il faut + Infinitiv, il faut qc; Verb boire im Präsens." },
         { "code": "F6.2", "title": "Article partitif und Mengenangaben", "description": "du, de la, de l', des; Mengenangaben mit de (un kilo de, beaucoup de), de nach Verneinung." },
         { "code": "F6.3", "title": "Pronomen en", "description": "en als Ersatz für Teilungsartikel und Mengenangaben, Stellung vor dem Verb." },
         { "code": "F6.4", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Lebensmittel, Einkaufen, Mahlzeiten." }
       ]
     },
     {
-      "code": "F7", "subject": "F", "title": "Unité 7: Stadt und Land", "hours": 24,
+      "code": "F7", "subject": "F", "title": "Unité 7: Découvrir Nantes", "hours": 24,
       "skills": [
         { "code": "F7.1", "title": "Impératif", "description": "Bejahter und verneinter Imperativ, unregelmäßig: sois, aie …" },
         { "code": "F7.2", "title": "Impératif mit Pronomen", "description": "Stellung der Pronomen beim bejahten (Donne-lui le livre !) und verneinten Imperativ (Ne lui donne pas le livre !)." },
-        { "code": "F7.3", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Stadt und Land, Sehenswürdigkeiten, Musik." }
+        { "code": "F7.3", "title": "Lire et comprendre", "description": "Kurze eigene Texte im Wortschatz der Unité: Nantes, Geografie, Stadt und Land, Sehenswürdigkeiten, Zahlen bis zu einer Million." }
       ]
     },
     {

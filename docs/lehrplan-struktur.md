@@ -43,7 +43,7 @@ Themengebiete (Auszug): Lebenswelt von Jugendlichen in Nordamerika; Mediennutzun
 | Gebiet | Unit im Buch | Seiten | Stunden (SVP, inkl. Revision, Across cultures, Focus, Text smart bis zur nächsten Unit) | Skills |
 |---|---|---|---|---|
 | E1 | Unit 1: Find your place | 8–25 | 31 (Std. 1–31) | E1.1 Reflexive pronouns und each other · E1.2 Adverbs of manner · E1.3 one/ones und possessive pronouns · E1.4 Reading und Use of English |
-| E2 | Unit 2: Let's go to Wales | 34–49 | 34 (Std. 32–65) | E2.1 Present perfect progressive · E2.2 Conditional sentences type 2 · E2.3 Reading und Use of English |
+| E2 | Unit 2: Let's go to Wales! | 34–49 | 34 (Std. 32–65) | E2.1 Present perfect progressive · E2.2 Conditional sentences type 2 · E2.3 Reading und Use of English |
 | E3 | Unit 3: What was it like? | 62–79 | 38 (Std. 66–103) | E3.1 Past perfect · E3.2 Conditional sentences type 3 · E3.3 Reading und Use of English |
 | E4 | Unit 4: In the Desert Southwest | 96–111 | 21 (Std. 104–124) | E4.1 Conditional clauses with mixed tenses · E4.2 Zeitliche und logische Bezüge · E4.3 Indirect speech (rezeptiv) · E4.4 Reading und Use of English |
 | EV | Vokabelteil | – | 0 (läuft das ganze Jahr) | EV.1 bis EV.4, je Unit, nur aus Fotos |
@@ -56,7 +56,7 @@ Grammatik pro Unit laut Stoffverteilungsplan (wörtlich):
 
 ## Französisch (Code F): Découvertes 2, Ausgabe Bayern ab 2017
 
-ISBN 978-3-12-622278-5. 7 Unités, 3 fakultative Plateaus. Der Stoffverteilungsplan rechnet mit ca. 36 Wochen zu je 4 Stunden. Er nennt **keine Titel** der Unités, die Titel in der App sind deshalb Themen-Stichworte aus dem Plan. Die genaue Zuordnung wird mit dem Foto des Inhaltsverzeichnisses abgeglichen (`docs/schulbuecher.md`).
+ISBN 978-3-12-622278-5. 7 Unités, 3 fakultative Plateaus. Der Stoffverteilungsplan rechnet mit ca. 36 Wochen zu je 4 Stunden. Er nennt keine Titel der Unités. Die Titel in der App stammen aus dem Inhaltsverzeichnis, ebenso die Aufteilung der Grammatik auf Ateliers und Seiten (`docs/schulbuecher.md`, Abgleich 2026-10-06).
 
 ### Grammatik laut LehrplanPLUS F7 (1.2, wörtlich)
 
@@ -72,13 +72,13 @@ Themengebiete (Auszug): Feste und Traditionen (la rentrée, Ostern, crêpes, gal
 | Gebiet | Unité (SVP) | Stunden / Wochen (SVP) | Grammatik laut SVP (wörtlich) | Skills |
 |---|---|---|---|---|
 | F0 | Wiederholung Band 1 (Plateau Rentrée und was im Unterricht wiederholt wird) | 2 / 1 | „Wortschatz und Grammatik des letzten Schuljahres reaktivieren" | folgen, wenn Phil die Themen nennt |
-| F1 | Unité 1: Schulbeginn, Collège, Lyon | 18 / 1–5 | pronoms personnels disjoints, Relativsätze mit qui, que, où; Verben connaître, savoir, mettre | F1.1 Pronoms disjoints · F1.2 qui, que, où · F1.3 connaître, savoir, mettre · F1.4 Lire et comprendre |
-| F2 | Unité 2: Traboules von Lyon, Erlebnisse, Brief | 20 + Plateau 1 (4) / 6–10 | das Passé composé mit avoir (von Verben auf -er und -dre sowie unregelmäßigen Verben); Verben voir, devoir, ouvrir | F2.1 Passé composé avoir: -er, -dre · F2.2 Passé composé avoir: unregelmäßig · F2.3 voir, devoir, ouvrir · F2.4 Lire et comprendre |
-| F3 | Unité 3: Tagesablauf, Kleidung, Feste | 20 / 11–15 | verbes pronominaux (im Präsens), das Passé composé mit être; Verben auf -ir (dormir), venir | F3.1 Verbes pronominaux · F3.2 Passé composé mit être · F3.3 dormir und venir · F3.4 Lire et comprendre |
-| F4 | Unité 4: Bretagne, Wetter, Klassenfahrt | 20 + Plateau 2 (4) / 16–20 | pronom objet indirect, discours indirect, interrogation indirecte, imparfait; Verb vivre | F4.1 Pronoms objets indirects · F4.2 Discours indirect, interrogation indirecte · F4.3 Imparfait · F4.4 Lire et comprendre |
-| F5 | Unité 5: Sport | 20 / 21–25 | les degrés de l'adjectif et la comparaison, tout, imparfait – passé composé; Verben auf -ir (finir) | F5.1 Comparatif und superlatif · F5.2 tout · F5.3 Imparfait oder passé composé · F5.4 Verben auf -ir mit -iss- · F5.5 Lire et comprendre |
-| F6 | Unité 6: Essen, Einkaufen, Nantes | 20 / 26–30 | il faut (faire) qc, l'article partitif, Mengenausdruck mit de, Pronomen en; Verb boire | F6.1 il faut · F6.2 Article partitif und Mengenangaben · F6.3 Pronomen en · F6.4 Lire et comprendre |
-| F7 | Unité 7: Nantes, Stadt und Land, Musik | 20 + Plateau 3 (4) / 31–35 | Imperativ von être und avoir, Imperativ mit einem Pronomen; Zahlen bis 1 Million | F7.1 Impératif · F7.2 Impératif mit Pronomen · F7.3 Lire et comprendre |
+| F1 | Unité 1: C'est la rentrée! (S. 12–25) | 18 / 1–5 | pronoms personnels disjoints, Relativsätze mit qui, que, où; Verben connaître, savoir, mettre | F1.1 Pronoms disjoints · F1.2 qui, que, où · F1.3 connaître, savoir, mettre · F1.4 Lire et comprendre |
+| F2 | Unité 2: Lyon mystérieux (S. 28–41) | 20 + Plateau 1 (4) / 6–10 | das Passé composé mit avoir (von Verben auf -er und -dre sowie unregelmäßigen Verben); Verben voir, devoir, ouvrir | F2.1 Passé composé avoir: -er und faire · F2.2 Passé composé avoir: -dre und unregelmäßig · F2.3 voir, devoir, ouvrir · F2.4 Lire et comprendre |
+| F3 | Unité 3: Quelle journée, Léonie! (S. 48–61) | 20 / 11–15 | verbes pronominaux (im Präsens), das Passé composé mit être; Verben auf -ir (dormir), venir | F3.1 Verbes pronominaux · F3.2 Passé composé mit être · F3.3 dormir und venir · F3.4 Lire et comprendre |
+| F4 | Unité 4: Une semaine en Bretagne (S. 66–82) | 20 + Plateau 2 (4) / 16–20 | pronom objet indirect, discours indirect, interrogation indirecte, imparfait; Verb vivre | F4.1 Pronoms objets indirects · F4.2 Discours indirect, interrogation indirecte · F4.3 Imparfait · F4.4 Lire et comprendre |
+| F5 | Unité 5: La Fête du sport (S. 88–101) | 20 / 21–25 | les degrés de l'adjectif et la comparaison, tout, imparfait – passé composé; Verben auf -ir (finir) | F5.1 Comparatif und superlatif · F5.2 tout · F5.3 Imparfait oder passé composé · F5.4 Verben auf -ir mit -iss- · F5.5 Lire et comprendre |
+| F6 | Unité 6: Fou de cuisine! (S. 105–120) | 20 / 26–30 | il faut (faire) qc, l'article partitif, Mengenausdruck mit de, Pronomen en; Verb boire | F6.1 il faut und boire · F6.2 Article partitif und Mengenangaben · F6.3 Pronomen en · F6.4 Lire et comprendre |
+| F7 | Unité 7: Découvrir Nantes (S. 124–137) | 20 + Plateau 3 (4) / 31–35 | Imperativ von être und avoir, Imperativ mit einem Pronomen; Zahlen bis 1 Million | F7.1 Impératif · F7.2 Impératif mit Pronomen · F7.3 Lire et comprendre |
 | FV | Vokabelteil | 0 (läuft das ganze Jahr) | – | FV.0 Band 1, FV.1 bis FV.7, nur aus Fotos |
 
 Die fakultativen Plateaus sind der jeweils vorangehenden Unité zugeschlagen, Plateau Rentrée steckt in F0.
