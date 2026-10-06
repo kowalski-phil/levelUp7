@@ -112,7 +112,7 @@ Unterricht: folgt (Phil).
 
 ## Französisch Band 1: Klett "Découvertes 1, Ausgabe Bayern ab 2017"
 
-ISBN 978-3-12-622268-6. Nur für die Wiederholung (F0) und den Vokabelteil (FV.0). Was gerade wiederholt wird, folgt (Phil oder Paula). Erst dann bekommt F0 Skills.
+ISBN 978-3-12-622268-6. Nur Vokabelwiederholung (FV.0), keine Grammatik-Aufgaben (Phil, 2026-10-06). Band 1 sollte im letzten Schuljahr abgeschlossen sein, die Klasse hinkt aber evtl. noch hinterher. Die Grammatik unten ist nur zur Orientierung, z. B. um zu wissen, was Paula schon kennt.
 
 | Teil im Buch | Seiten | Grammatik |
 |---|---|---|

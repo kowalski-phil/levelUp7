@@ -71,7 +71,7 @@ Themengebiete (Auszug): Feste und Traditionen (la rentrée, Ostern, crêpes, gal
 
 | Gebiet | Unité (SVP) | Stunden / Wochen (SVP) | Grammatik laut SVP (wörtlich) | Skills |
 |---|---|---|---|---|
-| F0 | Wiederholung Band 1 (Plateau Rentrée und was im Unterricht wiederholt wird) | 2 / 1 | „Wortschatz und Grammatik des letzten Schuljahres reaktivieren" | folgen, wenn Phil die Themen nennt |
+| F0 | Wiederholung Band 1 (Plateau Rentrée und was im Unterricht wiederholt wird) | 2 / 1 | „Wortschatz und Grammatik des letzten Schuljahres reaktivieren" | keine: Band 1 wird nur über die Vokabeln (FV.0) wiederholt |
 | F1 | Unité 1: C'est la rentrée! (S. 12–25) | 18 / 1–5 | pronoms personnels disjoints, Relativsätze mit qui, que, où; Verben connaître, savoir, mettre | F1.1 Pronoms disjoints · F1.2 qui, que, où · F1.3 connaître, savoir, mettre · F1.4 Lire et comprendre |
 | F2 | Unité 2: Lyon mystérieux (S. 28–41) | 20 + Plateau 1 (4) / 6–10 | das Passé composé mit avoir (von Verben auf -er und -dre sowie unregelmäßigen Verben); Verben voir, devoir, ouvrir | F2.1 Passé composé avoir: -er und faire · F2.2 Passé composé avoir: -dre und unregelmäßig · F2.3 voir, devoir, ouvrir · F2.4 Lire et comprendre |
 | F3 | Unité 3: Quelle journée, Léonie! (S. 48–61) | 20 / 11–15 | verbes pronominaux (im Präsens), das Passé composé mit être; Verben auf -ir (dormir), venir | F3.1 Verbes pronominaux · F3.2 Passé composé mit être · F3.3 dormir und venir · F3.4 Lire et comprendre |
