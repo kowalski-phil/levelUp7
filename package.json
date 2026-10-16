@@ -10,7 +10,8 @@
     "test": "vitest run",
     "content:check": "tsx scripts/validate-content.ts",
     "content:preview": "tsx scripts/preview-items.ts",
-    "seed": "tsx --env-file=.env.local scripts/seed.ts"
+    "seed": "tsx --env-file=.env.local scripts/seed.ts",
+    "demo": "tsx --env-file=.env.local scripts/demo.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
