@@ -2,9 +2,8 @@ import "server-only";
 import webpush from "web-push";
 import { todayInBerlin } from "@/lib/engine/dates";
 import { reminderMessage, type ReminderSlot } from "@/lib/engine/reminder";
-import { initialStreak, type StreakState } from "@/lib/engine/streak";
 import { createAdminClient } from "@/lib/supabase/server";
-import type { StreakRow } from "@/lib/supabase/types";
+import { loadStreakState } from "./streak";
 
 /** Kontakt für die Push-Dienste (Apple, Google). Muss eine https- oder mailto-Adresse sein. */
 const VAPID_SUBJECT = "https://levelup7-liard.vercel.app";
@@ -28,7 +27,7 @@ interface SubscriptionRow {
 }
 
 /**
- * Schickt die Erinnerung an alle Geräte mit Push-Abo, außer heute wurde schon gelernt.
+ * Schickt die Erinnerung an alle Geräte mit Push-Abo, außer heute wurde schon gelernt oder ein Joker ist gesetzt.
  * Vercel Cron kann einen Lauf doppelt auslösen: Pro Schüler und Slot wird das Sendedatum in den
  * app_metadata des Accounts vermerkt, ein zweiter Lauf am selben Tag schickt nichts (außer force).
  */
@@ -56,11 +55,8 @@ export async function sendReminders(slot: ReminderSlot, now: Date, force = false
       continue;
     }
 
-    const { data: row } = await db.from("streaks").select("*").eq("student_id", studentId).maybeSingle<StreakRow>();
-    const stored: StreakState = row
-      ? { current: row.current, longest: row.longest, jokers: row.jokers, lastCompletedDate: row.last_completed_date }
-      : initialStreak();
-    const message = reminderMessage(slot, stored, today);
+    const { stored, jokerDays } = await loadStreakState(db, studentId);
+    const message = reminderMessage(slot, stored, jokerDays, today);
     if (!message) {
       run.alreadyLearned++;
       continue;

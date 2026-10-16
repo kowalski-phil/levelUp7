@@ -54,7 +54,7 @@ Alle Module aus `lib/engine/` sind übernommen. Geändert sind nur Konstanten un
 | `calendar.ts` `EXAM_PREP_DAYS` | 42 | 14 |
 | `calendar.ts` `buildSchedule` | – | Gebiete mit `hours: 0` (die Vokabel-Gebiete EV, FV) laufen das ganze Jahr neben der Unit-Reihe |
 
-Tagesplan, SM-2, Streak, Joker (alle 14 Tage, max. 2), XP, Fokus-Modus und Bewertung funktionieren wie in LevelUp10. Beschreibung dort in `PLAN.md` Abschnitt 4 (Git-Historie, Commit `c5eaff1`) und in `docs/fokus-modus.md`.
+Tagesplan, SM-2, Streak, Joker (Start mit 2, alle 14 Tage einer dazu, max. 3, Paula setzt sie selbst: vorab oder nachträglich, seit 2026-10-16 wie LevelUp10 Commit 6d92632), XP, Fokus-Modus und Bewertung funktionieren wie in LevelUp10. Beschreibung dort in `PLAN.md` Abschnitt 4 (Git-Historie, Commit `c5eaff1`) und in `docs/fokus-modus.md`.
 
 Geplante Erweiterung der Bewertung `vocab` (Tag 2, mit Tests):
 1. Französische Abkürzungen `qn` und `qc` sind optional, wie `sb` und `sth` im Englischen.

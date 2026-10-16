@@ -1,5 +1,5 @@
 import type { ISODate } from "./dates";
-import { displayStreak, type StreakState } from "./streak";
+import { displayStreak, pendingRescue, type StreakState } from "./streak";
 
 export type ReminderSlot = "first" | "second";
 
@@ -25,13 +25,27 @@ export interface ReminderMessage {
 }
 
 /**
- * Text der Erinnerung, oder null, wenn heute schon gelernt wurde.
- * Streak wird wie in der App angezeigt (verpasste Tage bis gestern verrechnet).
+ * Text der Erinnerung, oder null, wenn heute schon gelernt wurde oder ein Joker für heute gesetzt ist.
+ * Streak wird wie in der App angezeigt. Steht eine Joker-Rettung offen, erinnert die Nachricht daran.
  */
-export function reminderMessage(slot: ReminderSlot, stored: StreakState, today: ISODate): ReminderMessage | null {
-  if (stored.lastCompletedDate === today) return null;
-  const n = displayStreak(stored, today).current;
+export function reminderMessage(
+  slot: ReminderSlot,
+  stored: StreakState,
+  jokerDays: readonly ISODate[],
+  today: ISODate,
+): ReminderMessage | null {
+  if (stored.lastCompletedDate === today || jokerDays.includes(today)) return null;
+  const n = displayStreak(stored, jokerDays, today).current;
   const days = (k: number) => `${k} ${k === 1 ? "Tag" : "Tage"}`;
+
+  const missed = pendingRescue(stored, jokerDays, today);
+  if (missed) {
+    return {
+      title: "Dein Streak wartet",
+      body: `${missed.length === 1 ? "Ein Tag" : `${missed.length} Tage`} verpasst. Mit ${missed.length === 1 ? "einem Joker" : `${missed.length} Jokern`} rettest du ${days(n)}.`,
+      badge: n,
+    };
+  }
 
   if (slot === "first") {
     return {

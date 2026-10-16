@@ -1,16 +1,15 @@
 import "server-only";
 import { isDone, type AttemptState } from "@/lib/engine/grading";
 import { rewardsForCompletion, type RewardsConfig } from "@/lib/engine/rewards";
-import { completeDay, initialStreak, type StreakState } from "@/lib/engine/streak";
+import { completeDay } from "@/lib/engine/streak";
 import { createAdminClient } from "@/lib/supabase/server";
-import type { RewardsConfigRow, SessionRow, SessionSummary, StreakRow } from "@/lib/supabase/types";
+import type { RewardsConfigRow, SessionRow, SessionSummary } from "@/lib/supabase/types";
 import type { Viewer } from "./queries";
-
-const toState = (r: StreakRow | null): StreakState =>
-  r ? { current: r.current, longest: r.longest, jokers: r.jokers, lastCompletedDate: r.last_completed_date } : initialStreak();
+import { loadStreakState, saveStreak } from "./streak";
 
 /**
  * Schließt eine Session ab. Bei der Tagessession oder Fokus-Runde: Streak +1, Joker, Belohnungen.
+ * War für heute ein Joker gesetzt, geht er zurück in den Vorrat.
  * Streak und Ledger schreibt nur der Service-Role-Client, erst nachdem geprüft ist,
  * dass alle geplanten Aufgaben erledigt sind (falsche wiederholt, bis gelöst oder Versuche aufgebraucht).
  */
@@ -39,27 +38,21 @@ export async function completeSession(v: Viewer, session: SessionRow): Promise<S
     return (data?.summary as SessionSummary | null) ?? null;
   }
 
-  const { data: streakRow } = await admin.from("streaks").select("*").eq("student_id", v.userId).maybeSingle<StreakRow>();
-  const prev = toState(streakRow);
+  const { stored: prev, jokerDays } = await loadStreakState(admin, v.userId);
   let summary: SessionSummary = {
     streak: prev.current,
     streakCounted: false,
     jokerEarned: false,
-    jokersUsed: 0,
+    jokerRefunded: false,
     rewards: [],
   };
 
   // Tagessession ODER Fokus-Runde sichert den Streak-Tag. completeDay zählt pro Datum nur einmal.
   if (session.kind === "daily" || session.kind === "focus") {
-    const r = completeDay(prev, session.date);
+    const r = completeDay(prev, jokerDays, session.date);
     if (r.counted) {
-      await admin.from("streaks").upsert({
-        student_id: v.userId,
-        current: r.state.current,
-        longest: r.state.longest,
-        jokers: r.state.jokers,
-        last_completed_date: r.state.lastCompletedDate,
-      });
+      await saveStreak(admin, v.userId, r.state);
+      if (r.jokerRefunded) await admin.from("joker_days").delete().eq("student_id", v.userId).eq("date", session.date);
 
       const [{ data: cfg }, { data: ledger }] = await Promise.all([
         admin.from("rewards_config").select("*").eq("family_id", v.family.id).maybeSingle<RewardsConfigRow>(),
@@ -88,7 +81,7 @@ export async function completeSession(v: Viewer, session: SessionRow): Promise<S
         streak: r.state.current,
         streakCounted: true,
         jokerEarned: r.jokerEarned,
-        jokersUsed: r.jokersUsed,
+        jokerRefunded: r.jokerRefunded,
         rewards: rewards.map((e) => ({ label: e.label, amountEur: e.amountEur })),
       };
     }

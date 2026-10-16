@@ -1,104 +1,136 @@
-import { addDays, diffDays, type ISODate } from "./dates";
+import { addDays, type ISODate } from "./dates";
 
 export interface StreakState {
   current: number;
   longest: number;
+  /** Joker im Vorrat (noch nicht gesetzt). */
   jokers: number;
   lastCompletedDate: ISODate | null;
 }
 
-export const MAX_JOKERS = 2;
+/** Joker setzt Felix selbst (Phil, 2026-10-16): Start mit 2, alle 14 Streak-Tage einer dazu, höchstens 3. */
+export const START_JOKERS = 2;
+export const MAX_JOKERS = 3;
 /** Alle 14 Streak-Tage gibt es einen Joker (Phil, 2026-09-26: 7 war zu großzügig). */
 export const JOKER_EVERY = 14;
+/** Joker lassen sich für heute und die nächsten 6 Tage setzen. */
+export const JOKER_PLAN_DAYS = 7;
 
 export function initialStreak(): StreakState {
-  return { current: 0, longest: 0, jokers: 0, lastCompletedDate: null };
+  return { current: 0, longest: 0, jokers: START_JOKERS, lastCompletedDate: null };
 }
 
 /**
- * Wendet verpasste Tage zwischen dem letzten abgeschlossenen Tag und heute an.
- * Pro verpasstem Tag wird ein Joker verbraucht, ohne Joker fällt der Streak auf 0.
- * Rein und idempotent: hängt nur vom gespeicherten Zustand und dem Datum ab.
+ * Tage seit dem letzten geschafften Tag bis gestern, an denen weder gelernt noch ein Joker gesetzt wurde.
+ * Leer, wenn kein Streak läuft (dann gibt es nichts zu retten).
  */
-export function reconcile(state: StreakState, today: ISODate): { state: StreakState; jokersUsed: number } {
-  if (!state.lastCompletedDate) return { state, jokersUsed: 0 };
-  const missed = diffDays(today, state.lastCompletedDate) - 1;
-  if (missed <= 0) return { state, jokersUsed: 0 };
+export function missedDays(state: StreakState, jokerDays: readonly ISODate[], today: ISODate): ISODate[] {
+  if (!state.lastCompletedDate || state.current === 0) return [];
+  const covered = new Set(jokerDays);
+  const out: ISODate[] = [];
+  for (let d = addDays(state.lastCompletedDate, 1); d < today; d = addDays(d, 1)) if (!covered.has(d)) out.push(d);
+  return out;
+}
 
-  let { current, jokers } = state;
-  let jokersUsed = 0;
-  for (let i = 0; i < missed && current > 0; i++) {
-    if (jokers > 0) {
-      jokers -= 1;
-      jokersUsed += 1;
-    } else {
-      current = 0;
-    }
-  }
-  return { state: { ...state, current, jokers }, jokersUsed };
+/**
+ * Verpasste Tage, die Felix nachträglich mit Jokern retten kann (ein Joker pro Tag), sonst null.
+ * Reichen die Joker nicht, ist der Streak weg und es gibt nichts zu entscheiden.
+ */
+export function pendingRescue(state: StreakState, jokerDays: readonly ISODate[], today: ISODate): ISODate[] | null {
+  const days = missedDays(state, jokerDays, today);
+  return days.length > 0 && days.length <= state.jokers ? days : null;
+}
+
+/** Streak, wie er heute angezeigt wird. Solange eine Rettung möglich ist, bleibt er stehen. */
+export function displayStreak(state: StreakState, jokerDays: readonly ISODate[], today: ISODate): StreakState {
+  const missed = missedDays(state, jokerDays, today).length;
+  return missed > 0 && missed > state.jokers ? { ...state, current: 0 } : state;
+}
+
+/** "Joker einsetzen": je verpasstem Tag ein Joker, der Streak läuft weiter. null, wenn nichts zu retten ist. */
+export function rescue(
+  state: StreakState,
+  jokerDays: readonly ISODate[],
+  today: ISODate,
+): { state: StreakState; days: ISODate[] } | null {
+  const days = pendingRescue(state, jokerDays, today);
+  return days ? { state: { ...state, jokers: state.jokers - days.length }, days } : null;
+}
+
+/** "Nein, neu anfangen": Streak auf 0, die Joker bleiben im Vorrat. */
+export function giveUp(state: StreakState, jokerDays: readonly ISODate[], today: ISODate): StreakState | null {
+  return pendingRescue(state, jokerDays, today) ? { ...state, current: 0 } : null;
+}
+
+/** Tage, für die Felix vorab einen Joker setzen kann: heute und die nächsten 6. */
+export function plannableDays(today: ISODate): ISODate[] {
+  return Array.from({ length: JOKER_PLAN_DAYS }, (_, i) => addDays(today, i));
+}
+
+/** Joker für einen Tag setzen. null, wenn das nicht geht (kein Joker, Tag außerhalb, heute schon gelernt). */
+export function setJoker(state: StreakState, jokerDays: readonly ISODate[], date: ISODate, today: ISODate): StreakState | null {
+  if (!plannableDays(today).includes(date) || jokerDays.includes(date) || state.jokers <= 0) return null;
+  if (date === today && state.lastCompletedDate === today) return null;
+  return { ...state, jokers: state.jokers - 1 };
+}
+
+/** Gesetzten Joker zurücknehmen, solange der Tag nicht vorbei ist. */
+export function removeJoker(state: StreakState, jokerDays: readonly ISODate[], date: ISODate, today: ISODate): StreakState | null {
+  if (date < today || !jokerDays.includes(date)) return null;
+  return { ...state, jokers: Math.min(MAX_JOKERS, state.jokers + 1) };
+}
+
+/** Joker im Vorrat plus die für heute und später gesetzten. Gegen diese Zahl gilt das Maximum. */
+export function heldJokers(state: StreakState, jokerDays: readonly ISODate[], today: ISODate): number {
+  return state.jokers + jokerDays.filter((d) => d >= today).length;
 }
 
 export interface CompletionResult {
   state: StreakState;
   counted: boolean;
   jokerEarned: boolean;
-  jokersUsed: number;
+  /** Für heute war ein Joker gesetzt, Felix hat trotzdem gelernt: Joker zurück in den Vorrat. */
+  jokerRefunded: boolean;
 }
 
-/** Tagessession abgeschlossen: verpasste Tage verrechnen, dann Streak +1. */
-export function completeDay(stored: StreakState, today: ISODate): CompletionResult {
+/**
+ * Tagessession abgeschlossen: Streak +1. Hat Felix verpasste Tage nicht gerettet, beginnt der Streak neu.
+ * Ein für heute gesetzter Joker geht zurück in den Vorrat (das Löschen des Joker-Tags macht die Datenschicht).
+ */
+export function completeDay(stored: StreakState, jokerDays: readonly ISODate[], today: ISODate): CompletionResult {
   if (stored.lastCompletedDate === today) {
-    return { state: stored, counted: false, jokerEarned: false, jokersUsed: 0 };
+    return { state: stored, counted: false, jokerEarned: false, jokerRefunded: false };
   }
-  const { state, jokersUsed } = reconcile(stored, today);
-  const current = state.current + 1;
-  const jokerEarned = current % JOKER_EVERY === 0 && state.jokers < MAX_JOKERS;
+  const base = missedDays(stored, jokerDays, today).length > 0 ? 0 : stored.current;
+  const current = base + 1;
+  const jokerRefunded = jokerDays.includes(today);
+  const jokers = stored.jokers + (jokerRefunded ? 1 : 0);
+  const planned = jokerDays.filter((d) => d > today).length;
+  const jokerEarned = current % JOKER_EVERY === 0 && jokers + planned < MAX_JOKERS;
   return {
     state: {
       current,
-      longest: Math.max(state.longest, current),
-      jokers: jokerEarned ? state.jokers + 1 : state.jokers,
+      longest: Math.max(stored.longest, current),
+      jokers: jokerEarned ? jokers + 1 : jokers,
       lastCompletedDate: today,
     },
     counted: true,
     jokerEarned,
-    jokersUsed,
+    jokerRefunded,
   };
 }
 
-/** Streak, wie er heute angezeigt wird (verpasste Tage bis gestern verrechnet). */
-export function displayStreak(stored: StreakState, today: ISODate): StreakState {
-  return reconcile(stored, today).state;
-}
+export type DayMark = "done" | "joker";
 
-export type DayMark = "done" | "saved";
-
-/**
- * Markierung je Kalendertag für die Streak-Anzeige: "done" = Runde geschafft, "saved" = von einem Joker gerettet.
- * Tage ohne Eintrag waren verpasst (oder liegen vor dem ersten Streak). Spielt den Verlauf mit denselben Regeln nach,
- * inklusive der verpassten Tage bis gestern.
- */
-export function dayMarks(completedDates: readonly ISODate[], today: ISODate): Map<ISODate, DayMark> {
+/** Markierung je Kalendertag: "done" = Runde geschafft, "joker" = Joker gesetzt (auch für kommende Tage). */
+export function dayMarks(completedDates: readonly ISODate[], jokerDays: readonly ISODate[], today: ISODate): Map<ISODate, DayMark> {
   const marks = new Map<ISODate, DayMark>();
-  const dates = [...new Set(completedDates)].filter((d) => d <= today).sort();
-  let state = initialStreak();
-  const markSaved = (from: ISODate | null, count: number) => {
-    if (!from) return;
-    for (let i = 1; i <= count; i++) marks.set(addDays(from, i), "saved");
-  };
-  for (const d of dates) {
-    const before = state.lastCompletedDate;
-    const r = completeDay(state, d);
-    markSaved(before, r.jokersUsed);
-    marks.set(d, "done");
-    state = r.state;
-  }
-  const { jokersUsed } = reconcile(state, today);
-  markSaved(state.lastCompletedDate, jokersUsed);
+  for (const d of jokerDays) marks.set(d, "joker");
+  for (const d of completedDates) if (d <= today) marks.set(d, "done");
   return marks;
 }
 
-export type WeekDayStatus = "done" | "saved" | "today" | "missed" | "future" | "before";
+export type WeekDayStatus = "done" | "joker" | "today" | "missed" | "future" | "before";
 
 export interface WeekDay {
   date: ISODate;
@@ -113,6 +145,12 @@ export function mondayOf(date: ISODate): ISODate {
   const [y, m, d] = date.split("-").map(Number);
   const dow = new Date(Date.UTC(y, m - 1, d)).getUTCDay(); // 0 = Sonntag
   return addDays(date, -((dow + 6) % 7));
+}
+
+/** Kurzname des Wochentags ("Mo" bis "So"). */
+export function weekdayLabel(date: ISODate): string {
+  const [y, m, d] = date.split("-").map(Number);
+  return WEEKDAY_LABELS[(new Date(Date.UTC(y, m - 1, d)).getUTCDay() + 6) % 7];
 }
 
 /**
@@ -135,8 +173,8 @@ export function weekView(marks: ReadonlyMap<ISODate, DayMark>, today: ISODate): 
   });
 }
 
-/** Wie viele geschaffte Tage bis zum nächsten Joker; null, wenn der Vorrat voll ist. */
-export function daysToNextJoker(state: StreakState): number | null {
-  if (state.jokers >= MAX_JOKERS) return null;
+/** Wie viele geschaffte Tage bis zum nächsten Joker; null, wenn der Vorrat (inkl. gesetzter) voll ist. */
+export function daysToNextJoker(state: StreakState, held = state.jokers): number | null {
+  if (held >= MAX_JOKERS) return null;
   return JOKER_EVERY - (state.current % JOKER_EVERY);
 }

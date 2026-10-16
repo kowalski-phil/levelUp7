@@ -52,17 +52,15 @@ export default async function FertigPage({ params }: PageProps<"/fertig/[id]">) 
         </div>
       </div>
 
-      {summary.jokersUsed > 0 ? (
-        <p className="rounded-2xl bg-card p-4 text-center text-sm">
-          {summary.jokersUsed === 1 ? "Ein Joker hat" : `${summary.jokersUsed} Joker haben`} deinen Streak gerettet.
-        </p>
+      {summary.jokerRefunded ? (
+        <p className="rounded-2xl bg-card p-4 text-center text-sm">Heute war dein Joker-Tag. Du hast trotzdem gelernt, der Joker ist zurück.</p>
       ) : null}
 
       {summary.jokerEarned ? (
         <div className="flex items-center gap-3 rounded-2xl border-2 border-sky-500/60 bg-sky-500/10 p-4">
           <Shield className="size-7 shrink-0 text-sky-400" />
           <p>
-            <strong>Joker verdient.</strong> Verpasst du mal einen Tag, rettet er deinen Streak.
+            <strong>Joker verdient.</strong> Hast du mal keine Zeit, setz ihn auf der Streak-Seite.
           </p>
         </div>
       ) : null}

@@ -5,10 +5,11 @@ import { requireParent } from "@/lib/data/queries";
 import { addDays, todayInBerlin } from "@/lib/engine/dates";
 import { daysUntil } from "@/lib/engine/focus";
 import { balance } from "@/lib/engine/rewards";
-import { displayStreak, initialStreak } from "@/lib/engine/streak";
+import { displayStreak } from "@/lib/engine/streak";
+import { loadStreakState } from "@/lib/data/streak";
 import { formatNumberDe } from "@/lib/engine/template";
 import { loadCatalog } from "@/lib/data/queries";
-import type { LedgerRow, SessionRow, StreakRow } from "@/lib/supabase/types";
+import type { LedgerRow, SessionRow } from "@/lib/supabase/types";
 
 // Vorläufige Elternansicht (Tag 1). Das volle Dashboard mit Heatmap, Ampel und Belohnungs-Konfiguration kommt an Tag 2.
 export default async function ElternPage() {
@@ -18,7 +19,7 @@ export default async function ElternPage() {
 
   const today = todayInBerlin();
   const [streakRes, ledgerRes, sessionsRes, totalsRes, snoozeRes, catalog, allExams] = await Promise.all([
-    v.supabase.from("streaks").select("*").eq("student_id", studentId).maybeSingle<StreakRow>(),
+    loadStreakState(v.supabase, studentId),
     v.supabase.from("rewards_ledger").select("*").eq("student_id", studentId),
     v.supabase
       .from("sessions")
@@ -43,11 +44,7 @@ export default async function ElternPage() {
     return sk ? [{ ...r, title: `${subjectName.get(sk.subjectCode) ?? sk.subjectCode}: ${sk.title}` }] : [];
   });
   const fmt = (d: string) => new Date(d).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
-  const s = streakRes.data;
-  const streak = displayStreak(
-    s ? { current: s.current, longest: s.longest, jokers: s.jokers, lastCompletedDate: s.last_completed_date } : initialStreak(),
-    today,
-  );
+  const streak = displayStreak(streakRes.stored, streakRes.jokerDays, today);
   const money = balance(
     ((ledgerRes.data ?? []) as LedgerRow[]).map((l) => ({ type: l.type, label: l.label, amountEur: Number(l.amount_eur), paidAt: l.paid_at })),
   );

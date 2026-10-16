@@ -4,14 +4,14 @@ import { cn } from "@/lib/utils";
 
 const TITLE: Record<WeekDay["status"], string> = {
   done: "geschafft",
-  saved: "von einem Joker gerettet",
+  joker: "Joker",
   today: "heute noch offen",
   missed: "verpasst",
   future: "kommt noch",
   before: "",
 };
 
-/** Mo bis So: Flamme = geschafft, Schild = Joker hat gerettet, gestrichelte Flamme = heute offen. */
+/** Mo bis So: Flamme = geschafft, Schild = Joker (gesetzt oder eingelöst), gestrichelte Flamme = heute offen. */
 export function WeekRow({ week, size = "sm" }: { week: WeekDay[]; size?: "sm" | "lg" }) {
   const icon = size === "lg" ? "size-8" : "size-5";
   return (
@@ -23,7 +23,7 @@ export function WeekRow({ week, size = "sm" }: { week: WeekDay[]; size?: "sm" | 
           </span>
           <span className={cn("grid place-items-center", size === "lg" ? "size-10" : "size-7")}>
             {d.status === "done" ? <Flame className={cn(icon, "fill-orange-400 text-orange-500")} /> : null}
-            {d.status === "saved" ? <Shield className={cn(icon, "fill-sky-400/30 text-sky-400")} /> : null}
+            {d.status === "joker" ? <Shield className={cn(icon, "fill-sky-400/30 text-sky-400")} /> : null}
             {d.status === "today" ? <Flame className={cn(icon, "text-orange-400/70")} strokeDasharray="3 2" /> : null}
             {d.status === "missed" ? <span className="size-2 rounded-full bg-muted-foreground/60" /> : null}
             {d.status === "future" || d.status === "before" ? <span className="size-2 rounded-full bg-muted" /> : null}

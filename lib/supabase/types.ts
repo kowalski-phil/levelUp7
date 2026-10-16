@@ -70,7 +70,8 @@ export interface SessionSummary {
   streak: number;
   streakCounted: boolean;
   jokerEarned: boolean;
-  jokersUsed: number;
+  /** Für heute war ein Joker gesetzt, gelernt wurde trotzdem: Joker zurück im Vorrat. Fehlt bei alten Sessions. */
+  jokerRefunded?: boolean;
   rewards: { label: string; amountEur: number }[];
 }
 

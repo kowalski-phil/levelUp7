@@ -7,6 +7,7 @@ import { startBonus } from "@/app/(student)/session/actions";
 import { AppBadge } from "@/components/app-badge";
 import { LogoutButton } from "@/components/logout-button";
 import { BadgeOptIn } from "@/components/streak/badge-optin";
+import { RescueCard } from "@/components/streak/rescue-card";
 import { WeekRow } from "@/components/streak/week-row";
 import { examStats, loadExams, type ExamInfo, type ExamStats } from "@/lib/data/exams";
 import { skillStars } from "@/lib/data/progress";
@@ -17,6 +18,7 @@ import { activeUnits, weekOf } from "@/lib/engine/calendar";
 import { todayInBerlin } from "@/lib/engine/dates";
 import { activeExams, daysUntil, FOCUS_COUNT } from "@/lib/engine/focus";
 import { DAILY_PER_SUBJECT, isVocabUnit, SUBJECT_ROTATION } from "@/lib/engine/planner";
+import { MAX_JOKERS } from "@/lib/engine/streak";
 import { balance } from "@/lib/engine/rewards";
 import { formatNumberDe } from "@/lib/engine/template";
 import { WELCOME_SEEN_COOKIE, welcomeDue } from "@/lib/engine/welcome";
@@ -109,7 +111,7 @@ export default async function HomePage() {
           </div>
           <div className="flex flex-col items-center">
             <span className="flex gap-0.5">
-              {Array.from({ length: 2 }, (_, i) => (
+              {Array.from({ length: MAX_JOKERS }, (_, i) => (
                 <Shield
                   key={i}
                   className={i < streak.jokers ? "size-6 fill-sky-400/30 text-sky-400" : "size-6 text-muted-foreground/30"}
@@ -141,8 +143,17 @@ export default async function HomePage() {
         </Link>
       ) : null}
 
+      {streakView.jokerToday && !doneToday ? (
+        <p className="-mt-2 flex items-center gap-3 rounded-2xl bg-sky-500/10 p-4 text-sm">
+          <Shield className="size-6 shrink-0 fill-sky-400/30 text-sky-400" />
+          Heute ist dein Joker-Tag, dein Streak ist sicher. Lernst du trotzdem, bekommst du den Joker zurück.
+        </p>
+      ) : null}
+
       {noContent ? (
         <div className="rounded-3xl bg-card p-6 text-center text-muted-foreground">Noch keine Aufgaben geladen.</div>
+      ) : streakView.rescue ? (
+        <RescueCard days={streakView.rescue} streak={streak.current} today={today} />
       ) : doneToday ? (
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-4 rounded-3xl border-2 border-green-500/60 bg-green-500/10 p-6">
