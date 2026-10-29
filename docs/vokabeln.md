@@ -8,3 +8,4 @@ Protokoll von `/vokabeln-aus-foto`. Fotos liegen lokal, nicht im Repo:
 | Datum | Sprache | Vokabelseiten | bis Buchseite | Unit | Items | Wörter | Übersprungen |
 |---|---|---|---|---|---|---|---|
 | 2026-10-05 | Französisch (Band 1) | 195–199 | – | Unité 6 (Ende) und Unité 7 bis Station 2 (FV.0) | FV-001 bis FV-142 | 71 | Eigennamen (la Joconde, le Louvre, Notre-Dame, la Défense, la Grande Arche, l'Arc de triomphe, la place du Trocadéro, la tour Eiffel, Versailles, Gustave Eiffel); Kästen „Auf einen Blick“, „Mon dico personnel“ und „Tu te rappelles?“ |
+| 2026-10-29 | Englisch | 183–188 | – (laut Schulaufgaben-Info bis „(the) most“) | Unit 1 Check-in bis Unit task (EV.1) | EV-001 bis EV-204 | 102 | Kästen „Describing developments“ (S. 186) und „Nouns and adjectives“ (S. 187), kommen als Grammatik/English-in-use-Aufgaben |

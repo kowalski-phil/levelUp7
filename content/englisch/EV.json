@@ -1,0 +1,3785 @@
+[
+  {
+    "code": "EV-001",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **personality**?",
+    "payload": {
+      "options": [
+        "Fleisch",
+        "Persönlichkeit",
+        "Sendung, bei der sich das Publikum telefonisch beteiligen kann",
+        "Training; Übung"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "personality = Persönlichkeit. Beispiel: Tom is funny and kind. I like his personality. (Tom ist lustig und nett. Ich mag seine Persönlichkeit.)",
+    "hint": "My dog has a big personality."
+  },
+  {
+    "code": "EV-002",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Persönlichkeit**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "personality"
+      ]
+    },
+    "explanation": "personality = Persönlichkeit. Beispiel: Tom is funny and kind. I like his personality. (Tom ist lustig und nett. Ich mag seine Persönlichkeit.)",
+    "hint": "Nomen, beginnt mit „p“."
+  },
+  {
+    "code": "EV-003",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to disagree (with)**?",
+    "payload": {
+      "options": [
+        "anderer Meinung sein; nicht einverstanden sein (mit)",
+        "beurteilen; bewerten",
+        "fahren",
+        "jmdn. drängen"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "to disagree (with) = anderer Meinung sein; nicht einverstanden sein (mit). Beispiel: I disagree with you. I think the film was boring. (Ich bin anderer Meinung als du. Ich finde, der Film war langweilig.) Gegenteil: to agree.",
+    "hint": "We often disagree about music."
+  },
+  {
+    "code": "EV-004",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **anderer Meinung sein; nicht einverstanden sein (mit)**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "to disagree",
+        "to disagree with"
+      ]
+    },
+    "explanation": "to disagree (with) = anderer Meinung sein; nicht einverstanden sein (mit). Beispiel: I disagree with you. I think the film was boring. (Ich bin anderer Meinung als du. Ich finde, der Film war langweilig.) Gegenteil: to agree.",
+    "hint": "Verb, beginnt mit „d“."
+  },
+  {
+    "code": "EV-005",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to compromise**?",
+    "payload": {
+      "options": [
+        "Kompromisse eingehen",
+        "konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen)",
+        "beurteilen; bewerten",
+        "scheinen"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "to compromise = Kompromisse eingehen. Beispiel: We can't both win. Let's compromise. (Wir können nicht beide gewinnen. Lass uns einen Kompromiss eingehen.)",
+    "hint": "Good friends can compromise."
+  },
+  {
+    "code": "EV-006",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Kompromisse eingehen**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "to compromise"
+      ]
+    },
+    "explanation": "to compromise = Kompromisse eingehen. Beispiel: We can't both win. Let's compromise. (Wir können nicht beide gewinnen. Lass uns einen Kompromiss eingehen.)",
+    "hint": "Verb, beginnt mit „c“."
+  },
+  {
+    "code": "EV-007",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **smart**?",
+    "payload": {
+      "options": [
+        "zukünftig",
+        "ländlich",
+        "schlau; klug; intelligent",
+        "scharf"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "smart = schlau; klug; intelligent. Beispiel: Lisa always knows the answer. She's really smart. (Lisa weiß immer die Antwort. Sie ist wirklich schlau.)",
+    "hint": "My cat is very smart."
+  },
+  {
+    "code": "EV-008",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **schlau; klug; intelligent** (nicht „clever“)",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "smart"
+      ]
+    },
+    "explanation": "smart = schlau; klug; intelligent. Beispiel: Lisa always knows the answer. She's really smart. (Lisa weiß immer die Antwort. Sie ist wirklich schlau.)",
+    "hint": "Adjektiv, beginnt mit „s“."
+  },
+  {
+    "code": "EV-009",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **self, selves (pl)**?",
+    "payload": {
+      "options": [
+        "Mittelschule (weiterführende Schule in den USA, Mittelstufe)",
+        "Trainer/-in",
+        "das Selbst",
+        "Kleiderordnung; Bekleidungsvorschriften"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "self, selves (pl) = das Selbst. Beispiel: This test tells you more about your inner self. (Dieser Test sagt dir mehr über dein inneres Selbst.) Plural: selves.",
+    "hint": "Just be your true self!"
+  },
+  {
+    "code": "EV-010",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **das Selbst**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "self"
+      ]
+    },
+    "explanation": "self, selves (pl) = das Selbst. Beispiel: This test tells you more about your inner self. (Dieser Test sagt dir mehr über dein inneres Selbst.) Plural: selves.",
+    "hint": "Nomen, beginnt mit „s“."
+  },
+  {
+    "code": "EV-011",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **nature**?",
+    "payload": {
+      "options": [
+        "Natur",
+        "Universität (in den USA)",
+        "Persönlichkeit",
+        "Logik"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "nature = Natur. Beispiel: I love nature, so I often go for walks in the forest. (Ich liebe die Natur, deshalb gehe ich oft im Wald spazieren.) Achtung: „in der Natur“ heißt in the countryside, nicht in the nature.",
+    "hint": "We watched a film about nature."
+  },
+  {
+    "code": "EV-012",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Natur**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "nature"
+      ]
+    },
+    "explanation": "nature = Natur. Beispiel: I love nature, so I often go for walks in the forest. (Ich liebe die Natur, deshalb gehe ich oft im Wald spazieren.) Achtung: „in der Natur“ heißt in the countryside, nicht in the nature.",
+    "hint": "Nomen, beginnt mit „n“."
+  },
+  {
+    "code": "EV-013",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **logic**?",
+    "payload": {
+      "options": [
+        "Haut; Fell",
+        "Trainer/-in",
+        "Traum",
+        "Logik"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "logic = Logik. Beispiel: There's no logic in his answer. (In seiner Antwort steckt keine Logik.)",
+    "hint": "Maths needs a lot of logic."
+  },
+  {
+    "code": "EV-014",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Logik**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "logic"
+      ]
+    },
+    "explanation": "logic = Logik. Beispiel: There's no logic in his answer. (In seiner Antwort steckt keine Logik.)",
+    "hint": "Nomen, beginnt mit „l“."
+  },
+  {
+    "code": "EV-015",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **body**?",
+    "payload": {
+      "options": [
+        "Argument",
+        "Cover; Titelblatt",
+        "Körper",
+        "Persönlichkeit"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "body = Körper. Beispiel: Sport is good for your body. (Sport ist gut für deinen Körper.)",
+    "hint": "My whole body hurts."
+  },
+  {
+    "code": "EV-016",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Körper**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "body"
+      ]
+    },
+    "explanation": "body = Körper. Beispiel: Sport is good for your body. (Sport ist gut für deinen Körper.)",
+    "hint": "Nomen, beginnt mit „b“."
+  },
+  {
+    "code": "EV-017",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **saying**?",
+    "payload": {
+      "options": [
+        "Redensart; Sprichwort",
+        "Note; Klasse",
+        "Lebensweise",
+        "Logik"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "saying = Redensart; Sprichwort. Beispiel: „Practice makes perfect“ is a famous saying. („Übung macht den Meister“ ist ein bekanntes Sprichwort.) Kommt von to say.",
+    "hint": "My grandma knows a lot of old sayings."
+  },
+  {
+    "code": "EV-018",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Redensart; Sprichwort**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "saying"
+      ]
+    },
+    "explanation": "saying = Redensart; Sprichwort. Beispiel: „Practice makes perfect“ is a famous saying. („Übung macht den Meister“ ist ein bekanntes Sprichwort.) Kommt von to say.",
+    "hint": "Nomen, beginnt mit „s“."
+  },
+  {
+    "code": "EV-019",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **practice**?",
+    "payload": {
+      "options": [
+        "Training; Übung",
+        "Körper",
+        "Zeugnis",
+        "Argument"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "practice = Training; Übung. Beispiel: You need a lot of practice to play the guitar well. (Du brauchst viel Übung, um gut Gitarre zu spielen.) Das Verb dazu schreibt man im britischen Englisch mit s: to practise.",
+    "hint": "Football practice is on Monday."
+  },
+  {
+    "code": "EV-020",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Training; Übung**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "practice"
+      ]
+    },
+    "explanation": "practice = Training; Übung. Beispiel: You need a lot of practice to play the guitar well. (Du brauchst viel Übung, um gut Gitarre zu spielen.) Das Verb dazu schreibt man im britischen Englisch mit s: to practise.",
+    "hint": "Nomen, beginnt mit „p“."
+  },
+  {
+    "code": "EV-021",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to judge**?",
+    "payload": {
+      "options": [
+        "sich entspannen; sich ausruhen; sich beruhigen",
+        "studieren; lernen",
+        "(sich) entwickeln",
+        "beurteilen; bewerten"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to judge = beurteilen; bewerten. Beispiel: You can't judge people when you don't know them. (Du kannst Menschen nicht beurteilen, wenn du sie nicht kennst.)",
+    "hint": "Please don't judge me!"
+  },
+  {
+    "code": "EV-022",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **beurteilen; bewerten**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "to judge"
+      ]
+    },
+    "explanation": "to judge = beurteilen; bewerten. Beispiel: You can't judge people when you don't know them. (Du kannst Menschen nicht beurteilen, wenn du sie nicht kennst.)",
+    "hint": "Verb, beginnt mit „j“."
+  },
+  {
+    "code": "EV-023",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **cover**?",
+    "payload": {
+      "options": [
+        "Rindfleisch",
+        "Körper",
+        "Cover; Titelblatt",
+        "Sicherheit"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "cover = Cover; Titelblatt. Beispiel: There's a horse on the cover of my book. (Auf dem Cover meines Buchs ist ein Pferd.)",
+    "hint": "I like the cover of this CD."
+  },
+  {
+    "code": "EV-024",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Cover; Titelblatt**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "cover"
+      ]
+    },
+    "explanation": "cover = Cover; Titelblatt. Beispiel: There's a horse on the cover of my book. (Auf dem Cover meines Buchs ist ein Pferd.)",
+    "hint": "Nomen, beginnt mit „c“."
+  },
+  {
+    "code": "EV-025",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to matter**?",
+    "payload": {
+      "options": [
+        "von Bedeutung sein; etw. ausmachen",
+        "jmdn. drängen",
+        "reagieren",
+        "scheinen"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "to matter = von Bedeutung sein; etw. ausmachen. Beispiel: It doesn't matter if you're late. We'll wait. (Es macht nichts, wenn du zu spät kommst. Wir warten.) to matter to sb = für jmdn. wichtig sein.",
+    "hint": "Your friends matter a lot."
+  },
+  {
+    "code": "EV-026",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **von Bedeutung sein; etw. ausmachen**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "to matter"
+      ]
+    },
+    "explanation": "to matter = von Bedeutung sein; etw. ausmachen. Beispiel: It doesn't matter if you're late. We'll wait. (Es macht nichts, wenn du zu spät kommst. Wir warten.) to matter to sb = für jmdn. wichtig sein.",
+    "hint": "Verb, beginnt mit „m“."
+  },
+  {
+    "code": "EV-027",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **I don't care**?",
+    "payload": {
+      "options": [
+        "streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen",
+        "Hausarrest haben",
+        "es ist mir egal",
+        "etw. richtigstellen"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "I don't care = es ist mir egal. Beispiel: Pizza or pasta? I don't care, I like both. (Pizza oder Nudeln? Mir ist es egal, ich mag beides.)",
+    "hint": "I don't care about the rain."
+  },
+  {
+    "code": "EV-028",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **es ist mir egal**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "I don't care"
+      ]
+    },
+    "explanation": "I don't care = es ist mir egal. Beispiel: Pizza or pasta? I don't care, I like both. (Pizza oder Nudeln? Mir ist es egal, ich mag beides.)",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „I“."
+  },
+  {
+    "code": "EV-029",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to be in**?",
+    "payload": {
+      "options": [
+        "ganz allein",
+        "am meisten",
+        "in sein; angesagt sein",
+        "etw. richtigstellen"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to be in = in sein; angesagt sein. Beispiel: Big jackets are in this winter. (Große Jacken sind diesen Winter angesagt.)",
+    "hint": "This song is really in right now."
+  },
+  {
+    "code": "EV-030",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **in sein; angesagt sein**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "to be in"
+      ]
+    },
+    "explanation": "to be in = in sein; angesagt sein. Beispiel: Big jackets are in this winter. (Große Jacken sind diesen Winter angesagt.)",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „b“."
+  },
+  {
+    "code": "EV-031",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to be out**?",
+    "payload": {
+      "options": [
+        "so; auf diese Weise",
+        "eine Entscheidung treffen",
+        "Ich habe nichts dagegen (zu) ...; Mir macht es nichts aus (zu) ...",
+        "out sein"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to be out = out sein. Beispiel: Last year this game was cool, but now it's out. (Letztes Jahr war dieses Spiel cool, aber jetzt ist es out.) Gegenteil: to be in.",
+    "hint": "Old phones are out."
+  },
+  {
+    "code": "EV-032",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **out sein**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "to be out"
+      ]
+    },
+    "explanation": "to be out = out sein. Beispiel: Last year this game was cool, but now it's out. (Letztes Jahr war dieses Spiel cool, aber jetzt ist es out.) Gegenteil: to be in.",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „b“."
+  },
+  {
+    "code": "EV-033",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **as long as**?",
+    "payload": {
+      "options": [
+        "jmdm. leichtfallen",
+        "so; auf diese Weise",
+        "solange",
+        "streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "as long as = solange. Beispiel: You can play outside as long as it's light. (Du kannst draußen spielen, solange es hell ist.)",
+    "hint": "I'm happy as long as I have music."
+  },
+  {
+    "code": "EV-034",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **solange**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "as long as"
+      ]
+    },
+    "explanation": "as long as = solange. Beispiel: You can play outside as long as it's light. (Du kannst draußen spielen, solange es hell ist.)",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „a“."
+  },
+  {
+    "code": "EV-035",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **call-in**?",
+    "payload": {
+      "options": [
+        "Logik",
+        "Käfig",
+        "Sendung, bei der sich das Publikum telefonisch beteiligen kann",
+        "Kleiderordnung; Bekleidungsvorschriften"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "call-in = Sendung, bei der sich das Publikum telefonisch beteiligen kann. Beispiel: Yesterday I phoned a call-in on the radio and talked about my hobby. (Gestern habe ich bei einer Call-in-Sendung im Radio angerufen und über mein Hobby gesprochen.) Kommt von to call.",
+    "hint": "My mum listens to a call-in every morning."
+  },
+  {
+    "code": "EV-036",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Sendung, bei der sich das Publikum telefonisch beteiligen kann**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "call-in",
+        "call in"
+      ]
+    },
+    "explanation": "call-in = Sendung, bei der sich das Publikum telefonisch beteiligen kann. Beispiel: Yesterday I phoned a call-in on the radio and talked about my hobby. (Gestern habe ich bei einer Call-in-Sendung im Radio angerufen und über mein Hobby gesprochen.) Kommt von to call.",
+    "hint": "Nomen, beginnt mit „c“."
+  },
+  {
+    "code": "EV-037",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **imagination**?",
+    "payload": {
+      "options": [
+        "Trainer/-in",
+        "Käfig",
+        "Fantasie; Vorstellungskraft",
+        "Chance; Gelegenheit; Möglichkeit"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "imagination = Fantasie; Vorstellungskraft. Beispiel: Little kids often have a lot of imagination. (Kleine Kinder haben oft viel Fantasie.) Kommt von to imagine = sich vorstellen.",
+    "hint": "Use your imagination!"
+  },
+  {
+    "code": "EV-038",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Fantasie; Vorstellungskraft**",
+    "payload": {
+      "page": 183
+    },
+    "solution": {
+      "answers": [
+        "imagination"
+      ]
+    },
+    "explanation": "imagination = Fantasie; Vorstellungskraft. Beispiel: Little kids often have a lot of imagination. (Kleine Kinder haben oft viel Fantasie.) Kommt von to imagine = sich vorstellen.",
+    "hint": "Nomen, beginnt mit „i“."
+  },
+  {
+    "code": "EV-039",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to compete (with/against)**?",
+    "payload": {
+      "options": [
+        "Spaß haben; sich amüsieren",
+        "anderer Meinung sein; nicht einverstanden sein (mit)",
+        "reagieren",
+        "konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen)"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to compete (with/against) = konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen). Beispiel: Our team will compete against the best school in town. (Unser Team tritt gegen die beste Schule der Stadt an.) Nomen dazu: a competition = ein Wettbewerb.",
+    "hint": "Ten teams compete in the race."
+  },
+  {
+    "code": "EV-040",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen)**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to compete",
+        "to compete with",
+        "to compete against"
+      ]
+    },
+    "explanation": "to compete (with/against) = konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen). Beispiel: Our team will compete against the best school in town. (Unser Team tritt gegen die beste Schule der Stadt an.) Nomen dazu: a competition = ein Wettbewerb.",
+    "hint": "Verb, beginnt mit „c“."
+  },
+  {
+    "code": "EV-041",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **themselves**?",
+    "payload": {
+      "options": [
+        "euch selbst",
+        "sich selbst (3. P. Pl.)",
+        "uns selbst",
+        "einander; sich gegenseitig"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "themselves = sich selbst (3. P. Pl.). Beispiel: The twins taught themselves to swim. (Die Zwillinge haben sich selbst das Schwimmen beigebracht.) Nicht verwechseln: each other = einander, sich gegenseitig.",
+    "hint": "The kids made the cake themselves."
+  },
+  {
+    "code": "EV-042",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **sich selbst (3. P. Pl.)**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "themselves"
+      ]
+    },
+    "explanation": "themselves = sich selbst (3. P. Pl.). Beispiel: The twins taught themselves to swim. (Die Zwillinge haben sich selbst das Schwimmen beigebracht.) Nicht verwechseln: each other = einander, sich gegenseitig.",
+    "hint": "Pronomen, beginnt mit „t“."
+  },
+  {
+    "code": "EV-043",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to push oneself**?",
+    "payload": {
+      "options": [
+        "unterbrechen",
+        "besiegen",
+        "sich alles abverlangen; sich Mühe geben",
+        "bleiben"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to push oneself = sich alles abverlangen; sich Mühe geben. Beispiel: Before a race she really pushes herself. (Vor einem Rennen verlangt sie sich alles ab.) Im Satz passt du oneself an: I push myself, she pushes herself.",
+    "hint": "You have to push yourself a bit."
+  },
+  {
+    "code": "EV-044",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **sich alles abverlangen; sich Mühe geben**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to push oneself"
+      ]
+    },
+    "explanation": "to push oneself = sich alles abverlangen; sich Mühe geben. Beispiel: Before a race she really pushes herself. (Vor einem Rennen verlangt sie sich alles ab.) Im Satz passt du oneself an: I push myself, she pushes herself.",
+    "hint": "Verb, beginnt mit „p“."
+  },
+  {
+    "code": "EV-045",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to study**?",
+    "payload": {
+      "options": [
+        "Kompromisse eingehen",
+        "motivieren",
+        "kritisieren",
+        "studieren; lernen"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to study = studieren; lernen. Beispiel: My cousin studies maths at university. (Mein Cousin studiert Mathe an der Uni.)",
+    "hint": "I study for my English test."
+  },
+  {
+    "code": "EV-046",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **studieren; lernen** (nicht „learn“)",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to study"
+      ]
+    },
+    "explanation": "to study = studieren; lernen. Beispiel: My cousin studies maths at university. (Mein Cousin studiert Mathe an der Uni.)",
+    "hint": "Verb, beginnt mit „s“."
+  },
+  {
+    "code": "EV-047",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to enjoy oneself**?",
+    "payload": {
+      "options": [
+        "Spaß haben; sich amüsieren",
+        "besiegen",
+        "fahren",
+        "unterbrechen"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "to enjoy oneself = Spaß haben; sich amüsieren. Beispiel: We enjoyed ourselves a lot at the party. (Wir hatten auf der Party viel Spaß.) Im Satz passt du oneself an: I enjoy myself, we enjoy ourselves.",
+    "hint": "Did you enjoy yourself at the zoo?"
+  },
+  {
+    "code": "EV-048",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Spaß haben; sich amüsieren**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to enjoy oneself"
+      ]
+    },
+    "explanation": "to enjoy oneself = Spaß haben; sich amüsieren. Beispiel: We enjoyed ourselves a lot at the party. (Wir hatten auf der Party viel Spaß.) Im Satz passt du oneself an: I enjoy myself, we enjoy ourselves.",
+    "hint": "Verb, beginnt mit „e“."
+  },
+  {
+    "code": "EV-049",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **waste**?",
+    "payload": {
+      "options": [
+        "Note; Klasse",
+        "Bindung",
+        "Trainer/-in",
+        "Verschwendung"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "waste = Verschwendung. Beispiel: Watching this film was a waste of time. (Diesen Film anzuschauen war Zeitverschwendung.) Verb dazu: to waste = verschwenden.",
+    "hint": "Don't buy it. It's a waste of money."
+  },
+  {
+    "code": "EV-050",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Verschwendung**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "waste"
+      ]
+    },
+    "explanation": "waste = Verschwendung. Beispiel: Watching this film was a waste of time. (Diesen Film anzuschauen war Zeitverschwendung.) Verb dazu: to waste = verschwenden.",
+    "hint": "Nomen, beginnt mit „w“."
+  },
+  {
+    "code": "EV-051",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to accept**?",
+    "payload": {
+      "options": [
+        "fahren",
+        "beurteilen; bewerten",
+        "akzeptieren; hinnehmen; annehmen",
+        "anderer Meinung sein; nicht einverstanden sein (mit)"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to accept = akzeptieren; hinnehmen; annehmen. Beispiel: Mia accepted the invitation to my party. (Mia hat die Einladung zu meiner Party angenommen.)",
+    "hint": "I can't accept that!"
+  },
+  {
+    "code": "EV-052",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **akzeptieren; hinnehmen; annehmen**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to accept"
+      ]
+    },
+    "explanation": "to accept = akzeptieren; hinnehmen; annehmen. Beispiel: Mia accepted the invitation to my party. (Mia hat die Einladung zu meiner Party angenommen.)",
+    "hint": "Verb, beginnt mit „a“."
+  },
+  {
+    "code": "EV-053",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **grade (AE)**?",
+    "payload": {
+      "options": [
+        "Gericht; Speise",
+        "Ohr",
+        "Note; Klasse",
+        "Verschwendung"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "grade (AE) = Note; Klasse. Beispiel: I got a good grade in my maths test. (Ich habe in meinem Mathetest eine gute Note bekommen.) Amerikanisch. Im britischen Englisch heißt die Note mark, die Klasse class oder year.",
+    "hint": "She's in seventh grade."
+  },
+  {
+    "code": "EV-054",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Note; Klasse**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "grade"
+      ]
+    },
+    "explanation": "grade (AE) = Note; Klasse. Beispiel: I got a good grade in my maths test. (Ich habe in meinem Mathetest eine gute Note bekommen.) Amerikanisch. Im britischen Englisch heißt die Note mark, die Klasse class oder year.",
+    "hint": "Nomen, beginnt mit „g“."
+  },
+  {
+    "code": "EV-055",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to make it**?",
+    "payload": {
+      "options": [
+        "sich auf halbem Weg treffen",
+        "nicht ganz Unrecht haben",
+        "es schaffen",
+        "Ich habe nichts dagegen (zu) ...; Mir macht es nichts aus (zu) ..."
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to make it = es schaffen. Beispiel: The bus leaves in five minutes. Can we make it? (Der Bus fährt in fünf Minuten ab. Schaffen wir es?) Unregelmäßig: make, made, made.",
+    "hint": "Run! We can make it!"
+  },
+  {
+    "code": "EV-056",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **es schaffen**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to make it"
+      ]
+    },
+    "explanation": "to make it = es schaffen. Beispiel: The bus leaves in five minutes. Can we make it? (Der Bus fährt in fünf Minuten ab. Schaffen wir es?) Unregelmäßig: make, made, made.",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „m“."
+  },
+  {
+    "code": "EV-057",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to complain**?",
+    "payload": {
+      "options": [
+        "reagieren",
+        "motivieren",
+        "von Bedeutung sein; etw. ausmachen",
+        "sich beschweren; sich beklagen"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to complain = sich beschweren; sich beklagen. Beispiel: Dad complained about the loud music. (Papa hat sich über die laute Musik beschwert.)",
+    "hint": "Stop complaining!"
+  },
+  {
+    "code": "EV-058",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **sich beschweren; sich beklagen**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to complain"
+      ]
+    },
+    "explanation": "to complain = sich beschweren; sich beklagen. Beispiel: Dad complained about the loud music. (Papa hat sich über die laute Musik beschwert.)",
+    "hint": "Verb, beginnt mit „c“."
+  },
+  {
+    "code": "EV-059",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **report card (AE)**?",
+    "payload": {
+      "options": [
+        "Sendung, bei der sich das Publikum telefonisch beteiligen kann",
+        "Zeugnis",
+        "Mittelschule (weiterführende Schule in den USA, Mittelstufe)",
+        "Training; Übung"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "report card (AE) = Zeugnis. Beispiel: I showed my report card to my parents. (Ich habe meinen Eltern mein Zeugnis gezeigt.)",
+    "hint": "Her report card was great this year."
+  },
+  {
+    "code": "EV-060",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Zeugnis**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "report card"
+      ]
+    },
+    "explanation": "report card (AE) = Zeugnis. Beispiel: I showed my report card to my parents. (Ich habe meinen Eltern mein Zeugnis gezeigt.)",
+    "hint": "Nomen, beginnt mit „r“."
+  },
+  {
+    "code": "EV-061",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **loser**?",
+    "payload": {
+      "options": [
+        "Verantwortung",
+        "Schweinefleisch",
+        "Natur",
+        "Verlierer/-in; Loser/-in"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "loser = Verlierer/-in; Loser/-in. Beispiel: Don't be a bad loser. It's only a game! (Sei kein schlechter Verlierer. Es ist nur ein Spiel!) Kommt von to lose = verlieren.",
+    "hint": "Nobody wants to feel like a loser."
+  },
+  {
+    "code": "EV-062",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Verlierer/-in; Loser/-in**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "loser"
+      ]
+    },
+    "explanation": "loser = Verlierer/-in; Loser/-in. Beispiel: Don't be a bad loser. It's only a game! (Sei kein schlechter Verlierer. Es ist nur ein Spiel!) Kommt von to lose = verlieren.",
+    "hint": "Nomen, beginnt mit „l“."
+  },
+  {
+    "code": "EV-063",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to be hard on sb**?",
+    "payload": {
+      "options": [
+        "in sein; angesagt sein",
+        "Hausarrest haben",
+        "jmdm. leichtfallen",
+        "streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to be hard on sb = streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen. Beispiel: My coach is hard on me, but he helps me a lot. (Mein Trainer ist streng mit mir, aber er hilft mir sehr.)",
+    "hint": "Don't be so hard on yourself."
+  },
+  {
+    "code": "EV-064",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to be hard on sb"
+      ]
+    },
+    "explanation": "to be hard on sb = streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen. Beispiel: My coach is hard on me, but he helps me a lot. (Mein Trainer ist streng mit mir, aber er hilft mir sehr.)",
+    "hint": "Wendung mit 5 Wörtern, beginnt mit „b“."
+  },
+  {
+    "code": "EV-065",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to relax**?",
+    "payload": {
+      "options": [
+        "überzeugen",
+        "sich entspannen; sich ausruhen; sich beruhigen",
+        "anderer Meinung sein; nicht einverstanden sein (mit)",
+        "kritisieren"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "to relax = sich entspannen; sich ausruhen; sich beruhigen. Beispiel: On Sundays I like to relax on the sofa. (Sonntags entspanne ich mich gern auf dem Sofa.) Achtung: ohne myself! Man sagt I relax, nicht I relax myself.",
+    "hint": "Relax, it's only a test."
+  },
+  {
+    "code": "EV-066",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **sich entspannen; sich ausruhen; sich beruhigen**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "to relax"
+      ]
+    },
+    "explanation": "to relax = sich entspannen; sich ausruhen; sich beruhigen. Beispiel: On Sundays I like to relax on the sofa. (Sonntags entspanne ich mich gern auf dem Sofa.) Achtung: ohne myself! Man sagt I relax, nicht I relax myself.",
+    "hint": "Verb, beginnt mit „r“."
+  },
+  {
+    "code": "EV-067",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **laid-back**?",
+    "payload": {
+      "options": [
+        "bestimmt; sicher; gewiss",
+        "reich",
+        "entspannt; locker",
+        "erfolgreich"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "laid-back = entspannt; locker. Beispiel: My uncle is very laid-back. Nothing makes him angry. (Mein Onkel ist sehr locker. Nichts macht ihn wütend.)",
+    "hint": "Our new teacher is quite laid-back."
+  },
+  {
+    "code": "EV-068",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **entspannt; locker**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "laid-back",
+        "laid back"
+      ]
+    },
+    "explanation": "laid-back = entspannt; locker. Beispiel: My uncle is very laid-back. Nothing makes him angry. (Mein Onkel ist sehr locker. Nichts macht ihn wütend.)",
+    "hint": "Adjektiv, beginnt mit „l“."
+  },
+  {
+    "code": "EV-069",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **bossy**?",
+    "payload": {
+      "options": [
+        "herrisch; rechthaberisch",
+        "lecker; schmackhaft",
+        "scharf",
+        "reich"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "bossy = herrisch; rechthaberisch. Beispiel: My little sister is so bossy. She always tells everyone what to do. (Meine kleine Schwester ist so herrisch. Sie sagt allen immer, was sie tun sollen.)",
+    "hint": "Don't be so bossy!"
+  },
+  {
+    "code": "EV-070",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **herrisch; rechthaberisch**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "bossy"
+      ]
+    },
+    "explanation": "bossy = herrisch; rechthaberisch. Beispiel: My little sister is so bossy. She always tells everyone what to do. (Meine kleine Schwester ist so herrisch. Sie sagt allen immer, was sie tun sollen.)",
+    "hint": "Adjektiv, beginnt mit „b“."
+  },
+  {
+    "code": "EV-071",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **rich**?",
+    "payload": {
+      "options": [
+        "missverstanden",
+        "reich",
+        "ehrgeizig",
+        "vergleichbar"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "rich = reich. Beispiel: He's rich. He has three cars and a big house. (Er ist reich. Er hat drei Autos und ein großes Haus.) Gegenteil: poor = arm.",
+    "hint": "I want to be rich one day."
+  },
+  {
+    "code": "EV-072",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **reich**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "rich"
+      ]
+    },
+    "explanation": "rich = reich. Beispiel: He's rich. He has three cars and a big house. (Er ist reich. Er hat drei Autos und ein großes Haus.) Gegenteil: poor = arm.",
+    "hint": "Adjektiv, beginnt mit „r“."
+  },
+  {
+    "code": "EV-073",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **college**?",
+    "payload": {
+      "options": [
+        "Sicherheit",
+        "Schweinefleisch",
+        "Universität (in den USA)",
+        "Ohr"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "college = Universität (in den USA). Beispiel: After high school, my cousin wants to go to college in Boston. (Nach der Highschool will mein Cousin in Boston an die Uni gehen.)",
+    "hint": "My brother is at college now."
+  },
+  {
+    "code": "EV-074",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Universität (in den USA)**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "college"
+      ]
+    },
+    "explanation": "college = Universität (in den USA). Beispiel: After high school, my cousin wants to go to college in Boston. (Nach der Highschool will mein Cousin in Boston an die Uni gehen.)",
+    "hint": "Nomen, beginnt mit „c“."
+  },
+  {
+    "code": "EV-075",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **all by oneself**?",
+    "payload": {
+      "options": [
+        "ganz allein",
+        "nicht ganz Unrecht haben",
+        "Hausarrest haben",
+        "out sein"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "all by oneself = ganz allein. Beispiel: Tim built the tree house all by himself. (Tim hat das Baumhaus ganz allein gebaut.) Im Satz passt du oneself an: all by myself, all by himself.",
+    "hint": "She did her homework all by herself."
+  },
+  {
+    "code": "EV-076",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **ganz allein**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "all by oneself"
+      ]
+    },
+    "explanation": "all by oneself = ganz allein. Beispiel: Tim built the tree house all by himself. (Tim hat das Baumhaus ganz allein gebaut.) Im Satz passt du oneself an: all by myself, all by himself.",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „a“."
+  },
+  {
+    "code": "EV-077",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **successful**?",
+    "payload": {
+      "options": [
+        "erfolgreich",
+        "herrisch; rechthaberisch",
+        "vergleichbar",
+        "ländlich"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "successful = erfolgreich. Beispiel: The school concert was very successful. (Das Schulkonzert war sehr erfolgreich.) Nomen dazu: success = Erfolg.",
+    "hint": "Her band is very successful."
+  },
+  {
+    "code": "EV-078",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **erfolgreich**",
+    "payload": {
+      "page": 184
+    },
+    "solution": {
+      "answers": [
+        "successful"
+      ]
+    },
+    "explanation": "successful = erfolgreich. Beispiel: The school concert was very successful. (Das Schulkonzert war sehr erfolgreich.) Nomen dazu: success = Erfolg.",
+    "hint": "Adjektiv, beginnt mit „s“."
+  },
+  {
+    "code": "EV-079",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **stubborn**?",
+    "payload": {
+      "options": [
+        "eigensinnig; störrisch",
+        "missverstanden",
+        "extrem; radikal; äußerste/-r/-s",
+        "spektakulär"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "stubborn = eigensinnig; störrisch. Beispiel: Ben never changes his mind. He's so stubborn. (Ben ändert nie seine Meinung. Er ist so eigensinnig.)",
+    "hint": "My grandpa can be very stubborn."
+  },
+  {
+    "code": "EV-080",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **eigensinnig; störrisch**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "stubborn"
+      ]
+    },
+    "explanation": "stubborn = eigensinnig; störrisch. Beispiel: Ben never changes his mind. He's so stubborn. (Ben ändert nie seine Meinung. Er ist so eigensinnig.)",
+    "hint": "Adjektiv, beginnt mit „s“."
+  },
+  {
+    "code": "EV-081",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to make a decision**?",
+    "payload": {
+      "options": [
+        "so; auf diese Weise",
+        "eine Entscheidung treffen",
+        "an jmds. Stelle",
+        "jmdm. leichtfallen"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "to make a decision = eine Entscheidung treffen. Beispiel: I can't make a decision. Both jackets are nice. (Ich kann keine Entscheidung treffen. Beide Jacken sind schön.) Unregelmäßig: make, made, made.",
+    "hint": "It's time to make a decision."
+  },
+  {
+    "code": "EV-082",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **eine Entscheidung treffen**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "to make a decision"
+      ]
+    },
+    "explanation": "to make a decision = eine Entscheidung treffen. Beispiel: I can't make a decision. Both jackets are nice. (Ich kann keine Entscheidung treffen. Beide Jacken sind schön.) Unregelmäßig: make, made, made.",
+    "hint": "Wendung mit 4 Wörtern, beginnt mit „m“."
+  },
+  {
+    "code": "EV-083",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **ambitious**?",
+    "payload": {
+      "options": [
+        "ehrgeizig",
+        "reich",
+        "ländlich",
+        "verständlich"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "ambitious = ehrgeizig. Beispiel: Sara wants to win every race. She's very ambitious. (Sara will jedes Rennen gewinnen. Sie ist sehr ehrgeizig.)",
+    "hint": "My brother is ambitious at school."
+  },
+  {
+    "code": "EV-084",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **ehrgeizig**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "ambitious"
+      ]
+    },
+    "explanation": "ambitious = ehrgeizig. Beispiel: Sara wants to win every race. She's very ambitious. (Sara will jedes Rennen gewinnen. Sie ist sehr ehrgeizig.)",
+    "hint": "Adjektiv, beginnt mit „a“."
+  },
+  {
+    "code": "EV-085",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **pushy**?",
+    "payload": {
+      "options": [
+        "aufdringlich; penetrant; aggressiv",
+        "streng; strikt",
+        "entspannt; locker",
+        "zukünftig"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "pushy = aufdringlich; penetrant; aggressiv. Beispiel: The man in the shop was so pushy that I left. (Der Mann im Laden war so aufdringlich, dass ich gegangen bin.) Kommt von to push.",
+    "hint": "Please don't be so pushy."
+  },
+  {
+    "code": "EV-086",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **aufdringlich; penetrant; aggressiv**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "pushy"
+      ]
+    },
+    "explanation": "pushy = aufdringlich; penetrant; aggressiv. Beispiel: The man in the shop was so pushy that I left. (Der Mann im Laden war so aufdringlich, dass ich gegangen bin.) Kommt von to push.",
+    "hint": "Adjektiv, beginnt mit „p“."
+  },
+  {
+    "code": "EV-087",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to react**?",
+    "payload": {
+      "options": [
+        "reagieren",
+        "(sich) entwickeln",
+        "beurteilen; bewerten",
+        "konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen)"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "to react = reagieren. Beispiel: How did your mum react when she saw your room? (Wie hat deine Mutter reagiert, als sie dein Zimmer gesehen hat?) Nomen dazu: reaction.",
+    "hint": "He didn't react to my message."
+  },
+  {
+    "code": "EV-088",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **reagieren**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "to react"
+      ]
+    },
+    "explanation": "to react = reagieren. Beispiel: How did your mum react when she saw your room? (Wie hat deine Mutter reagiert, als sie dein Zimmer gesehen hat?) Nomen dazu: reaction.",
+    "hint": "Verb, beginnt mit „r“."
+  },
+  {
+    "code": "EV-089",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **in sb's shoes**?",
+    "payload": {
+      "options": [
+        "an jmds. Stelle",
+        "streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen",
+        "so; auf diese Weise",
+        "etw. richtigstellen"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "in sb's shoes = an jmds. Stelle. Beispiel: Imagine you're in my shoes. It isn't easy! (Stell dir vor, du bist an meiner Stelle. Es ist nicht leicht!)",
+    "hint": "I'm happy I'm not in his shoes."
+  },
+  {
+    "code": "EV-090",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **an jmds. Stelle**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "in sb's shoes"
+      ]
+    },
+    "explanation": "in sb's shoes = an jmds. Stelle. Beispiel: Imagine you're in my shoes. It isn't easy! (Stell dir vor, du bist an meiner Stelle. Es ist nicht leicht!)",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „i“."
+  },
+  {
+    "code": "EV-091",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to criticize (AE)**?",
+    "payload": {
+      "options": [
+        "besiegen",
+        "konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen)",
+        "bleiben",
+        "kritisieren"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to criticize (AE) = kritisieren. Beispiel: Don't criticize my drawing. I did my best! (Kritisiere meine Zeichnung nicht. Ich habe mein Bestes gegeben!) Im britischen Englisch schreibt man auch criticise.",
+    "hint": "My dad often criticizes my music."
+  },
+  {
+    "code": "EV-092",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **kritisieren**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "to criticize",
+        "to criticise"
+      ]
+    },
+    "explanation": "to criticize (AE) = kritisieren. Beispiel: Don't criticize my drawing. I did my best! (Kritisiere meine Zeichnung nicht. Ich habe mein Bestes gegeben!) Im britischen Englisch schreibt man auch criticise.",
+    "hint": "Verb, beginnt mit „c“."
+  },
+  {
+    "code": "EV-093",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to push sb**?",
+    "payload": {
+      "options": [
+        "(sich) entwickeln",
+        "Kompromisse eingehen",
+        "jmdn. drängen",
+        "fahren"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to push sb = jmdn. drängen. Beispiel: My parents don't push me to do sports. (Meine Eltern drängen mich nicht, Sport zu machen.)",
+    "hint": "Don't push him too much."
+  },
+  {
+    "code": "EV-094",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **jmdn. drängen**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "to push sb"
+      ]
+    },
+    "explanation": "to push sb = jmdn. drängen. Beispiel: My parents don't push me to do sports. (Meine Eltern drängen mich nicht, Sport zu machen.)",
+    "hint": "Verb, beginnt mit „p“."
+  },
+  {
+    "code": "EV-095",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to motivate**?",
+    "payload": {
+      "options": [
+        "Kompromisse eingehen",
+        "konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen)",
+        "motivieren",
+        "reagieren"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to motivate = motivieren. Beispiel: Good music motivates me when I run. (Gute Musik motiviert mich beim Laufen.)",
+    "hint": "Our coach motivates the team."
+  },
+  {
+    "code": "EV-096",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **motivieren**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "to motivate"
+      ]
+    },
+    "explanation": "to motivate = motivieren. Beispiel: Good music motivates me when I run. (Gute Musik motiviert mich beim Laufen.)",
+    "hint": "Verb, beginnt mit „m“."
+  },
+  {
+    "code": "EV-097",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **chance**?",
+    "payload": {
+      "options": [
+        "Traum",
+        "Chance; Gelegenheit; Möglichkeit",
+        "Einfluss",
+        "Note; Klasse"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "chance = Chance; Gelegenheit; Möglichkeit. Beispiel: This is your chance to show what you can do. (Das ist deine Chance zu zeigen, was du kannst.)",
+    "hint": "Please give me one more chance."
+  },
+  {
+    "code": "EV-098",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Chance; Gelegenheit; Möglichkeit**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "chance"
+      ]
+    },
+    "explanation": "chance = Chance; Gelegenheit; Möglichkeit. Beispiel: This is your chance to show what you can do. (Das ist deine Chance zu zeigen, was du kannst.)",
+    "hint": "Nomen, beginnt mit „c“."
+  },
+  {
+    "code": "EV-099",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **middle school (AE)**?",
+    "payload": {
+      "options": [
+        "Persönlichkeit",
+        "Mittelschule (weiterführende Schule in den USA, Mittelstufe)",
+        "Fantasie; Vorstellungskraft",
+        "Argument"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "middle school (AE) = Mittelschule (weiterführende Schule in den USA, Mittelstufe). Beispiel: In the US, kids go to middle school before high school. (In den USA gehen Kinder vor der Highschool auf die Middle School.)",
+    "hint": "My cousin goes to middle school in Iowa."
+  },
+  {
+    "code": "EV-100",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Mittelschule (weiterführende Schule in den USA, Mittelstufe)**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "middle school"
+      ]
+    },
+    "explanation": "middle school (AE) = Mittelschule (weiterführende Schule in den USA, Mittelstufe). Beispiel: In the US, kids go to middle school before high school. (In den USA gehen Kinder vor der Highschool auf die Middle School.)",
+    "hint": "Nomen, beginnt mit „m“."
+  },
+  {
+    "code": "EV-101",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **trainer**?",
+    "payload": {
+      "options": [
+        "Traum",
+        "Haut; Fell",
+        "Trainer/-in",
+        "Käfig"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "trainer = Trainer/-in. Beispiel: Our trainer shows us new exercises every week. (Unsere Trainerin zeigt uns jede Woche neue Übungen.) Verwandt: to train, training.",
+    "hint": "The trainer helps the young riders."
+  },
+  {
+    "code": "EV-102",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Trainer/-in**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "trainer"
+      ]
+    },
+    "explanation": "trainer = Trainer/-in. Beispiel: Our trainer shows us new exercises every week. (Unsere Trainerin zeigt uns jede Woche neue Übungen.) Verwandt: to train, training.",
+    "hint": "Nomen, beginnt mit „t“."
+  },
+  {
+    "code": "EV-103",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **safety**?",
+    "payload": {
+      "options": [
+        "Fantasie; Vorstellungskraft",
+        "Sicherheit",
+        "Verlierer/-in; Loser/-in",
+        "Sendung, bei der sich das Publikum telefonisch beteiligen kann"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "safety = Sicherheit. Beispiel: For your safety, please wear a helmet. (Trag bitte zu deiner Sicherheit einen Helm.) Adjektiv dazu: safe = sicher.",
+    "hint": "Safety comes first!"
+  },
+  {
+    "code": "EV-104",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Sicherheit**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "safety"
+      ]
+    },
+    "explanation": "safety = Sicherheit. Beispiel: For your safety, please wear a helmet. (Trag bitte zu deiner Sicherheit einen Helm.) Adjektiv dazu: safe = sicher.",
+    "hint": "Nomen, beginnt mit „s“."
+  },
+  {
+    "code": "EV-105",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **bond**?",
+    "payload": {
+      "options": [
+        "Körper",
+        "Topf",
+        "Bindung",
+        "Ohr"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "bond = Bindung. Beispiel: There's a strong bond between my sister and me. (Zwischen meiner Schwester und mir gibt es eine starke Bindung.)",
+    "hint": "Dogs and their owners often have a special bond."
+  },
+  {
+    "code": "EV-106",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Bindung**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "bond"
+      ]
+    },
+    "explanation": "bond = Bindung. Beispiel: There's a strong bond between my sister and me. (Zwischen meiner Schwester und mir gibt es eine starke Bindung.)",
+    "hint": "Nomen, beginnt mit „b“."
+  },
+  {
+    "code": "EV-107",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to come easily to sb**?",
+    "payload": {
+      "options": [
+        "nicht ganz Unrecht haben",
+        "jmdm. leichtfallen",
+        "Hausarrest haben",
+        "am meisten"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "to come easily to sb = jmdm. leichtfallen. Beispiel: Maths comes easily to my brother. (Mathe fällt meinem Bruder leicht.) Unregelmäßig: come, came, come.",
+    "hint": "Drawing comes easily to her."
+  },
+  {
+    "code": "EV-108",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **jmdm. leichtfallen**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "to come easily to sb"
+      ]
+    },
+    "explanation": "to come easily to sb = jmdm. leichtfallen. Beispiel: Maths comes easily to my brother. (Mathe fällt meinem Bruder leicht.) Unregelmäßig: come, came, come.",
+    "hint": "Wendung mit 5 Wörtern, beginnt mit „c“."
+  },
+  {
+    "code": "EV-109",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **influence**?",
+    "payload": {
+      "options": [
+        "Persönlichkeit",
+        "Einfluss",
+        "Körper",
+        "Redensart; Sprichwort"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "influence = Einfluss. Beispiel: My friends have a big influence on me. (Meine Freunde haben einen großen Einfluss auf mich.)",
+    "hint": "French had a big influence on English."
+  },
+  {
+    "code": "EV-110",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Einfluss**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "influence"
+      ]
+    },
+    "explanation": "influence = Einfluss. Beispiel: My friends have a big influence on me. (Meine Freunde haben einen großen Einfluss auf mich.)",
+    "hint": "Nomen, beginnt mit „i“."
+  },
+  {
+    "code": "EV-111",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **Norman**?",
+    "payload": {
+      "options": [
+        "Griechisch; griechisch; aus Griechenland",
+        "Sachse/Sächsin; sächsisch",
+        "Angelsachse; Angelsächsin; angelsächsisch",
+        "Normanne/Normannin; normannisch"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Norman = Normanne/Normannin; normannisch. Beispiel: The Normans came from the north of France. (Die Normannen kamen aus dem Norden Frankreichs.) Wie alle Völker und Nationalitäten schreibt man Norman groß.",
+    "hint": "The Norman king spoke French."
+  },
+  {
+    "code": "EV-112",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Normanne/Normannin; normannisch**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "Norman"
+      ]
+    },
+    "explanation": "Norman = Normanne/Normannin; normannisch. Beispiel: The Normans came from the north of France. (Die Normannen kamen aus dem Norden Frankreichs.) Wie alle Völker und Nationalitäten schreibt man Norman groß.",
+    "hint": "Großgeschrieben, beginnt mit „N“."
+  },
+  {
+    "code": "EV-113",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **pork**?",
+    "payload": {
+      "options": [
+        "Käfig",
+        "Schweinefleisch",
+        "Verschwendung",
+        "Trainer/-in"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "pork = Schweinefleisch. Beispiel: I don't eat pork, but I love chicken. (Ich esse kein Schweinefleisch, aber ich liebe Hähnchen.) Wie beef kommt pork aus dem Französischen (porc).",
+    "hint": "We had pork for lunch."
+  },
+  {
+    "code": "EV-114",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Schweinefleisch**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "pork"
+      ]
+    },
+    "explanation": "pork = Schweinefleisch. Beispiel: I don't eat pork, but I love chicken. (Ich esse kein Schweinefleisch, aber ich liebe Hähnchen.) Wie beef kommt pork aus dem Französischen (porc).",
+    "hint": "Nomen, beginnt mit „p“."
+  },
+  {
+    "code": "EV-115",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **beef**?",
+    "payload": {
+      "options": [
+        "Haut; Fell",
+        "Rindfleisch",
+        "Tauchen",
+        "Schweinefleisch"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "beef = Rindfleisch. Beispiel: This burger is made of beef. (Dieser Burger ist aus Rindfleisch.) Wie pork kommt beef aus dem Französischen (bœuf).",
+    "hint": "Do you like beef?"
+  },
+  {
+    "code": "EV-116",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Rindfleisch**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "beef"
+      ]
+    },
+    "explanation": "beef = Rindfleisch. Beispiel: This burger is made of beef. (Dieser Burger ist aus Rindfleisch.) Wie pork kommt beef aus dem Französischen (bœuf).",
+    "hint": "Nomen, beginnt mit „b“."
+  },
+  {
+    "code": "EV-117",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to mix**?",
+    "payload": {
+      "options": [
+        "mixen; mischen; vermischen",
+        "sich entspannen; sich ausruhen; sich beruhigen",
+        "akzeptieren; hinnehmen; annehmen",
+        "(sich) entwickeln"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "to mix = mixen; mischen; vermischen. Beispiel: Mix the milk and the eggs in a bowl. (Misch die Milch und die Eier in einer Schüssel.)",
+    "hint": "Can you mix the colours?"
+  },
+  {
+    "code": "EV-118",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **mixen; mischen; vermischen**",
+    "payload": {
+      "page": 185
+    },
+    "solution": {
+      "answers": [
+        "to mix"
+      ]
+    },
+    "explanation": "to mix = mixen; mischen; vermischen. Beispiel: Mix the milk and the eggs in a bowl. (Misch die Milch und die Eier in einer Schüssel.)",
+    "hint": "Verb, beginnt mit „m“."
+  },
+  {
+    "code": "EV-119",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **future**?",
+    "payload": {
+      "options": [
+        "scharf",
+        "zukünftig",
+        "bestimmt; sicher; gewiss",
+        "schlau; klug; intelligent"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "future = zukünftig. Beispiel: We talked about our future jobs. (Wir haben über unsere zukünftigen Berufe gesprochen.) Als Nomen: a future = eine Zukunft.",
+    "hint": "These are our future stars!"
+  },
+  {
+    "code": "EV-120",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **zukünftig**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "future"
+      ]
+    },
+    "explanation": "future = zukünftig. Beispiel: We talked about our future jobs. (Wir haben über unsere zukünftigen Berufe gesprochen.) Als Nomen: a future = eine Zukunft.",
+    "hint": "Adjektiv, beginnt mit „f“."
+  },
+  {
+    "code": "EV-121",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **rural**?",
+    "payload": {
+      "options": [
+        "herrisch; rechthaberisch",
+        "extrem; radikal; äußerste/-r/-s",
+        "schlau; klug; intelligent",
+        "ländlich"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "rural = ländlich. Beispiel: My grandparents live in a rural area with lots of farms. (Meine Großeltern leben in einer ländlichen Gegend mit vielen Bauernhöfen.)",
+    "hint": "Iowa is a very rural state."
+  },
+  {
+    "code": "EV-122",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **ländlich**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "rural"
+      ]
+    },
+    "explanation": "rural = ländlich. Beispiel: My grandparents live in a rural area with lots of farms. (Meine Großeltern leben in einer ländlichen Gegend mit vielen Bauernhöfen.)",
+    "hint": "Adjektiv, beginnt mit „r“."
+  },
+  {
+    "code": "EV-123",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **responsibility**?",
+    "payload": {
+      "options": [
+        "Natur",
+        "Verantwortung",
+        "Logik",
+        "Schweinefleisch"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "responsibility = Verantwortung. Beispiel: Having a pet is a big responsibility. (Ein Haustier zu haben ist eine große Verantwortung.)",
+    "hint": "It's your responsibility to feed the cat."
+  },
+  {
+    "code": "EV-124",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Verantwortung**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "responsibility"
+      ]
+    },
+    "explanation": "responsibility = Verantwortung. Beispiel: Having a pet is a big responsibility. (Ein Haustier zu haben ist eine große Verantwortung.)",
+    "hint": "Nomen, beginnt mit „r“."
+  },
+  {
+    "code": "EV-125",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **living**?",
+    "payload": {
+      "options": [
+        "Einfluss",
+        "Lebensweise",
+        "Rindfleisch",
+        "Redensart; Sprichwort"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "living = Lebensweise. Beispiel: Healthy living means good food and lots of sleep. (Eine gesunde Lebensweise bedeutet gutes Essen und viel Schlaf.) Kommt von to live.",
+    "hint": "Country living is very quiet."
+  },
+  {
+    "code": "EV-126",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Lebensweise**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "living"
+      ]
+    },
+    "explanation": "living = Lebensweise. Beispiel: Healthy living means good food and lots of sleep. (Eine gesunde Lebensweise bedeutet gutes Essen und viel Schlaf.) Kommt von to live.",
+    "hint": "Nomen, beginnt mit „l“."
+  },
+  {
+    "code": "EV-127",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to be grounded**?",
+    "payload": {
+      "options": [
+        "in sein; angesagt sein",
+        "eine Entscheidung treffen",
+        "Hausarrest haben",
+        "es schaffen"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to be grounded = Hausarrest haben. Beispiel: I came home too late, so now I'm grounded. (Ich bin zu spät nach Hause gekommen, deshalb habe ich jetzt Hausarrest.)",
+    "hint": "Max is grounded this weekend."
+  },
+  {
+    "code": "EV-128",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Hausarrest haben**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "to be grounded"
+      ]
+    },
+    "explanation": "to be grounded = Hausarrest haben. Beispiel: I came home too late, so now I'm grounded. (Ich bin zu spät nach Hause gekommen, deshalb habe ich jetzt Hausarrest.)",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „b“."
+  },
+  {
+    "code": "EV-129",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to taste**?",
+    "payload": {
+      "options": [
+        "schmecken; probieren",
+        "sich alles abverlangen; sich Mühe geben",
+        "jmdn. drängen",
+        "beurteilen; bewerten"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "to taste = schmecken; probieren. Beispiel: This soup tastes really good. (Diese Suppe schmeckt wirklich gut.) Adjektiv dazu: tasty = lecker.",
+    "hint": "Can I taste your cake?"
+  },
+  {
+    "code": "EV-130",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **schmecken; probieren**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "to taste"
+      ]
+    },
+    "explanation": "to taste = schmecken; probieren. Beispiel: This soup tastes really good. (Diese Suppe schmeckt wirklich gut.) Adjektiv dazu: tasty = lecker.",
+    "hint": "Verb, beginnt mit „t“."
+  },
+  {
+    "code": "EV-131",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **hot**?",
+    "payload": {
+      "options": [
+        "spektakulär",
+        "scharf",
+        "verständlich",
+        "herrisch; rechthaberisch"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "hot = scharf. Beispiel: This sauce is too hot for me. My mouth is on fire! (Diese Soße ist mir zu scharf. Mein Mund brennt!) hot heißt auch heiß. Bei Essen mit Chili heißt es scharf.",
+    "hint": "Do you like hot food?"
+  },
+  {
+    "code": "EV-132",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **scharf** (beim Essen, Wort mit 3 Buchstaben)",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "hot"
+      ]
+    },
+    "explanation": "hot = scharf. Beispiel: This sauce is too hot for me. My mouth is on fire! (Diese Soße ist mir zu scharf. Mein Mund brennt!) hot heißt auch heiß. Bei Essen mit Chili heißt es scharf.",
+    "hint": "Adjektiv, beginnt mit „h“."
+  },
+  {
+    "code": "EV-133",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **spectacular**?",
+    "payload": {
+      "options": [
+        "ehrgeizig",
+        "ländlich",
+        "spektakulär",
+        "eigensinnig; störrisch"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "spectacular = spektakulär. Beispiel: The view from the mountain was spectacular. (Die Aussicht vom Berg war spektakulär.)",
+    "hint": "The fireworks were spectacular."
+  },
+  {
+    "code": "EV-134",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **spektakulär**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "spectacular"
+      ]
+    },
+    "explanation": "spectacular = spektakulär. Beispiel: The view from the mountain was spectacular. (Die Aussicht vom Berg war spektakulär.)",
+    "hint": "Adjektiv, beginnt mit „s“."
+  },
+  {
+    "code": "EV-135",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **pot**?",
+    "payload": {
+      "options": [
+        "Verschwendung",
+        "Topf",
+        "Zeugnis",
+        "Universität (in den USA)"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "pot = Topf. Beispiel: Put the potatoes in a big pot with water. (Leg die Kartoffeln in einen großen Topf mit Wasser.)",
+    "hint": "The pot is on the cooker."
+  },
+  {
+    "code": "EV-136",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Topf**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "pot"
+      ]
+    },
+    "explanation": "pot = Topf. Beispiel: Put the potatoes in a big pot with water. (Leg die Kartoffeln in einen großen Topf mit Wasser.)",
+    "hint": "Nomen, beginnt mit „p“."
+  },
+  {
+    "code": "EV-137",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **tasty**?",
+    "payload": {
+      "options": [
+        "lecker; schmackhaft",
+        "ehrgeizig",
+        "entspannt; locker",
+        "spektakulär"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "tasty = lecker; schmackhaft. Beispiel: Mum's pancakes are really tasty. (Mamas Pfannkuchen sind wirklich lecker.) Verwandt: to taste = schmecken.",
+    "hint": "This apple is very tasty."
+  },
+  {
+    "code": "EV-138",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **lecker; schmackhaft** (nicht „delicious“)",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "tasty"
+      ]
+    },
+    "explanation": "tasty = lecker; schmackhaft. Beispiel: Mum's pancakes are really tasty. (Mamas Pfannkuchen sind wirklich lecker.) Verwandt: to taste = schmecken.",
+    "hint": "Adjektiv, beginnt mit „t“."
+  },
+  {
+    "code": "EV-139",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **dish**?",
+    "payload": {
+      "options": [
+        "Gericht; Speise",
+        "Ohr",
+        "Trainer/-in",
+        "Lebensweise"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "dish = Gericht; Speise. Beispiel: Pizza is my favourite dish. (Pizza ist mein Lieblingsgericht.)",
+    "hint": "This is a dish from Wales."
+  },
+  {
+    "code": "EV-140",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Gericht; Speise**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "dish"
+      ]
+    },
+    "explanation": "dish = Gericht; Speise. Beispiel: Pizza is my favourite dish. (Pizza ist mein Lieblingsgericht.)",
+    "hint": "Nomen, beginnt mit „d“."
+  },
+  {
+    "code": "EV-141",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **vegetable**?",
+    "payload": {
+      "options": [
+        "Mittelschule (weiterführende Schule in den USA, Mittelstufe)",
+        "Gemüse",
+        "Rezept",
+        "Argument"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "vegetable = Gemüse. Beispiel: Peas are my favourite vegetable. (Erbsen sind mein Lieblingsgemüse.) Im Englischen zählbar: a vegetable, two vegetables.",
+    "hint": "Eat your vegetables!"
+  },
+  {
+    "code": "EV-142",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Gemüse**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "vegetable",
+        "vegetables"
+      ]
+    },
+    "explanation": "vegetable = Gemüse. Beispiel: Peas are my favourite vegetable. (Erbsen sind mein Lieblingsgemüse.) Im Englischen zählbar: a vegetable, two vegetables.",
+    "hint": "Nomen, beginnt mit „v“."
+  },
+  {
+    "code": "EV-143",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to seem**?",
+    "payload": {
+      "options": [
+        "studieren; lernen",
+        "schmecken; probieren",
+        "scheinen",
+        "beurteilen; bewerten"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to seem = scheinen. Beispiel: Your new teacher seems nice. (Deine neue Lehrerin scheint nett zu sein.) Nicht verwechseln mit to shine: Die Sonne scheint = The sun is shining.",
+    "hint": "You seem tired today."
+  },
+  {
+    "code": "EV-144",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **scheinen**",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "to seem"
+      ]
+    },
+    "explanation": "to seem = scheinen. Beispiel: Your new teacher seems nice. (Deine neue Lehrerin scheint nett zu sein.) Nicht verwechseln mit to shine: Die Sonne scheint = The sun is shining.",
+    "hint": "Verb, beginnt mit „s“."
+  },
+  {
+    "code": "EV-145",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **certain**?",
+    "payload": {
+      "options": [
+        "schlau; klug; intelligent",
+        "zukünftig",
+        "bestimmt; sicher; gewiss",
+        "herrisch; rechthaberisch"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "certain = bestimmt; sicher; gewiss. Beispiel: Are you certain that the shop is open? (Bist du sicher, dass der Laden offen hat?)",
+    "hint": "There are certain rules in our class."
+  },
+  {
+    "code": "EV-146",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **bestimmt; sicher; gewiss** (nicht „sure“)",
+    "payload": {
+      "page": 186
+    },
+    "solution": {
+      "answers": [
+        "certain"
+      ]
+    },
+    "explanation": "certain = bestimmt; sicher; gewiss. Beispiel: Are you certain that the shop is open? (Bist du sicher, dass der Laden offen hat?)",
+    "hint": "Adjektiv, beginnt mit „c“."
+  },
+  {
+    "code": "EV-147",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **recipe**?",
+    "payload": {
+      "options": [
+        "Gemüse",
+        "Körper",
+        "Rezept",
+        "Kleiderordnung; Bekleidungsvorschriften"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "recipe = Rezept. Beispiel: Can I have the recipe for your cookies? (Kann ich das Rezept für deine Kekse haben?) Aussprache: [ˈresɪpi], drei Silben, das e am Ende spricht man mit.",
+    "hint": "Grandma has a great recipe for apple pie."
+  },
+  {
+    "code": "EV-148",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Rezept**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "recipe"
+      ]
+    },
+    "explanation": "recipe = Rezept. Beispiel: Can I have the recipe for your cookies? (Kann ich das Rezept für deine Kekse haben?) Aussprache: [ˈresɪpi], drei Silben, das e am Ende spricht man mit.",
+    "hint": "Nomen, beginnt mit „r“."
+  },
+  {
+    "code": "EV-149",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to drive**?",
+    "payload": {
+      "options": [
+        "unterbrechen",
+        "reagieren",
+        "überzeugen",
+        "fahren"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to drive = fahren. Beispiel: My mum drives me to school when it rains. (Meine Mutter fährt mich zur Schule, wenn es regnet.) Unregelmäßig: drive, drove, driven.",
+    "hint": "You can't drive a car at 13."
+  },
+  {
+    "code": "EV-150",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **fahren** (Auto, Bus)",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "to drive"
+      ]
+    },
+    "explanation": "to drive = fahren. Beispiel: My mum drives me to school when it rains. (Meine Mutter fährt mich zur Schule, wenn es regnet.) Unregelmäßig: drive, drove, driven.",
+    "hint": "Verb, beginnt mit „d“."
+  },
+  {
+    "code": "EV-151",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to put sth right**?",
+    "payload": {
+      "options": [
+        "Hausarrest haben",
+        "es ist mir egal",
+        "etw. richtigstellen",
+        "in sein; angesagt sein"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to put sth right = etw. richtigstellen. Beispiel: There's a mistake in the article. Let's put it right. (Im Artikel ist ein Fehler. Lass ihn uns richtigstellen.)",
+    "hint": "I made a mistake, but I can put it right."
+  },
+  {
+    "code": "EV-152",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **etw. richtigstellen**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "to put sth right"
+      ]
+    },
+    "explanation": "to put sth right = etw. richtigstellen. Beispiel: There's a mistake in the article. Let's put it right. (Im Artikel ist ein Fehler. Lass ihn uns richtigstellen.)",
+    "hint": "Wendung mit 4 Wörtern, beginnt mit „p“."
+  },
+  {
+    "code": "EV-153",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **understandable**?",
+    "payload": {
+      "options": [
+        "verständlich",
+        "herrisch; rechthaberisch",
+        "entspannt; locker",
+        "bestimmt; sicher; gewiss"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "understandable = verständlich. Beispiel: Your anger is understandable. (Deine Wut ist verständlich.) Kommt von to understand.",
+    "hint": "Her answer was short and understandable."
+  },
+  {
+    "code": "EV-154",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **verständlich**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "understandable"
+      ]
+    },
+    "explanation": "understandable = verständlich. Beispiel: Your anger is understandable. (Deine Wut ist verständlich.) Kommt von to understand.",
+    "hint": "Adjektiv, beginnt mit „u“."
+  },
+  {
+    "code": "EV-155",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **dream**?",
+    "payload": {
+      "options": [
+        "Traum",
+        "Persönlichkeit",
+        "Haut; Fell",
+        "Fantasie; Vorstellungskraft"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "dream = Traum. Beispiel: Last night I had a strange dream about a dog. (Letzte Nacht hatte ich einen seltsamen Traum über einen Hund.)",
+    "hint": "It's my dream to visit New York."
+  },
+  {
+    "code": "EV-156",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Traum**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "dream"
+      ]
+    },
+    "explanation": "dream = Traum. Beispiel: Last night I had a strange dream about a dog. (Letzte Nacht hatte ich einen seltsamen Traum über einen Hund.)",
+    "hint": "Nomen, beginnt mit „d“."
+  },
+  {
+    "code": "EV-157",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **extreme**?",
+    "payload": {
+      "options": [
+        "reich",
+        "extrem; radikal; äußerste/-r/-s",
+        "vergleichbar",
+        "ehrgeizig"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "extreme = extrem; radikal; äußerste/-r/-s. Beispiel: In the desert the heat can be extreme. (In der Wüste kann die Hitze extrem sein.)",
+    "hint": "That idea is too extreme for me."
+  },
+  {
+    "code": "EV-158",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **extrem; radikal; äußerste/-r/-s**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "extreme"
+      ]
+    },
+    "explanation": "extreme = extrem; radikal; äußerste/-r/-s. Beispiel: In the desert the heat can be extreme. (In der Wüste kann die Hitze extrem sein.)",
+    "hint": "Adjektiv, beginnt mit „e“."
+  },
+  {
+    "code": "EV-159",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **comparable**?",
+    "payload": {
+      "options": [
+        "vergleichbar",
+        "eigensinnig; störrisch",
+        "entspannt; locker",
+        "extrem; radikal; äußerste/-r/-s"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "comparable = vergleichbar. Beispiel: The two phones are comparable in price. (Die beiden Handys sind im Preis vergleichbar.) Kommt von to compare. Betonung auf der ersten Silbe: COMparable.",
+    "hint": "Our schools are not really comparable."
+  },
+  {
+    "code": "EV-160",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **vergleichbar**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "comparable"
+      ]
+    },
+    "explanation": "comparable = vergleichbar. Beispiel: The two phones are comparable in price. (Die beiden Handys sind im Preis vergleichbar.) Kommt von to compare. Betonung auf der ersten Silbe: COMparable.",
+    "hint": "Adjektiv, beginnt mit „c“."
+  },
+  {
+    "code": "EV-161",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to develop**?",
+    "payload": {
+      "options": [
+        "fahren",
+        "sich alles abverlangen; sich Mühe geben",
+        "(sich) entwickeln",
+        "überzeugen"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to develop = (sich) entwickeln. Beispiel: Babies develop very fast. (Babys entwickeln sich sehr schnell.)",
+    "hint": "Our town developed a lot in the last years."
+  },
+  {
+    "code": "EV-162",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **(sich) entwickeln**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "to develop"
+      ]
+    },
+    "explanation": "to develop = (sich) entwickeln. Beispiel: Babies develop very fast. (Babys entwickeln sich sehr schnell.)",
+    "hint": "Verb, beginnt mit „d“."
+  },
+  {
+    "code": "EV-163",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **Saxon**?",
+    "payload": {
+      "options": [
+        "Normanne/Normannin; normannisch",
+        "Angelsachse; Angelsächsin; angelsächsisch",
+        "Griechisch; griechisch; aus Griechenland",
+        "Sachse/Sächsin; sächsisch"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Saxon = Sachse/Sächsin; sächsisch. Beispiel: Some Saxon words are still part of English today. (Einige sächsische Wörter sind heute noch Teil des Englischen.) Wie alle Völker und Nationalitäten schreibt man Saxon groß.",
+    "hint": "The Saxons lived in small villages."
+  },
+  {
+    "code": "EV-164",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Sachse/Sächsin; sächsisch**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "Saxon"
+      ]
+    },
+    "explanation": "Saxon = Sachse/Sächsin; sächsisch. Beispiel: Some Saxon words are still part of English today. (Einige sächsische Wörter sind heute noch Teil des Englischen.) Wie alle Völker und Nationalitäten schreibt man Saxon groß.",
+    "hint": "Großgeschrieben, beginnt mit „S“."
+  },
+  {
+    "code": "EV-165",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **Anglo-Saxon**?",
+    "payload": {
+      "options": [
+        "Normanne/Normannin; normannisch",
+        "Griechisch; griechisch; aus Griechenland",
+        "Angelsachse; Angelsächsin; angelsächsisch",
+        "Sachse/Sächsin; sächsisch"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Anglo-Saxon = Angelsachse; Angelsächsin; angelsächsisch. Beispiel: Many short English words are Anglo-Saxon. (Viele kurze englische Wörter sind angelsächsisch.) Die Angelsachsen sprachen Old English, bevor die Normannen kamen.",
+    "hint": "The Anglo-Saxons were farmers."
+  },
+  {
+    "code": "EV-166",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Angelsachse; Angelsächsin; angelsächsisch**",
+    "payload": {
+      "page": 187
+    },
+    "solution": {
+      "answers": [
+        "Anglo-Saxon",
+        "Anglo Saxon"
+      ]
+    },
+    "explanation": "Anglo-Saxon = Angelsachse; Angelsächsin; angelsächsisch. Beispiel: Many short English words are Anglo-Saxon. (Viele kurze englische Wörter sind angelsächsisch.) Die Angelsachsen sprachen Old English, bevor die Normannen kamen.",
+    "hint": "Großgeschrieben, beginnt mit „A“."
+  },
+  {
+    "code": "EV-167",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to defeat**?",
+    "payload": {
+      "options": [
+        "besiegen",
+        "sich entspannen; sich ausruhen; sich beruhigen",
+        "bleiben",
+        "studieren; lernen"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "to defeat = besiegen. Beispiel: Our team defeated the best team in the league. (Unsere Mannschaft hat das beste Team der Liga besiegt.) to defeat = to beat.",
+    "hint": "The Normans defeated the Anglo-Saxons."
+  },
+  {
+    "code": "EV-168",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **besiegen** (nicht „beat“)",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "to defeat"
+      ]
+    },
+    "explanation": "to defeat = besiegen. Beispiel: Our team defeated the best team in the league. (Unsere Mannschaft hat das beste Team der Liga besiegt.) to defeat = to beat.",
+    "hint": "Verb, beginnt mit „d“."
+  },
+  {
+    "code": "EV-169",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **meat (no pl)**?",
+    "payload": {
+      "options": [
+        "Gemüse",
+        "Sicherheit",
+        "Fleisch",
+        "Zeugnis"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "meat (no pl) = Fleisch. Beispiel: Vegetarians don't eat meat. (Vegetarier essen kein Fleisch.) Kein Plural: much meat, nicht many meats.",
+    "hint": "I don't eat much meat."
+  },
+  {
+    "code": "EV-170",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Fleisch**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "meat"
+      ]
+    },
+    "explanation": "meat (no pl) = Fleisch. Beispiel: Vegetarians don't eat meat. (Vegetarier essen kein Fleisch.) Kein Plural: much meat, nicht many meats.",
+    "hint": "Nomen, beginnt mit „m“."
+  },
+  {
+    "code": "EV-171",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to remain**?",
+    "payload": {
+      "options": [
+        "fahren",
+        "von Bedeutung sein; etw. ausmachen",
+        "bleiben",
+        "beurteilen; bewerten"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to remain = bleiben. Beispiel: Please remain in your seats. (Bitte bleibt auf euren Plätzen.) to remain = to stay.",
+    "hint": "The shop will remain closed today."
+  },
+  {
+    "code": "EV-172",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **bleiben** (nicht „stay“)",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "to remain"
+      ]
+    },
+    "explanation": "to remain = bleiben. Beispiel: Please remain in your seats. (Bitte bleibt auf euren Plätzen.) to remain = to stay.",
+    "hint": "Verb, beginnt mit „r“."
+  },
+  {
+    "code": "EV-173",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **Greek**?",
+    "payload": {
+      "options": [
+        "Sachse/Sächsin; sächsisch",
+        "Normanne/Normannin; normannisch",
+        "Griechisch; griechisch; aus Griechenland",
+        "Angelsachse; Angelsächsin; angelsächsisch"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Greek = Griechisch; griechisch; aus Griechenland. Beispiel: Many English words come from Greek. (Viele englische Wörter kommen aus dem Griechischen.) Wie alle Sprachen und Nationalitäten schreibt man Greek groß.",
+    "hint": "We had Greek food last night."
+  },
+  {
+    "code": "EV-174",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Griechisch; griechisch; aus Griechenland**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "Greek"
+      ]
+    },
+    "explanation": "Greek = Griechisch; griechisch; aus Griechenland. Beispiel: Many English words come from Greek. (Viele englische Wörter kommen aus dem Griechischen.) Wie alle Sprachen und Nationalitäten schreibt man Greek groß.",
+    "hint": "Großgeschrieben, beginnt mit „G“."
+  },
+  {
+    "code": "EV-175",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to have a point**?",
+    "payload": {
+      "options": [
+        "es ist mir egal",
+        "nicht ganz Unrecht haben",
+        "etw. richtigstellen",
+        "sich auf halbem Weg treffen"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "to have a point = nicht ganz Unrecht haben. Beispiel: OK, you have a point. Let's do it your way. (Okay, du hast nicht ganz Unrecht. Machen wir es auf deine Art.) Oft mit got: You've got a point.",
+    "hint": "Hmm, she has a point."
+  },
+  {
+    "code": "EV-176",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **nicht ganz Unrecht haben**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "to have a point"
+      ]
+    },
+    "explanation": "to have a point = nicht ganz Unrecht haben. Beispiel: OK, you have a point. Let's do it your way. (Okay, du hast nicht ganz Unrecht. Machen wir es auf deine Art.) Oft mit got: You've got a point.",
+    "hint": "Wendung mit 4 Wörtern, beginnt mit „h“."
+  },
+  {
+    "code": "EV-177",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to meet halfway**?",
+    "payload": {
+      "options": [
+        "nicht ganz Unrecht haben",
+        "sich auf halbem Weg treffen",
+        "streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen",
+        "an jmds. Stelle"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "to meet halfway = sich auf halbem Weg treffen. Beispiel: You want to go at 6, I want to go at 8. Let's meet halfway and go at 7. (Du willst um 6 gehen, ich um 8. Treffen wir uns auf halbem Weg und gehen um 7.) Gemeint ist meistens: einen Kompromiss finden.",
+    "hint": "Can we meet halfway on this?"
+  },
+  {
+    "code": "EV-178",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **sich auf halbem Weg treffen**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "to meet halfway"
+      ]
+    },
+    "explanation": "to meet halfway = sich auf halbem Weg treffen. Beispiel: You want to go at 6, I want to go at 8. Let's meet halfway and go at 7. (Du willst um 6 gehen, ich um 8. Treffen wir uns auf halbem Weg und gehen um 7.) Gemeint ist meistens: einen Kompromiss finden.",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „m“."
+  },
+  {
+    "code": "EV-179",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **I don't mind ... (+ -ing)**?",
+    "payload": {
+      "options": [
+        "streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen",
+        "sich auf halbem Weg treffen",
+        "nicht ganz Unrecht haben",
+        "Ich habe nichts dagegen (zu) ...; Mir macht es nichts aus (zu) ..."
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "I don't mind ... (+ -ing) = Ich habe nichts dagegen (zu) ...; Mir macht es nichts aus (zu) .... Beispiel: I don't mind walking to school. (Mir macht es nichts aus, zu Fuß zur Schule zu gehen.) Danach kommt die -ing-Form: I don't mind waiting, nicht I don't mind to wait.",
+    "hint": "I don't mind helping you."
+  },
+  {
+    "code": "EV-180",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Ich habe nichts dagegen (zu) ...; Mir macht es nichts aus (zu) ...**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "I don't mind",
+        "I do not mind"
+      ]
+    },
+    "explanation": "I don't mind ... (+ -ing) = Ich habe nichts dagegen (zu) ...; Mir macht es nichts aus (zu) .... Beispiel: I don't mind walking to school. (Mir macht es nichts aus, zu Fuß zur Schule zu gehen.) Danach kommt die -ing-Form: I don't mind waiting, nicht I don't mind to wait.",
+    "hint": "Wendung mit 3 Wörtern, beginnt mit „I“."
+  },
+  {
+    "code": "EV-181",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **this way**?",
+    "payload": {
+      "options": [
+        "streng mit jmdm. sein; mit jmdm. hart ins Gericht gehen",
+        "Ich habe nichts dagegen (zu) ...; Mir macht es nichts aus (zu) ...",
+        "so; auf diese Weise",
+        "es ist mir egal"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "this way = so; auf diese Weise. Beispiel: Hold the pen this way, not that way. (Halte den Stift auf diese Weise, nicht auf jene.) this way = auf diese Weise, that way = auf jene Weise.",
+    "hint": "Try it this way!"
+  },
+  {
+    "code": "EV-182",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **so; auf diese Weise**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "this way"
+      ]
+    },
+    "explanation": "this way = so; auf diese Weise. Beispiel: Hold the pen this way, not that way. (Halte den Stift auf diese Weise, nicht auf jene.) this way = auf diese Weise, that way = auf jene Weise.",
+    "hint": "Wendung mit 2 Wörtern, beginnt mit „t“."
+  },
+  {
+    "code": "EV-183",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **misunderstood**?",
+    "payload": {
+      "options": [
+        "spektakulär",
+        "ländlich",
+        "missverstanden",
+        "herrisch; rechthaberisch"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "misunderstood = missverstanden. Beispiel: Nobody listens to me. I feel so misunderstood. (Niemand hört mir zu. Ich fühle mich so missverstanden.) Kommt von to understand (understand, understood, understood).",
+    "hint": "The new boy often feels misunderstood."
+  },
+  {
+    "code": "EV-184",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **missverstanden**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "misunderstood"
+      ]
+    },
+    "explanation": "misunderstood = missverstanden. Beispiel: Nobody listens to me. I feel so misunderstood. (Niemand hört mir zu. Ich fühle mich so missverstanden.) Kommt von to understand (understand, understood, understood).",
+    "hint": "Adjektiv, beginnt mit „m“."
+  },
+  {
+    "code": "EV-185",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **ear**?",
+    "payload": {
+      "options": [
+        "Traum",
+        "Ohr",
+        "Universität (in den USA)",
+        "Verlierer/-in; Loser/-in"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "ear = Ohr. Beispiel: I've got a pain in my ear. (Ich habe Schmerzen im Ohr.)",
+    "hint": "The cat has white ears."
+  },
+  {
+    "code": "EV-186",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Ohr**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "ear"
+      ]
+    },
+    "explanation": "ear = Ohr. Beispiel: I've got a pain in my ear. (Ich habe Schmerzen im Ohr.)",
+    "hint": "Nomen, beginnt mit „e“."
+  },
+  {
+    "code": "EV-187",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **diving**?",
+    "payload": {
+      "options": [
+        "Tauchen",
+        "Zeugnis",
+        "das Selbst",
+        "Topf"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "diving = Tauchen. Beispiel: Diving in the sea is my favourite hobby. (Tauchen im Meer ist mein liebstes Hobby.)",
+    "hint": "We went diving in Greece."
+  },
+  {
+    "code": "EV-188",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Tauchen**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "diving"
+      ]
+    },
+    "explanation": "diving = Tauchen. Beispiel: Diving in the sea is my favourite hobby. (Tauchen im Meer ist mein liebstes Hobby.)",
+    "hint": "Nomen, beginnt mit „d“."
+  },
+  {
+    "code": "EV-189",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **argument**?",
+    "payload": {
+      "options": [
+        "Traum",
+        "Argument",
+        "Sicherheit",
+        "Chance; Gelegenheit; Möglichkeit"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "argument = Argument. Beispiel: That's a good argument. I agree. (Das ist ein gutes Argument. Ich stimme zu.)",
+    "hint": "Her arguments were very strong."
+  },
+  {
+    "code": "EV-190",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Argument**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "argument"
+      ]
+    },
+    "explanation": "argument = Argument. Beispiel: That's a good argument. I agree. (Das ist ein gutes Argument. Ich stimme zu.)",
+    "hint": "Nomen, beginnt mit „a“."
+  },
+  {
+    "code": "EV-191",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **cage**?",
+    "payload": {
+      "options": [
+        "Bindung",
+        "Redensart; Sprichwort",
+        "Käfig",
+        "Gemüse"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "cage = Käfig. Beispiel: Our bird lives in a big cage. (Unser Vogel lebt in einem großen Käfig.)",
+    "hint": "The hamster is in its cage."
+  },
+  {
+    "code": "EV-192",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Käfig**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "cage"
+      ]
+    },
+    "explanation": "cage = Käfig. Beispiel: Our bird lives in a big cage. (Unser Vogel lebt in einem großen Käfig.)",
+    "hint": "Nomen, beginnt mit „c“."
+  },
+  {
+    "code": "EV-193",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **strict**?",
+    "payload": {
+      "options": [
+        "eigensinnig; störrisch",
+        "ländlich",
+        "streng; strikt",
+        "schlau; klug; intelligent"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "strict = streng; strikt. Beispiel: Our maths teacher is very strict about homework. (Unser Mathelehrer ist bei Hausaufgaben sehr streng.)",
+    "hint": "My parents are not very strict."
+  },
+  {
+    "code": "EV-194",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **streng; strikt**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "strict"
+      ]
+    },
+    "explanation": "strict = streng; strikt. Beispiel: Our maths teacher is very strict about homework. (Unser Mathelehrer ist bei Hausaufgaben sehr streng.)",
+    "hint": "Adjektiv, beginnt mit „s“."
+  },
+  {
+    "code": "EV-195",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **dress code**?",
+    "payload": {
+      "options": [
+        "Note; Klasse",
+        "Bindung",
+        "Verlierer/-in; Loser/-in",
+        "Kleiderordnung; Bekleidungsvorschriften"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "dress code = Kleiderordnung; Bekleidungsvorschriften. Beispiel: Is there a dress code for the party? (Gibt es für die Party eine Kleiderordnung?)",
+    "hint": "Our school has no dress code."
+  },
+  {
+    "code": "EV-196",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Kleiderordnung; Bekleidungsvorschriften**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "dress code"
+      ]
+    },
+    "explanation": "dress code = Kleiderordnung; Bekleidungsvorschriften. Beispiel: Is there a dress code for the party? (Gibt es für die Party eine Kleiderordnung?)",
+    "hint": "Nomen, beginnt mit „d“."
+  },
+  {
+    "code": "EV-197",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **skin**?",
+    "payload": {
+      "options": [
+        "Rindfleisch",
+        "Haut; Fell",
+        "Mittelschule (weiterführende Schule in den USA, Mittelstufe)",
+        "Käfig"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "skin = Haut; Fell. Beispiel: My skin is very dry in winter. (Im Winter ist meine Haut sehr trocken.)",
+    "hint": "Snakes have dry skin."
+  },
+  {
+    "code": "EV-198",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **Haut; Fell**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "skin"
+      ]
+    },
+    "explanation": "skin = Haut; Fell. Beispiel: My skin is very dry in winter. (Im Winter ist meine Haut sehr trocken.)",
+    "hint": "Nomen, beginnt mit „s“."
+  },
+  {
+    "code": "EV-199",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to interrupt**?",
+    "payload": {
+      "options": [
+        "akzeptieren; hinnehmen; annehmen",
+        "unterbrechen",
+        "besiegen",
+        "motivieren"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "to interrupt = unterbrechen. Beispiel: Sorry to interrupt, but dinner is ready. (Entschuldigung, dass ich unterbreche, aber das Essen ist fertig.)",
+    "hint": "Don't interrupt your sister!"
+  },
+  {
+    "code": "EV-200",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **unterbrechen**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "to interrupt"
+      ]
+    },
+    "explanation": "to interrupt = unterbrechen. Beispiel: Sorry to interrupt, but dinner is ready. (Entschuldigung, dass ich unterbreche, aber das Essen ist fertig.)",
+    "hint": "Verb, beginnt mit „i“."
+  },
+  {
+    "code": "EV-201",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **to convince**?",
+    "payload": {
+      "options": [
+        "konkurrieren (mit); sich messen (mit); in Wettbewerb treten (mit); antreten (gegen)",
+        "überzeugen",
+        "beurteilen; bewerten",
+        "mixen; mischen; vermischen"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "to convince = überzeugen. Beispiel: I convinced my dad to buy a dog. (Ich habe meinen Vater überzeugt, einen Hund zu kaufen.)",
+    "hint": "Can you convince her to come?"
+  },
+  {
+    "code": "EV-202",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **überzeugen**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "to convince"
+      ]
+    },
+    "explanation": "to convince = überzeugen. Beispiel: I convinced my dad to buy a dog. (Ich habe meinen Vater überzeugt, einen Hund zu kaufen.)",
+    "hint": "Verb, beginnt mit „c“."
+  },
+  {
+    "code": "EV-203",
+    "skill_code": "EV.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Was bedeutet **(the) most**?",
+    "payload": {
+      "options": [
+        "es schaffen",
+        "Ich habe nichts dagegen (zu) ...; Mir macht es nichts aus (zu) ...",
+        "eine Entscheidung treffen",
+        "am meisten"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "(the) most = am meisten. Beispiel: Which subject do you like (the) most? (Welches Fach magst du am meisten?) Steigerung: much – more – (the) most.",
+    "hint": "I like summer the most."
+  },
+  {
+    "code": "EV-204",
+    "skill_code": "EV.1",
+    "type": "vocab",
+    "difficulty": 2,
+    "stem": "Wie heißt das auf Englisch? **am meisten**",
+    "payload": {
+      "page": 188
+    },
+    "solution": {
+      "answers": [
+        "(the) most"
+      ]
+    },
+    "explanation": "(the) most = am meisten. Beispiel: Which subject do you like (the) most? (Welches Fach magst du am meisten?) Steigerung: much – more – (the) most.",
+    "hint": "Wendung mit 2 Wörtern, beginnt mit „t“."
+  }
+]
