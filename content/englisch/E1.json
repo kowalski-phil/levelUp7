@@ -946,5 +946,3506 @@
     },
     "explanation": "Die Satzstellung ist Subjekt, Verb, Objekt: I like your idea. Das Adverb better steht danach, dann der Vergleich mit than. Mine ersetzt my idea.",
     "hint": "Subjekt, Verb, Objekt, dann der Vergleich."
+  },
+  {
+    "code": "E1-044",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "This computer game is so easy. It almost plays ___!",
+    "payload": {
+      "options": [
+        "themselves",
+        "himself",
+        "it",
+        "itself"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Das Subjekt ist das Spiel (it), also heißt das Reflexivpronomen itself. himself passt nur zu einer männlichen Person, themselves zum Plural. Mit nur \"it\" fehlt der Rückbezug auf das Subjekt.",
+    "hint": "Zu welchem Personalpronomen gehört das Spiel: he, she oder it?"
+  },
+  {
+    "code": "E1-045",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the reflexive pronoun.",
+    "payload": {
+      "text": "Kids, please help [[0]] to some juice."
+    },
+    "solution": {
+      "answers": [
+        [
+          "yourselves"
+        ]
+      ]
+    },
+    "explanation": "Die Kinder sind mehrere Personen, angesprochen mit you. Im Plural heißt das Reflexivpronomen yourselves (Endung -selves). yourself wäre nur für eine einzige Person richtig.",
+    "hint": "Wie viele Personen werden angesprochen?"
+  },
+  {
+    "code": "E1-046",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the reflexive pronouns.",
+    "payload": {
+      "text": "Did you make this cake [[0]], Mum? — Yes, I made it all by [[1]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "yourself"
+        ],
+        [
+          "myself"
+        ]
+      ]
+    },
+    "explanation": "Mum ist eine Person, also yourself. Bei all by oneself passt man oneself an das Subjekt an: I → all by myself. \"by me\" oder \"by mine\" sind hier falsch.",
+    "hint": "Erste Lücke: you zu einer Person. Zweite Lücke: I made it all by …"
+  },
+  {
+    "code": "E1-047",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Wow, what a nice shelf! — Thanks, nobody helped me. I built it ___.",
+    "payload": {
+      "options": [
+        "mine",
+        "my self",
+        "me",
+        "myself"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Hier betont das Reflexivpronomen, dass man etwas selbst, ohne fremde Hilfe, getan hat. Es steht dann am Satzende: I built it myself. myself schreibt man zusammen, \"my self\" ist ein Rechtschreibfehler.",
+    "hint": "Gemeint ist: Ich habe es selbst gebaut."
+  },
+  {
+    "code": "E1-048",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "I cut ___ with a knife yesterday. Now my finger hurts.",
+    "payload": {
+      "options": [
+        "me",
+        "myself",
+        "mine",
+        "my"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Subjekt und Objekt sind dieselbe Person (I), deshalb steht das Reflexivpronomen myself. Das Objektpronomen me wäre nur richtig, wenn jemand anderes mich geschnitten hätte.",
+    "hint": "Wer hat wen geschnitten?"
+  },
+  {
+    "code": "E1-049",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Did your dad help you with the homework? — No, he was busy. I did it ___.",
+    "payload": {
+      "options": [
+        "himself",
+        "myself",
+        "him",
+        "me"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Gemeint ist: Ich habe es selbst gemacht, ohne Hilfe. Das Reflexivpronomen richtet sich nach dem Subjekt I, also myself. himself würde zu he passen, aber Papa hat ja gerade nicht geholfen.",
+    "hint": "Das Reflexivpronomen richtet sich nach dem Subjekt des Satzes."
+  },
+  {
+    "code": "E1-050",
+    "skill_code": "E1.1",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Max is a good runner, but he sometimes pushes [[0]] too hard. Then his legs hurt and he has to look after [[1]].",
+      "gaps": [
+        {
+          "options": [
+            "him",
+            "himself",
+            "each other",
+            "itself"
+          ]
+        },
+        {
+          "options": [
+            "himself",
+            "herself",
+            "his",
+            "him"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "himself",
+        "himself"
+      ]
+    },
+    "explanation": "Beide Male tut Max etwas mit sich selbst, also himself. Mit \"him\" wäre eine andere Person gemeint. Bei to push oneself und to look after oneself passt man oneself an das Subjekt an: he → himself.",
+    "hint": "Max ist das Subjekt. Wen treibt er an, um wen kümmert er sich?"
+  },
+  {
+    "code": "E1-051",
+    "skill_code": "E1.1",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "Mia and Zoe had a fight. Now they don't talk to [[0]] anymore.",
+      "gaps": [
+        {
+          "options": [
+            "themselves",
+            "them",
+            "theirselves",
+            "each other"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "each other"
+      ]
+    },
+    "explanation": "Mia spricht nicht mit Zoe, und Zoe spricht nicht mit Mia. Das ist wechselseitig, also each other (einander, sich gegenseitig). themselves hieße, dass jede mit sich selbst spricht. \"theirselves\" gibt es nicht.",
+    "hint": "Geht es um sich selbst oder um die andere Person?"
+  },
+  {
+    "code": "E1-052",
+    "skill_code": "E1.1",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "Our grandparents are 80, but they still do everything [[0]]. They don't need any help.",
+      "gaps": [
+        {
+          "options": [
+            "themselves",
+            "each other",
+            "them",
+            "theirselves"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "themselves"
+      ]
+    },
+    "explanation": "Hier wird betont, dass die Großeltern alles selbst machen, ohne fremde Hilfe. Das ist das verstärkende Reflexivpronomen, für they heißt es themselves. Die Form \"theirselves\" gibt es nicht.",
+    "hint": "Gemeint ist: Sie machen alles selbst."
+  },
+  {
+    "code": "E1-053",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the missing words. (Sie haben sich im Urlaub kennengelernt.)",
+    "payload": {
+      "text": "Lucy and Ben got to know [[0]] on holiday."
+    },
+    "solution": {
+      "answers": [
+        [
+          "each other",
+          "one another"
+        ]
+      ]
+    },
+    "explanation": "Lucy lernt Ben kennen und Ben lernt Lucy kennen. Das deutsche \"sich\" ist hier wechselseitig, also each other oder one another. themselves wäre falsch, denn niemand lernt sich selbst kennen.",
+    "hint": "Wer lernt wen kennen?"
+  },
+  {
+    "code": "E1-054",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the reflexive pronoun.",
+    "payload": {
+      "text": "My grandma lives alone and takes care of [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "herself"
+        ]
+      ]
+    },
+    "explanation": "Die Großmutter kümmert sich um sich selbst. Subjekt und Objekt sind dieselbe Person (she), also herself.",
+    "hint": "Zu my grandma gehört das Pronomen she."
+  },
+  {
+    "code": "E1-055",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "How do you say this in English? (Ich freue mich auf die Ferien.)",
+    "payload": {
+      "options": [
+        "I'm looking forward myself to the holidays.",
+        "I'm looking myself forward to the holidays.",
+        "I look me forward to the holidays.",
+        "I'm looking forward to the holidays."
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "sich freuen auf heißt to look forward to und ist im Englischen nicht reflexiv. Viele Verben, die im Deutschen ein \"sich\" haben, brauchen im Englischen kein Reflexivpronomen.",
+    "hint": "Braucht to look forward to ein Reflexivpronomen?"
+  },
+  {
+    "code": "E1-056",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "How do you say this in English? (Beeil dich! Der Bus kommt.)",
+    "payload": {
+      "options": [
+        "Hurry up yourself! The bus is coming.",
+        "Hurry yourself up! The bus is coming.",
+        "Hurry you! The bus is coming.",
+        "Hurry up! The bus is coming."
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "sich beeilen heißt to hurry (up) und ist im Englischen nicht reflexiv. \"Hurry yourself\" ist ein typischer Fehler, weil man das deutsche \"dich\" mitübersetzt.",
+    "hint": "Im Englischen sind viele \"sich\"-Verben nicht reflexiv."
+  },
+  {
+    "code": "E1-057",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "How do you say this in English? (Wie fühlst du dich heute?)",
+    "payload": {
+      "options": [
+        "How do you feel yourself today?",
+        "How do you feel you today?",
+        "How do you feel today?",
+        "How feel you today?"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "sich fühlen heißt to feel, ohne Reflexivpronomen. Fragen bildet man mit do: How do you feel today?",
+    "hint": "Zwei Dinge prüfen: Braucht feel ein Reflexivpronomen, und wie bildet man die Frage?"
+  },
+  {
+    "code": "E1-058",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "How do you say this in English? (Wir treffen uns um vier am Kino.)",
+    "payload": {
+      "options": [
+        "We're meeting ours at four at the cinema.",
+        "We're meeting ourselves at four at the cinema.",
+        "We're meeting us at four at the cinema.",
+        "We're meeting at four at the cinema."
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Das deutsche \"sich treffen\" heißt einfach to meet. Die Form \"meeting us\" ist Wort für Wort übersetzt, und \"meeting ourselves\" hieße, dass wir uns selbst treffen.",
+    "hint": "Braucht to meet ein Reflexivpronomen?"
+  },
+  {
+    "code": "E1-059",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Translate the German verb. (Er wäscht sich jeden Morgen.)",
+    "payload": {
+      "text": "He [[0]] every morning."
+    },
+    "solution": {
+      "answers": [
+        [
+          "washes"
+        ]
+      ]
+    },
+    "explanation": "to wash, to dress und to shave sind im Englischen nicht reflexiv, wenn man etwas regelmäßig für sich selbst tut. Also: He washes every morning. Achte auf das -es in der 3. Person Singular.",
+    "hint": "wash ist im Englischen ohne Reflexivpronomen. Was hängt bei he an das Verb?"
+  },
+  {
+    "code": "E1-060",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Translate the German verb. (Wir müssen uns beeilen!)",
+    "payload": {
+      "text": "We have to [[0]]!"
+    },
+    "solution": {
+      "answers": [
+        [
+          "hurry",
+          "hurry up"
+        ]
+      ]
+    },
+    "explanation": "Das deutsche \"sich beeilen\" heißt to hurry oder to hurry up, ohne Reflexivpronomen. Die Form \"hurry ourselves\" ist falsch.",
+    "hint": "Im Englischen gibt es hier kein \"uns\"."
+  },
+  {
+    "code": "E1-061",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Translate the German verb. (Entspann dich! Es ist nur ein Test.)",
+    "payload": {
+      "text": "[[0]]! It's only a test."
+    },
+    "solution": {
+      "answers": [
+        [
+          "Relax"
+        ]
+      ]
+    },
+    "explanation": "sich entspannen heißt to relax und ist im Englischen nicht reflexiv. \"Relax yourself\" ist ein typischer Fehler.",
+    "hint": "Ein einziges Wort reicht."
+  },
+  {
+    "code": "E1-062",
+    "skill_code": "E1.1",
+    "type": "mc_multi",
+    "difficulty": 3,
+    "stem": "Which sentences are correct? Choose all correct answers.",
+    "payload": {
+      "options": [
+        "Please sit down.",
+        "Relax yourself, it's only a game.",
+        "Lisa and Tom are looking forward to the trip.",
+        "I feel myself tired today.",
+        "We enjoyed ourselves at the zoo."
+      ]
+    },
+    "solution": {
+      "indices": [
+        0,
+        2,
+        4
+      ]
+    },
+    "explanation": "Die Verben to sit down, to relax, to look forward to und to feel sind im Englischen nicht reflexiv. Nur to enjoy oneself braucht das Reflexivpronomen: We enjoyed ourselves.",
+    "hint": "Welche Verben brauchen im Englischen wirklich ein -self/-selves?"
+  },
+  {
+    "code": "E1-063",
+    "skill_code": "E1.1",
+    "type": "match",
+    "difficulty": 1,
+    "stem": "Match the personal pronouns with the reflexive pronouns.",
+    "payload": {
+      "pairs": [
+        [
+          "you (one person)",
+          "yourself"
+        ],
+        [
+          "you (more than one)",
+          "yourselves"
+        ],
+        [
+          "he",
+          "himself"
+        ],
+        [
+          "it",
+          "itself"
+        ]
+      ]
+    },
+    "explanation": "Singular endet auf -self, Plural auf -selves. Bei you entscheidet die Zahl der Personen: eine Person yourself, mehrere yourselves.",
+    "hint": "Singular -self, Plural -selves."
+  },
+  {
+    "code": "E1-064",
+    "skill_code": "E1.1",
+    "type": "cloze",
+    "difficulty": 3,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Sam: Mum, can I make [[0]] a sandwich? — Mum: Sure, and can you make [[1]] one too? I'm hungry. — Later, Sam and his sister argue again. They never listen to [[2]]!",
+      "gaps": [
+        {
+          "options": [
+            "mine",
+            "myself",
+            "me",
+            "each other"
+          ]
+        },
+        {
+          "options": [
+            "herself",
+            "myself",
+            "each other",
+            "me"
+          ]
+        },
+        {
+          "options": [
+            "them",
+            "themselves",
+            "each other",
+            "theirselves"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "myself",
+        "me",
+        "each other"
+      ]
+    },
+    "explanation": "Lücke 1: Sam macht für sich selbst ein Sandwich, also myself. Lücke 2: Sam soll eines für Mum machen, also für eine andere Person, dafür steht das Objektpronomen me. Lücke 3: Die Geschwister hören einander nicht zu, also each other.",
+    "hint": "Für jede Lücke: Wer tut etwas für wen? Für sich selbst, für jemand anderen oder gegenseitig?"
+  },
+  {
+    "code": "E1-065",
+    "skill_code": "E1.1",
+    "type": "order",
+    "difficulty": 2,
+    "stem": "Put the words in the right order.",
+    "payload": {
+      "items": [
+        "Did",
+        "you",
+        "enjoy",
+        "yourselves",
+        "at the party?"
+      ]
+    },
+    "explanation": "Frage im simple past: Did + Subjekt + Verb. Das Reflexivpronomen folgt direkt auf das Verb: enjoy yourselves. Die Ortsangabe steht am Ende.",
+    "hint": "Fragen im simple past beginnen mit Did."
+  },
+  {
+    "code": "E1-066",
+    "skill_code": "E1.1",
+    "type": "order",
+    "difficulty": 3,
+    "stem": "Be careful! Put the words in the right order.",
+    "payload": {
+      "items": [
+        "Don't",
+        "hurt",
+        "yourself",
+        "with the scissors."
+      ]
+    },
+    "explanation": "Verneinte Aufforderung: Don't + Verb. Das Reflexivpronomen folgt direkt auf das Verb: hurt yourself. Die Angabe womit (with the scissors) kommt ans Ende.",
+    "hint": "Eine verneinte Aufforderung beginnt mit Don't."
+  },
+  {
+    "code": "E1-067",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the adverb of \"happy\".",
+    "payload": {
+      "text": "The children played [[0]] in the garden."
+    },
+    "solution": {
+      "answers": [
+        [
+          "happily"
+        ]
+      ]
+    },
+    "explanation": "Endet das Adjektiv auf -y, wird das y zu i, dann kommt -ly: happy → happily. Die Form \"happyly\" ist falsch.",
+    "hint": "Was passiert mit dem -y vor der Endung -ly?"
+  },
+  {
+    "code": "E1-068",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the adverb of \"angry\".",
+    "payload": {
+      "text": "\"Go away!\" she shouted [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "angrily"
+        ]
+      ]
+    },
+    "explanation": "angry endet auf -y, also y → i und dann -ly: angrily. Das Adverb beschreibt, wie sie gerufen hat.",
+    "hint": "Gleiche Regel wie bei happy → happily."
+  },
+  {
+    "code": "E1-069",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the adverb of \"shy\".",
+    "payload": {
+      "text": "The new girl smiled [[0]] at us."
+    },
+    "solution": {
+      "answers": [
+        [
+          "shyly"
+        ]
+      ]
+    },
+    "explanation": "shy ist die Ausnahme von der y-Regel: Hier bleibt das y, also shyly. Bei angry → angrily oder happy → happily wird das y dagegen zu i.",
+    "hint": "shy ist eine Ausnahme von der Regel y → i."
+  },
+  {
+    "code": "E1-070",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the adverb of \"simple\".",
+    "payload": {
+      "text": "Can you explain it [[0]], please? I'm not an expert."
+    },
+    "solution": {
+      "answers": [
+        [
+          "simply"
+        ]
+      ]
+    },
+    "explanation": "Endet das Adjektiv auf -le, fällt das e weg und es kommt nur -y dazu: simple → simply, terrible → terribly. Die Form \"simplely\" ist falsch.",
+    "hint": "Wie wird terrible zu terribly?"
+  },
+  {
+    "code": "E1-071",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the adverb of \"fantastic\".",
+    "payload": {
+      "text": "The band played [[0]] last night."
+    },
+    "solution": {
+      "answers": [
+        [
+          "fantastically"
+        ]
+      ]
+    },
+    "explanation": "Endet das Adjektiv auf -ic, hängt man -ally an: fantastic → fantastically, basic → basically. Die Form \"fantasticly\" ist falsch.",
+    "hint": "Adjektive auf -ic bekommen eine längere Endung."
+  },
+  {
+    "code": "E1-072",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the adverb of \"basic\".",
+    "payload": {
+      "text": "[[0]], it's a game for two players."
+    },
+    "solution": {
+      "answers": [
+        [
+          "basically"
+        ]
+      ]
+    },
+    "explanation": "Adjektive auf -ic bekommen -ally: basic → basically. Das Adverb steht hier am Satzanfang und bezieht sich auf den ganzen Satz.",
+    "hint": "Gleiche Regel wie bei fantastic."
+  },
+  {
+    "code": "E1-073",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Use \"friendly\" as an adverb.",
+    "payload": {
+      "text": "The shop assistant smiled at me [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "in a friendly way",
+          "in a friendly manner"
+        ]
+      ]
+    },
+    "explanation": "friendly endet schon auf -ly, ist aber ein Adjektiv. Ein Adverb \"friendlily\" gibt es nicht, man sagt in a friendly way.",
+    "hint": "friendly hat keine eigene Adverbform. Man braucht mehrere Wörter dazu."
+  },
+  {
+    "code": "E1-074",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the adverb of \"early\".",
+    "payload": {
+      "text": "I got up [[0]] this morning because I had a test."
+    },
+    "solution": {
+      "answers": [
+        [
+          "early"
+        ]
+      ]
+    },
+    "explanation": "Das Wort early ist Adjektiv und Adverb zugleich, die Form bleibt gleich. Eine Form \"earlily\" gibt es nicht.",
+    "hint": "Manche Adverbien sehen genauso aus wie das Adjektiv."
+  },
+  {
+    "code": "E1-075",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the adverb of \"high\".",
+    "payload": {
+      "text": "Our cat can jump really [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "high"
+        ]
+      ]
+    },
+    "explanation": "Das Adverb zu high ist ebenfalls high. Das Wort highly ist etwas anderes und bedeutet \"sehr\" (highly interesting).",
+    "hint": "Die Form ändert sich nicht."
+  },
+  {
+    "code": "E1-076",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "I'm so tired. I can ___ keep my eyes open.",
+    "payload": {
+      "options": [
+        "harder",
+        "hardly",
+        "hardy",
+        "hard"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "hardly bedeutet \"kaum\". Das Adverb zu hard (fleißig, hart) ist hard: She works hard. Wer hardly sagt, meint also etwas ganz anderes als hard.",
+    "hint": "Gemeint ist: Ich kann die Augen kaum offen halten."
+  },
+  {
+    "code": "E1-077",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Ben is very lazy. He ___ does his homework.",
+    "payload": {
+      "options": [
+        "hardly ever",
+        "hard never",
+        "hard ever",
+        "hardly never"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Die Wendung hardly ever bedeutet \"fast nie\". Das Wort hard heißt fleißig oder hart, das passt nicht zu \"lazy\". \"Hardly never\" ist eine doppelte Verneinung und deshalb falsch.",
+    "hint": "Er ist faul. Wie oft macht er seine Hausaufgaben?"
+  },
+  {
+    "code": "E1-078",
+    "skill_code": "E1.2",
+    "type": "match",
+    "difficulty": 1,
+    "stem": "Match the adjectives with their adverbs.",
+    "payload": {
+      "pairs": [
+        [
+          "early",
+          "early"
+        ],
+        [
+          "shy",
+          "shyly"
+        ],
+        [
+          "basic",
+          "basically"
+        ],
+        [
+          "angry",
+          "angrily"
+        ]
+      ]
+    },
+    "explanation": "Das Wort early bleibt gleich, und shy behält sein y (Ausnahme). Bei basic kommt -ally dazu, weil es auf -ic endet. Bei angry wird y zu i, dann kommt -ly.",
+    "hint": "Denk an die Rechtschreibregeln für -y, -le und -ic."
+  },
+  {
+    "code": "E1-079",
+    "skill_code": "E1.2",
+    "type": "match",
+    "difficulty": 2,
+    "stem": "Match the adjectives with their adverbs.",
+    "payload": {
+      "pairs": [
+        [
+          "careful",
+          "carefully"
+        ],
+        [
+          "simple",
+          "simply"
+        ],
+        [
+          "hard",
+          "hard"
+        ],
+        [
+          "good",
+          "well"
+        ]
+      ]
+    },
+    "explanation": "Bei careful kommt einfach -ly dazu, mit Doppel-l: carefully. Bei simple fällt das e weg: simply. Die Wörter hard und good sind Ausnahmen: hard bleibt hard (hardly heißt kaum), good wird zu well.",
+    "hint": "Zwei davon sind Ausnahmen, die man auswendig lernen muss."
+  },
+  {
+    "code": "E1-080",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the adverb of \"careful\".",
+    "payload": {
+      "text": "Please read the instructions [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "carefully"
+        ]
+      ]
+    },
+    "explanation": "careful + -ly = carefully, mit zwei l. Das Adverb beschreibt, wie man lesen soll.",
+    "hint": "Die Endung -ly kommt einfach dazu."
+  },
+  {
+    "code": "E1-081",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Which sentence is correct?",
+    "payload": {
+      "options": [
+        "She speaks English very well.",
+        "She speaks English very good.",
+        "She speaks very well English.",
+        "She very well speaks English."
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Das Adverb der Art und Weise steht nach dem Verb und nach dem Objekt, nicht dazwischen: speaks English very well. Das Wort good ist ein Adjektiv, das Adverb heißt well.",
+    "hint": "Verb und Objekt (speaks English) bleiben zusammen."
+  },
+  {
+    "code": "E1-082",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Which sentence is correct?",
+    "payload": {
+      "options": [
+        "Tom ate his lunch quickly.",
+        "Tom quick ate his lunch.",
+        "Tom ate quickly his lunch.",
+        "Tom ate his lunch quick."
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Das Adverb steht nach dem Objekt: ate his lunch quickly. quick ist das Adjektiv, das Adverb braucht -ly. Zwischen Verb und Objekt darf es nicht stehen.",
+    "hint": "Zwei Fragen: Adjektiv oder Adverb? Und wo steht es?"
+  },
+  {
+    "code": "E1-083",
+    "skill_code": "E1.2",
+    "type": "order",
+    "difficulty": 2,
+    "stem": "Put the words in the right order.",
+    "payload": {
+      "items": [
+        "Our team",
+        "played",
+        "really badly",
+        "last Saturday."
+      ]
+    },
+    "explanation": "Das Adverb der Art und Weise (really badly) steht nach dem Verb und vor der Zeitangabe. Die Zeitangabe kommt ans Ende.",
+    "hint": "Art und Weise vor Zeit."
+  },
+  {
+    "code": "E1-084",
+    "skill_code": "E1.2",
+    "type": "order",
+    "difficulty": 2,
+    "stem": "Put the words in the right order.",
+    "payload": {
+      "items": [
+        "Paula",
+        "speaks",
+        "French",
+        "very well",
+        "now."
+      ]
+    },
+    "explanation": "Die Reihenfolge ist Subjekt, Verb, Objekt, dann das Adverb der Art und Weise (very well), die Zeitangabe now kommt ans Ende. Das Adverb darf nicht zwischen speaks und French stehen.",
+    "hint": "Verb und Objekt bleiben zusammen."
+  },
+  {
+    "code": "E1-085",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the comparative of \"high\".",
+    "payload": {
+      "text": "A cat can jump [[0]] than a dog."
+    },
+    "solution": {
+      "answers": [
+        [
+          "higher"
+        ]
+      ]
+    },
+    "explanation": "Einsilbige Adverbien steigert man mit -er und -est: high – higher – highest. Die Form \"more high\" ist falsch.",
+    "hint": "high hat nur eine Silbe."
+  },
+  {
+    "code": "E1-086",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the superlative of \"early\".",
+    "payload": {
+      "text": "Who gets up [[0]] in your family?"
+    },
+    "solution": {
+      "answers": [
+        [
+          "the earliest",
+          "earliest"
+        ]
+      ]
+    },
+    "explanation": "Das Wort early endet zwar auf -ly, wird aber mit -er/-est gesteigert: early – earlier – earliest (y → i). Die Form \"most early\" ist falsch.",
+    "hint": "early ist eine Ausnahme bei der Steigerung."
+  },
+  {
+    "code": "E1-087",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the comparative of \"easily\".",
+    "payload": {
+      "text": "With a map you can find the way [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "more easily"
+        ]
+      ]
+    },
+    "explanation": "Adverbien auf -ly steigert man mit more und most: easily – more easily – most easily. Eine Form \"easilier\" gibt es nicht.",
+    "hint": "Adverbien auf -ly bekommen kein -er."
+  },
+  {
+    "code": "E1-088",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the comparative of \"well\".",
+    "payload": {
+      "text": "After a lot of practice, Emma swims much [[0]] now."
+    },
+    "solution": {
+      "answers": [
+        [
+          "better"
+        ]
+      ]
+    },
+    "explanation": "Das Adverb well ist unregelmäßig: well – better – best. Die Formen \"weller\" und \"more well\" sind falsch.",
+    "hint": "Gleiche Steigerung wie bei good."
+  },
+  {
+    "code": "E1-089",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the comparative of \"little\".",
+    "payload": {
+      "text": "I'm tired. I slept [[0]] than usual last night."
+    },
+    "solution": {
+      "answers": [
+        [
+          "less"
+        ]
+      ]
+    },
+    "explanation": "Das Wort little ist unregelmäßig: little – less – least. Die Form \"littler\" ist falsch.",
+    "hint": "Das Gegenteil von more."
+  },
+  {
+    "code": "E1-090",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Fill in the superlative of \"badly\".",
+    "payload": {
+      "text": "Our team played [[0]] of all the teams in the league."
+    },
+    "solution": {
+      "answers": [
+        [
+          "the worst",
+          "worst"
+        ]
+      ]
+    },
+    "explanation": "Das Adverb badly ist unregelmäßig: badly – worse – worst. Die Formen \"most badly\" und \"baddest\" sind falsch.",
+    "hint": "badly hat dieselben Steigerungsformen wie bad."
+  },
+  {
+    "code": "E1-091",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Of all the dancers, Ella danced ___.",
+    "payload": {
+      "options": [
+        "more beautifully",
+        "the most beautifully",
+        "the most beautiful",
+        "the beautifullest"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Das Wort beautifully ist ein Adverb auf -ly, also bildet man den Superlativ mit most: the most beautifully. \"The most beautiful\" ist das Adjektiv und passt nicht zum Verb danced. Mit \"more\" wäre es nur der Komparativ.",
+    "hint": "Wie hat sie getanzt? Und es geht um alle Tänzerinnen, nicht um zwei."
+  },
+  {
+    "code": "E1-092",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "My brother eats ___ than me. He's always hungry.",
+    "payload": {
+      "options": [
+        "most",
+        "more",
+        "mucher",
+        "much"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "much ist unregelmäßig: much – more – most. Nach than braucht man den Komparativ, also more.",
+    "hint": "Nach than steht immer die 1. Steigerung."
+  },
+  {
+    "code": "E1-093",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "The cheetah runs [[0]] of all animals.",
+      "gaps": [
+        {
+          "options": [
+            "the most fastly",
+            "the most fast",
+            "the faster",
+            "the fastest"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "the fastest"
+      ]
+    },
+    "explanation": "fast ist einsilbig: fast – faster – fastest. Es geht um alle Tiere, also Superlativ. \"fastly\" gibt es nicht, fast ist schon das Adverb.",
+    "hint": "Einsilbig, und es geht um alle Tiere."
+  },
+  {
+    "code": "E1-094",
+    "skill_code": "E1.2",
+    "type": "mc_multi",
+    "difficulty": 3,
+    "stem": "Which sentences are correct? Choose all correct answers.",
+    "payload": {
+      "options": [
+        "Tim runs faster than me.",
+        "She speaks more quickly than her sister.",
+        "He sings more good than me.",
+        "Lisa finished the test more early than Ben.",
+        "Kate works harder than anyone else."
+      ]
+    },
+    "solution": {
+      "indices": [
+        0,
+        1,
+        4
+      ]
+    },
+    "explanation": "fast und hard sind einsilbig: faster, harder. quickly endet auf -ly: more quickly. Das Adverb zu good ist well, gesteigert better. early wird mit -er gesteigert: earlier.",
+    "hint": "Achte auf einsilbige Adverbien, Adverbien auf -ly und die Ausnahmen."
+  },
+  {
+    "code": "E1-095",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Fill in the correct forms of the words in brackets.",
+    "payload": {
+      "text": "Lena runs [[0]] (fast) than Max, but Max jumps [[1]] (high). And Kim? She plays [[2]] (good) of all."
+    },
+    "solution": {
+      "answers": [
+        [
+          "faster"
+        ],
+        [
+          "higher"
+        ],
+        [
+          "the best",
+          "best"
+        ]
+      ]
+    },
+    "explanation": "fast und high sind einsilbig: faster, higher. Max springt höher als Lena, darum Komparativ. good wird als Adverb zu well, die Steigerung ist well – better – best. Kim ist die Beste von allen: the best.",
+    "hint": "Bei den ersten beiden vergleichst du zwei Personen, bei der dritten alle."
+  },
+  {
+    "code": "E1-096",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Ben is a [[0]] swimmer. He swims really [[1]].",
+      "gaps": [
+        {
+          "options": [
+            "good",
+            "well"
+          ]
+        },
+        {
+          "options": [
+            "well",
+            "good"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "good",
+        "well"
+      ]
+    },
+    "explanation": "Vor einem Nomen (swimmer) steht das Adjektiv good. Das Verb swims wird durch das Adverb beschrieben: well.",
+    "hint": "Erste Lücke: vor einem Nomen. Zweite Lücke: beschreibt ein Verb."
+  },
+  {
+    "code": "E1-097",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "This soup smells [[0]]. Can I taste it?",
+      "gaps": [
+        {
+          "options": [
+            "good",
+            "well"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "good"
+      ]
+    },
+    "explanation": "Nach Verben der Sinneswahrnehmung (smell, taste, look, sound, feel, seem) steht das Adjektiv, weil es die Suppe beschreibt, nicht die Handlung. Also: smells good.",
+    "hint": "Beschreibt das Wort die Suppe oder wie jemand riecht?"
+  },
+  {
+    "code": "E1-098",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "The teacher looked at the noisy class [[0]]. She looked really [[1]].",
+      "gaps": [
+        {
+          "options": [
+            "angrily",
+            "angry"
+          ]
+        },
+        {
+          "options": [
+            "angrily",
+            "angry"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "angrily",
+        "angry"
+      ]
+    },
+    "explanation": "Die Wendung look at sb (jemanden anschauen) ist eine Tätigkeit, die mit dem Adverb beschrieben wird: angrily. Ohne at heißt look \"aussehen\", danach steht das Adjektiv: She looked angry (Sie sah wütend aus).",
+    "hint": "look at = anschauen, look allein = aussehen."
+  },
+  {
+    "code": "E1-099",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "It got [[0]] in the evening, so we went inside.",
+      "gaps": [
+        {
+          "options": [
+            "cold",
+            "coldly"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "cold"
+      ]
+    },
+    "explanation": "get beschreibt hier eine Entwicklung (werden). Nach be, become, get, grow, turn, stay und remain steht das Adjektiv: It got cold.",
+    "hint": "get heißt hier \"werden\"."
+  },
+  {
+    "code": "E1-100",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "Stay [[0]]! Everything will be OK.",
+      "gaps": [
+        {
+          "options": [
+            "calmly",
+            "calm"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "calm"
+      ]
+    },
+    "explanation": "stay beschreibt einen Zustand. Nach be, stay und remain steht das Adjektiv: Stay calm!",
+    "hint": "stay ist ein Zustandsverb wie be."
+  },
+  {
+    "code": "E1-101",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 3,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Leo tasted the soup [[0]]. It tasted [[1]].",
+      "gaps": [
+        {
+          "options": [
+            "careful",
+            "carefully"
+          ]
+        },
+        {
+          "options": [
+            "terrible",
+            "terribly"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "carefully",
+        "terrible"
+      ]
+    },
+    "explanation": "Im ersten Satz probiert Leo die Suppe, das ist eine Tätigkeit: carefully. Im zweiten Satz heißt taste \"schmecken\" und beschreibt die Suppe selbst: It tasted terrible.",
+    "hint": "taste kann \"probieren\" oder \"schmecken\" heißen."
+  },
+  {
+    "code": "E1-102",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Oh no, the milk has turned ___. Don't drink it!",
+    "payload": {
+      "options": [
+        "sourly",
+        "badly",
+        "sweetly",
+        "sour"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "turn beschreibt eine Entwicklung (werden). Danach steht das Adjektiv: to turn sour = sauer werden.",
+    "hint": "turn heißt hier \"werden\"."
+  },
+  {
+    "code": "E1-103",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "You look ___ today. Did you get good news?",
+    "payload": {
+      "options": [
+        "happiness",
+        "happy",
+        "more happily",
+        "happily"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "look ohne at heißt \"aussehen\". Danach steht das Adjektiv, weil es die Person beschreibt: You look happy.",
+    "hint": "look heißt hier \"aussehen\"."
+  },
+  {
+    "code": "E1-104",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "How do you say this in English? (Er sah wütend aus.)",
+    "payload": {
+      "options": [
+        "He looked at angry.",
+        "He saw angry out.",
+        "He looked angry.",
+        "He looked angrily."
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Das deutsche \"aussehen\" heißt to look, danach steht das Adjektiv: He looked angry. Mit \"looked angrily\" wäre gemeint, dass er auf wütende Art geschaut hat.",
+    "hint": "Beschreibt das Wort, wie er war, oder wie er etwas getan hat?"
+  },
+  {
+    "code": "E1-105",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "How do you say this in English? (Sie schaute ihn wütend an.)",
+    "payload": {
+      "options": [
+        "She looked at him angry.",
+        "She looked at him angrily.",
+        "She saw him angrily on.",
+        "She looked him angrily at."
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "jemanden anschauen heißt to look at sb. Das ist eine Tätigkeit, die das Adverb beschreibt: angrily, am Satzende nach dem Objekt.",
+    "hint": "anschauen = look at. Wie hat sie geschaut?"
+  },
+  {
+    "code": "E1-106",
+    "skill_code": "E1.2",
+    "type": "mc_multi",
+    "difficulty": 3,
+    "stem": "Which sentences are correct? Choose all correct answers.",
+    "payload": {
+      "options": [
+        "This cake tastes delicious.",
+        "She felt sadly after the film.",
+        "He became famous.",
+        "The dog looked at me friendly.",
+        "They remained quiet."
+      ]
+    },
+    "solution": {
+      "indices": [
+        0,
+        2,
+        4
+      ]
+    },
+    "explanation": "Nach taste, feel, become und remain steht das Adjektiv: tastes delicious, felt sad, became famous, remained quiet. Zu friendly gibt es keine Adverbform, man sagt in a friendly way.",
+    "hint": "Nach Zustands- und Wahrnehmungsverben steht das Adjektiv."
+  },
+  {
+    "code": "E1-107",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Fill in the adjective or the adverb.",
+    "payload": {
+      "text": "Your idea sounds [[0]] (interesting). Let's do it [[1]] (quick)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "interesting"
+        ],
+        [
+          "quickly"
+        ]
+      ]
+    },
+    "explanation": "Das Verb sound ist ein Verb der Wahrnehmung, danach steht das Adjektiv: sounds interesting. Mit do it ist eine Tätigkeit gemeint, dazu passt das Adverb: quickly.",
+    "hint": "Was wird beschrieben: die Idee oder die Handlung?"
+  },
+  {
+    "code": "E1-108",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Fill in the correct forms. Use adjectives, adverbs or comparatives.",
+    "payload": {
+      "text": "Our new neighbour is a [[0]] (good) cook. She cooks [[1]] (good) than my mum. Her food always smells [[2]] (wonderful), and she works very [[3]] (hard) in her garden."
+    },
+    "solution": {
+      "answers": [
+        [
+          "good"
+        ],
+        [
+          "better"
+        ],
+        [
+          "wonderful"
+        ],
+        [
+          "hard"
+        ]
+      ]
+    },
+    "explanation": "Lücke 1: Vor dem Nomen cook steht das Adjektiv good. Lücke 2: Hier wird eine Tätigkeit verglichen, also well – better. Lücke 3: Nach smell steht das Adjektiv wonderful. Lücke 4: Das Wort hard ist Adjektiv und Adverb zugleich, hardly hieße kaum.",
+    "hint": "Für jede Lücke: Nomen, Tätigkeit, Wahrnehmung oder Vergleich?"
+  },
+  {
+    "code": "E1-109",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Which pen do you want, the red one or the black ___?",
+    "payload": {
+      "options": [
+        "one",
+        "it",
+        "them",
+        "ones"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Das Stützwort one ersetzt ein zählbares Nomen im Singular, damit man es nicht wiederholen muss: the black one = the black pen. Die Form ones wäre Plural.",
+    "hint": "Es geht um einen einzigen Stift."
+  },
+  {
+    "code": "E1-110",
+    "skill_code": "E1.3",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Which T-shirt do you like? — I like the green [[0]]. But the white [[1]] in the window are nice too.",
+      "gaps": [
+        {
+          "options": [
+            "it",
+            "ones",
+            "one"
+          ]
+        },
+        {
+          "options": [
+            "ones",
+            "one",
+            "them"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "one",
+        "ones"
+      ]
+    },
+    "explanation": "Nach einem Adjektiv steht das Stützwort: the green one (ein T-Shirt). Bei the white ones sind es mehrere, das zeigt das Verb are.",
+    "hint": "Achte auf das Verb: is oder are?"
+  },
+  {
+    "code": "E1-111",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "I've got three cats, and my friend has ___.",
+    "payload": {
+      "options": [
+        "ones two",
+        "two one",
+        "two",
+        "two ones"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Nach Grundzahlen (one, two, three …) steht kein one/ones. Man sagt einfach: my friend has two.",
+    "hint": "Nach Zahlen braucht man kein Stützwort."
+  },
+  {
+    "code": "E1-112",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "These cookies are great. Which sentence is correct?",
+    "payload": {
+      "options": [
+        "Can I have a few one?",
+        "Can I have a few?",
+        "Can I have few ones?",
+        "Can I have a few ones?"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Nach Mengenwörtern wie some, a few, many steht kein one/ones. Also: Can I have a few?",
+    "hint": "Nach Mengenwörtern fällt das Stützwort weg."
+  },
+  {
+    "code": "E1-113",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Is this your bike? — No, ___ is the blue one.",
+    "payload": {
+      "options": [
+        "my",
+        "my one",
+        "me",
+        "mine"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Nach Possessivbegleitern (my, your, his …) steht kein one. Statt \"my one\" benutzt man das Possessivpronomen mine.",
+    "hint": "\"my one\" gibt es nicht."
+  },
+  {
+    "code": "E1-114",
+    "skill_code": "E1.3",
+    "type": "cloze",
+    "difficulty": 3,
+    "stem": "Choose the correct words. (– = no word)",
+    "payload": {
+      "text": "A: Have you got any rucksacks? — B: Yes, these are our new [[0]]. — A: I like the red [[1]]. How much is it? Have you got any blue [[2]]? — B: Sorry, we've only got two [[3]] left.",
+      "gaps": [
+        {
+          "options": [
+            "–",
+            "ones",
+            "one"
+          ]
+        },
+        {
+          "options": [
+            "–",
+            "one",
+            "ones"
+          ]
+        },
+        {
+          "options": [
+            "ones",
+            "one",
+            "–"
+          ]
+        },
+        {
+          "options": [
+            "–",
+            "one",
+            "ones"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "ones",
+        "one",
+        "ones",
+        "–"
+      ]
+    },
+    "explanation": "Lücke 1: Nach einem Adjektiv im Plural steht ones: our new ones. Lücke 2: Es ist ein Rucksack, also the red one. Lücke 3: Mehrere, also any blue ones. Lücke 4: Nach Zahlen wie two steht kein Stützwort: two left.",
+    "hint": "Singular oder Plural? Und steht davor eine Zahl?"
+  },
+  {
+    "code": "E1-115",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Which cake would you like, the chocolate cake or the apple ___?",
+    "payload": {
+      "options": [
+        "it",
+        "one",
+        "–",
+        "ones"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Das Stützwort one ersetzt cake, damit es nicht zweimal im Satz steht: the apple one. Es geht um einen Kuchen, also one.",
+    "hint": "Welches Wort soll nicht wiederholt werden?"
+  },
+  {
+    "code": "E1-116",
+    "skill_code": "E1.3",
+    "type": "order",
+    "difficulty": 2,
+    "stem": "Put the words in the right order.",
+    "payload": {
+      "items": [
+        "Which one",
+        "do",
+        "you",
+        "like",
+        "better?"
+      ]
+    },
+    "explanation": "Fragen mit Which one bildet man so: Which one + do + Subjekt + Verb. Das Wort better steht am Ende.",
+    "hint": "Die Frage beginnt mit dem Fragewort."
+  },
+  {
+    "code": "E1-117",
+    "skill_code": "E1.3",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in one or ones.",
+    "payload": {
+      "text": "My old shoes are too small. I need new [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "ones"
+        ]
+      ]
+    },
+    "explanation": "Das Wort shoes ist Plural, also ersetzt ones das Nomen: new ones = new shoes. Mit one wäre nur ein Schuh gemeint.",
+    "hint": "Singular oder Plural?"
+  },
+  {
+    "code": "E1-118",
+    "skill_code": "E1.3",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the possessive pronoun.",
+    "payload": {
+      "text": "Is this your pen, Tom? — Yes, it's [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "mine"
+        ]
+      ]
+    },
+    "explanation": "Tom antwortet über sich selbst: my pen → mine. Das Possessivpronomen ersetzt Begleiter und Nomen.",
+    "hint": "Tom spricht über sich selbst."
+  },
+  {
+    "code": "E1-119",
+    "skill_code": "E1.3",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the possessive pronoun.",
+    "payload": {
+      "text": "Are these the twins' bikes? — Yes, they're [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "theirs"
+        ]
+      ]
+    },
+    "explanation": "Die Zwillinge sind they, also their bikes → theirs. Ohne Apostroph.",
+    "hint": "Zu they gehört their. Was wird daraus ohne Nomen?"
+  },
+  {
+    "code": "E1-120",
+    "skill_code": "E1.3",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the possessive pronoun.",
+    "payload": {
+      "text": "Is that your family's dog? — Yes, the brown one is [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "ours"
+        ]
+      ]
+    },
+    "explanation": "Zu we gehört der Begleiter our, das Possessivpronomen heißt ours. Possessivpronomen schreibt man ohne Apostroph.",
+    "hint": "we → our → …"
+  },
+  {
+    "code": "E1-121",
+    "skill_code": "E1.3",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the possessive pronoun.",
+    "payload": {
+      "text": "This isn't my sandwich. Is it [[0]], Lisa?"
+    },
+    "solution": {
+      "answers": [
+        [
+          "yours"
+        ]
+      ]
+    },
+    "explanation": "Lisa wird angesprochen (you): your sandwich → yours. Die Form \"your's\" mit Apostroph ist ein typischer Fehler.",
+    "hint": "Lisa wird mit you angesprochen."
+  },
+  {
+    "code": "E1-122",
+    "skill_code": "E1.3",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the possessive pronoun.",
+    "payload": {
+      "text": "Whose cap is this? Is it Paul's? — Yes, it's [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "his"
+        ]
+      ]
+    },
+    "explanation": "Paul ist he, also his cap → his. Beim Possessivpronomen bleibt his gleich.",
+    "hint": "Bei he ändert sich die Form nicht."
+  },
+  {
+    "code": "E1-123",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Is this your book or ___?",
+    "payload": {
+      "options": [
+        "her's",
+        "she's",
+        "her",
+        "hers"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Ohne Nomen danach steht das Possessivpronomen: hers. Possessivpronomen haben nie einen Apostroph. she's heißt she is.",
+    "hint": "Nach dem Wort kommt kein Nomen mehr."
+  },
+  {
+    "code": "E1-124",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Our garden is big, but ___ is even bigger.",
+    "payload": {
+      "options": [
+        "their's",
+        "there's",
+        "their",
+        "theirs"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "theirs steht für their garden. Possessivpronomen schreibt man ohne Apostroph. there's heißt there is.",
+    "hint": "Das Wort ersetzt \"their garden\"."
+  },
+  {
+    "code": "E1-125",
+    "skill_code": "E1.3",
+    "type": "match",
+    "difficulty": 1,
+    "stem": "Match the possessive determiners with the possessive pronouns.",
+    "payload": {
+      "pairs": [
+        [
+          "my",
+          "mine"
+        ],
+        [
+          "her",
+          "hers"
+        ],
+        [
+          "our",
+          "ours"
+        ],
+        [
+          "their",
+          "theirs"
+        ]
+      ]
+    },
+    "explanation": "Die meisten Possessivpronomen bekommen ein -s: hers, ours, yours, theirs. Ausnahmen: my → mine, his bleibt his.",
+    "hint": "Nur einer bekommt kein -s."
+  },
+  {
+    "code": "E1-126",
+    "skill_code": "E1.3",
+    "type": "cloze",
+    "difficulty": 3,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Waiter: Whose pizza is this? — Ella: It's not [[0]]. I wanted the pasta. — Jack: Oh, the pizza is [[1]]. — Waiter: And the two milkshakes? — Ben and Lucy: They're [[2]]!",
+      "gaps": [
+        {
+          "options": [
+            "mine's",
+            "me",
+            "mine",
+            "my"
+          ]
+        },
+        {
+          "options": [
+            "me",
+            "my",
+            "mines",
+            "mine"
+          ]
+        },
+        {
+          "options": [
+            "us",
+            "our",
+            "ours",
+            "our's"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "mine",
+        "mine",
+        "ours"
+      ]
+    },
+    "explanation": "Ohne folgendes Nomen stehen Possessivpronomen: mine, ours. \"mines\" und \"our's\" sind typische Fehler. Ben und Lucy sprechen über sich beide (we), also ours.",
+    "hint": "Nach den Lücken kommt kein Nomen mehr."
+  },
+  {
+    "code": "E1-127",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "How do you say this in English? (Sie ist eine Freundin von uns.)",
+    "payload": {
+      "options": [
+        "She's our's friend.",
+        "She's a friend of us.",
+        "She's a friend from us.",
+        "She's a friend of ours."
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Die Wendung \"eine Freundin von uns\" heißt a friend of ours, mit Possessivpronomen. Die Form \"a friend of us\" ist ein typischer Fehler.",
+    "hint": "Nach a friend of steht das Possessivpronomen."
+  },
+  {
+    "code": "E1-128",
+    "skill_code": "E1.3",
+    "type": "mc_multi",
+    "difficulty": 3,
+    "stem": "Which sentences are correct? Choose all correct answers.",
+    "payload": {
+      "options": [
+        "Is that bag yours?",
+        "This is a friend of hers.",
+        "The red car is our's.",
+        "Their house is bigger than ours.",
+        "These books are my ones."
+      ]
+    },
+    "solution": {
+      "indices": [
+        0,
+        1,
+        3
+      ]
+    },
+    "explanation": "Possessivpronomen haben keinen Apostroph (ours, nicht our's). Nach my, your … steht kein one/ones, man sagt mine. a friend of hers ist richtig.",
+    "hint": "Achte auf Apostrophe und auf \"my ones\"."
+  },
+  {
+    "code": "E1-129",
+    "skill_code": "E1.3",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Fill in the possessive pronouns.",
+    "payload": {
+      "text": "I lost my umbrella. Can I borrow [[0]], Mum? — Sorry, I need [[1]] today. Ask Dad. Maybe he can give you [[2]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "yours"
+        ],
+        [
+          "mine"
+        ],
+        [
+          "his"
+        ]
+      ]
+    },
+    "explanation": "Lücke 1: Die Mutter wird angesprochen, also your umbrella → yours. Lücke 2: Die Mutter spricht über sich selbst, also my umbrella → mine. Lücke 3: Dad ist he, also his.",
+    "hint": "Wer spricht, und über wessen Schirm?"
+  },
+  {
+    "code": "E1-130",
+    "skill_code": "E1.3",
+    "type": "order",
+    "difficulty": 2,
+    "stem": "Put the words in the right order.",
+    "payload": {
+      "items": [
+        "She's",
+        "a good friend",
+        "of",
+        "mine."
+      ]
+    },
+    "explanation": "a friend of mine = eine Freundin von mir. Nach of steht das Possessivpronomen.",
+    "hint": "Am Ende steht das Possessivpronomen."
+  },
+  {
+    "code": "E1-131",
+    "skill_code": "E1.3",
+    "type": "cloze",
+    "difficulty": 3,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Look at these jackets. [[0]] one do you like better? — I like the blue one. It's nicer than [[1]].",
+      "gaps": [
+        {
+          "options": [
+            "What",
+            "Who",
+            "Which"
+          ]
+        },
+        {
+          "options": [
+            "my",
+            "mine",
+            "my one"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "Which",
+        "mine"
+      ]
+    },
+    "explanation": "Wenn man zwischen bestimmten Dingen wählt, fragt man mit Which one. Statt \"my one\" sagt man mine.",
+    "hint": "Man wählt zwischen zwei Jacken."
+  },
+  {
+    "code": "E1-132",
+    "skill_code": "E1.4",
+    "type": "match",
+    "difficulty": 1,
+    "stem": "Match the nouns with their adjectives.",
+    "payload": {
+      "pairs": [
+        [
+          "anger",
+          "angry"
+        ],
+        [
+          "health",
+          "healthy"
+        ],
+        [
+          "mud",
+          "muddy"
+        ],
+        [
+          "cloud",
+          "cloudy"
+        ]
+      ]
+    },
+    "explanation": "Viele Adjektive bildet man mit -y. Achte auf die Schreibung: anger → angry (ohne e), mud → muddy (d wird verdoppelt).",
+    "hint": "Alle vier Adjektive enden auf -y."
+  },
+  {
+    "code": "E1-133",
+    "skill_code": "E1.4",
+    "type": "match",
+    "difficulty": 1,
+    "stem": "Match the nouns with their adjectives.",
+    "payload": {
+      "pairs": [
+        [
+          "history",
+          "historical"
+        ],
+        [
+          "music",
+          "musical"
+        ],
+        [
+          "tradition",
+          "traditional"
+        ],
+        [
+          "centre",
+          "central"
+        ]
+      ]
+    },
+    "explanation": "Diese Adjektive enden auf -al. Achte auf die Schreibung: history → historical, centre → central.",
+    "hint": "Alle vier Adjektive enden auf -al."
+  },
+  {
+    "code": "E1-134",
+    "skill_code": "E1.4",
+    "type": "match",
+    "difficulty": 2,
+    "stem": "Match the nouns with their adjectives.",
+    "payload": {
+      "pairs": [
+        [
+          "competition",
+          "competitive"
+        ],
+        [
+          "crowd",
+          "crowded"
+        ],
+        [
+          "danger",
+          "dangerous"
+        ],
+        [
+          "freedom",
+          "free"
+        ]
+      ]
+    },
+    "explanation": "Diese Adjektive muss man einzeln lernen: competitive, crowded, dangerous, free. Achtung: Das Adjektiv zu freedom ist einfach free.",
+    "hint": "Jedes Adjektiv hat eine andere Endung."
+  },
+  {
+    "code": "E1-135",
+    "skill_code": "E1.4",
+    "type": "match",
+    "difficulty": 2,
+    "stem": "Match the nouns with their adjectives.",
+    "payload": {
+      "pairs": [
+        [
+          "difference",
+          "different"
+        ],
+        [
+          "independence",
+          "independent"
+        ],
+        [
+          "possibility",
+          "possible"
+        ],
+        [
+          "wood",
+          "wooden"
+        ]
+      ]
+    },
+    "explanation": "Nomen auf -ence haben oft ein Adjektiv auf -ent: difference → different, independence → independent. Aus wood wird wooden (aus Holz), aus possibility wird possible.",
+    "hint": "-ence wird oft zu -ent."
+  },
+  {
+    "code": "E1-136",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "Take a jacket. It's very [[0]] (cloud) today."
+    },
+    "solution": {
+      "answers": [
+        [
+          "cloudy"
+        ]
+      ]
+    },
+    "explanation": "Das Adjektiv bildet man mit -y: cloud → cloudy (bewölkt). Vor dem Nomen oder nach be steht immer das Adjektiv.",
+    "hint": "Die Endung ist -y."
+  },
+  {
+    "code": "E1-137",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "Don't swim in this river. It's [[0]] (danger)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "dangerous"
+        ]
+      ]
+    },
+    "explanation": "Das Adjektiv bildet man mit -ous: danger → dangerous (gefährlich). Nach is steht das Adjektiv.",
+    "hint": "Die Endung ist -ous."
+  },
+  {
+    "code": "E1-138",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "The market was so [[0]] (crowd) that we couldn't move."
+    },
+    "solution": {
+      "answers": [
+        [
+          "crowded"
+        ]
+      ]
+    },
+    "explanation": "Das Nomen crowd heißt Menschenmenge, das Adjektiv crowded heißt überfüllt. Es endet auf -ed, ist aber hier kein Verb.",
+    "hint": "Die Endung sieht aus wie bei einem Verb in der Vergangenheit."
+  },
+  {
+    "code": "E1-139",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "My little brother tells really [[0]] (fun) jokes."
+    },
+    "solution": {
+      "answers": [
+        [
+          "funny"
+        ]
+      ]
+    },
+    "explanation": "fun → funny (lustig). Das n wird verdoppelt, dann -y. Achtung: fun allein heißt Spaß.",
+    "hint": "Doppelter Konsonant, dann -y."
+  },
+  {
+    "code": "E1-140",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "Thanks for your tips. They were really [[0]] (help)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "helpful"
+        ]
+      ]
+    },
+    "explanation": "Das Adjektiv bildet man mit -ful: help → helpful (hilfreich). Die Endung -ful schreibt man mit nur einem l.",
+    "hint": "Die Tipps waren voller Hilfe."
+  },
+  {
+    "code": "E1-141",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "Without his glasses, Grandpa feels [[0]] (help)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "helpless"
+        ]
+      ]
+    },
+    "explanation": "help + -less = helpless (hilflos). -less bedeutet \"ohne\", -ful bedeutet \"voller\". Nach feel steht das Adjektiv.",
+    "hint": "Ohne Brille kann er sich nicht helfen."
+  },
+  {
+    "code": "E1-142",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "Our town has a [[0]] (tradition) festival every summer."
+    },
+    "solution": {
+      "answers": [
+        [
+          "traditional"
+        ]
+      ]
+    },
+    "explanation": "tradition + -al = traditional. Vor dem Nomen festival steht das Adjektiv.",
+    "hint": "Die Endung ist -al."
+  },
+  {
+    "code": "E1-143",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "After the football match, our boots were all [[0]] (mud)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "muddy"
+        ]
+      ]
+    },
+    "explanation": "mud → muddy (schlammig). Der Konsonant d wird verdoppelt, dann -y.",
+    "hint": "Doppelter Konsonant, dann -y."
+  },
+  {
+    "code": "E1-144",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "Ben hates losing. He's very [[0]] (competition)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "competitive"
+        ]
+      ]
+    },
+    "explanation": "competition → competitive (ehrgeizig im Wettkampf). Achtung: Das Adjektiv endet auf -itive.",
+    "hint": "Das Adjektiv endet auf -ive."
+  },
+  {
+    "code": "E1-145",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "Eat more fruit and vegetables. They're [[0]] (health)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "healthy"
+        ]
+      ]
+    },
+    "explanation": "Das Adjektiv bildet man mit -y: health → healthy (gesund). Nach be steht das Adjektiv, nicht das Nomen.",
+    "hint": "Die Endung ist -y."
+  },
+  {
+    "code": "E1-146",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "This museum shows [[0]] (history) clothes from the time of the Normans."
+    },
+    "solution": {
+      "answers": [
+        [
+          "historical"
+        ]
+      ]
+    },
+    "explanation": "history → historical (historisch). Das y wird zu i, dann -cal.",
+    "hint": "Die Endung ist -al."
+  },
+  {
+    "code": "E1-147",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "We had dinner at a big [[0]] (wood) table."
+    },
+    "solution": {
+      "answers": [
+        [
+          "wooden"
+        ]
+      ]
+    },
+    "explanation": "wood → wooden (aus Holz). Das Adjektiv endet auf -en, wie golden.",
+    "hint": "Die Endung ist -en."
+  },
+  {
+    "code": "E1-148",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "What's the opposite of \"successful\"?",
+    "payload": {
+      "options": [
+        "insuccessful",
+        "unsuccessfull",
+        "unsuccessful",
+        "successless"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Das Gegenteil von successful bildet man mit un-: unsuccessful. Am Ende steht -ful mit nur einem l.",
+    "hint": "Die Vorsilbe heißt un-."
+  },
+  {
+    "code": "E1-149",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "What's the opposite of \"colourful\"?",
+    "payload": {
+      "options": [
+        "colourfree",
+        "colourlest",
+        "uncolourful",
+        "colourless"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "-less bedeutet \"ohne\": colourless = farblos. Gegenteile von -ful-Adjektiven bildet man oft mit -less: helpful – helpless, hopeful – hopeless.",
+    "hint": "-ful heißt \"voller\", was heißt \"ohne\"?"
+  },
+  {
+    "code": "E1-150",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "The film was really [[0]]. I wasn't bored at all.",
+      "gaps": [
+        {
+          "options": [
+            "excited",
+            "excitement",
+            "exciting"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "exciting"
+      ]
+    },
+    "explanation": "Adjektive auf -ing beschreiben, wie etwas ist: an exciting film (ein spannender Film). Mit excited beschreibt man, wie sich jemand fühlt. Das Wort excitement ist das Nomen.",
+    "hint": "Wird der Film beschrieben oder ein Gefühl?"
+  },
+  {
+    "code": "E1-151",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Make an adjective from the noun in brackets.",
+    "payload": {
+      "text": "The end of the story was very [[0]] (surprise). Nobody expected it."
+    },
+    "solution": {
+      "answers": [
+        [
+          "surprising"
+        ]
+      ]
+    },
+    "explanation": "surprise → surprising (überraschend). Das e fällt weg, dann -ing.",
+    "hint": "Adjektiv auf -ing."
+  },
+  {
+    "code": "E1-152",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Hurry up! We have to get ___ for school.",
+    "payload": {
+      "options": [
+        "readiness",
+        "readily",
+        "ready",
+        "more ready"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "to get ready = sich bereit machen. Nach get (werden) steht das Adjektiv.",
+    "hint": "get heißt hier \"werden\"."
+  },
+  {
+    "code": "E1-153",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Oh no! Everything went ___ today.",
+    "payload": {
+      "options": [
+        "wrongly",
+        "wrongs",
+        "mistake",
+        "wrong"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "to go wrong = schiefgehen. Nach go (im Sinn von werden) steht das Adjektiv: wrong.",
+    "hint": "Gemeint ist: Alles ist schiefgegangen."
+  },
+  {
+    "code": "E1-154",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 3,
+    "stem": "Choose the correct verb.",
+    "payload": {
+      "text": "Dinosaurs [[0]] extinct millions of years ago.",
+      "gaps": [
+        {
+          "options": [
+            "became",
+            "got",
+            "made",
+            "turned"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "became"
+      ]
+    },
+    "explanation": "to become extinct = aussterben. Diese Verbindung steht so im Buch, mit become.",
+    "hint": "Welches Verb gehört zu extinct?"
+  },
+  {
+    "code": "E1-155",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 3,
+    "stem": "Choose the correct verb.",
+    "payload": {
+      "text": "My grandpa [[0]] eighty last week. We had a big party.",
+      "gaps": [
+        {
+          "options": [
+            "became",
+            "went",
+            "turned",
+            "got"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "turned"
+      ]
+    },
+    "explanation": "Bei Altersangaben sagt man turn: He turned eighty = Er wurde achtzig. Die Form \"became eighty\" ist falsch.",
+    "hint": "Mit welchem Verb sagt man, dass jemand ein neues Alter erreicht?"
+  },
+  {
+    "code": "E1-156",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct verb.",
+    "payload": {
+      "text": "When she saw the big spider, she [[0]] scared.",
+      "gaps": [
+        {
+          "options": [
+            "did",
+            "went",
+            "got",
+            "made"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "got"
+      ]
+    },
+    "explanation": "Die Wendung to get scared heißt Angst bekommen. Das Verb get bedeutet hier \"werden\", danach steht das Adjektiv.",
+    "hint": "Welches Verb bedeutet hier \"werden\"?"
+  },
+  {
+    "code": "E1-157",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct verb.",
+    "payload": {
+      "text": "You're ill? I hope you [[0]] well soon!",
+      "gaps": [
+        {
+          "options": [
+            "get",
+            "go",
+            "make",
+            "turn"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "get"
+      ]
+    },
+    "explanation": "to get well = gesund werden. Get well soon! ist auch der typische Gruß für Kranke.",
+    "hint": "Denk an den Gruß auf Genesungskarten."
+  },
+  {
+    "code": "E1-158",
+    "skill_code": "E1.4",
+    "type": "match",
+    "difficulty": 3,
+    "stem": "Match the English phrases with the German meanings.",
+    "payload": {
+      "pairs": [
+        [
+          "to become extinct",
+          "aussterben"
+        ],
+        [
+          "to get ready",
+          "sich bereit machen"
+        ],
+        [
+          "to go wrong",
+          "schiefgehen"
+        ],
+        [
+          "to turn sour",
+          "sauer werden"
+        ]
+      ]
+    },
+    "explanation": "Alle vier Verben bedeuten \"werden\", passen aber nur zu bestimmten Adjektiven: become extinct, get ready, go wrong, turn sour. Diese Verbindungen lernt man am besten als feste Wendungen.",
+    "hint": "Die Verben become, get, go und turn bedeuten alle \"werden\"."
+  },
+  {
+    "code": "E1-159",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "My coach is very [[0]]. He always tells everyone what to do. But he's also very [[1]]: he wants our team to win every game.",
+      "gaps": [
+        {
+          "options": [
+            "tasty",
+            "bossy",
+            "rural",
+            "laid-back"
+          ]
+        },
+        {
+          "options": [
+            "spectacular",
+            "understandable",
+            "stubborn",
+            "ambitious"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "bossy",
+        "ambitious"
+      ]
+    },
+    "explanation": "Das Wort bossy heißt herrisch: jemand, der allen sagt, was sie tun sollen. Mit ambitious (ehrgeizig) beschreibt man jemanden, der immer gewinnen will. Das Wort laid-back wäre das Gegenteil von bossy.",
+    "hint": "Wer allen sagt, was sie tun sollen, ist …"
+  },
+  {
+    "code": "E1-160",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "I can't [[0]] a decision. Both jackets are nice. — OK, let's meet [[1]]: you buy the blue one today, and the black one next month.",
+      "gaps": [
+        {
+          "options": [
+            "make",
+            "do",
+            "put",
+            "give"
+          ]
+        },
+        {
+          "options": [
+            "half",
+            "between",
+            "middle",
+            "halfway"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "make",
+        "halfway"
+      ]
+    },
+    "explanation": "Die Wendung to make a decision heißt eine Entscheidung treffen, nicht \"do a decision\". Mit to meet halfway (sich auf halbem Weg treffen) ist gemeint, einen Kompromiss zu finden.",
+    "hint": "Beides sind feste Wendungen aus Unit 1."
+  },
+  {
+    "code": "E1-161",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Please don't [[0]] me while I'm speaking. — Sorry! But you've got a [[1]]. I didn't think about that.",
+      "gaps": [
+        {
+          "options": [
+            "complain",
+            "convince",
+            "accept",
+            "interrupt"
+          ]
+        },
+        {
+          "options": [
+            "chance",
+            "right",
+            "point",
+            "sense"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "interrupt",
+        "point"
+      ]
+    },
+    "explanation": "Das Verb to interrupt heißt unterbrechen. Die Wendung to have (got) a point heißt nicht ganz Unrecht haben.",
+    "hint": "Was tut jemand, der dazwischenredet?"
+  },
+  {
+    "code": "E1-162",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct words.",
+    "payload": {
+      "text": "Maths comes [[0]] to my sister. She never has to [[1]] about her grades.",
+      "gaps": [
+        {
+          "options": [
+            "easier",
+            "ease",
+            "easyly",
+            "easily"
+          ]
+        },
+        {
+          "options": [
+            "complain",
+            "compromise",
+            "compete",
+            "convince"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "easily",
+        "complain"
+      ]
+    },
+    "explanation": "Die Wendung to come easily to sb heißt jmdm. leichtfallen, mit dem Adverb easily. Das Verb to complain about heißt sich beschweren über.",
+    "hint": "Nach come steht hier ein Adverb."
+  },
+  {
+    "code": "E1-163",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Fill in the missing words. (Wenn du Erfolg haben willst, musst du dir alles abverlangen.)",
+    "payload": {
+      "text": "If you want to be successful, you have to [[0]] yourself."
+    },
+    "solution": {
+      "answers": [
+        [
+          "push"
+        ]
+      ]
+    },
+    "explanation": "to push oneself = sich alles abverlangen. Das Reflexivpronomen passt man an: you → yourself.",
+    "hint": "Das Verb heißt auch \"schieben\"."
+  },
+  {
+    "code": "E1-164",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Fill in the missing word. (Ich habe nichts dagegen, auf meinen Bruder aufzupassen.)",
+    "payload": {
+      "text": "I don't [[0]] looking after my little brother."
+    },
+    "solution": {
+      "answers": [
+        [
+          "mind"
+        ]
+      ]
+    },
+    "explanation": "I don't mind + -ing = Ich habe nichts dagegen, … zu tun. Nach mind steht die -ing-Form.",
+    "hint": "I don't … + -ing-Form."
+  },
+  {
+    "code": "E1-165",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Choose the correct word. \"I can do it all by ___. I don't need any help.\"",
+    "payload": {
+      "options": [
+        "myself",
+        "me",
+        "my own",
+        "mine"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Die Wendung all by oneself heißt ganz allein, ohne Hilfe. Man passt oneself an das Subjekt an: I → all by myself.",
+    "hint": "Das Subjekt ist I."
+  },
+  {
+    "code": "E1-166",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Read the text and answer the question.\n\n*Hi, I'm Jayden and I'm 13. I go to a middle school in Ohio. After school I'm in the robot club. We build robots and compete against other schools. Last month our robot won second prize! Building robots doesn't come easily to me, but our coach motivates us a lot. My parents don't push me. They say it doesn't matter if we win, as long as I enjoy myself.*\n\nWhat does Jayden do after school?",
+    "payload": {
+      "options": [
+        "He builds robots in a club.",
+        "He helps his parents.",
+        "He trains horses.",
+        "He plays basketball."
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Im Text steht: After school I'm in the robot club. We build robots …",
+    "hint": "Lies den dritten Satz."
+  },
+  {
+    "code": "E1-167",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Read the text and answer the question.\n\n*Hi, I'm Jayden and I'm 13. I go to a middle school in Ohio. After school I'm in the robot club. We build robots and compete against other schools. Last month our robot won second prize! Building robots doesn't come easily to me, but our coach motivates us a lot. My parents don't push me. They say it doesn't matter if we win, as long as I enjoy myself.*\n\nWhat do Jayden's parents think?",
+    "payload": {
+      "options": [
+        "Jayden has to win every competition.",
+        "Jayden should go to another school.",
+        "The robot club is a waste of time.",
+        "Having fun is more important than winning."
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Die Eltern sagen: it doesn't matter if we win, as long as I enjoy myself. Spaß ist ihnen also wichtiger als Gewinnen.",
+    "hint": "Lies den letzten Satz genau: doesn't matter, as long as …"
+  },
+  {
+    "code": "E1-168",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Read the text and answer the question.\n\n*Hi, I'm Jayden and I'm 13. I go to a middle school in Ohio. After school I'm in the robot club. We build robots and compete against other schools. Last month our robot won second prize! Building robots doesn't come easily to me, but our coach motivates us a lot. My parents don't push me. They say it doesn't matter if we win, as long as I enjoy myself.*\n\nWhich sentence is true?",
+    "payload": {
+      "options": [
+        "Jayden's robot won first prize.",
+        "Jayden's parents push him a lot.",
+        "Building robots isn't easy for Jayden.",
+        "The coach is very strict and never helps."
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Im Text steht: Building robots doesn't come easily to me. Der Roboter wurde Zweiter, die Eltern drängen ihn nicht, und der Coach motiviert die Gruppe.",
+    "hint": "to come easily to sb = jmdm. leichtfallen."
+  },
+  {
+    "code": "E1-169",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Read the text and answer the question.\n\n*English is a mix of many languages. Before 1066, the Anglo-Saxons lived in England and spoke Old English. Then the Normans came from France and defeated the Anglo-Saxon king. For about 300 years, the rich people in England spoke French. That's why English has two words for many things: the farmers, who spoke English, had a cow or a pig. But the rich Normans ate beef or pork. Words from Latin and Greek came into English later.*\n\nWhy are there two words for some animals and their meat?",
+    "payload": {
+      "options": [
+        "Greek and Latin words came first.",
+        "The farmers spoke English, but the rich Normans who ate the meat spoke French.",
+        "The Normans didn't eat meat.",
+        "The Anglo-Saxons liked meat more than the Normans."
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Die Bauern, die die Tiere hielten, sprachen Englisch (cow, pig). Die reichen Normannen, die das Fleisch aßen, sprachen Französisch (beef, pork).",
+    "hint": "Wer hielt die Tiere, wer aß das Fleisch?"
+  },
+  {
+    "code": "E1-170",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Read the text and answer the question.\n\n*English is a mix of many languages. Before 1066, the Anglo-Saxons lived in England and spoke Old English. Then the Normans came from France and defeated the Anglo-Saxon king. For about 300 years, the rich people in England spoke French. That's why English has two words for many things: the farmers, who spoke English, had a cow or a pig. But the rich Normans ate beef or pork. Words from Latin and Greek came into English later.*\n\nWhat happened in 1066?",
+    "payload": {
+      "options": [
+        "The Anglo-Saxons came to England.",
+        "The Normans defeated the Anglo-Saxon king.",
+        "Latin words came into English.",
+        "English people stopped speaking French."
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Im Text steht: Then the Normans came from France and defeated the Anglo-Saxon king. Das Verb to defeat heißt besiegen.",
+    "hint": "to defeat = besiegen."
+  },
+  {
+    "code": "E1-171",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "The boys built the tree house ___. Nobody helped them.",
+    "payload": {
+      "options": [
+        "each other",
+        "theirselves",
+        "themselves",
+        "themself"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Für they heißt das Reflexivpronomen themselves. Die Formen \"theirselves\" und \"themself\" sind typische Fehler. Mit each other wäre gemeint, dass sie einander gebaut hätten.",
+    "hint": "Plural von -self ist -selves, und die erste Silbe ist them-."
+  },
+  {
+    "code": "E1-172",
+    "skill_code": "E1.1",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "How do you say this in English? (Sie fragen sich, wo ihr Hund ist.)",
+    "payload": {
+      "options": [
+        "They wonder themselves where their dog is.",
+        "They wonder where their dog is.",
+        "They wonder each other where their dog is.",
+        "They wonder them where their dog is."
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Das deutsche \"sich fragen\" heißt to wonder, ohne Reflexivpronomen. Formen wie \"wonder themselves\" oder \"wonder them\" sind falsch, weil man das deutsche \"sich\" mitübersetzt.",
+    "hint": "Für \"sich fragen\" gibt es ein eigenes englisches Verb."
+  },
+  {
+    "code": "E1-173",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the reflexive pronoun.",
+    "payload": {
+      "text": "Children, did you enjoy [[0]] at the zoo?"
+    },
+    "solution": {
+      "answers": [
+        [
+          "yourselves"
+        ]
+      ]
+    },
+    "explanation": "Mehrere Kinder werden angesprochen, also Plural: yourselves. Im Plural wird aus -self die Endung -selves, \"yourselfs\" ist falsch.",
+    "hint": "Plural von -self ist -selves."
+  },
+  {
+    "code": "E1-174",
+    "skill_code": "E1.1",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the reflexive pronoun.",
+    "payload": {
+      "text": "When I was six, I taught [[0]] to ride a bike."
+    },
+    "solution": {
+      "answers": [
+        [
+          "myself"
+        ]
+      ]
+    },
+    "explanation": "Subjekt und Objekt sind dieselbe Person (I). Darum steht das Reflexivpronomen myself, man fragt: Wem habe ich es beigebracht? Mir selbst.",
+    "hint": "Wem hat das Kind das Radfahren beigebracht?"
+  },
+  {
+    "code": "E1-175",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 1,
+    "stem": "Fill in the adverb of \"beautiful\".",
+    "payload": {
+      "text": "My sister sings [[0]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "beautifully"
+        ]
+      ]
+    },
+    "explanation": "Endet das Adjektiv auf -ful, kommt -ly dazu und man schreibt zwei l: beautiful → beautifully. \"Beautifuly\" mit einem l ist ein häufiger Fehler.",
+    "hint": "Bei -ful + -ly stehen zwei l hintereinander."
+  },
+  {
+    "code": "E1-176",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "The film was [[0]] boring. I fell asleep.",
+      "gaps": [
+        {
+          "options": [
+            "terrible",
+            "terribly"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "terribly"
+      ]
+    },
+    "explanation": "Adverbien beschreiben auch Adjektive genauer: terribly boring (furchtbar langweilig). Vor einem Adjektiv steht deshalb das Adverb, nicht das Adjektiv.",
+    "hint": "Das Wort beschreibt das Adjektiv boring."
+  },
+  {
+    "code": "E1-177",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "I didn't have breakfast. I'm ___ hungry!",
+    "payload": {
+      "options": [
+        "real",
+        "reality",
+        "really",
+        "more real"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Vor einem Adjektiv (hungry) steht das Adverb: really hungry. Das Adjektiv real passt nur vor ein Nomen oder nach be.",
+    "hint": "Das Wort beschreibt hungry genauer."
+  },
+  {
+    "code": "E1-178",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "That was close! I ___ missed the bus.",
+    "payload": {
+      "options": [
+        "near",
+        "nearly",
+        "hardly",
+        "nearby"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Das Wort nearly heißt fast (beinahe): I nearly missed the bus. Das Wort near heißt nahe, hardly heißt kaum. Achtung, Verwechslungsgefahr: nearly heißt nicht \"nah\".",
+    "hint": "Gemeint ist: Ich hätte den Bus beinahe verpasst."
+  },
+  {
+    "code": "E1-179",
+    "skill_code": "E1.2",
+    "type": "cloze",
+    "difficulty": 1,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "Lisa runs faster [[0]] her brother.",
+      "gaps": [
+        {
+          "options": [
+            "then",
+            "as",
+            "like",
+            "than"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "than"
+      ]
+    },
+    "explanation": "Nach einem Komparativ steht than (als): faster than. Das Wort then heißt dann. Diese beiden verwechselt man leicht, weil sie ähnlich klingen.",
+    "hint": "Wie heißt \"als\" beim Vergleich?"
+  },
+  {
+    "code": "E1-180",
+    "skill_code": "E1.2",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the adverb of the word in brackets.",
+    "payload": {
+      "text": "I can't shout as [[0]] (loud) as you."
+    },
+    "solution": {
+      "answers": [
+        [
+          "loudly"
+        ]
+      ]
+    },
+    "explanation": "Bei as … as vergleicht man zwei Dinge, die gleich sind. Es beschreibt hier, wie jemand ruft, also steht das Adverb: as loudly as.",
+    "hint": "Das Wort beschreibt das Verb shout."
+  },
+  {
+    "code": "E1-181",
+    "skill_code": "E1.2",
+    "type": "order",
+    "difficulty": 2,
+    "stem": "Make a sentence from the words: ride • Emily • good • Jack",
+    "payload": {
+      "items": [
+        "Emily",
+        "rides",
+        "better",
+        "than",
+        "Jack."
+      ]
+    },
+    "explanation": "Emily reitet besser als Jack. Das Adverb zu good ist well, die Steigerung heißt better. Danach folgt than und die zweite Person.",
+    "hint": "Die Steigerung von well heißt better."
+  },
+  {
+    "code": "E1-182",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Which sentence has a mistake?",
+    "payload": {
+      "options": [
+        "The wolf is horribly.",
+        "It was a horrible night.",
+        "The wolf howled loudly.",
+        "The wolf is horrible."
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Nach be steht immer das Adjektiv: The wolf is horrible. \"is horribly\" ist deshalb falsch. Das Verb howled wird mit dem Adverb loudly beschrieben.",
+    "hint": "Was steht nach einer Form von be?"
+  },
+  {
+    "code": "E1-183",
+    "skill_code": "E1.2",
+    "type": "mc",
+    "difficulty": 3,
+    "stem": "Which sentence has a mistake?",
+    "payload": {
+      "options": [
+        "She explained the rules very clear.",
+        "Their grades were good.",
+        "Our team beat them easily.",
+        "He tried hard, but he lost."
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Das Verb explained wird mit einem Adverb beschrieben: very clearly. Die Wörter hard und good stehen richtig: tried hard (Adverb = Adjektiv), were good (nach be ein Adjektiv).",
+    "hint": "Prüfe bei jedem Satz: beschreibt das Wort ein Verb oder ein Nomen?"
+  },
+  {
+    "code": "E1-184",
+    "skill_code": "E1.2",
+    "type": "mc_multi",
+    "difficulty": 3,
+    "stem": "Check the sentences. Which ones are correct?",
+    "payload": {
+      "options": [
+        "He looked at me nervously.",
+        "This pizza smells fantastically.",
+        "We worked hardly all day.",
+        "She did well in the test.",
+        "Stay quiet, please."
+      ]
+    },
+    "solution": {
+      "indices": [
+        0,
+        3,
+        4
+      ]
+    },
+    "explanation": "Das Verb look at ist eine Handlung, also nervously. Nach smell steht das Adjektiv: smells fantastic. Für fleißig arbeiten heißt es work hard, denn hardly heißt kaum. Nach stay steht das Adjektiv quiet, und do well ist richtig.",
+    "hint": "Achte auf Sinnesverben, auf hard/hardly und auf well."
+  },
+  {
+    "code": "E1-185",
+    "skill_code": "E1.3",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct word.",
+    "payload": {
+      "text": "I don't like this bag. Can I see that black [[0]]?",
+      "gaps": [
+        {
+          "options": [
+            "one",
+            "–",
+            "ones"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "one"
+      ]
+    },
+    "explanation": "Nach einem Adjektiv steht one, wenn es um ein zählbares Ding im Singular geht: that black one = that black bag. Ohne Stützwort fehlt nach black das Nomen, und ones wäre Plural.",
+    "hint": "Es geht um eine einzige Tasche."
+  },
+  {
+    "code": "E1-186",
+    "skill_code": "E1.3",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Whose pens are these? — The blue ___ are mine.",
+    "payload": {
+      "options": [
+        "pens ones",
+        "one",
+        "–",
+        "ones"
+      ]
+    },
+    "solution": {
+      "index": 3
+    },
+    "explanation": "Das Verb are zeigt, dass es mehrere Stifte sind, also ones: the blue ones. Nach einem Adjektiv muss das Stützwort stehen.",
+    "hint": "Das Verb are zeigt dir: Singular oder Plural?"
+  },
+  {
+    "code": "E1-187",
+    "skill_code": "E1.3",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Fill in the possessive pronouns.",
+    "payload": {
+      "text": "This is my seat and that's [[0]], Ella. And where are Ben and Lucy? — Those two seats are [[1]]."
+    },
+    "solution": {
+      "answers": [
+        [
+          "yours"
+        ],
+        [
+          "theirs"
+        ]
+      ]
+    },
+    "explanation": "Ella wird angesprochen: your seat → yours. Ben und Lucy sind they: their seats → theirs. Possessivpronomen haben keinen Apostroph und kein Nomen danach.",
+    "hint": "Wer wird angesprochen, und über wen wird gesprochen?"
+  },
+  {
+    "code": "E1-188",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct prepositions.",
+    "payload": {
+      "text": "We couldn't agree [[0]] a film, so we went to the park. — Don't judge people [[1]] their clothes!",
+      "gaps": [
+        {
+          "options": [
+            "by",
+            "at",
+            "for",
+            "on"
+          ]
+        },
+        {
+          "options": [
+            "by",
+            "at",
+            "after",
+            "of"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "on",
+        "by"
+      ]
+    },
+    "explanation": "Wenn man sich auf etwas einigt, sagt man agree on sth. Menschen beurteilen nach etwas heißt judge by sth. Beide Präpositionen muss man mit dem Verb zusammen lernen.",
+    "hint": "Beide Präpositionen gehören fest zum Verb."
+  },
+  {
+    "code": "E1-189",
+    "skill_code": "E1.4",
+    "type": "cloze",
+    "difficulty": 2,
+    "stem": "Choose the correct prepositions.",
+    "payload": {
+      "text": "Your opinion really matters [[0]] me. — Next week our team will compete [[1]] the best team in town.",
+      "gaps": [
+        {
+          "options": [
+            "with",
+            "to",
+            "for",
+            "at"
+          ]
+        },
+        {
+          "options": [
+            "at",
+            "from",
+            "to",
+            "against"
+          ]
+        }
+      ]
+    },
+    "solution": {
+      "answers": [
+        "to",
+        "against"
+      ]
+    },
+    "explanation": "Die Wendung matter to sb heißt für jmdn. wichtig sein, \"matter for\" ist ein typischer Fehler. Für \"gegen jmdn. antreten\" sagt man compete against sb.",
+    "hint": "Für jmdn. wichtig sein: matter …"
+  },
+  {
+    "code": "E1-190",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Use the right form of the word in brackets.",
+    "payload": {
+      "text": "My sister has a very strong [[0]] (person)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "personality"
+        ]
+      ]
+    },
+    "explanation": "Aus der Wortfamilie person – personal – personality brauchst du hier das Nomen personality (Persönlichkeit). Nach strong (Adjektiv) steht ein Nomen.",
+    "hint": "Gesucht ist ein Nomen mit der Bedeutung \"Persönlichkeit\"."
+  },
+  {
+    "code": "E1-191",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 2,
+    "stem": "Use the right form of the word in brackets.",
+    "payload": {
+      "text": "Close your eyes and use your [[0]] (imagine)."
+    },
+    "solution": {
+      "answers": [
+        [
+          "imagination"
+        ]
+      ]
+    },
+    "explanation": "Aus dem Verb to imagine wird das Nomen imagination (Fantasie). Nach your steht ein Nomen.",
+    "hint": "Nach your fehlt ein Nomen."
+  },
+  {
+    "code": "E1-192",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Use the right form of the word in brackets.",
+    "payload": {
+      "text": "Chess needs a lot of [[0]] (logic) thinking."
+    },
+    "solution": {
+      "answers": [
+        [
+          "logical"
+        ]
+      ]
+    },
+    "explanation": "Vor dem Nomen thinking steht das Adjektiv logical. Aus dem Nomen logic wird mit -al das Adjektiv.",
+    "hint": "Vor thinking fehlt ein Adjektiv."
+  },
+  {
+    "code": "E1-193",
+    "skill_code": "E1.4",
+    "type": "cloze_free",
+    "difficulty": 3,
+    "stem": "Use the right form of the word in brackets.",
+    "payload": {
+      "text": "Next week there's a big spelling [[0]] (compete) at our school."
+    },
+    "solution": {
+      "answers": [
+        [
+          "competition"
+        ]
+      ]
+    },
+    "explanation": "Aus der Wortfamilie compete – competition – competitive brauchst du hier das Nomen competition (Wettbewerb). Nach spelling fehlt hier ein Nomen.",
+    "hint": "Gesucht ist ein Nomen: ein Wettbewerb."
+  },
+  {
+    "code": "E1-194",
+    "skill_code": "E1.4",
+    "type": "match",
+    "difficulty": 2,
+    "stem": "Match the beginnings and endings of the sayings.",
+    "payload": {
+      "pairs": [
+        [
+          "You can't judge a book",
+          "by its cover."
+        ],
+        [
+          "Practice makes",
+          "perfect."
+        ],
+        [
+          "Don't follow",
+          "the crowd."
+        ],
+        [
+          "You'll never know",
+          "until you try."
+        ]
+      ]
+    },
+    "explanation": "Diese englischen Sprichwörter kamen im Unterricht vor. \"Practice makes perfect\" heißt auf Deutsch \"Übung macht den Meister\".",
+    "hint": "Denk an das Sprichwort über Bücher und Cover."
+  },
+  {
+    "code": "E1-195",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Which word fits? \"A person who always tells other people what to do.\"",
+    "payload": {
+      "options": [
+        "stubborn",
+        "bossy",
+        "successful",
+        "laid-back"
+      ]
+    },
+    "solution": {
+      "index": 1
+    },
+    "explanation": "Das Wort bossy heißt herrisch: jemand, der anderen immer sagt, was sie tun sollen. Mit laid-back meint man das Gegenteil, mit stubborn jemanden, der eigensinnig ist.",
+    "hint": "Das Wort steckt in \"boss\"."
+  },
+  {
+    "code": "E1-196",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 2,
+    "stem": "Which word fits? \"You can't go out because you did something wrong. You are …\"",
+    "payload": {
+      "options": [
+        "laid-back",
+        "misunderstood",
+        "grounded",
+        "rural"
+      ]
+    },
+    "solution": {
+      "index": 2
+    },
+    "explanation": "Die Wendung to be grounded heißt Hausarrest haben. Das ist eine typisch amerikanische Strafe für Kinder und Jugendliche.",
+    "hint": "Die Strafe heißt auf Deutsch Hausarrest."
+  },
+  {
+    "code": "E1-197",
+    "skill_code": "E1.4",
+    "type": "mc",
+    "difficulty": 1,
+    "stem": "Which word fits? \"It tells you how to cook something.\"",
+    "payload": {
+      "options": [
+        "a recipe",
+        "a pot",
+        "a vegetable",
+        "a dish"
+      ]
+    },
+    "solution": {
+      "index": 0
+    },
+    "explanation": "Das Wort recipe heißt Rezept. Mit dish ist das fertige Gericht gemeint, nicht die Anleitung.",
+    "hint": "Ein Kochbuch ist voll davon."
   }
 ]
