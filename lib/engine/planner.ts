@@ -222,16 +222,27 @@ function interleave(main: string[], extra: string[]): string[] {
 }
 
 /**
- * Tagesplan: 8 Aufgaben, 4 pro Fach, dazu bis zu 12 Vokabeln (6 pro Sprache, beide Sprachen abwechselnd).
+ * Tagesplan: 8 Aufgaben, 4 pro Fach, dazu bis zu 12 Vokabeln (6 pro Sprache, beide Sprachen abwechselnd; bei Schulaufgabe siehe planVocab).
  * Fehlt ein Fach (noch kein Inhalt), übernimmt das andere. Dasselbe gilt für die Vokabeln.
  */
 export function planDaily(input: PlanInput): string[] {
   const rotation = isExamMode(input.today, input.examDate) ? EXAM_ROTATION : SUBJECT_ROTATION;
   const ranked = new Map(rotation.map((s) => [s, rankSubject(s, input)]));
   const main = assemble(ranked, rotation, DAILY_PER_SUBJECT, DAILY_PER_SUBJECT * rotation.length);
-  const vocabRanked = new Map(SUBJECT_ROTATION.map((s) => [s, VOCAB_UNITS[s] ? rankVocab(input, VOCAB_UNITS[s], true) : []]));
-  const vocab = assemble(vocabRanked, SUBJECT_ROTATION, VOCAB_PER_DAY, VOCAB_PER_DAY * SUBJECT_ROTATION.length);
-  return interleave(main, vocab);
+  return interleave(main, planVocab(input));
+}
+
+/**
+ * Vokabel-Spur: 6 pro Sprache. Hat nur eine Sprache eine aktive Schulaufgabe, bekommt sie alle 12 Plätze
+ * und die andere pausiert; gehen ihr die Wörter aus, füllt die andere auf.
+ */
+function planVocab(input: PlanInput): string[] {
+  const total = VOCAB_PER_DAY * SUBJECT_ROTATION.length;
+  const ranked = new Map(SUBJECT_ROTATION.map((s) => [s, VOCAB_UNITS[s] ? rankVocab(input, VOCAB_UNITS[s], true) : []]));
+  const exam = SUBJECT_ROTATION.filter((s) => VOCAB_UNITS[s] && input.focusSkills?.get(s)?.size);
+  if (exam.length !== 1) return assemble(ranked, SUBJECT_ROTATION, VOCAB_PER_DAY, total);
+  const order = [exam[0], ...SUBJECT_ROTATION.filter((s) => s !== exam[0])];
+  return order.flatMap((s) => ranked.get(s)!).slice(0, total).map((i) => i.id);
 }
 
 /** Bonus-Runde: 6 weitere Aufgaben nach denselben Prioritäten, ohne die heutigen. Optional auf ein Gebiet beschränkt. */

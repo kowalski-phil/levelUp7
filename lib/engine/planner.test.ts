@@ -205,6 +205,29 @@ describe("Vokabeln", () => {
     expect(isVocabId(r!)).toBe(false);
   });
 
+  it("Schulaufgabe in einer Sprache: deren Vokabeln bekommen alle Plätze, die andere pausiert", () => {
+    const v = planDaily(withVocab({ focusSkills: new Map([["E", new Set(["E1.1"])]]) })).filter(isVocabId);
+    expect(v).toHaveLength(2 * VOCAB_PER_DAY);
+    expect(v.every((id) => id.startsWith("EV-"))).toBe(true);
+  });
+
+  it("gehen der Schulaufgaben-Sprache die Vokabeln aus, füllt die andere auf", () => {
+    const states: PlannerState[] = vocab
+      .filter((i) => i.unitCode === "EV")
+      .slice(0, 20)
+      .map((i) => ({ itemId: i.id, dueDate: "2026-12-01", lapses: 0, lastResult: "correct" }));
+    const v = planDaily(withVocab({ states, focusSkills: new Map([["E", new Set(["E1.1"])]]) })).filter(isVocabId);
+    expect(v.filter((id) => id.startsWith("EV-"))).toHaveLength(4);
+    expect(v.filter((id) => id.startsWith("FV-"))).toHaveLength(2 * VOCAB_PER_DAY - 4);
+  });
+
+  it("Schulaufgaben in beiden Sprachen: Vokabeln wie gewohnt halbe-halbe", () => {
+    const focusSkills = new Map([["E", new Set(["E1.1"])], ["F", new Set(["F1.1"])]]);
+    const v = planDaily(withVocab({ focusSkills })).filter(isVocabId);
+    expect(v.filter((id) => id.startsWith("EV-"))).toHaveLength(VOCAB_PER_DAY);
+    expect(v.filter((id) => id.startsWith("FV-"))).toHaveLength(VOCAB_PER_DAY);
+  });
+
   it("ohne Vokabeln im Katalog ändert sich nichts", () => {
     expect(planDaily(base())).toHaveLength(8);
   });
